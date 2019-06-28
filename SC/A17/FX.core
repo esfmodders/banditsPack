@@ -1,0 +1,169 @@
+public FIX( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.a17" );
+}
+
+public RemoveModel( CORE[] )
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	setClientMODEL( Client, "none" );
+	AddFx( Client, "fxAvatar", "create", 1, 1.0 );
+}
+
+public A17( CORE[] )
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	setClientMODEL( Client, "ecx.a17" );
+	AddFx( Client, "fxAvatar", "create", 28, 1.0 );
+
+}
+public SA17( CORE[] )
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	setClientMODEL( Client, "ecx.a17.super" );
+	AddFx( Client, "fxAvatar", "create", 25, 1.0 );
+
+}
+
+public SA17hit( CORE[] )
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	setClientMODEL( Client, "ecx.a17.super" );
+	AddFx( Client, "fxAvatar", "create", 90, 1.0 );
+
+}
+public yellowglow( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/yellowswirl.spr", 6, 60, 0, 0, 0 );	
+	return 1;
+}
+public sphere( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/us_aura2.mdl", 0, 0, 99.0, 0, 0, 0, 2.0, 1.3, 0, 1 );
+	return 1;
+}
+
+public shine( Core[] )
+{
+	AddFx( Core[0], "fxSpriteEntity", "sprites/ecx.shine.spr", 0, 0, 255.0, 40.0, 1.0, 0.4 );
+	return 1;
+}
+
+public waves( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/ywaves.spr", 6, 60, 0, 0, 0 );	
+	return 1;
+}
+
+public fxPwave( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 90, 250);
+	return 1;
+}
+
+public fxBlow( Core[] )
+{
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public A17Middle( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Middletransa17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+
+public aA17( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/transa17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+public aA172( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/trans2a17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+public aA173( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/trans3a17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+public aA174( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/trans4a17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+
+public bA17( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/2transa17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+public bA172( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/2trans2a17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+public bA173( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/2trans3a17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+public bA174( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/2trans4a17.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 1.0, 0, 1 );
+	return 1;
+}
+
+public Bolts( Core[] )
+{
+	AddFx( Core[0], "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 20, 50, 150, 60, 40, 150, 200, 650, 0, 22 );
+	return 1;
+}
+
+public RemoveModels( Core[] )
+{
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	return 1;
+}
+
+public RemoveModels2( Core[] )
+{
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	return 1;
+}
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	return 1;
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 50, 255, 255, 100, 255, 25, 450, 0, 40 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+
+	return 1;
+}

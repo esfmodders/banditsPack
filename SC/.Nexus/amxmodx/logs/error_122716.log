@@ -1,0 +1,8 @@
+L 12/27/2016 - 16:57:20: Start of error session.
+L 12/27/2016 - 16:57:20: Info (map "esf_Gurufixed") (logfile "error_122716.log")
+L 12/27/2016 - 16:57:20: Could not find function "@WeaponExplosion"
+L 12/27/2016 - 16:57:20: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 12/27/2016 - 16:57:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/27/2016 - 16:57:20: Could not find function "@WeaponExplosion"
+L 12/27/2016 - 16:57:20: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 12/27/2016 - 16:57:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

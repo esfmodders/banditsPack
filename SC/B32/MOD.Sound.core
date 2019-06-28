@@ -1,0 +1,96 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/finalflash_charge.wav",
+		"ecx.a18/wc_hyperwave.wav",
+		"ecx.a18/wc_hyperwave.wav",
+		"ecx.a18/wc_hyperwave.wav",
+		"ecx.a18/wc_hyperwave.wav",
+		"ecx.a18/wc_hyperwave.wav"
+	},
+	{
+		"*/finalflash.wav",
+		"ecx.a18/w_hyperwave.wav",
+		"ecx.a18/w_hyperwave.wav",
+		"ecx.a18/w_hyperwave.wav",
+		"ecx.a18/w_hyperwave.wav",
+		"ecx.a18/w_hyperwave.wav"
+	},
+	{
+		"*/shield.wav",
+		"ecx.a18/w_shield.wav",
+		"ecx.a18/w_shield.wav",
+		"ecx.a18/w_shield.wav",
+		"ecx.a18/w_shield.wav",
+		"ecx.a18/w_shield.wav"
+	},
+	{
+		"*/shield_charge.wav",
+		"ecx.a18/wc_shield.wav",
+		"ecx.a18/wc_shield.wav",
+		"ecx.a18/wc_shield.wav",
+		"ecx.a18/wc_shield.wav",
+		"ecx.a18/wc_shield.wav"
+	},
+	{
+		"*/bigbang_charge.wav",
+		"ecx.a18/wc_hyperblast.wav",
+		"ecx.a18/wc_hyperblast.wav",
+		"ecx.a18/wc_hyperblast.wav",
+		"ecx.a18/wc_hyperblast.wav",
+		"ecx.a18/wc_hyperblast.wav"
+	},
+	{
+		"*/bigbang.wav",
+		"ecx.a18/w_hyperblast.wav",
+		"ecx.a18/w_hyperblast.wav",
+		"ecx.a18/w_hyperblast.wav",
+		"ecx.a18/w_hyperblast.wav",
+		"ecx.a18/w_hyperblast.wav"
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.a18/p_pain1.wav",
+		"ecx.a18/p_pain1.wav",
+		"ecx.a18/p_pain1.wav",
+		"ecx.a18/p_pain1.wav",
+		"ecx.a18/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.a18/p_pain2.wav",
+		"ecx.a18/p_pain2.wav",
+		"ecx.a18/p_pain2.wav",
+		"ecx.a18/p_pain2.wav",
+		"ecx.a18/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.a18/p_pain3.wav",
+		"ecx.a18/p_pain3.wav",
+		"ecx.a18/p_pain3.wav",
+		"ecx.a18/p_pain3.wav",
+		"ecx.a18/p_pain3.wav"
+	},
+
+	{
+		"*/pain4.wav",
+		"ecx.a18/p_pain4.wav",
+		"ecx.a18/p_pain4.wav",
+		"ecx.a18/p_pain4.wav",
+		"ecx.a18/p_pain4.wav",
+		"ecx.a18/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.a18/p_death.wav",
+		"ecx.a18/p_death.wav",
+		"ecx.a18/p_death.wav",
+		"ecx.a18/p_death.wav",
+		"ecx.a18/p_death.wav"
+	}
+};

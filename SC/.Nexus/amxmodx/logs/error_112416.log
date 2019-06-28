@@ -1,0 +1,86 @@
+L 11/24/2016 - 18:00:34: Start of error session.
+L 11/24/2016 - 18:00:34: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 18:00:34: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 18:00:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:27:18: Start of error session.
+L 11/24/2016 - 18:27:18: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 18:27:18: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 18:27:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:28:25: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 18:28:25: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 18:28:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:41:13: Start of error session.
+L 11/24/2016 - 18:41:13: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 18:41:13: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 18:41:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:42:13: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 18:42:13: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 18:42:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:45:15: Start of error session.
+L 11/24/2016 - 18:45:15: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 18:45:15: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 18:45:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:45:43: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 18:45:43: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 18:45:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:48:06: Start of error session.
+L 11/24/2016 - 18:48:06: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 18:48:06: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 18:48:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:49:02: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 18:49:02: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 18:49:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:51:20: Start of error session.
+L 11/24/2016 - 18:51:20: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 18:51:20: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 18:51:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:51:59: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 18:51:59: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 18:51:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:55:59: Start of error session.
+L 11/24/2016 - 18:55:59: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 18:55:59: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 18:55:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 18:57:08: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 18:57:08: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 18:57:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 19:04:31: Start of error session.
+L 11/24/2016 - 19:04:31: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 19:04:31: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 19:04:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 19:07:45: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 19:07:45: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 19:07:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 19:18:53: Start of error session.
+L 11/24/2016 - 19:18:53: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 19:18:53: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 19:18:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 19:19:21: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 19:19:21: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 19:19:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 19:28:11: Start of error session.
+L 11/24/2016 - 19:28:11: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 19:28:11: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 19:28:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 19:28:50: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 19:28:50: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 19:28:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 19:57:25: Start of error session.
+L 11/24/2016 - 19:57:25: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 19:57:25: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 19:57:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 20:02:29: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 11/24/2016 - 20:02:29: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 11/24/2016 - 20:02:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 20:02:55: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 11/24/2016 - 20:02:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 20:03:02: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 11/24/2016 - 20:03:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 22:01:02: Start of error session.
+L 11/24/2016 - 22:01:02: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 22:01:02: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 22:01:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/24/2016 - 22:47:25: Start of error session.
+L 11/24/2016 - 22:47:25: Info (map "esf_Guru") (logfile "error_112416.log")
+L 11/24/2016 - 22:47:25: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/24/2016 - 22:47:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

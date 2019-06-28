@@ -1,0 +1,191 @@
+new MOD_SOUND_CORE[][][] =
+{
+	{
+		"*/pain1.wav",
+		"Bergamo/Pain1.wav",
+		"Bergamo/Pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"Bergamo/Pain2.wav",
+		"Bergamo/Pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"Bergamo/Pain2.wav",
+		"Bergamo/Pain3.wav"
+	},
+	{
+		"*/pain4.wav",
+		"Bergamo/Pain4.wav",
+		"Bergamo/Pain4.wav"
+	},
+	{
+		"*/death.wav",
+		"Bergamo/Death.wav",
+		"Bergamo/Death.wav"
+	},
+	{
+		"*/renzoku.wav",
+		"Bergamo/Renzoku.wav",
+		"Bergamo/Renzoku.wav"
+	},
+	{
+		"*/kamehame.wav",
+		"Bergamo/Kamehame.wav",
+		"Bergamo/Kamehame.wav"
+	},
+	{
+		"*/ha.wav",
+		"Bergamo/Ha.wav",
+		"Bergamo/Ha.wav"
+	},
+	{
+		"*/bigbang_charge.wav",
+		"Bergamo/BigbangCharge.wav",
+		"Bergamo/BigbangCharge.wav"
+	},
+	{
+		"*/bigbang.wav",
+		"Bergamo/Bigbang.wav",
+		"Bergamo/Bigbang.wav"
+	},
+	{
+		"*/finalflash_charge.wav",
+		"Bergamo/FinalFlashCharge.wav",
+		"Bergamo/FinalFlashCharge.wav"
+	},
+	{
+		"*/finalflash.wav",
+		"Bergamo/FinalFlash.wav",
+		"Bergamo/FinalFlash.wav"
+	}
+}
+
+Class_Sound_PreCache ()
+{
+	precache_sound( "Bergamo/Taunt.wav" );
+	precache_sound( "Bergamo/Taunt2.wav" );
+
+	precache_sound( "Bergamo/Thinks/1.wav" );
+	precache_sound( "Bergamo/Thinks/2.wav" );
+	precache_sound( "Bergamo/Thinks/3.wav" );
+	precache_sound( "Bergamo/Thinks/4.wav" );
+	precache_sound( "Bergamo/Thinks/5.wav" );
+	precache_sound( "Bergamo/Thinks/6.wav" );
+	precache_sound( "Bergamo/Thinks/7.wav" );
+	precache_sound( "Bergamo/Thinks/8.wav" );
+	precache_sound( "Bergamo/Thinks/9.wav" );
+	precache_sound( "Bergamo/Thinks/10.wav" );
+
+	precache_sound( "Bergamo/Hurt1.wav" );
+	precache_sound( "Bergamo/Hurt2.wav" );
+	precache_sound( "Bergamo/Hurt3.wav" );
+	precache_sound( "Bergamo/Hurt4.wav" );
+}
+
+new Float: Delay_Think[ 33 ], bool: BergamoHurt[ 33 ] [ 4 ];
+
+public @ClassBergamoThink( Client )
+{
+	if( getClientDATAc( Client, cliClass ) != getCXbyName( "Bergamo" ) ) return;
+
+	if( !is_user_alive( Client ) || getClientHP( Client ) < 100 ) return;
+
+	if( pev( Client, pev_sequence ) > 51 || getClientFROZEN( Client ) ) return;
+
+	if( get_gametime() > Delay_Think[ Client ] )
+	{
+		Delay_Think[ Client ] = get_gametime() + 30.0;
+
+		switch( random_num( 1, 10 ) )
+		{
+			case 1: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/1.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 2: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 3: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/3.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 4: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/4.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 5: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/5.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 6: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/6.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 7: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/7.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 8: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/8.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 9: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/9.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			case 10: emit_sound( Client, CHAN_BODY, "Bergamo/Thinks/10.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+		}
+	}
+}
+
+public @ClassHurtThink( MsgID, dest, Client )
+{
+	new Health = get_msg_arg_int( 1 );
+
+	if( Health == getClientMHP( Client ) )
+	{
+		BergamoHurt[ Client ] [ 0 ] = false;
+		BergamoHurt[ Client ] [ 1 ] = false;
+		BergamoHurt[ Client ] [ 2 ] = false;
+		BergamoHurt[ Client ] [ 3 ] = false;
+	}
+
+	if( Health <= 0 || Health > 100 ) return;
+
+	if( getClientDATAc( Client, cliClass ) != getCXbyName( "Bergamo" ) ) return;
+
+	if( Health <= 100 && Health > 80 )
+	{
+		if( BergamoHurt[ Client ] [ 0 ] ) return;
+
+		BergamoHurt[ Client ] [ 0 ] = true;
+		emit_sound( Client, CHAN_BODY, "Bergamo/Hurt1.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	}
+	if( Health <= 80 && Health > 60 )
+	{
+		if( BergamoHurt[ Client ] [ 1 ] ) return;
+
+		BergamoHurt[ Client ] [ 1 ] = true;
+		emit_sound( Client, CHAN_BODY, "Bergamo/Hurt2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	}
+	if( Health <= 60 && Health > 30 )
+	{
+		if( BergamoHurt[ Client ] [ 2 ] ) return;
+
+		BergamoHurt[ Client ] [ 2 ] = true;
+		emit_sound( Client, CHAN_BODY, "Bergamo/Hurt3.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	}
+	if( Health <= 30 && Health > 0 )
+	{
+		if( BergamoHurt[ Client ] [ 3 ] ) return;
+
+		BergamoHurt[ Client ] [ 3 ] = true;
+		emit_sound( Client, CHAN_BODY, "Bergamo/Hurt4.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	}
+}
+
+public @ClassDeathMsg( MsgID, dest )
+{
+	new Killer = get_msg_arg_int( 1 );
+	new Victim = get_msg_arg_int( 2 );
+
+	if( getClientDATAc( Killer, cliClass ) == getCXbyName( "Bergamo" ) && Victim != Killer )
+	{
+		if( random( 2 ) )
+			emit_sound( Killer, CHAN_BODY, "Bergamo/Taunt.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+		else
+			emit_sound( Killer, CHAN_BODY, "Bergamo/Taunt2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	}
+
+	if( getClientDATAc( Victim, cliClass ) != getCXbyName( "Bergamo" ) ) return;
+
+	BergamoHurt[ Victim ] [ 0 ] = false;
+	BergamoHurt[ Victim ] [ 1 ] = false;
+	BergamoHurt[ Victim ] [ 2 ] = false;
+	BergamoHurt[ Victim ] [ 3 ] = false;
+}
+
+
+public client_connect( Client )
+{
+	BergamoHurt[ Client ] [ 0 ] = false;
+	BergamoHurt[ Client ] [ 1 ] = false;
+	BergamoHurt[ Client ] [ 2 ] = false;
+	BergamoHurt[ Client ] [ 3 ] = false;
+}

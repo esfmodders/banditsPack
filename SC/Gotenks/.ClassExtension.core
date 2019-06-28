@@ -1,0 +1,268 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Gotenks";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+#include <xtension/fusion>
+public @FusionClassCreation ()
+{
+	addFusion (
+		"Goten",
+		"Trunks:Kid",
+		FUSION_DANCE,
+		{ 0, 0, 0 },
+		3000000,
+		2.0,
+		Float:{ 0.8, 0.8, 218.0, 216.0 },
+		Float:{ 0.0, 0.0, 0.0, 0.0 },
+		3.0 
+		);
+	addFusion (
+		"Goten",
+		"Trunks:Kid",
+		FUSION_DANCE,
+		{ 1, 1, 1 },
+		8000000,
+		2.0,
+		Float:{ 0.8, 0.8, 218.0, 216.0 },
+		Float:{ 0.0, 0.0, 0.0, 0.0 },
+		3.0 
+		);
+	
+}
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Gotenks", false, true, "FUCK YEAH", "sound/ecx.gotenks/c_intro.wav" );
+
+	// gotenks
+	addClassLevel( "gotenks", "ecx.gotenks", 10.0, 10.0, 3000000, 0, 2.0, 
+					480, 100, bool:{ false, true }, 0.0, { 300, 160 }, { 1, 1, 0, 0, 0, 1, 0 }, 6.0, Float:{ 210.0, 20.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 30.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// SSJ gotenks
+	addClassLevel( "SSJ gotenks", "ecx.gotenks.ssj", 7.0, 7.0, 6000000, 0, 2.0, 
+					540, 120, bool:{ false, true }, 9.0, { 350, 150 }, { 1, 1, 1, 0, 0, 2, 1 }, 8.0, Float:{ 220.0, 40.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 128.0, 30.0 }, 4, kRenderTransAdd,
+					{ 255, 253, 174 }, { 1, 2, 1, 8 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// SSJ3 gotenks
+	addClassLevel( "SSJ3 gotenks", "ecx.gotenks.ssj3", 7.0, 7.0, 19000000, 0, 4.0, 
+					590, 235, bool:{ true, true }, 15.0, { 500, 160 }, { 1, 1, 1, 1, 0, 3, 2 }, 10.0, Float:{ 230.0, 60.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 128.0, 30.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 128 }, { 1, 2, 1, 4 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+
+
+	addClassLevel( "<<FusionFailure>>", "ecx.gotenks.skinny", 5.0, 1.5, 100, 0, 2.0,
+					120, 30, bool:{ true, true }, -3.0, { 500, 150 }, bool:{ false, false, false, false, false, false, false }, 0.0 );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 100.0, 100.0, 100.0, 50.0 }, 0, kRenderTransAdd,
+					{ 100, 100, 100 } );
+
+	addClassLevel( "<<FusionFailure>>", "ecx.gotenks.fat", 0.0, 1.5, 100, 0, 2.0,
+					80, 60, bool:{ true, true }, -3.0, { 100, 150 }, bool:{ false, false, false, false, false, false, false }, 0.0 );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 100.0, 100.0, 100.0, 50.0 }, 0, kRenderTransAdd,
+					{ 100, 100, 100 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Gotenks
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+		}
+		case 1: // SSJ Gotenks
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassSpecial( Client, "SGKA" );
+		
+		}
+		case 2: // SSJ3 Gotenks
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassSpecial( Client, "SGKA" );
+			
+		}
+		
+	}
+}
+
+// << Class Extension PreCache >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.gotenks/ecx.gotenks.mdl" );
+	precache_model( "models/player/ecx.gotenks.skinny/ecx.gotenks.skinny.mdl" );
+	precache_model( "models/player/ecx.gotenks.fat/ecx.gotenks.fat.mdl" );
+	precache_model( "models/player/ecx.gotenks.ssj/ecx.gotenks.ssj.mdl" );
+	precache_model( "models/player/ecx.gotenks.ssj3/ecx.gotenks.ssj3.mdl" );
+	precache_model( "models/player/ecx.gotenks.ssj4/ecx.gotenks.ssj4.mdl" );
+
+	precache_model( "models/evolution/Auras/default.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/evolution/Auras/shape_05.mdl" );
+	precache_model( "models/evolution/Auras/shape_06.mdl" );
+	precache_sound( "ecx.gotenks/temp_supergotenks.wav" );
+	precache_sound( "ecx.gotenks/s_4.wav" );
+	precache_sound( "ecx.gotenks/w_superghost.wav" );
+	precache_sound( "ecx.gotenks/wc_superghost.wav" );
+	
+}
+
+// << Class Extension Transformation >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+
+
+			}
+
+			case 2:
+			{
+
+
+			}
+
+			case 3:
+			{
+
+			}
+
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.gotenks/temp_supergotenks.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+
+				set_task( 0.0, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 5.2, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.1, "fxAura4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 10.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 1.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 15.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",5 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 19.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+
+			}
+
+			case 2:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.gotenks/temp_supergotenks.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+
+				set_task( 0.0, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 5.2, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.1, "fxAura4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 10.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 1.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 15.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",5 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 19.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+	client_cmd( Client, "turbo" );
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}

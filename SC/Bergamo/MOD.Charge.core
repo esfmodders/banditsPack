@@ -1,0 +1,17 @@
+#include <xs>
+
+
+
+ModChargeInit ()
+{
+	
+	alterCharge( 0, "kamehameha", "sprites/w_finalshine_c.spr", 0.3 );
+	alterCharge( 1, "kamehameha", "sprites/RoseChargeK.spr", 0.3 );
+	alterCharge( 0, "finalflash", "sprites/w_jubeikame_c.spr", 0.5 );
+	alterCharge( 1, "finalflash", "sprites/w_jubeikame_c.spr", 0.5 );
+	alterCharge( 2, "finalflash", "sprites/w_jubeikame_c.spr", 0.5 );
+	alterCharge( 3, "finalflash", "sprites/w_jubeikame_c.spr", 0.5 );
+	alterCharge( 4, "finalflash", "sprites/w_jubeikame_c.spr", 0.5 );
+
+}
+

@@ -1,0 +1,195 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Vegeta+";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"ESFKAMI";
+
+new bool: Charging[33], ChargePercentage[33], Float: FX_Delay[33], Float: FX_Delay2[33];
+new BigBangChargeEntity[33];
+
+
+#define MOD_SOUND 	0
+#define MOD_CHARGE 	0
+#define MOD_WEAPON	0
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+	register_message( get_user_msgid( "Charge" ), "@Charging" )// 蓄波事件 Attack Charge Event
+	register_forward( FM_AddToFullPack, "fw_AddToFullPack_Post", true )// 实体全局控制 Entities Handler
+}
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Vegeta+", false, false, "www.esfkami.net" );
+
+	// Vegeta+
+	addClassLevel( "Vegeta+", "Vegeta+", 10.0, 1.5, 1000000, 1500000, 1.0, 
+					400, 100, bool:{ false, false }, 20.0, { 200, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 1.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public bool:@ClassCandyEat ( Client )
+	return true;
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Vegeta+
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_bigbang" );
+		}
+	}
+}
+
+public @Charging( msgID, dest, Client )
+{
+	if( get_user_weapon( Client ) == 13 )
+	{
+		ChargePercentage[Client] = get_msg_arg_int( 1 )
+	}
+}
+
+public client_PostThink( Client )
+{
+	if( getClientATKCHARGE(Client) && get_user_weapon( Client ) == 13 && !is_valid_ent( BigBangChargeEntity[Client] ) && ChargePercentage[Client] > 35 )// 判断是否在蓄13号波(big bang) Check if the client is charging and if the weaponIndex is 13(big bang)
+	{
+		Charging[Client] = true;
+
+		new Float: RHandOrg[3], Float: tempAng[3];
+		BigBangChargeEntity[Client] = create_entity( "env_sprite" );// 创建spr实体
+		engfunc( EngFunc_GetAttachment, Client, 2, RHandOrg, tempAng );// 获取附件坐标 Get Attachment Origin
+		engfunc( EngFunc_SetModel, BigBangChargeEntity[Client], "sprites/bigbangb.spr" ); // 设置SPR外观 Set sprite file
+		set_rendering( BigBangChargeEntity[Client], kRenderFxNone, 0, 0, 0, kRenderTransAdd, 185 );// 设置渲染模式 Set render mode
+		set_pev( BigBangChargeEntity[Client], pev_classname, "BigBangChargeEnt" );// 设置实体的类名 Set classname
+		set_pev( BigBangChargeEntity[Client], pev_owner, Client ); // 设置该实体的所有者 set the entity's owner
+
+		/* 以下是为了修复 get attachment偏移(关闭了它们的原因是我已经在MS3D内手动修复了) Below is for debugging the offset of geting attachment(I disabled it because of I have manually fixed it in MS3D)
+		//set_pev( BigBangChargeEntity[Client], pev_body, 1 );
+		//set_pev( BigBangChargeEntity[Client], pev_movetype, MOVETYPE_FOLLOW );
+		//set_pev( BigBangChargeEntity[Client], pev_aiment, Client );
+		*/
+
+		DispatchKeyValue( BigBangChargeEntity[Client], "scale", "0.5");// 设置SPR缩放值 SPR Scaler
+		DispatchKeyValue( BigBangChargeEntity[Client], "framerate", "5.0");// 设置SPR播放速度 Set spr frame rate
+		DispatchSpawn( BigBangChargeEntity[Client] );// 让实体出生在地图中 Make the entity Spawned
+	}
+	if( !getClientATKCHARGE(Client) && Charging[Client] && is_valid_ent( BigBangChargeEntity[Client] ) )// 判断是否放出了13号波(big bang) Check if the charging has been stoped
+	{
+		Charging[Client] = false;
+		ChargePercentage[Client] = 0;
+
+		set_pev( BigBangChargeEntity[Client], pev_flags, FL_KILLME );// 移除13号波的Charge实体 Remove the ChargeEntity of FinishingBuster
+		BigBangChargeEntity[Client] = 0;// Debug
+	}
+
+	//以下是为ChargeEntity加射线的特效 The code below adds the Rays for the ChargeEntity
+	if( is_valid_ent( BigBangChargeEntity[Client] ) && ChargePercentage[Client] > 35 )
+	{
+		new origin[3], Float: RHandOrg[3], Float: tempAng[3];
+		engfunc( EngFunc_GetAttachment, Client, 2, RHandOrg, tempAng );// 获取附件坐标 Get Attachment Origin
+		origin[0] = floatround( RHandOrg[0] )// 浮点值转换整数值 Float to Integer
+		origin[1] = floatround( RHandOrg[1] )
+		origin[2] = floatround( RHandOrg[2] )
+
+		if( FX_Delay[Client] <= get_gametime( ) )
+		{
+			FX_Delay[Client] = get_gametime( ) + 0.2// 射线的频率 The frequence of the rays
+
+			for( new i; i < 3; i++ )// 射线的数量 The number of the rays
+			{
+				message_begin( MSG_PVS, SVC_TEMPENTITY, origin ); 
+				write_byte( TE_BEAMENTPOINT ); 
+				write_short( BigBangChargeEntity[Client] ); //start entity
+				write_coord( origin[0] + random_num(-50, 50)); //end position X 
+				write_coord( origin[1] + random_num(-50, 50)); //end position Y 
+				write_coord( origin[2] + random_num(-50, 50)); //end positon Z 
+				write_short( engfunc( EngFunc_ModelIndex,"sprites/bigbangb.spr" ) ); //set spr file 
+				write_byte( 10 ); //starting frame 
+				write_byte( 10 ); //frame rate in 0.1's 
+				write_byte( 10 ); //life in 0.1's 
+				write_byte( 5 ); //line width in 0.1's 
+				write_byte( 0 ); //noise amplitude in 0.01's 
+				write_byte( 150 ); //R 
+				write_byte( 255 ); //G 
+				write_byte( 255 ); //B 
+				write_byte( 255 ); //Brightness 
+				write_byte( random_num(10, 25) ); //scroll speed in 0.1's 
+				message_end( ); 
+			}
+		}
+		if( FX_Delay2[Client] <= get_gametime( ) )
+		{
+			FX_Delay2[Client] = get_gametime( ) + 0.3// 射线的频率 The frequence of the rays
+
+			for( new i; i < 3; i++ )// 射线的数量 The number of the rays
+			{
+				message_begin( MSG_PVS, SVC_TEMPENTITY, origin ); 
+				write_byte( TE_BEAMENTPOINT ); 
+				write_short( BigBangChargeEntity[Client] ); //start entity
+				write_coord( origin[0] + random_num(-50, 50)); //end position X 
+				write_coord( origin[1] + random_num(-50, 50)); //end position Y 
+				write_coord( origin[2] + random_num(-50, 50)); //end positon Z 
+				write_short( engfunc( EngFunc_ModelIndex,"sprites/finishingbusterb.spr" ) ); //set spr file 
+				write_byte( 10 ); //starting frame 
+				write_byte( 10 ); //frame rate in 0.1's 
+				write_byte( 10 ); //life in 0.1's 
+				write_byte( 5 ); //line width in 0.1's 
+				write_byte( 0 ); //noise amplitude in 0.01's 
+				write_byte( 150 ); //R 
+				write_byte( 255 ); //G 
+				write_byte( 255 ); //B 
+				write_byte( 255 ); //Brightness 
+				write_byte( random_num(10, 25) ); //scroll speed in 0.1's 
+				message_end( ); 
+			}
+		}
+	}
+}
+
+public fw_AddToFullPack_Post(ES_Handle, e, iEntity, iHost, iHostFlags, iPlayer, iSet)// 实体全局控制 Entities Handler
+{
+	if( pev_valid( iEntity ) )// 以下是实时刷新ChargeEntity的坐标到玩家的头上方  The code below refreshes the ChargeEntity's origin to be above the client
+	{
+		new szClassName[32];
+		pev(iEntity, pev_classname, szClassName, 31); // 获取实体类名 Get classname
+
+		if(equal(szClassName, "BigBangChargeEnt") && ChargePercentage[get_es( ES_Handle, ES_Owner )] > 35 ) //判断实体类名是否为FinishingBusterChargeEnt  Check if the classname is equal to FinishingBusterChargeEnt
+		{
+			new Float: RHandOrg[3], Float: tempAng[3];
+			engfunc( EngFunc_GetAttachment, get_es( ES_Handle, ES_Owner ), 2, RHandOrg, tempAng );// 获取附件坐标 Get Attachment Origin
+			set_es( ES_Handle, ES_Origin, RHandOrg );// 刷新ChargeEntity的坐标 Refresh the origin of ChargeEntity
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/Vegeta+/Vegeta+.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+}

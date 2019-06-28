@@ -1,0 +1,259 @@
+/* 
+	VERSION 4.0
+
+	-Deleted Forward
+	-Deleted clientATKCHARGE(%1) get_pdata_int(%1, 0b11001000) 
+	-Deleted think //registrar el fx weapon
+	-Deleted getCXbyName(AMXX)
+	-Deleted FM_PlayerPreThink 
+	-Change bool:Carga [33] > __bool_charge [bitsum]
+	-Change bool:PJ[33]	 > __bool_char [bitsum]	
+	-Change:  ATAQUE(%1) > __int_weapon
+	-Bitsums, save more memory (__bool_true, false, check) 33 ---> 1
+	-switch(__int_weapon(id)) 
+			
+ */
+
+
+#include <amxmodx>
+#include <engine>
+#include <fakemeta>
+#include <ipci/Ascend>
+#include <ipci/core>
+#include <ipci/fxlib>
+#include <xtension/special>
+
+#define __bool_true(%1,%2)      (%1 |= (1<<(%2&31)))
+#define __bool_false(%1,%2)    (%1 &= ~(1 <<(%2&31)))
+#define __bool_check(%1,%2)    (%1 & (1<<(%2&31)))
+
+#define __int_weapon(%1) get_user_weapon(%1)
+
+
+#define KAMEHAMEHA 6
+#define FINALFLASH 15
+
+
+static bool:__bool_register;
+
+static __think_register[1 char];
+
+new __bool_char, __bool_charge;
+
+
+public plugin_init()
+	register_plugin("fxWeapons", "4.0", "Matias_Esf");    
+
+
+public plugin_precache()
+{
+	precache_model("sprites/w_gb_b_s.spr")  
+}
+
+
+
+public @ClientReSpawned(id)
+{
+	if(is_user_bot(id))
+		return 
+
+	static __sz_amxx [ 11 ]; // 10 + 1 = number of letters of char. Vegeta DBS == 10 characters/letters
+
+
+	getClassDATAv(getClientCLASS(id), cxName, __sz_amxx,10);
+
+	if(equal(__sz_amxx,"Vegeta DBS"))
+	{
+		__bool_true(__bool_char, id);
+
+		__bool_false(__bool_charge, id);
+
+		// debug:
+		//client_print(id, print_chat , "fxWeapons 4.0 Works! Correct Char")
+
+		if(!__bool_register)
+		{
+			__think_register{0} = register_message(get_user_msgid("Charge"), "@FxWeapons")
+		}
+
+	}
+
+	else
+	{
+		if(__bool_check(__bool_char, id))
+		{
+			__bool_false(__bool_char, id);
+			__bool_false(__bool_charge, id);
+
+		}
+
+		@off_fxweapons_char(id)
+
+	}
+}
+
+
+
+public @FxWeapons( MsgID, dest, id )
+{
+
+	if(!__bool_check(__bool_char,id))
+		return
+
+	if(	get_msg_arg_int( 1 ) != 0) //Start Attack
+	{
+		if(!__bool_check(__bool_charge,id))
+		{
+			switch(__int_weapon(id))
+			{
+				case KAMEHAMEHA:
+				{ 
+					static CORE[1];
+					CORE[0] = id
+
+					set_task(2.0,"fxRayitos",uniqueTaskID( id,90 ), CORE, 1, "a", 1 )
+			
+					__bool_true (__bool_charge ,id );
+				}
+			
+				case FINALFLASH:
+				{
+					static CORE[1];
+					CORE[0] = id
+
+					set_task(1.0,"fxBlow",uniqueTaskID( id,90 ), CORE, 1, "a", 1 )
+					set_task(2.0,"fxBlow",uniqueTaskID( id,90 ), CORE, 1, "a", 1 )
+					set_task(3.0,"fxBlow",uniqueTaskID( id,90 ), CORE, 1, "a", 1 )
+			
+					__bool_true (__bool_charge ,id );
+				}
+
+
+				}
+
+		}
+
+
+	}
+
+	else //Shoot || Cancel || Weapon switch
+	{
+		if(!__bool_check( __bool_charge, id)) return
+
+		__bool_false( __bool_charge, id); 
+
+
+		switch(__int_weapon(id))
+		{
+			case KAMEHAMEHA:
+			{ 
+				if(task_exists(uniqueTaskID( id, 90 ) ))
+					remove_task( uniqueTaskID( id, 90 ) );
+			}
+
+			case FINALFLASH: 
+			{ 
+				if(task_exists(uniqueTaskID( id, 90 ) ))
+					remove_task( uniqueTaskID( id, 90 ) );
+			}
+
+		}
+
+	}
+}
+
+
+
+
+public fxRayitos(Core[])
+{
+	static Float:Origin[3];
+	entity_get_vector(Core[0], EV_VEC_origin, Origin);
+
+	message_begin(MSG_BROADCAST, SVC_TEMPENTITY)
+	write_byte(TE_BEAMENTPOINT);
+	write_short(Core[0] | 0x1000);
+	write_coord(floatround(Origin[0])+ random_num(-39, 39));
+	write_coord(floatround(Origin[1])+ random_num(-39, 39));
+	write_coord(floatround(Origin[2])+ random_num(-39, 39));
+	write_short(engfunc( EngFunc_ModelIndex,"sprites/w_gb_b_s.spr") )
+	write_byte(10);
+	write_byte(5);
+	write_byte(7);
+	write_byte(7);
+	write_byte(0); 
+	write_byte(255);
+	write_byte(255); 
+	write_byte(255); 
+	write_byte(160);
+	write_byte(20);
+	message_end();
+
+	set_task(0.1,"fxRayitos",uniqueTaskID( Core[0],90 ), Core, 1, "a", 1 )
+}
+
+public fxBlow(Core[])
+{
+	AddFx(Core[0],"fxBlow")
+}
+
+
+
+
+@off_fxweapons_char(id)
+{
+	if(!__bool_register) return
+
+	for(new i = 1; i < get_maxplayers();i++)
+	{
+		if(id != i)
+		{
+			if(__bool_check(__bool_char,id)) return
+
+			unregister_message(get_user_msgid( "Charge" ), __think_register{0});
+
+			__bool_register = false;
+
+			break;
+		}
+	}
+}
+
+
+/* ID of Weapons in ESF	 */	
+
+
+/* #define ESFW_NONE		0	//  no weapon
+#define ESFW_MELEE		1	//  melee weapon
+#define ESFW_SWORD		2	//  trunks sword weapon
+#define ESFW_KIBLAST		3	//  kitblast weapon
+#define ESFW_GENERICBEAM	4	//  genericbeam weapon
+#define ESFW_GALLITGUN		5	//  vegeta's gallitgun weapon
+#define ESFW_KAMEHAMEHA		6	//  kamehameha weapon
+#define ESFW_DESTRUCTODISC	7	//  krillin's destructo disc weapon
+#define ESFW_SOLARFLARE		8	//  solar flare weapon
+#define ESFW_EYELASER		9	//  piccolo's eye laser o.O
+#define ESFW_FRIEZADISC		10 	//  frieza's disc weapon
+#define ESFW_SPECIALBEAMCANNON	11	//  piccolo's special beam cannon weapon
+#define ESFW_SPIRITBOMB		12	//  goku spirit bomb weapon
+#define ESFW_BIGBANG		13	//  vegeta's big bang attack weapon
+#define ESFW_FINGERLASER	14	//  frieza's finger lsaer weapon
+#define ESFW_FINALFLASH		15	//  vegeta's final flash weapon
+#define ESFW_MASENKO		16	//  masenko weapon ( gohan's and piccolo's )
+#define ESFW_DEATHBALL		17	//  frieza's death ball weapon
+#define ESFW_BURNINGATTACK	18	//  trunks burning attack weapon
+#define ESFW_SCATTERBEAM	19	//  scatter beam weapon
+#define ESFW_CANDY		20	//  buu's candy weapon
+#define ESFW_SCATTERSHOT	21	//  scatter shot weapon
+#define ESFW_POWERBEAM		22	//  power beam weapon
+#define ESFW_MOUTHBLAST		23	//  mouth blast weapon
+#define ESFW_FINISHINGBUSTER	24	//  finishing buster weapon
+#define ESFW_SENSU		25	//  sensu weapon ( with this you can eat sensubeans if you have ) 
+#define ESFW_DRAGONBALL		26	//  deagonball weapon ( you can hold dragon balls i think.. i never used )
+#define ESFW_BODYPART		27	//  idk wtf is this =]
+#define ESFW_SHIELDATTACK	28	//  shield attack weapon
+#define ESFW_REGENERATION	29	//  buu's regeneration weapon
+#define ESFW_RENZOKU		30	//  gohan's scout (renzoku) weapon
+#define ESFW_KAMETORPEDO	31	//  kame torpedo weapon :X my favorite :-"
+#define ESFW_TELEKINESIS	32	//  piccolo's telekinesis weapon
+#define ESFW_FLAMETHROWER	33	//  flamethrower weapon ;] */

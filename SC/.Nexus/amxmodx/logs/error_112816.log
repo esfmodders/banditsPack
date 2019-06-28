@@ -1,0 +1,5 @@
+L 11/28/2016 - 17:50:37: Start of error session.
+L 11/28/2016 - 17:50:37: Info (map "esf_Guru") (logfile "error_112816.log")
+L 11/28/2016 - 17:50:37: [FAKEMETA] Invalid entity
+L 11/28/2016 - 17:50:37: [AMXX] Run time error 10 (plugin "SX.Buudeathball.amxx") (native "engfunc") - debug not enabled!
+L 11/28/2016 - 17:50:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

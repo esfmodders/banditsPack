@@ -1,0 +1,23 @@
+/*
+
+[EN]You can put the source code in "CCI\.Plugins" folder in order to compile
+*/
+
+#include <amxx/amxmodx>
+#include <ipci/dragonball>
+
+public plugin_init()
+{
+        register_plugin("Wishes Addition","1.0" ,"ESFKAMI");
+}
+
+public @InitWishList( Client, Wishlevel )
+{
+        addWish( "Wish Name", "@Callback" )
+}
+
+public @Callback( Client )
+{
+        //Add your code here...
+        client_print( Client, print_chat, "Add your code here..." )
+}

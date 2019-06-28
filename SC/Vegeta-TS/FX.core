@@ -1,0 +1,496 @@
+public NORMALCHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.vegeta-ts" );
+}
+public NCHANGE( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts" );
+}
+public SSJ2CHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.vegeta-ts.ssj2" );
+}
+public SSJCHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.vegeta-ts.ssj" );
+}
+public SSJ3CHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.vegeta-ts.majin" );
+}
+public SSJ3CHECK2( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.vegeta-ts.ssjmajin" );
+}
+public SSJ4CHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.vegeta-ts.ssj4" );
+}
+public OZF ( Core[] )
+{
+	AddFx( Core[0], "fxSpriteEntity", "sprites/oozarufire.spr", 0, 0, 255.0, 40.0, 5.0, 1.4 );
+	return 1;
+}
+public CHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+public ModelChange1( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts" );
+AddFx( Client, "fxAvatar", "create", 2, 1.0 );
+}
+
+public ModelChange11( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+
+
+public ModelChange2( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts" );
+AddFx( Client, "fxAvatar", "create", 1, 1.0 );
+}
+
+public ModelChangeblau( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+public ModelChangeblau2( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts.ssb" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+public ModelChange3( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts" );
+AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+}
+
+public fxCamBack( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 210" )
+	return 1;
+}
+
+public fxssj45( Core[] )
+{
+	AddFx( Core[0], "fxPowerup", 0, 0, 0 );
+	return 1;
+}
+
+public ModelChange4( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+public fxAura21( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transgoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 28, 1.0 );
+}
+
+public fxAura133( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 28, 1.0 );
+}
+
+public fxAura134( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts.ssj4" );
+AddFx( Client, "fxAvatar", "create", 1, 1.0 );
+}
+
+public ModelChange5( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts.ssj" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+public ModelChange6( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts.ssj" );
+AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+}
+public ModelChange7( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.vegeta-ts.ssj" );
+AddFx( Client, "fxAvatar", "create", 97, 0.2 );
+}
+
+public fxAura24( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.9, 0, 1 );
+	//return 1;
+}
+public fxAura40( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.1, 0, 1 );
+	//return 1;
+}
+
+public fxAura42( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.3, 0, 1 );
+	//return 1;
+}
+
+public fxAura44( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.5, 0, 1 );
+	//return 1;
+}
+
+public fxAura46( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.7, 0, 1 );
+	//return 1;
+}
+
+public fxblau( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/godblue.mdl", 0, 0, 50.0, 0, 0, 0, 2.0, 1.3, 0, 3 );
+	return 1;
+}
+
+public fxAura32( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transgoozaru2.mdl", 28, 5, 100.0, 0, 0, 0, 1.0, 0.7, 0, 1 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 4.3, 0, 4 );
+	return 1;
+}
+public fxAura33( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transgoozaru2.mdl", 28, 5, 100.0, 0, 0, 0, 1.0, 0.6, 0, 1 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 3.3, 0, 4 );
+	return 1;
+}
+public fxAura34( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transgoozaru2.mdl", 28, 5, 100.0, 0, 0, 0, 1.0, 0.5, 0, 1 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 3.0, 0, 4 );
+	return 1;
+}
+public fxAura35( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transgoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.4, 0, 1 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 2.3, 0, 4 );
+	return 1;
+}
+public fxAura36( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transgoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.3, 0, 1 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 1.3, 0, 4 );
+	return 1;
+}
+public fxAura37( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transgoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.2, 0, 1 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 1.1, 0, 4 );
+	return 1;
+}
+public fxAura38( Core[] )
+{
+	//AddFx( Core[0], "fxModelEntity", "models/evolution/transgoozaru2.mdl", 25, 5, 100.0, 0, 0, 0, 1.0, 0.1, 0, 1 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.5, 0, 4 );
+	return 1;
+}
+public fxAura39( Core[] )
+{
+	AddFx( Core[0], "fxSpriteField", "sprites/yellowcharge.spr", 0.1, 1, 255, 200, 400 );
+	return 1;
+}
+public fxAura20( Core[] )
+{
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	return 1;
+}
+
+public fxAura22( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 5.3, 0, 4 );
+	return 1;
+}
+public fxBlow( Core[] )
+{
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+public fxAura( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 40.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+public fxScream3333( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	emit_sound( Core[0], CHAN_ITEM, "ecx.vegeta-ts/tp_ssj2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+public fxBlowSpecial( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 40" )
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+public fxAura15( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_C.mdl", 0, 0, 40.0, 0, 0, 0, 1.0, 0.3, 0, 7 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+public fxLight( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	return 1;
+}
+public fxAura2( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_02.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.5, 0, 4  );
+	AddFx( Core[0], "fxPowerup", 150,140,80);
+	return 1;
+}
+
+public fxrocklift( Core[] )
+{
+	AddFx( Core[0], "fxPowerup", 0,0,0);
+	return 1;
+}
+
+public fxWhiteAura( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_01.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.3, 0, 0 );
+	return 1;
+}
+
+public fxYellowAura( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_01.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+public fxYellowAura2( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_01.mdl", 0, 0, 20.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+public fxYellowAura3( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_01.mdl", 0, 0, 10.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+public fxPwave( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 90, 250);
+	return 1;
+}
+
+public fxAura300( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/waves.spr", 4, 50, 0, 0, 0 );
+	return 1;
+}
+
+public fxAura301( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/ywaves.spr", 6, 60, 0, 0, 0 );
+	return 1;
+}
+public endpowerup( Core[] )
+{
+	RemFx( Core[0], "fxPowerup", 0);
+	RemFx( Core[0], "fxLgtField", 0)
+	return 1;
+}
+public fxAura19( Core[] )
+{
+	AddFx( Core[0], "fxSmokeField", "sprites/steam1.spr", 0.3, 3, 10, 10, 10 );
+	AddFx( Core[0], "fxSpriteRays", "sprites/w_jubeikame_c.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 )
+	return 1;
+}
+public fxAura5( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 150" )
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/Electircity.mdl", 0, 0, 50.0, 0, 0, 0, 0.5, 0.2, 0, 0 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/Electircity2.mdl", 0, 0, 50.0, 0, 0, 0, 0.5, 0.2, 0, 0 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Machine.mdl", 0, 10, 100.0, 0, 0, 0, 0.6, 0.9, 0, 1 );
+	AddFx( Core[0], "fxSpriteEntity", "sprites/ecx.shine.spr", 0, 0, 100.0, 5.0, 1.0, 5 );
+	return 1;
+}
+
+public fxAura18( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/Electircity.mdl", 0, 0, 50.0, 0, 0, 0, 0.5, 0.2, 0, 0 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/Electircity2.mdl", 0, 0, 50.0, 0, 0, 0, 0.5, 0.2, 0, 0 );
+	AddFx( Core[0], "fxPowerup", 255, 120, 80 );
+	AddFx( Core[0], "fxSpriteEntity", "sprites/ecx.shine.spr", 0, 0, 100.0, 5.0, 1.0, 1 );
+	AddFx( Core[0], "fxScreenShake", 50.0, 3.0, 5.0 );
+	return 1;
+}
+
+public fxAura7( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 3.3, 0, 8 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 1.8, 0, 8 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 2.8, 0, 8 );
+	AddFx( Core[0], "fxPowerup", 255, 120, 80 );
+	return 1;
+}
+
+
+public fxAura4( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 10.0, 0, 0, 0, 1.0, 0.5, 0, 5  );
+	return 1;
+}
+
+public fxTarus( Core[] )
+{
+	AddFx( Core[0], "fxBeamTorus", "sprites/vegetassj4trans.spr", 100, 255, 200, 255, 250, 8, 25, 8 );
+	return 1;
+}
+public fxLgt( Core[] )
+{
+	AddFx( Core[0], "fxLgtField", 0.2, 3, 255, 100);
+	return 1;
+}
+public fxsphere( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/us_aura2.mdl", 0, 0, 50.0, 0, 0, 0, 2.0, 2.3, 0, 1 );
+	return 1;
+}
+public fxLgt2( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 90, 255, 255, 255, 200.1, 0.5);
+	return 1;
+}
+public fxScream( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	emit_sound( Core[0], CHAN_ITEM, "ecx.vegeta-ts/t_ssj4end.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+
+	return 1;
+}
+
+public fxFinalBlow2( Core[] )
+{
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxBeamTorus", "sprites/vegetassj4trans.spr", 100, 255, 200, 255, 250, 20, 50, 0 );
+	AddFx( Core[0], "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 20, 50, 255, 100, 40, 150, 200, 650, 0, 22 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+
+	return 1;
+}
+
+public fxFinalBlow3( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 520" )
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxLgtField", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxCSpriteRays", 0);
+	RemFx( Client, "fxSmokeField", 0 );
+	RemFx( Client, "fxSpriteField", 0 );
+	return 1;
+}
+public fxAura3( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.5, 0, 4 );
+	AddFx( Core[0], "fxPowerup", 150,140,80);
+	return 1;
+}

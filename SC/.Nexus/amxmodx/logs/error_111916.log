@@ -1,0 +1,4 @@
+L 11/19/2016 - 17:53:20: Start of error session.
+L 11/19/2016 - 17:53:20: Info (map "esf_Guru") (logfile "error_111916.log")
+L 11/19/2016 - 17:53:20: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/19/2016 - 17:53:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

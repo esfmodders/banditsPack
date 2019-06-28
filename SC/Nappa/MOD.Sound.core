@@ -1,0 +1,46 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+
+	{
+		"*/finalflash_charge.wav",
+		"ecx.nappa/wc_Nappa attack.wav",
+		"ecx.nappa/wc_Nappa attack.wav"
+
+	},
+	{
+		"*/finalflash.wav",
+		"ecx.nappa/w_Nappa attack.wav",
+		"ecx.nappa/w_Nappa attack.wav"
+
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.nappa/p_pain1.wav",
+		"ecx.nappa/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.nappa/p_pain2.wav",
+		"ecx.nappa/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.nappa/p_pain3.wav",
+		"ecx.nappa/p_pain3.wav"
+	},
+	{
+		"*/pain4.wav",
+		"ecx.nappa/p_pain4.wav",
+		"ecx.nappa/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.nappa/p_death.wav",
+		"ecx.nappa/p_death.wav"
+	}
+	
+};

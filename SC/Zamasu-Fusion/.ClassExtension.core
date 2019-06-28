@@ -1,0 +1,600 @@
+/*
+** << Evolution Class Extension >>
+**
+**  Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+ 
+ 
+new const CX_Plugin[]   =   "CX.Zamasu-Fusion";
+new const CX_Version[]  =   "1337";
+new const CX_Author[]   =   "BANDIT/C4";
+ 
+#define MOD_SOUND   1
+#define MOD_CHARGE  1
+#define MOD_WEAPON  1
+
+#define BladesMaxDmg (120.0)
+#define BladesMaxRadius (800.0)
+#define BladesMaxDmgRadius (600.0)
+ 
+//new bool:bladecd[32];
+
+
+
+stock MSG_Explosion;
+stock FxExplosionBlue;
+stock SPR_Rocks;
+stock SPR_Rocks2;
+stock SPR_Rocks3;
+ 
+#include <amxmodx>
+#include <amxmisc>
+#include <amxx/fakemeta_util>
+#include <fakemeta>
+#include <engine>
+#include <esf_util>
+#include <fun>
+#include <hamsandwich>
+#include "ipci/Core"
+#include <ipci/ascend>
+#include <ipci/Fxlib>
+ 
+// << Implement CX Interface >>
+#include <xtension/class/main>
+PluginInit ()
+{
+    register_plugin( CX_Plugin, CX_Version, CX_Author );
+    register_message( get_user_msgid( "Health" ), "@ClassDamage" );
+    register_message( get_user_msgid( "PowerLevel" ), "@ClassPowerLevel" );
+    register_message( get_user_msgid( "ManipModel" ), "@ManipModel" );
+    //register_clcmd("say f", "blades");
+}
+   
+ 
+#include <xtension/fusion>
+public @FusionClassCreation ()
+{
+    addFusion (
+        "Black",
+        "Zamasu",
+        FUSION_POTARA,
+        { 1, 0, 0 },
+        100000000,
+        4.0,
+        Float:{ 1.0, 1.0, 83.0, 83.0 },
+        Float:{ 90.0, 0.0, 0.0, 0.0 }
+        );
+   
+}
+ 
+public @ClassCreation ()
+{
+    createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+                "Zamasu-Fusion",false, true, "Two assholes combined", "Black/c_intro.wav" );
+ 
+    // Zamasu Fusion
+    addClassLevel( "Zamasu-Fusion", "Zamasu-Fusion", 20.0, 20.0, 4000000, 1000000000, 2.0,
+                    500, 255, bool:{ true, false }, 30.0, { 300, 200 }, { 1, 0, 0, 0, 0, 0, 0 }, 8.0, Float:{ 400.0, 70.0 } );
+    addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+                    { 255, 255, 255 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+   
+    // Zamasu Fusion God
+    addClassLevel( "Zamasu-Fusion-God", "Zamasu-Fusion-God", 20.0, 20.0, 1000000000, 450000000, 1.0,
+                    500, 255, bool:{ true, false }, 30.0, { 300, 200 }, { 1, 0, 0, 0, 0, 0, 0 }, 10.0, Float:{ 500.0, 80.0 } );
+    addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+                    { 255, 255, 255 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+                   
+    // Zamasu Fusion Muta God
+    addClassLevel( "Zamasu-Fusion-MutaGod", "Zamasu-Fusion-MutaGod", 20.0, 20.0, 1000000000, 1000000000, 1.0,
+                    500, 255, bool:{ true, false }, 30.0, { 300, 200 }, { 1, 0, 0, 0, 0, 0, 0 }, 5.0, Float:{ 300.0, 60.0 } );
+    addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+                    { 255, 255, 255 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+                   
+    // Zamasu Fusion Megamuta God
+    addClassLevel( "Zamasu-Fusion-Mutagod2", "Zamasu-Fusion-Mutagod2", 20.0, 20.0, 1000000000, 1000000000, 1.0,
+                    500, 255, bool:{ true, false }, 30.0, { 300, 200 }, { 1, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 260.0, 50.0 } );
+    addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+                    { 255, 255, 255 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+                   
+}
+ 
+public @ClassWeaponUpdate ( Client, Level )
+{
+    switch ( Level )
+    {
+        case 0: // Zamasu Fusion
+        {
+            addClassItem( Client, "weapon_melee", true );
+            addClassItem( Client, "weapon_renzoku" );
+            addClassItem( Client, "weapon_genericbeam" );
+            addClassItem( Client, "weapon_Blades" );
+            addClassSpecial( Client, "Spirit Sword" );
+            //addClassSpecial( Client, "Genocide" );
+        }
+        case 1: // Zamasu Fusion PL
+        {
+            addClassItem( Client, "weapon_melee", true );
+            addClassItem( Client, "weapon_renzoku" );
+            addClassItem( Client, "weapon_genericbeam" );
+            addClassItem( Client, "weapon_Blades" );
+            addClassSpecial( Client, "Spirit Sword" );
+            //addClassSpecial( Client, "Genocide" );
+        }
+        case 2: // Zamasu Fusion God
+        {
+            addClassItem( Client, "weapon_melee", true );
+            addClassItem( Client, "weapon_renzoku" );
+            addClassItem( Client, "weapon_genericbeam" );
+            addClassItem( Client, "weapon_Blades" );
+            addClassSpecial( Client, "Spirit Sword" );
+            //addClassSpecial( Client, "Genocide" );
+        }
+        case 3: // Zamasu Fusion Mutagod
+        {
+            addClassItem( Client, "weapon_melee", true );
+            addClassItem( Client, "weapon_renzoku" );
+            addClassItem( Client, "weapon_genericbeam" );
+            addClassItem( Client, "weapon_Blades" );
+            addClassSpecial( Client, "Spirit Sword" );
+            //addClassSpecial( Client, "Genocide" );
+        }
+        case 4: // Zamasu Fusion Mutagod2
+        {
+            addClassItem( Client, "weapon_melee", true );
+            addClassItem( Client, "weapon_renzoku" );
+            addClassItem( Client, "weapon_genericbeam" );
+            addClassItem( Client, "weapon_Blades" );
+            addClassSpecial( Client, "Spirit Sword" );
+            //addClassSpecial( Client, "Genocide" );
+        }
+       
+    }
+}
+ 
+// << Class Extension PreCache >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ 
+PluginPreCache ()
+{
+    MOD_Charge_PreCache ();
+    
+   
+    precache_model( "models/player/Zamasu-Fusion/Zamasu-Fusion.mdl" );
+    precache_model( "models/player/Zamasu-Fusion-god/Zamasu-Fusion-god.mdl" );
+    precache_model( "models/player/Zamasu-Fusion-Mutagod/Zamasu-Fusion-Mutagod.mdl" );
+    precache_model( "models/player/Zamasu-Fusion-Mutagod2/Zamasu-Fusion-Mutagod2.mdl" );
+    precache_model( "models/evolution/Auras/shape_01.mdl" );
+    precache_model( "models/evolution/Auras/shape_05.mdl" );
+    precache_model( "models/evolution/Auras/shape_06.mdl" );
+    precache_sound( "ecx.vegetto/t_ssj.wav" );
+    precache_sound( "ecx.vegetto/t_scream.wav" );
+    precache_sound( "Black/Null.wav" );
+    precache_sound( "Black/Step1.wav" );
+    precache_sound( "Black/Step2.wav" );
+    precache_sound( "Black/Step3.wav" );
+    precache_sound( "Black/Step4.wav" );
+    precache_sound( "Black/Transformation.wav" );
+    precache_sound( "Black/TransformationP.wav" );
+    precache_model( "sprites/RoseAura.spr" );
+    precache_model( "models/evolution/Auras/Aura_Black.mdl" );
+    precache_model( "sprites/w_karmaball.spr" );
+    precache_model( "sprites/jubeikametrail.spr" );
+    precache_model( "models/evolution/Auras/shape_01.mdl" );
+}
+ 
+// << Class Extension Transformation >>
+@ClassPowerLevel( MsgID, dest )
+{
+    new Client = get_msg_arg_int( 1 );
+ 
+    if( getClientCLASS( Client ) != getCXbyName( "Zamasu-Fusion" ) ) return;
+ 
+    if( get_msg_arg_int( 2 ) >= 500_000_000 )
+    {
+        if( getClientLEVEL( Client ) < 2 )
+            @ClassInitiateTransformation ( Client, 2, false );
+    }
+}
+ 
+@ClassDamage( MsgID, dest, Client )
+{
+    if(getClientCLASS( Client ) != getCXbyName( "Zamasu-Fusion" )) return;
+ 
+    if(getClientLEVEL( Client ) == 0)
+    {
+        @ClassInitiateTransformation ( Client, 1, false );
+    }
+    else if(getClientLEVEL( Client ) <= 2)
+    {
+        if(get_msg_arg_int( 1 ) <= 180)
+            @ClassInitiateTransformation ( Client, 3, false );
+    }  
+    else if(getClientLEVEL( Client ) == 3)
+    {
+        if(get_msg_arg_int( 1 ) <= 100)
+            @ClassInitiateTransformation ( Client, 4, false );
+    }
+}
+ 
+ 
+ 
+public @ClassInitiateTransformation ( Client, Level, bool: Perfect )// 开始变身
+{
+    client_cmd( Client, "spk sound/black/Pain3.wav" );
+ 
+    AddFx( Client, "fxFinalBlow2" );
+    AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+   
+    switch( Level )
+    {
+        case 1:
+        {
+           
+        }
+        case 2:
+        {
+            setClientMODEL( Client, "Zamasu-Fusion-God" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 3:
+        {    
+            setClientMODEL( Client, "Zamasu-Fusion-Mutagod" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 4:
+        {
+            setClientMODEL( Client, "Zamasu-Fusion-Mutagod2" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+    }
+ 
+    /*--------------------
+ 
+    >> 闪电效果|Lightning FX
+     setClientLEVELDATAv( Client, cxlLightning, { 2, 2, 2, 8 }, 4 );
+ 
+    >> 蓄气颜色|Powerup Colour
+     setClientLEVELDATAv( Client, cxlPowerUp, { 255, 255, 0 }, 3 );
+ 
+    >> 暴气颜色|Aura Colour
+     setClientLEVELDATAc( Client, cxlAuraSkin, 4 );
+ 
+    --------------------*/
+}
+public @ClassFinishTransformation ( Client, Level )
+{
+    //setClientANIMATION(Client,-1);
+    RemFx( Client, "fxAvatar", 0);
+ 
+    AddFx( Client, "fxBlow" );
+    FX_off(Client);
+ 
+    remove_task( uniqueTaskID( Client, 100 ) );
+}
+ 
+public blades(id)
+{
+	//client_print(id, print_chat, "3");
+		
+	new Float: org[3]
+	pev( id, pev_origin, org ) // 获取烟花起始位置[] Get the Start Origin
+	new ent = engfunc( EngFunc_CreateNamedEntity,engfunc( EngFunc_AllocString,"env_sprite" ) )
+	engfunc( EngFunc_SetModel, ent, "sprites/w_karmaball.spr" )// 设置SPR文件[] Set Sprite file
+	engfunc( EngFunc_SetSize, ent, {-1.0,-1.0,-1.0}, {1.0,1.0,1.0} )// 设置实体大小[] Set entity size
+	
+	set_pev( ent, pev_solid, SOLID_TRIGGER )// 设置固体类型[] Set solid type
+	set_pev( ent, pev_solid, SOLID_BBOX )// 设置固体类型[] Set solid type
+	set_pev( ent, pev_movetype, MOVETYPE_TOSS )// 设置移动方式[] Set move type
+	set_pev( ent, pev_rendermode, 5 )// 设置渲染方案[] Set render mode
+	set_pev( ent, pev_renderamt, 200.0 )// 设置透明度[] Alpha
+	set_pev( ent, pev_scale, 0.3 )// 缩放大小[] Scale value
+	set_pev( ent, pev_owner, id )// 设置实体的拥有者[] Set owner for the entity
+	set_pev( ent, pev_classname, "Fireworks" )// 设置实体类名[] Set classname
+	set_pev( ent, pev_origin, org )// 设置实体位置[] Set entity origin
+	
+	set_pev( ent, pev_animtime, 1.0);
+	set_pev( ent, pev_framerate, 1.0);
+	
+	new Float: ang[3], Float:vec[3]
+	/* 烟花向上的角度偏移量[] The offset of upward fireworks */
+	ang[0] = random_float( -90.0, -60.0 )
+	ang[1] = random_float( -180.0, 180.0 )
+	
+	/* 设置烟花速率[] Set Velocity */
+	angle_vector( ang, 1, vec )
+	xs_vec_mul_scalar(vec, random_float( 1000.0, 3000.0), vec )
+	set_pev( ent, pev_velocity, vec )
+	
+	/* 托尾特效[] Trail FX */
+	message_begin( MSG_BROADCAST,SVC_TEMPENTITY )
+	write_byte( TE_BEAMFOLLOW )
+	write_short( ent )
+	write_short( engfunc( EngFunc_ModelIndex,"sprites/jubeikametrail.spr" ) )
+	write_byte( 30 )// 持续时间[] life in 0.1's
+	write_byte( 20 )// 宽度[] line width in 0.1's
+	write_byte( 255 )// Red
+	write_byte( 255 )// Green
+	write_byte( 255 )// Blue
+	write_byte( 255 )// Brightness
+	message_end( )
+	
+	//lighter200(ent);
+   
+	set_task( random_float( 30.0, 40.0 ), "boomboom",ent);
+}
+
+public lighter200(id)
+{
+	if(is_valid_ent(id))
+	{
+
+// new variable for origin and get origin of entity
+		static Float:origin[3];
+		pev(id,pev_origin,origin);
+
+
+		// send the light flash
+		message_begin(MSG_BROADCAST,SVC_TEMPENTITY);
+		write_byte(27); // TE_DLIGHT
+		write_coord(floatround(origin[0])); // x
+		write_coord(floatround(origin[1])); // y
+		write_coord(floatround(origin[2])); // z	
+		write_byte(350); // radius
+		write_byte(255);	// r
+		write_byte(255); // g
+		write_byte(255); // b
+		write_byte(220); // life <<<<<<<<
+		write_byte(10); // decay rate
+		message_end();
+		
+		
+	}
+}
+
+ 
+public boomboom(ent)
+{
+	boomboom2(ent);
+	@ExplodeEntity(ent);
+	remove_entity(ent); //Shorten           
+}
+ 
+ 
+ 
+public boomboom2(ent)
+{
+	static Float:varOrigin[3];
+	entity_get_vector(ent, EV_VEC_origin, varOrigin);  
+	
+	
+
+    // debug output
+    //console_print(0, "boom");
+   
+	engfunc(EngFunc_MessageBegin, MSG_ALL, get_user_msgid("Explosion") , varOrigin, 0)
+	{
+		engfunc(EngFunc_WriteCoord, varOrigin[0]);
+		engfunc(EngFunc_WriteCoord, varOrigin[1]);
+		engfunc(EngFunc_WriteCoord, varOrigin[2]);
+           
+		write_long(3200);
+           
+		write_byte(5);  //Color
+	}
+	message_end();
+	
+	
+	new Float:a[3], Float:b[3];
+	entity_get_vector(ent, EV_VEC_origin, a);
+	
+	b[0] = a[0];
+	b[1] = a[1];
+	b[2] = a[2] * -9999.0;
+	
+	trace_line(ent, a, b, b);
+	
+	message_begin(MSG_BROADCAST, 23);
+	{
+		write_byte(116);
+		
+		write_coord(floatround(b[0]));
+		write_coord(floatround(b[1]));
+		write_coord(floatround(b[2]));
+		
+		write_byte(engfunc(EngFunc_DecalIndex, "{scorch3"));
+    }
+	message_end();
+}
+
+
+public @ExplodeEntity( buudeathball )
+{
+	static Float:origin[3],Origin[3];
+	pev(buudeathball, pev_origin, origin );
+	FVecIVec(origin, Origin );
+	new dist = floatround(BladesMaxRadius);
+
+	new Client;
+	Client = pev(buudeathball, pev_owner);
+	//client_print(Client,print_chat,"Touch2 %d",Client);
+	
+	//setClientSPECIALSTATE( Client, sxBlades, false );
+	//setClientXFROZEN( Client, false );
+	//remBeamStart( Client );
+	//emit_sound(buudeathball, CHAN_WEAPON, "evolution/null.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	//set_task( 0.0, "AnimationCancel", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	//set_task( 0.0, "fxCamFix", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+	radiusDamage ( buudeathball, "Blades-of-Judgement", BladesMaxDmg
+								  , BladesMaxRadius
+								  , BladesMaxDmgRadius
+				 );
+				 
+	
+	fm_remove_entity( buudeathball );
+	
+
+	//remfxBlades( buudeathball );
+	
+	
+	message_begin   ( MSG_ALL, get_user_msgid("Explosion") );
+	write_coord		( Origin[0] );
+	write_coord		( Origin[1] );
+	write_coord		( Origin[2]  );
+	write_long		( 200 );
+	write_byte		( 0 );
+	message_end		();
+	
+	message_begin( MSG_BROADCAST,SVC_TEMPENTITY);
+	write_byte( TE_EXPLOSION );
+	write_coord(Origin[0]);
+	write_coord(Origin[1]);
+	write_coord(Origin[2] +100);
+	write_short( FxExplosionBlue );
+	write_byte( 80 ); // scale
+	write_byte( 0 ); // framerate
+	write_byte( 4 ); // flags
+	message_end();
+	
+	
+	for (new i=0; i<=dist ; i+=500 )
+	{
+
+		message_begin (MSG_BROADCAST,SVC_TEMPENTITY); 
+		write_byte( TE_SPRITETRAIL ); 
+		write_coord(Origin[0]+random_num(0, dist /10)); 
+		write_coord(Origin[1]+random_num(0, dist /10)); 
+		write_coord(Origin[2]+random_num(0, dist /10)); 
+		write_coord(Origin[0] + i /10); 
+		write_coord(Origin[1] + i /10); 
+		write_coord(Origin[2] + i /10); 
+		write_short( SPR_Rocks );
+		write_byte( 5 ); 				//count
+		write_byte( 8 ); 				//life
+		write_byte( 1 ); 				//scale
+		write_byte( 50 ); 				//velocity
+		write_byte( 0 ); 				//randomness
+		message_end();
+	}
+	
+	for (new i=0; i<=dist ; i+=500 )
+	{
+		message_begin (MSG_BROADCAST,SVC_TEMPENTITY); 
+		write_byte( TE_SPRITETRAIL ); 
+		write_coord(Origin[0]+random_num(0, dist /10)); 
+		write_coord(Origin[1]+random_num(0, dist /10)); 
+		write_coord(Origin[2]+random_num(0, dist /10)); 
+		write_coord(Origin[0] + i /10); 
+		write_coord(Origin[1] + i /10); 
+		write_coord(Origin[2] + i /10); 
+		write_short( SPR_Rocks2 );
+		write_byte( 10 ); 				//count
+		write_byte( 10 ); 				//life
+		write_byte( 1 ); 				//scale
+		write_byte( 80 ); 				//velocity
+		write_byte( 0 ); 				//randomness
+		message_end();
+	}
+	
+	for (new i=0; i<=dist ; i+=500 )
+	{
+
+		message_begin (MSG_BROADCAST,SVC_TEMPENTITY); 
+		write_byte( TE_SPRITETRAIL ); 
+		write_coord(Origin[0]+random_num(0, dist /10)); 
+		write_coord(Origin[1]+random_num(0, dist /10)); 
+		write_coord(Origin[2]+random_num(0, dist /10)); 
+		write_coord(Origin[0] + i /10); 
+		write_coord(Origin[1] + i /10); 
+		write_coord(Origin[2] + i /10); 
+		write_short( SPR_Rocks3 );
+		write_byte( 5 ); 				//count
+		write_byte( 8 ); 				//life
+		write_byte( 1 ); 				//scale
+		write_byte( 40 ); 				//velocity
+		write_byte( 0 ); 				//randomness
+		message_end();
+	}
+	
+}
+ 
+ 
+ 
+@ManipModel( msgID, dest )
+{
+        new Client = pev( get_msg_arg_int( 2 ), pev_owner );
+ 
+        if( Client > 0 && Client < 33 && getClientCLASS( Client ) == getCXbyName( "Zamasu-Fusion" ))
+        {
+                if( getClientTURBO( Client ) )
+                {
+                    //client_print(Client, print_chat, "01");
+               
+               
+                    if (pev( Client, pev_sequence ) == 25)
+                    {
+                        set_task(7.0, "bladecheck2",Client);
+                        //client_print(Client, print_chat, "1");
+                    }
+                    else if (pev( Client, pev_sequence ) == 27)
+                    {
+                        set_task(7.0, "bladecheck2",Client);
+                        //client_print(Client, print_chat, "1");
+                    }
+                }
+                else
+                {  
+                   
+                }
+        }
+}
+ 
+public bladecheck2( Client )
+{
+    if( getClientTURBO( Client ) && getClientCLASS( Client ) == getCXbyName( "Zamasu-Fusion" ))
+    {
+        if (pev( Client, pev_sequence ) == 25 )
+        {
+            set_task(0.1, "blades",Client);
+            //client_print(Client, print_chat, "2");
+            set_task(0.1, "bladecheck2",Client);
+        }
+        else if (pev( Client, pev_sequence ) == 27 )
+        {
+            set_task(0.1, "blades",Client);
+            //client_print(Client, print_chat, "2");
+            set_task(0.1, "bladecheck2",Client);
+        }
+        else
+        {  
+                   
+        }
+    }
+}
+ 
+ 
+public @ClassCancelTransformation ( Client, Level )
+{
+    //setClientANIMATION(Client,-1);
+    RemFx( Client, "fxAvatar", 0);
+ 
+    FX_off(Client);
+ 
+    remove_task( uniqueTaskID( Client, 100 ) );
+}

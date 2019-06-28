@@ -1,0 +1,219 @@
+#include <xs>
+
+new ChargeEnt[ 33 ], WeaponChargeP[ 33 ];
+
+stock MOD_Charge_PreCache ()
+{
+	precache_sound( "Black/Energy.wav" );
+
+	precache_model( "models/BlackBlast.mdl" );
+}
+
+ModChargeInit ()
+{
+	alterCharge( 0, "genericbeam", "sprites/BlackCharge.spr", 0.1 );
+	alterCharge( 1, "genericbeam", "sprites/BlackCharge.spr", 0.1 );
+	alterCharge( 0, "kamehameha", "sprites/RoseChargeK.spr", 0.1 );
+	alterCharge( 1, "kamehameha", "sprites/RoseChargeK.spr", 0.1 );
+	alterCharge( 1, "finalflash", "sprites/RoseKamehameha.spr", 1.0 );
+}
+
+public @WeaponCharge( MsgID, dest, Client )
+{
+	if( getCXbyName( "Black" ) == getClientDATAc( Client, cliClass ) )
+	{
+		if( !is_valid_ent( ChargeEnt[ Client ] ) )
+		{
+			if( get_msg_arg_int( 1 ) > 30 && get_user_weapon( Client ) == 6 )
+			{
+				ChargeEnt[ Client ] = create_entity( "env_model" );
+				engfunc( EngFunc_SetModel, ChargeEnt[ Client ], "models/BlackBlast.mdl" );
+				entity_set_float( ChargeEnt[ Client ], EV_FL_framerate, 1.0 );
+				entity_set_int( ChargeEnt[ Client ], EV_INT_sequence, 2 );
+				set_pev( ChargeEnt[ Client ], pev_owner, Client );
+				set_pev( ChargeEnt[ Client ], pev_skin, getClientLEVEL( Client ) );
+				set_pev( ChargeEnt[ Client ], pev_scale, 2.0 );
+				set_rendering( ChargeEnt[ Client ], kRenderFxPulseFastWide, 0, 0, 0, kRenderTransColor, 255 );
+
+				AddFx( Client, "fxLgtField", 0.2 , 1, 255, 20, 20 );
+			}
+
+			if( get_msg_arg_int( 1 ) == 100 && get_user_weapon( Client ) == 4 )
+			{
+				ChargeEnt[ Client ] = create_entity( "env_model" );
+				engfunc( EngFunc_SetModel, ChargeEnt[ Client ], "models/BlackBlast.mdl" );
+				entity_set_float( ChargeEnt[ Client ], EV_FL_framerate, 1.0 );
+				entity_set_int( ChargeEnt[ Client ], EV_INT_sequence, 1 );
+				set_pev( ChargeEnt[ Client ], pev_owner, Client );
+				set_pev( ChargeEnt[ Client ], pev_skin, getClientLEVEL( Client ) );
+				set_pev( ChargeEnt[ Client ], pev_scale, 2.0 );
+				set_rendering( ChargeEnt[ Client ], kRenderFxPulseFastWide, 0, 0, 0, kRenderTransColor, 255 );
+			}
+		}
+
+		if( get_msg_arg_int( 1 ) == 31 && get_user_weapon( Client ) == 15 )
+		{
+			AddFx( Client, "fxLgtField", 0.2 , 1, 255, 200, 20 );
+			AddFx( Client, "fxPowerup", 0, 0, 0 ); emit_sound( Client, CHAN_WEAPON, "Black/Null.wav", 0.3, ATTN_NORM, 0, PITCH_NORM );
+		}
+		if( get_msg_arg_int( 1 ) == 77 || get_msg_arg_int( 1 ) == 85 || get_msg_arg_int( 1 ) == 93 )
+		{
+			if( get_user_weapon( Client ) == 15 ) AddFx( Client, "fxLightning", "sprites/lgtning.spr", 5, 10, 150, 200, 0, 200, 250, 10, 100, 0  );
+		}
+
+		if( get_user_weapon( Client ) == 6 )
+		{
+			if( get_msg_arg_int( 1 ) == 96 )
+			{
+				emit_sound( Client, CHAN_STATIC, "Black/Energy.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			}
+			if( get_msg_arg_int( 1 ) == 98 )
+			{
+				AddFx( Client, "fxBlow" );
+			}
+			if( get_msg_arg_int( 1 ) == 100 )
+			{
+				AddFx( Client, "fxBlow" );
+			}
+		}
+		if( get_user_weapon( Client ) == 13 )
+		{
+			if( get_msg_arg_int( 1 ) == 80 )
+			{
+				emit_sound( Client, CHAN_STATIC, "Black/Energy.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			}
+			if( get_msg_arg_int( 1 ) == 90 )
+			{
+				AddFx( Client, "fxBlow" );
+			}
+			if( get_msg_arg_int( 1 ) == 100 )
+			{
+				AddFx( Client, "fxBlow" );
+			}
+		}
+		if( get_user_weapon( Client ) == 15 )
+		{
+			if( get_msg_arg_int( 1 ) == 95 )
+			{
+				emit_sound( Client, CHAN_STATIC, "Black/Energy.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			}
+			if( get_msg_arg_int( 1 ) == 97 )
+			{
+				AddFx( Client, "fxBlow" );
+			}
+			if( get_msg_arg_int( 1 ) == 100 )
+			{
+				AddFx( Client, "fxBlow" );
+			}
+		}
+
+		if( get_msg_arg_int( 1 ) > 0 )
+		{
+			WeaponChargeP[ Client ] = get_msg_arg_int( 1 );
+
+			if( get_user_weapon( Client ) == 13 && getClientLEVEL( Client ) == 0 )
+				setClientLEVELDATAv( Client, cxlLightning, { 2, 2, 2, 8 }, 4 );
+		}
+		else
+		{
+			RemFx( Client, "fxLgtField", 0 );
+			RemFx( Client, "fxPowerup", 0 );
+
+			if( getClientLEVEL( Client ) == 0 ) setClientLEVELDATAv( Client, cxlLightning, { 0, 0, 0, 0 }, 4 );
+		}
+	}
+}
+
+
+public @WeaponSwitch(MsgID, dest, Client)
+{
+	if( is_valid_ent( ChargeEnt[ Client ] ) )
+	{
+		remove_entity( ChargeEnt[ Client ] );
+		ChargeEnt[ Client ] = 0;
+
+		RemFx( Client, "fxLgtField", 0 );
+	}
+}
+
+public @ClassChargeBlack( ES_Handle, e, iEntity, Client, iHostFlags, iPlayer, iSet )
+{
+	if( !pev_valid( iEntity ) ) return;
+
+	if( iEntity != ChargeEnt[ Client ] ) return;
+
+	if( getClientATKCHARGEP( Client ) <= 0 ) return;
+
+	if( get_user_weapon( Client ) == 4 )
+	{
+		new Float: vAng[ 3 ], Float: vec[ 3 ];
+		pev( Client, pev_v_angle, vAng );
+	
+		/* Rightward */
+		vAng[ 1 ] += 90.0;
+
+		angle_vector( vAng, 2, vec );
+		new Float: vec2[ 3 ];
+
+		vec2[ 0 ] = vec[ 0 ];
+		vec2[ 1 ] = vec[ 1 ];
+		vec2[ 2 ] = vec[ 2 ] + 1.0;
+
+		new Float: vecRightward[ 3 ];
+		xs_vec_cross( vec, vec2, vecRightward );
+		xs_vec_normalize( vecRightward, vecRightward );
+
+		new Float: org[ 3 ];
+		pev( Client, pev_origin, org );
+		org[ 0 ] = ( vecRightward[ 0 ] * 4.5 ) + org[ 0 ];
+		org[ 1 ] = ( vecRightward[ 1 ] * 4.5 ) + org[ 1 ];
+		org[ 2 ] = ( vecRightward[ 2 ] * 4.5 ) + org[ 2 ];
+
+		/* Forward */
+		vAng[ 1 ] -= 90.0;
+
+		angle_vector( vAng, 2, vec );
+
+		vec2[ 0 ] = vec[ 0 ];
+		vec2[ 1 ] = vec[ 1 ];
+		vec2[ 2 ] = vec[ 2 ] + -1.0;
+
+		new Float: vecForward[ 3 ];
+		xs_vec_cross( vec, vec2, vecForward );
+		xs_vec_normalize(vecForward, vecForward);
+
+		/* Distance */
+		org[ 0 ] = ( vecForward[ 0 ] * 4.0 ) + org[ 0 ];
+		org[ 1 ] = ( vecForward[ 1 ] * 4.0 ) + org[ 1 ];
+		org[ 2 ] = ( vecForward[ 2 ] * 4.0 ) + org[ 2 ];
+		org[ 2 ] += 7.0;
+		set_es( ES_Handle, ES_Origin, org );
+	}
+	if( get_user_weapon( Client ) == 6 )
+	{
+		new Float: vAng[ 3 ], Float: vec[ 3 ];
+		pev( Client, pev_v_angle, vAng );
+
+		/* Rightward */
+		vAng[ 1 ] += 90.0;
+
+		angle_vector( vAng, 2, vec );
+		new Float: vec2[ 3 ];
+
+		vec2[ 0 ] = vec[ 0 ];
+		vec2[ 1 ] = vec[ 1 ];
+		vec2[ 2 ] = vec[ 2 ] + 1.0;
+
+		new Float: vecRightward[ 3 ];
+		xs_vec_cross( vec, vec2, vecRightward );
+		xs_vec_normalize( vecRightward, vecRightward );
+
+		new Float: org[ 3 ];
+		pev( Client, pev_origin, org );
+		org[ 0 ] = ( vecRightward[ 0 ] * 3.5 ) + org[ 0 ];
+		org[ 1 ] = ( vecRightward[ 1 ] * 3.5 ) + org[ 1 ];
+		org[ 2 ] = ( vecRightward[ 2 ] * 3.5 ) + org[ 2 ];
+		org[ 2 ] += 3.0;
+		set_es( ES_Handle, ES_Origin, org );
+	}
+}

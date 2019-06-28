@@ -1,0 +1,332 @@
+#pragma semicolon 1
+#pragma ctrlchar '\'
+
+new SoundK[33];
+new SpecialXtension:SuperKaioken;
+
+Float:operator++(Float:)(Float:oper)
+{
+    return oper + 1.00;
+}
+
+bool:operator==(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return floatcmp(oper1, oper2) == 0;
+}
+
+bool:operator<=(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 >= floatcmp(oper1, oper2);
+}
+
+bool:operator<=(Float:,_:)(Float:oper1, oper2)
+{
+    return 0 >= floatcmp(oper1, float(oper2));
+}
+
+public plugin_pause()
+{
+    unpause(0, "", "");
+    return 1;
+}
+
+public plugin_init()
+{
+    register_plugin("SuperKaioken", "1.0", "Matias_Esf | Matias Arguello");
+    register_forward(FM_EmitSound, "HookSound", 0);
+    register_forward(FM_PlayerPreThink, "ClientPreThink", 0);
+    register_forward(FM_CmdStart, "forward_CmdStart", 0);
+    return 0;
+}
+
+public plugin_precache()
+{
+    precache_model("models/evolution/Auras/shape_01.mdl");
+    precache_model("sprites/mat.taura1.spr");
+    precache_model("sprites/evm_wave4.spr");
+    precache_sound("weapons/kaiokenswoop.wav");
+    return 0;
+}
+
+public @SpecialCreation()
+{
+    beginSpecialCreation("SuperKaioken", "", "callbackSample", "special_skaioken", "");
+    addSpecialCharge("", 10.00/*1092616192*/, 4.00/*1082130432*/, 0);
+    addSpecialHook(0, "deathmsgSample");
+    SuperKaioken = endSpecialCreation();
+    return 0;
+}
+
+public callbackSample(id, CSpecialState:Status, Control, Float:Charge, Level)
+{
+    !!! Removed Phi
+    switch (Status)
+    {
+        case 0:
+        {
+            if ((getClientPOWERUP(id) && !getClientXFROZEN(id)) || (getClientTURBO(id) || getClientMELEE(id) || getClientWALLGND(id) || getClientBLOCK(id) || getClientSWOOPING(id) || getClientTHROWAWAY(id) || getClientTHROW(id)))
+            {
+                return 0;
+            }
+            if (0.00 == Charge)
+            {
+                tas(id);
+            }
+            if (0.30 == Charge)
+            {
+                aura1(id);
+            }
+            if (1.00 == Charge)
+            {
+                remove_task(id, 0);
+                client_cmd(id, "stopsound");
+                client_cmd(id, "spk sound/mat.goku/kaioken10x.wav");
+                AddFx(id, "fxBlow");
+                on(id);
+                client_cmd(id, "resetview");
+                setClientLEVELDATAv(id, "", "", "");
+                setClientLEVELDATAv(id, "", 1432, "");
+                setClientLEVELDATAv(id, "", 1436, "");
+                setClientLEVELDATAv(id, "", 1440, "");
+                setClientSPEED(id, "");
+                setClientLEVELDATAv(id, "", "", "");
+                client_print(id, print_chat, "<SuperKaioken");
+                client_print(id, print_chat, "<Matias_Esf ECX MOD");
+                FX_off(id);
+                new Float:i = 0;
+                while (i <= 999.00)
+                {
+                    set_task(i, "Estados", id, "", 0, "", 0);
+                    i += 1.00;
+                }
+                setClientPROTECT(id, 0);
+                setClientPROTECT(id, 0);
+                setClientSPECIALSTATE(id, SuperKaioken, "");
+                return 0;
+            }
+            return 1;
+        }
+        case 1:
+        {
+            if (Control == 1)
+            {
+                remove_task(id, 0);
+            }
+            setClientANIMATION(id, -1, 0.50/*1056964608*/);
+            client_cmd(id, "resetview");
+            off(id);
+            FX_off(id);
+            client_cmd(id, "stopsound");
+            setClientPROTECT(id, 0);
+            setClientPROTECT(id, 0);
+            setClientSPECIALSTATE(id, SuperKaioken, 0);
+        }
+        case 2:
+        {
+            setClientPROTECT(id, 0);
+            setClientPROTECT(id, 0);
+            remove_task(id, 0);
+            client_cmd(id, "resetview");
+            setClientANIMATION(id, -1, 0.50/*1056964608*/);
+            FX_off(id);
+            off(id);
+            SoundK[id] = 0;
+            client_cmd(id, "stopsound");
+            restoreClientLEVELDATA(id);
+            setClientSPECIALSTATE(id, SuperKaioken, 0);
+            return 0;
+        }
+        case 4:
+        {
+            if (getClientSPECIALSTATE(id, SuperKaioken) == 1)
+            {
+                if (Control == 1)
+                {
+                    setClientPROTECT(id, 0);
+                }
+                setClientPROTECT(id, 0);
+                remove_task(id, 0);
+                off(id);
+                SoundK[id] = 0;
+                setClientFLY(id, 0);
+                setClientSWOOPTIME(id, 0);
+                setClientSPEED(id, 400);
+                client_cmd(id, "resetview");
+                set_user_rendering(id, 19, 0, 0, 0, 0, 0);
+                restoreClientLEVELDATA(id);
+                setClientSPECIALSTATE(id, SuperKaioken, 0);
+                return 0;
+            }
+            off(id);
+            SoundK[id] = 0;
+        }
+        default:
+        {
+        }
+    }
+    return 1;
+}
+
+public deathmsgSample(id, Killer, String:Weapon[])
+{
+    set_msg_arg_string(3, "Super Kaioken");
+    return 0;
+}
+
+public ClientPreThink(id)
+{
+    if (getClientSPECIALSTATE(id, SuperKaioken) == 1)
+    {
+        setClientLEVELDATAv(id, "", "??", "");
+        setClientLEVELDATAv(id, "", "", "");
+        setClientSWOOPTIME(id, 100000000000.00/*1371161527*/);
+        if (getClientSWOOPING(id) == 1)
+        {
+            set_user_rendering(id, 19, 30, 30, 0, 4, 200);
+        }
+        if (getClientKI(id) <= 2)
+        {
+            setClientFLY(id, 0);
+            setClientSWOOPTIME(id, 0);
+        }
+    }
+    return 0;
+}
+
+public on(id)
+{
+    if (!is_user_alive(id))
+    {
+        return 1;
+    }
+    SoundK[id] = 1;
+    return 0;
+}
+
+public off(id)
+{
+    if (!is_user_alive(id))
+    {
+        return 1;
+    }
+    SoundK[id] = 0;
+    restoreClientLEVELDATA(id);
+    remove_task(id, 0);
+    return 0;
+}
+
+public tas(id)
+{
+    setClientPROTECT(id, "");
+    setClientPROTECT(id, "");
+    client_cmd(id, "spk sound/mat.goku/carga_kaioken.wav");
+    RemFx(id, "fxAvatar", 0);
+    RemFx(id, "fxAvatar", 0);
+    RemFx(id, "fxAvatar", 0);
+    setClientANIMATION(id, "", 0.50/*1056964608*/);
+    set_task(0.00, "powerup", id, "", 0, "", 0);
+    set_task(1.00, "lgt", id, "", 0, "", 0);
+    set_task(6.00, "sprite", id, "", 0, "", 0);
+    set_task(6.50, "rays1", id, "", 0, "", 0);
+    set_task(6.70, "rays1", id, "", 0, "", 0);
+    set_task(7.10, "rays1", id, "", 0, "", 0);
+    set_task(7.50, "rays1", id, "", 0, "", 0);
+    set_task(7.80, "rays1", id, "", 0, "", 0);
+    set_task(8.50, "rays1", id, "", 0, "", 0);
+    set_task(9.50, "rays1", id, "", 0, "", 0);
+    return 0;
+}
+
+public HookSound(player, channel, String:sound[])
+{
+    !!! Removed Phi
+    if (player > 32 || player < 1)
+    {
+        return 1;
+    }
+    if (SoundK[player][0][0])
+    {
+        if (containi(sound, "weapons/swoop.wav") != -1)
+        {
+            emit_sound(player, channel, "weapons/kaiokenswoop.wav", 1.00, 0.80, 0, 100);
+            return 4;
+        }
+        if (containi(sound, "weapons/chainswoop.wav") != -1)
+        {
+            emit_sound(player, channel, "weapons/kaiokenswoop.wav", 1.00, 0.80, 0, 100);
+            return 4;
+        }
+        if (containi(sound, "weapons/aura.wav") != -1)
+        {
+            emit_sound(player, channel, "weapons/kaiokenswoop.wav", 1.00, 0.80, 0, 100);
+            return 4;
+        }
+    }
+    return 0;
+}
+
+public Estados(id)
+{
+    if (getClientPOWERUP(id) == 1)
+    {
+        AddFx(id, "fxBeamTorus", "sprites/lgtning.spr", 255, 255, 255, 255, 250, 8, 20, 0);
+        AddFx(id, "fxLightning", "sprites/lgtning.spr", 3, 90, 150, 55, 55, 0, 250, 10, 100, 0);
+        AddFx(id, "fxSprite", "sprites/evm_wave4.spr", 0, 255, 0, 0);
+    }
+    return 0;
+}
+
+public aura1(id)
+{
+    client_cmd(id, "spk sound/matias_esf/power.wav");
+    AddFx(id, "fxModelEntity", "models/evolution/Auras/shape_01.mdl", 0, 0, 80.00/*1117782016*/, 0, 0, 0, 2.00/*1073741824*/, 0.20/*1045220557*/, 0, 4);
+    AddFx(id, "fxScreenShake", 60.00/*1114636288*/, 0.60/*1058642330*/, 2.00/*1073741824*/);
+    AddFx(id, "fxBlow");
+    return 0;
+}
+
+public powerup(id)
+{
+    AddFx(id, "fxPowerup", 255, 255, 105);
+    return 0;
+}
+
+public rays1(id)
+{
+    AddFx(id, "fxLightning", "sprites/lgtning.spr", 2, 50, 150, 55, 55, 0, 250, 10, 100, 0);
+    return 0;
+}
+
+public blow(Client)
+{
+    AddFx(Client, "fxBlow");
+    return 0;
+}
+
+public sprite(id)
+{
+    client_cmd(id, "cam_idealdist 100");
+    AddFx(id, "fxSpriteEntity", "sprites/mat.taura1.spr", 0, 0, 250.00/*1132068864*/, 10.00/*1092616192*/, 0, 0.60/*1058642330*/, 0.60/*1058642330*/);
+    return 0;
+}
+
+public lgt(id)
+{
+    AddFx(id, "fxLgtField", 0.10/*1036831949*/, 2, 255, 40, 40);
+    return 0;
+}
+
+public FX_off(Client)
+{
+    setClientANIMATION(Client, -1, 0.50/*1056964608*/);
+    client_cmd(Client, "resetview");
+    RemFx(Client, "fxLgtField", 0);
+    RemFx(Client, "fxAvatar", 0);
+    RemFx(Client, "fxAvatar", 0);
+    RemFx(Client, "fxPowerup", 0);
+    RemFx(Client, "fxModelEntity", 0);
+    RemFx(Client, "fxModelEntity", 0);
+    RemFx(Client, "fxSpriteEntity", 0);
+    return 1;
+}
+

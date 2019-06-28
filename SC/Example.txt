@@ -1,0 +1,15 @@
+/**
+	 1 -  LONG - Client ???					- do not edit
+	 2 -  LONG - Weapon					- do not edit
+	 3 -  BYTE - Client ???					- do not edit
+	 4 - SHORT - Head Start A
+	 5 - SHORT - Head Start B
+	 6 - SHORT - Head End A
+	 7 - SHORT - Head End B
+	 8 - SHORT - Trail
+	 9 -  BYTE - Size
+	10 -  BYTE - Segement Length ???
+	11 - COORD - X						- do not edit
+	12 - COORD - Y						- do not edit
+	13 - COORD - Z						- do not edit
+	**/

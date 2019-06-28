@@ -1,0 +1,71 @@
+new MOD_SOUND_CORE[][][] =
+{
+	{
+		"*/pain1.wav",
+		"Zamasu/Pain1.wav",
+		"Zamasu/Pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"Zamasu/Pain2.wav",
+		"Zamasu/Pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"Zamasu/Pain2.wav",
+		"Zamasu/Pain3.wav"
+	},
+	{
+		"*/pain4.wav",
+		"Zamasu/Pain4.wav",
+		"Zamasu/Pain4.wav"
+	},
+	{
+		"*/death.wav",
+		"Zamasu/Death.wav",
+		"Zamasu/Death.wav"
+	},
+	{
+		"*/renzoku.wav",
+		"Zamasu/Renzoku.wav",
+		"Zamasu/Renzoku.wav"
+	},
+	{
+		"*/kamehame.wav",
+		"Zamasu/Kamehame.wav",
+		"Zamasu/Kamehame.wav"
+	},
+	{
+		"*/ha.wav",
+		"Zamasu/Ha.wav",
+		"Zamasu/Ha.wav"
+	},
+	{
+		"*/bigbang_charge.wav",
+		"Zamasu/BigbangCharge.wav",
+		"Zamasu/BigbangCharge.wav"
+	},
+	{
+		"*/bigbang.wav",
+		"Zamasu/Bigbang.wav",
+		"Zamasu/Bigbang.wav"
+	},
+	{
+		"*/finalflash_charge.wav",
+		"Zamasu/FinalFlashCharge.wav",
+		"Zamasu/FinalFlashCharge.wav"
+	},
+	{
+		"*/finalflash.wav",
+		"Zamasu/FinalFlash.wav",
+		"Zamasu/FinalFlash.wav"
+	}
+}
+
+
+
+
+
+
+
+

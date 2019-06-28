@@ -1,0 +1,10 @@
+L 08/17/2016 - 18:55:40: Start of error session.
+L 08/17/2016 - 18:55:40: Info (map "esf_Guru") (logfile "error_081716.log")
+L 08/17/2016 - 18:55:40: [AMXX] Run time error 4 (plugin "baby.vegeta.amxx") - debug not enabled!
+L 08/17/2016 - 18:55:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 08/17/2016 - 18:55:43: [AMXX] Run time error 4 (plugin "baby.vegeta.amxx") - debug not enabled!
+L 08/17/2016 - 18:55:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 08/17/2016 - 19:02:13: Start of error session.
+L 08/17/2016 - 19:02:13: Info (map "esf_Guru") (logfile "error_081716.log")
+L 08/17/2016 - 19:02:13: [AMXX] Run time error 4 (plugin "baby.vegeta.amxx") - debug not enabled!
+L 08/17/2016 - 19:02:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

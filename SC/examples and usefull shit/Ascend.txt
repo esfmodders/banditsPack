@@ -1,0 +1,7406 @@
+new xs__ITaskId;
+new xs__ITaskParam[1033] =
+{
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 115
+};
+new xs__TaskFlags[5];
+new xs__TaskFunc[48];
+new xs__TaskId;
+new Float:xs__TaskInterval;
+new xs__TaskParam[1033] =
+{
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 115
+};
+new xs__TaskRepeat;
+new xs__global_null;
+new xs__internalseed;
+new xs__logtypenames[6][0] =
+{
+	{
+		0, ...
+	},
+	{
+		0, ...
+	},
+	{
+		0, ...
+	},
+	{
+		0, ...
+	},
+	{
+		0, ...
+	},
+	{
+		0, ...
+	}
+};
+new xs__maxnum;
+new xs__replace_buf[3072] =
+{
+	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 115, 0, 97, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 46, 37, 115, 46, 82, 101, 86, 105, 115, 105, 111, 110, 0, 37, 105, 32, 37, 115, 32, 45, 32, 37, 115, 32, 37, 115, 0, 97, 118, 97, 116, 97, 114, 0, 50, 56, 46, 53, 46, 50, 48, 48, 55, 0, 50, 48, 58, 52, 53, 58, 50, 55, 0, 256, 1764, 3272, 4780, 6288, 7796, 9304, 10812, 12320, 13828, 15336, 16844, 18352, 19860, 21368, 22876, 24384, 25892, 27400, 28908, 30416, 31924, 33432, 34940, 36448, 37956, 39464, 40972, 42480, 43988, 45496, 47004, 48512, 50020, 51528, 53036, 54544, 56052, 57560, 59068, 60576, 62084, 63592, 65100, 66608, 68116, 69624, 71132, 72640, 74148, 75656, 77164, 78672, 80180, 81688, 83196, 84704, 86212, 87720, 89228, 90736, 92244, 93752, 95260, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+};
+new AuthentificationRevisionKey[64];
+new AuthentificationRevisionVal[64];
+new coreClassExtensions[64][378];
+new coreClassLevels[512][162];
+new ClassExtensionCTR;
+new coreClient[33][36];
+new coreClientLevel[33][162];
+new coreClientSpecials[33][64][3];
+new coreSpecialExtension[64][332];
+new SpecialExtCTR;
+new coreSpecialExtensionCharge[128][5];
+new SpecialExtChargeCTR;
+new coreSpecialExtensionControl[128][2];
+new SpecialExtControlCTR;
+new coreClientSpecialConfig[33][64][64];
+new CVAR_HyperMode;
+new CVAR_SwoopTrail;
+new CVAR_Boost;
+new CVAR_DmgMp;
+new CVAR_Lightning;
+new CVAR_Glow;
+new CVAR_GoreBleed;
+new CVAR_KiMod;
+new CVAR_TeleDelay;
+new CVAR_TeleStyle;
+new CVAR_StaticClients;
+new CVAR_AuraLight;
+new CVAR_PerfectTrans;
+new MSGID_ScreenFade;
+new MSGID_DeathMsg;
+new MSGID_Transform;
+new MSGID_Charge;
+new MSGID_PowerUp;
+new MSGID_MeleeAtkHud;
+new FWD_ClassChange;
+new FWD_LevelChange;
+new FWD_ClientDeath;
+new FWD_AscendInitiated;
+new FWD_Return;
+new HyperMode = 1;
+new MDLCounter;
+new MDLQueue[64];
+new MSGCounter;
+new MSGQueue[64][3];
+new MaxPlayers;
+new bool:InClassCreation;
+new bool:InClassCreationBegin;
+new tmpClassExtension[378];
+new tmpClassLevels[8][162];
+new tmpLevelCTR;
+new ClassSheet[2001];
+new szSkills[256];
+new bool:inSpecialCreation;
+new bool:inSpecialCreationBegin;
+new tmpSpecialExtension[332];
+new tmpSpecialExtensionCharge[2][5];
+new tmpSpecialExtChargeCTR;
+new tmpSpecialExtensionControl[2][2];
+new tmpSpecialExtControlCTR;
+new Float:sxNextThink[33];
+new Float:NextCoolDownNotify[33];
+new bool:ClientHasSwoopTrail[33];
+new SPR_SwoopTrail;
+new AuraCore[33];
+new Float:LastLgtSound[33];
+new SPR_Lightning_1;
+new SPR_Lightning_2;
+new SPR_Lightning_3;
+new AnimationCore[33];
+new Float:FrameRateCore[33];
+new bool:PushDelay[33] =
+{
+	1, ...
+};
+new bool:PushPowerUp[33];
+new PushCore[23][0] =
+{
+	{
+		107, ...
+	},
+	{
+		115, ...
+	},
+	{
+		98, ...
+	},
+	{
+		103, ...
+	},
+	{
+		98, ...
+	},
+	{
+		121, ...
+	},
+	{
+		112, ...
+	},
+	{
+		109, ...
+	},
+	{
+		103, ...
+	},
+	{
+		109, ...
+	},
+	{
+		98, ...
+	},
+	{
+		107, ...
+	},
+	{
+		102, ...
+	},
+	{
+		83, ...
+	},
+	{
+		83, ...
+	},
+	{
+		83, ...
+	},
+	{
+		68, ...
+	},
+	{
+		102, ...
+	},
+	{
+		75, ...
+	},
+	{
+		115, ...
+	},
+	{
+		98, ...
+	},
+	{
+		68, ...
+	},
+	{
+		70, ...
+	}
+};
+new g_ClientCHARGE[33] =
+{
+	-1, ...
+};
+new Float:DATA[5];
+new MSGID_Xplosion;
+new MSGID_Ball;
+new globalClass[32];
+new CustomStyle[2];
+new DamageCore[110][0] =
+{
+	{
+		107, ...
+	},
+	{
+		51, ...
+	},
+	{
+		48, ...
+	},
+	{
+		49, ...
+	},
+	{
+		52, ...
+	},
+	{
+		115, ...
+	},
+	{
+		51, ...
+	},
+	{
+		48, ...
+	},
+	{
+		49, ...
+	},
+	{
+		52, ...
+	},
+	{
+		98, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		50, ...
+	},
+	{
+		48, ...
+	},
+	{
+		103, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		50, ...
+	},
+	{
+		48, ...
+	},
+	{
+		121, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		50, ...
+	},
+	{
+		48, ...
+	},
+	{
+		112, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		50, ...
+	},
+	{
+		48, ...
+	},
+	{
+		112, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		52, ...
+	},
+	{
+		52, ...
+	},
+	{
+		109, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		54, ...
+	},
+	{
+		51, ...
+	},
+	{
+		103, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		56, ...
+	},
+	{
+		51, ...
+	},
+	{
+		109, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		52, ...
+	},
+	{
+		52, ...
+	},
+	{
+		98, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		55, ...
+	},
+	{
+		52, ...
+	},
+	{
+		107, ...
+	},
+	{
+		50, ...
+	},
+	{
+		48, ...
+	},
+	{
+		50, ...
+	},
+	{
+		48, ...
+	},
+	{
+		102, ...
+	},
+	{
+		50, ...
+	},
+	{
+		48, ...
+	},
+	{
+		50, ...
+	},
+	{
+		52, ...
+	},
+	{
+		83, ...
+	},
+	{
+		45, ...
+	},
+	{
+		45, ...
+	},
+	{
+		45, ...
+	},
+	{
+		54, ...
+	},
+	{
+		68, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		49, ...
+	},
+	{
+		53, ...
+	},
+	{
+		83, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		54, ...
+	},
+	{
+		52, ...
+	},
+	{
+		83, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		51, ...
+	},
+	{
+		52, ...
+	},
+	{
+		102, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		56, ...
+	},
+	{
+		48, ...
+	},
+	{
+		75, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		53, ...
+	},
+	{
+		48, ...
+	},
+	{
+		98, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		49, ...
+	},
+	{
+		48, ...
+	},
+	{
+		68, ...
+	},
+	{
+		57, ...
+	},
+	{
+		48, ...
+	},
+	{
+		57, ...
+	},
+	{
+		48, ...
+	},
+	{
+		70, ...
+	},
+	{
+		57, ...
+	},
+	{
+		48, ...
+	},
+	{
+		57, ...
+	},
+	{
+		48, ...
+	}
+};
+new PreHealth[33];
+new PreMaxHealth[33];
+new SPR_Blood;
+new SPR_BloodSpray;
+new GlobalIconRegister[256][35];
+new IconCTR = 35;
+new ClientIconOverride[33][257][2];
+new ClientIconRegister[33][65][3];
+new ClientIconCTR[33];
+new ClientCustomIcons[33];
+new CurrentClientIcon[33];
+new PreviousClientIcon[33];
+new BlockCurWeapon[33];
+new IconHook[64];
+new IconHookCTR;
+new MSGID_WeaponList;
+new MSGID_WeapUpdate;
+new MSGID_CurWeapon;
+new Handle:___Tuple;
+new ___ErrorCode;
+new ___Error[256];
+new ___Database[256];
+new myClientAuths[33][64];
+new bool:SQLiteLoaded = 1;
+new bool:SQLiteValid;
+new DatabaseFile[17] =
+{
+	99, 111, 114, 101, 47, 99, 111, 114, 101, 46, 115, 113, 108, 105, 116, 101, 0
+};
+new DatabaseLogFile[23] =
+{
+	99, 111, 114, 101, 47, 65, 115, 99, 101, 110, 100, 46, 83, 81, 76, 105, 116, 101, 46, 108, 111, 103, 0
+};
+new CreateDatabaseScript[3][0] =
+{
+	{
+		67, ...
+	},
+	{
+		67, ...
+	},
+	{
+		67, ...
+	}
+};
+new MeleeSense[33][70];
+new Arrows[33][37];
+new gmsgMeleeAtkHud;
+new Float:NextCheck[33];
+new _MDL_Podium[28] =
+{
+	109, 111, 100, 101, 108, 115, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 112, 111, 100, 105, 117, 109, 46, 109, 100, 108, 0
+};
+new _MDL_None[27] =
+{
+	109, 111, 100, 101, 108, 115, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 98, 108, 97, 99, 107, 46, 109, 100, 108, 0
+};
+new _CMD_Select[33] =
+{
+	115, 112, 107, 32, 34, 115, 111, 117, 110, 100, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 115, 101, 108, 101, 99, 116, 46, 119, 97, 118, 34, 0
+};
+new _CMD_Next[52] =
+{
+	115, 116, 111, 112, 115, 111, 117, 110, 100, 59, 115, 112, 107, 32, 34, 115, 111, 117, 110, 100, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 115, 119, 111, 111, 115, 104, 46, 119, 97, 118, 34, 59, 115, 112, 107, 32, 34, 37, 115, 34, 0
+};
+new _CMD_Invalid[36] =
+{
+	115, 112, 107, 32, 34, 115, 111, 117, 110, 100, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 105, 116, 115, 97, 116, 114, 105, 99, 107, 46, 119, 97, 118, 34, 0
+};
+new _CMD_Open[86] =
+{
+	115, 116, 111, 112, 115, 111, 117, 110, 100, 59, 115, 112, 107, 32, 34, 115, 111, 117, 110, 100, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 115, 119, 111, 111, 115, 104, 46, 119, 97, 118, 34, 59, 32, 115, 112, 107, 32, 34, 37, 115, 34, 59, 109, 112, 51, 32, 112, 108, 97, 121, 32, 109, 101, 100, 105, 97, 47, 99, 104, 97, 114, 115, 101, 108, 101, 99, 116, 105, 111, 110, 46, 109, 112, 51, 0
+};
+new _MSG_3DHelp[202] =
+{
+	77, 111, 118, 101, 32, 76, 101, 102, 116, 58, 32, 76, 101, 102, 116, 32, 67, 108, 97, 115, 115, 32, 116, 111, 32, 70, 114, 111, 110, 116, 10, 77, 111, 118, 101, 32, 82, 105, 103, 104, 116, 58, 32, 82, 105, 103, 104, 116, 32, 67, 108, 97, 115, 115, 32, 116, 111, 32, 70, 114, 111, 110, 116, 10, 10, 77, 111, 118, 101, 32, 70, 111, 114, 119, 97, 114, 100, 58, 32, 65, 115, 99, 101, 110, 100, 10, 77, 111, 118, 101, 32, 66, 97, 99, 107, 119, 97, 114, 100, 58, 32, 68, 101, 115, 99, 101, 110, 100, 10, 10, 76, 101, 102, 116, 32, 67, 108, 105, 99, 107, 58, 32, 83, 101, 108, 101, 99, 116, 32, 67, 104, 97, 114, 10, 82, 105, 103, 104, 116, 32, 67, 108, 105, 99, 107, 58, 32, 83, 104, 111, 119, 32, 68, 101, 116, 97, 105, 108, 115, 10, 10, 67, 104, 97, 116, 58, 32, 83, 101, 97, 114, 99, 104, 32, 102, 111, 114, 32, 67, 108, 97, 115, 115, 10, 74, 117, 109, 112, 58, 32, 90, 111, 111, 109, 32, 73, 110, 47, 79, 117, 116, 0
+};
+new _SPR_Corona[19] =
+{
+	115, 112, 114, 105, 116, 101, 115, 47, 99, 111, 114, 111, 110, 97, 46, 115, 112, 114, 0
+};
+new _SPR_Panel[23] =
+{
+	115, 112, 114, 105, 116, 101, 115, 47, 99, 111, 114, 101, 46, 112, 97, 110, 101, 108, 46, 115, 112, 114, 0
+};
+new coreClientCS[33][10];
+new core3DS[13];
+Float:operator*(Float:,_:)(Float:oper1, oper2)
+{
+	return floatmul(oper1, float(oper2));
+}
+
+Float:operator/(_:,Float:)(oper1, Float:oper2)
+{
+	return floatdiv(float(oper1), oper2);
+}
+
+Float:operator+(Float:,_:)(Float:oper1, oper2)
+{
+	return floatadd(oper1, float(oper2));
+}
+
+Float:operator-(Float:,_:)(Float:oper1, oper2)
+{
+	return floatsub(oper1, float(oper2));
+}
+
+bool:operator==(Float:,Float:)(Float:oper1, Float:oper2)
+{
+	return floatcmp(oper1, oper2) == 0;
+}
+
+bool:operator>(Float:,Float:)(Float:oper1, Float:oper2)
+{
+	return 0 < floatcmp(oper1, oper2);
+}
+
+bool:operator>(Float:,_:)(Float:oper1, oper2)
+{
+	return 0 < floatcmp(oper1, float(oper2));
+}
+
+bool:operator>=(Float:,Float:)(Float:oper1, Float:oper2)
+{
+	return 0 <= floatcmp(oper1, oper2);
+}
+
+bool:operator<(Float:,Float:)(Float:oper1, Float:oper2)
+{
+	return 0 > floatcmp(oper1, oper2);
+}
+
+bool:operator<(Float:,_:)(Float:oper1, oper2)
+{
+	return 0 > floatcmp(oper1, float(oper2));
+}
+
+bool:operator<=(Float:,Float:)(Float:oper1, Float:oper2)
+{
+	return 0 >= floatcmp(oper1, oper2);
+}
+
+bool:operator<=(Float:,_:)(Float:oper1, oper2)
+{
+	return 0 >= floatcmp(oper1, float(oper2));
+}
+
+bool:operator!(Float:)(Float:oper)
+{
+	return oper & -1 == 0;
+}
+
+IVecFVec(IVec[3], Float:FVec[3])
+{
+	FVec[0] = float(IVec[0]);
+	FVec[1] = float(IVec[1]);
+	FVec[2] = float(IVec[2]);
+	return 1;
+}
+
+FVecIVec(Float:FVec[3], IVec[3])
+{
+	IVec[0] = floatround(FVec[0], "HamFilter");
+	IVec[1] = floatround(FVec[1], "HamFilter");
+	IVec[2] = floatround(FVec[2], "HamFilter");
+	return 1;
+}
+
+public __fatal_ham_error(Ham:id, HamError:err, reason[])
+{
+	new func = get_func_id("HamFilter", -1);
+	new bool:fail = 1;
+	new var1;
+	if (func != -1 && callfunc_begin_i(func, -1) == 1)
+	{
+		callfunc_push_int(id);
+		callfunc_push_int(err);
+		callfunc_push_str(reason, "HamFilter");
+		if (callfunc_end() == 1)
+		{
+			fail = false;
+		}
+	}
+	if (fail)
+	{
+		set_fail_state(reason);
+	}
+	return 0;
+}
+
+Float:xs_rsqrt(Float:x)
+{
+	return floatdiv(1065353216, floatsqroot(x));
+}
+
+xs_vec_sub(Float:in1[], Float:in2[], Float:out[])
+{
+	out[0] = floatsub(in1[0], in2[0]);
+	out[1] = floatsub(in1[1], in2[1]);
+	out[2] = floatsub(in1[2], in2[2]);
+	return 0;
+}
+
+xs_vec_mul_scalar(Float:vec[], Float:scalar, Float:out[])
+{
+	out[0] = floatmul(vec[0], scalar);
+	out[1] = floatmul(vec[1], scalar);
+	out[2] = floatmul(vec[2], scalar);
+	return 0;
+}
+
+xs_vec_normalize(Float:vec[], Float:out[])
+{
+	new Float:invlen = xs_rsqrt(floatadd(floatadd(floatmul(vec[0], vec[0]), floatmul(vec[1], vec[1])), floatmul(vec[2], vec[2])));
+	out[0] = floatmul(vec[0], invlen);
+	out[1] = floatmul(vec[1], invlen);
+	out[2] = floatmul(vec[2], invlen);
+	return 0;
+}
+
+Float:fm_entity_range(ent1, ent2)
+{
+	static Float:origin2[3];
+	static Float:origin1[3];
+	pev(ent1, 118, xs__ITaskId);
+	pev(ent2, 118, origin2);
+	return get_distance_f(xs__ITaskId, origin2);
+}
+
+fm_trace_line(ignoreent, Float:start[3], Float:end[3], Float:ret[3])
+{
+	new var1;
+	if (ignoreent == -1)
+	{
+		var1 = 1;
+	}
+	else
+	{
+		var1 = 0;
+	}
+	engfunc(29, start, end, var1, ignoreent, 0);
+	static ent;
+	ent = get_tr2("HamFilter", 8);
+	get_tr2("HamFilter", 5, ret);
+	new var2;
+	if (pev_valid(ent))
+	{
+		var2 = ent;
+	}
+	else
+	{
+		var2 = 0;
+	}
+	return var2;
+}
+
+fm_trace_hull(Float:origin[3], hull, ignoredent, ignoremonsters)
+{
+	new result;
+	new var1;
+	if (ignoredent > 0)
+	{
+		var1 = ignoredent;
+	}
+	else
+	{
+		var1 = 0;
+	}
+	engfunc(32, origin, origin, ignoremonsters, hull, var1, 0);
+	if (get_tr2("HamFilter", 1))
+	{
+		result += 1;
+	}
+	if (get_tr2("HamFilter", "HamFilter"))
+	{
+		result += 2;
+	}
+	if (!get_tr2("HamFilter", 2))
+	{
+		result += 4;
+	}
+	return result;
+}
+
+uniqueTaskID(ClientID, Core)
+{
+	return Core * 32 + ClientID;
+}
+
+MSGID(String[])
+{
+	return get_user_msgid(String);
+}
+
+DevMsg(Client, Message[])
+{
+	static FormatedMessage[1024];
+	vformat(FormatedMessage, 1023, Message, "");
+	client_print(Client, "", "%s", FormatedMessage);
+	return 0;
+}
+
+public plugin_pause()
+{
+	unpause(4176, 4184, 4188);
+	return 1;
+}
+
+initReVision(Auth[])
+{
+	formatex(AuthentificationRevisionKey, 63, ".%s.ReVision", Auth);
+	formatex(AuthentificationRevisionVal, 63, "%i %s - %s %s", 1957, "avatar", "28.5.2007", "20:45:27");
+	register_cvar(AuthentificationRevisionKey, AuthentificationRevisionVal, 4, "HamFilter");
+	return 0;
+}
+
+cuteInteger(Integer, String[24])
+{
+	new Value[16];
+	new Buffer[24];
+	num_to_str(Integer, Value, 15);
+	new vLength = strlen(Value);
+	if (vLength < 4)
+	{
+		copy(String, "", Value);
+	}
+	else
+	{
+		new CTR = 1;
+		new i = vLength + -1;
+		while (0 <= i)
+		{
+			new var1;
+			if (CTR % 3 && i)
+			{
+				format(Buffer, 23, ".%c%s", Value[i], Buffer);
+			}
+			else
+			{
+				format(Buffer, 23, "%c%s", Value[i], Buffer);
+			}
+			CTR++;
+			i--;
+		}
+		copy(String, 23, Buffer);
+	}
+	return 0;
+}
+
+getSkills(Level)
+{
+	static P;
+	static Num;
+	Num = 0;
+	P = 0;
+	szSkills[0] = 0;
+	if (coreClassLevels[Level][76])
+	{
+		if (Num)
+		{
+			P = formatex(szSkills[P], 256 - P, ", ") + P;
+		}
+		P = formatex(szSkills[P], 256 - P, "Swoop Sense") + P;
+		Num += 1;
+	}
+	if (coreClassLevels[Level][77])
+	{
+		if (Num)
+		{
+			P = formatex(szSkills[P], 256 - P, ", ") + P;
+		}
+		P = formatex(szSkills[P], 256 - P, "Melee Sense %i", coreClassLevels[Level][77]) + P;
+		Num += 1;
+	}
+	if (coreClassLevels[Level][78])
+	{
+		if (Num)
+		{
+			P = formatex(szSkills[P], 256 - P, ", ") + P;
+		}
+		P = formatex(szSkills[P], 256 - P, "Strong Melee %i", coreClassLevels[Level][78]) + P;
+		Num += 1;
+	}
+	if (!Num)
+	{
+		formatex(szSkills, 255, "None");
+	}
+	return 0;
+}
+
+generateCXSHEET(Class)
+{
+	static P;
+	P = 0;
+	ClassSheet[0] = 0;
+	static Version[12];
+	static Author[32];
+	static None[2];
+	get_plugin(coreClassExtensions[Class][0], None, 1, None, 1, Version, 11, Author, 31, None, 1);
+	P = formatex(ClassSheet[P], 2000 - P, "< %s >\n   v%s by %s\n\n", coreClassExtensions[Class][1], Version, Author) + P;
+	P = formatex(ClassSheet[P], 2000 - P, "%s\n", coreClassExtensions[Class][34]) + P;
+	static Level;
+	new LevelID;
+	while (coreClassExtensions[Class][356] > LevelID)
+	{
+		Level = LevelID + Class * 8;
+		if (!(equal(coreClassLevels[Level], "<<FusionFailure>>", "HamFilter")))
+		{
+			new var1;
+			if (coreClassLevels[Level][65])
+			{
+				var1 = 1153140;
+			}
+			else
+			{
+				var1 = 1153204;
+			}
+			new var2;
+			if (coreClassLevels[Level][64])
+			{
+				var2 = 1153076;
+			}
+			else
+			{
+				var2 = 1153136;
+			}
+			P = formatex(ClassSheet[P], 2000 - P, "\n < %s >%s%s\n", coreClassLevels[Level], var2, var1) + P;
+			P = formatex(ClassSheet[P], 2000 - P, "    ATK: %.0f%%  DEF: %.0f%%\n", floatmul(1120403456, coreClassLevels[Level][67]), floatmul(1120403456, coreClassLevels[Level][68])) + P;
+			P = formatex(ClassSheet[P], 2000 - P, "    HP: %i  Speed: %i  ", coreClassLevels[Level][63], coreClassLevels[Level][62]) + P;
+			static PowerLevel[24];
+			cuteInteger(coreClassLevels[Level][59], PowerLevel);
+			if (0 < LevelID)
+			{
+				P = formatex(ClassSheet[P], 2000 - P, "PL: %s x %.1f  ", PowerLevel, coreClassLevels[Level][61]) + P;
+			}
+			else
+			{
+				P = formatex(ClassSheet[P], 2000 - P, "PL: %s  ", PowerLevel) + P;
+			}
+			P = formatex(ClassSheet[P], 2000 - P, "Ki: %.1f/sec\n", floatmul(1092616192, coreClassLevels[Level][66])) + P;
+			P = formatex(ClassSheet[P], 2000 - P, "    Skills: ") + P;
+			getSkills(Level);
+			P = formatex(ClassSheet[P], 2000 - P, szSkills) + P;
+			P = formatex(ClassSheet[P], 2000 - P, "\n    Teleport %.1fm for %i Ki\n", coreClassLevels[Level][70] / 1092616192, coreClassLevels[Level][71]) + P;
+			new var3;
+			if (coreClassLevels[Level][72] && coreClassLevels[Level][73])
+			{
+				P = formatex(ClassSheet[P], 2000 - P, "      while Charging and Swooping\n") + P;
+			}
+			else
+			{
+				new var4;
+				if (coreClassLevels[Level][72] || coreClassLevels[Level][73])
+				{
+					new var5;
+					if (coreClassLevels[Level][73])
+					{
+						var5 = 1154104;
+					}
+					else
+					{
+						var5 = 1154144;
+					}
+					new var6;
+					if (coreClassLevels[Level][72])
+					{
+						var6 = 1154060;
+					}
+					else
+					{
+						var6 = 1154100;
+					}
+					P = formatex(ClassSheet[P], 2000 - P, "      while%s%s\n", var6, var5) + P;
+				}
+			}
+			new var7;
+			if (coreClassLevels[Level][74] && coreClassLevels[Level][75])
+			{
+				P = formatex(ClassSheet[P], 2000 - P, "        with Telesense and Hypermode\n") + P;
+			}
+			else
+			{
+				new var8;
+				if (coreClassLevels[Level][74] || coreClassLevels[Level][75])
+				{
+					new var9;
+					if (coreClassLevels[Level][75])
+					{
+						var9 = 1154420;
+					}
+					else
+					{
+						var9 = 1154464;
+					}
+					new var10;
+					if (coreClassLevels[Level][74])
+					{
+						var10 = 1154372;
+					}
+					else
+					{
+						var10 = 1154416;
+					}
+					P = formatex(ClassSheet[P], 2000 - P, "        with%s%s\n", var10, var9) + P;
+				}
+			}
+		}
+		LevelID++;
+	}
+	return 0;
+}
+
+public initClassExtensions()
+{
+	InClassCreation = true;
+	static Level;
+	static plugin;
+	static end;
+	static FunctionIndex;
+	end = get_pluginsnum();
+	plugin = 0;
+	while (plugin < end)
+	{
+		tmpLevelCTR = 0;
+		InClassCreationBegin = false;
+		FunctionIndex = get_func_id("@ClassCreation", plugin);
+		if (!(0 > FunctionIndex))
+		{
+			if (!(callfunc_begin_i(FunctionIndex, plugin) != 1))
+			{
+				callfunc_end();
+				coreClassExtensions[ClassExtensionCTR][356] = tmpLevelCTR;
+				coreClassExtensions[ClassExtensionCTR][0] = plugin;
+				Level = 0;
+				while (Level < tmpLevelCTR)
+				{
+					Level += 1;
+				}
+				coreClassExtensions[ClassExtensionCTR][362] = CreateOneForward(plugin, "@ClassWeaponUpdate", 0, 0);
+				coreClassExtensions[ClassExtensionCTR][363] = CreateOneForward(plugin, "@ClassInitiateTransformation", 0, 0, 0);
+				coreClassExtensions[ClassExtensionCTR][364] = CreateOneForward(plugin, "@ClassFinishTransformation", 0, 0);
+				coreClassExtensions[ClassExtensionCTR][365] = CreateOneForward(plugin, "@ClassCancelTransformation", 0, 0);
+				coreClassExtensions[ClassExtensionCTR][376] = CreateOneForward(plugin, "@ClassCandyEat", 0);
+				coreClassExtensions[ClassExtensionCTR][377] = CreateOneForward(plugin, "@ClassSkipLevel", 0, 0, 0);
+				if (coreClassExtensions[ClassExtensionCTR][361])
+				{
+					coreClassExtensions[ClassExtensionCTR][366] = CreateOneForward(plugin, "@BaseWeaponCreation", 0, 0, 2);
+					coreClassExtensions[ClassExtensionCTR][367] = CreateOneForward(plugin, "@WeaponAdjust", 0, 0, 2, 0, 0);
+					coreClassExtensions[ClassExtensionCTR][368] = CreateOneForward(plugin, "@WeaponBeam", 0, 0, 2, 0);
+					coreClassExtensions[ClassExtensionCTR][369] = CreateOneForward(plugin, "@WeaponBlast", 0, 0, 2, 0);
+					coreClassExtensions[ClassExtensionCTR][370] = CreateOneForward(plugin, "@WeaponBall", 0, 0, 2, 0, 0);
+					coreClassExtensions[ClassExtensionCTR][371] = CreateOneForward(plugin, "@WeaponSBC", 0, 0, 2);
+					coreClassExtensions[ClassExtensionCTR][372] = CreateOneForward(plugin, "@WeaponDeath", 0, 0, 2);
+					coreClassExtensions[ClassExtensionCTR][373] = CreateOneForward(plugin, "@IconUpdate", 0, 0);
+				}
+				else
+				{
+					coreClassExtensions[ClassExtensionCTR][366] = -1;
+					coreClassExtensions[ClassExtensionCTR][367] = -1;
+					coreClassExtensions[ClassExtensionCTR][368] = -1;
+					coreClassExtensions[ClassExtensionCTR][369] = -1;
+					coreClassExtensions[ClassExtensionCTR][370] = -1;
+					coreClassExtensions[ClassExtensionCTR][371] = -1;
+					coreClassExtensions[ClassExtensionCTR][372] = -1;
+					coreClassExtensions[ClassExtensionCTR][373] = -1;
+				}
+				if (coreClassExtensions[ClassExtensionCTR][360])
+				{
+					coreClassExtensions[ClassExtensionCTR][374] = CreateOneForward(plugin, "@ClassCharge", 0);
+				}
+				else
+				{
+					coreClassExtensions[ClassExtensionCTR][374] = -1;
+				}
+				if (coreClassExtensions[ClassExtensionCTR][359])
+				{
+					coreClassExtensions[ClassExtensionCTR][375] = CreateOneForward(plugin, "@ClassEmitSound", 0, 0, 2);
+				}
+				else
+				{
+					coreClassExtensions[ClassExtensionCTR][375] = -1;
+				}
+				static szClassID[6];
+				formatex(szClassID, 5, "%d", ClassExtensionCTR);
+				static File;
+				static FileName[256];
+				formatex(FileName, 255, "core/cache/%d.cx", ClassExtensionCTR);
+				generateCXSHEET(ClassExtensionCTR);
+				File = fopen(FileName, "wt");
+				if (File)
+				{
+					fputs(File, ClassSheet);
+					fclose(File);
+				}
+				ClassExtensionCTR += 1;
+			}
+		}
+		plugin += 1;
+	}
+	InClassCreation = false;
+	ExecuteForward(FWD_AscendInitiated, FWD_Return);
+	return 0;
+}
+
+public __createClass(Plugin)
+{
+	if (!InClassCreation)
+	{
+		return 0;
+	}
+	tmpClassExtension[0] = Plugin;
+	get_array(1, 1136612 + 1436, "");
+	get_string(2, 1136612 + 4, 32);
+	tmpClassExtension[357] = get_param("");
+	tmpClassExtension[358] = get_param(4);
+	get_string(5, 1136612 + 136, 256);
+	get_string(6, 1136612 + 1164, 64);
+	InClassCreationBegin = true;
+	return 1;
+}
+
+public __addClassLevel(Plugin)
+{
+	if (!InClassCreation)
+	{
+		return 0;
+	}
+	if (!InClassCreationBegin)
+	{
+		return 0;
+	}
+	if (tmpLevelCTR >= 8)
+	{
+		return 0;
+	}
+	get_string(1, tmpClassLevels[tmpLevelCTR], 32);
+	get_string(2, tmpClassLevels[tmpLevelCTR][33], 22);
+	static Model[65];
+	formatex(Model, 64, "models/player/%s/%s.mdl", tmpClassLevels[tmpLevelCTR][33], tmpClassLevels[tmpLevelCTR][33]);
+	tmpClassLevels[tmpLevelCTR][56] = engfunc("", Model);
+	tmpClassLevels[tmpLevelCTR][57] = get_param("");
+	tmpClassLevels[tmpLevelCTR][58] = get_param(4);
+	tmpClassLevels[tmpLevelCTR][59] = get_param(5);
+	tmpClassLevels[tmpLevelCTR][60] = get_param(6);
+	tmpClassLevels[tmpLevelCTR][61] = get_param(7);
+	tmpClassLevels[tmpLevelCTR][62] = get_param(8);
+	tmpClassLevels[tmpLevelCTR][63] = get_param(9);
+	get_array(10, tmpClassLevels[tmpLevelCTR][64], 2);
+	tmpClassLevels[tmpLevelCTR][66] = get_param(11);
+	static Teleport[2];
+	get_array(12, Teleport, 2);
+	tmpClassLevels[tmpLevelCTR][70] = Teleport[0];
+	tmpClassLevels[tmpLevelCTR][71] = Teleport[1];
+	get_array(13, tmpClassLevels[tmpLevelCTR][72], 7);
+	tmpClassLevels[tmpLevelCTR][69] = get_param(14);
+	static Float:DamageModifiers[2];
+	get_array_f(15, DamageModifiers, 2);
+	tmpClassLevels[tmpLevelCTR][67] = floatdiv(DamageModifiers[0], 1120403456);
+	tmpClassLevels[tmpLevelCTR][68] = floatdiv(DamageModifiers[1], 1120403456);
+	return 1;
+}
+
+public __addClassEffect(Plugin)
+{
+	if (!InClassCreation)
+	{
+		return 0;
+	}
+	if (!InClassCreationBegin)
+	{
+		return 0;
+	}
+	if (tmpLevelCTR >= 8)
+	{
+		return 0;
+	}
+	get_string(1, tmpClassLevels[tmpLevelCTR][85], 64);
+	tmpClassLevels[tmpLevelCTR][150] = engfunc("", tmpClassLevels[tmpLevelCTR][85]);
+	get_array_f(2, tmpClassLevels[tmpLevelCTR][79], 4);
+	tmpClassLevels[tmpLevelCTR][83] = get_param("");
+	tmpClassLevels[tmpLevelCTR][84] = get_param(4);
+	get_array(5, tmpClassLevels[tmpLevelCTR][151], "");
+	get_array(6, tmpClassLevels[tmpLevelCTR][154], 4);
+	get_array(7, tmpClassLevels[tmpLevelCTR][158], 4);
+	tmpLevelCTR += 1;
+	return 1;
+}
+
+public __addClassItem(Plugin)
+{
+	static Icon;
+	static CORE[36];
+	CORE[0] = get_param(1);
+	CORE[1] = get_param("");
+	get_string(2, 1157136 + 12, 32);
+	Icon = getGlobalIconIndexFromSource(1157136 + 12);
+	CORE[2] = Icon;
+	if (!CORE[1])
+	{
+		set_task(random_float(1045220557, 1056964608), "addClassItemDELAYED", "HamFilter", CORE, 36, 1157364, "HamFilter");
+	}
+	else
+	{
+		set_task(1036831949, "addClassItemDELAYED", "HamFilter", CORE, 36, 1157364, "HamFilter");
+	}
+	return 0;
+}
+
+public addClassItemDELAYED(CORE[])
+{
+	static Entity;
+	static Client;
+	Client = CORE[0];
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	giveClientICON(Client, CORE[2], 0);
+	if (0 > coreClassExtensions[coreClient[Client][0]][366])
+	{
+		giveClientITEM(Client, CORE[3]);
+	}
+	else
+	{
+		Entity = giveClientITEM(Client, CORE[3]);
+		if (!Entity)
+		{
+			return 0;
+		}
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][366], FWD_Return, Client, Entity, CORE[3]);
+	}
+	return 0;
+}
+
+public __addClassSpecial(Plugin)
+{
+	static SpecialID;
+	static ID;
+	static Name[33];
+	static Client;
+	SpecialID = -1;
+	Client = get_param(1);
+	get_string(2, Name, 32);
+	ID = 0;
+	while (ID < SpecialExtCTR)
+	{
+		if (equali(coreSpecialExtension[ID][1], Name, "HamFilter"))
+		{
+			SpecialID = ID;
+			if (0 > SpecialID)
+			{
+				return 0;
+			}
+			get_array("", coreClientSpecialConfig[Client][SpecialID], 64);
+			static CORE[2];
+			CORE[0] = Client;
+			CORE[1] = SpecialID;
+			set_task(random_float(1045220557, 1053609165), "giveClientSpecialDELAYED", "HamFilter", CORE, 2, 1157364, "HamFilter");
+			return 0;
+		}
+		ID += 1;
+	}
+	if (0 > SpecialID)
+	{
+		return 0;
+	}
+	get_array("", coreClientSpecialConfig[Client][SpecialID], 64);
+	static CORE[2];
+	CORE[0] = Client;
+	CORE[1] = SpecialID;
+	set_task(random_float(1045220557, 1053609165), "giveClientSpecialDELAYED", "HamFilter", CORE, 2, 1157364, "HamFilter");
+	return 0;
+}
+
+public giveClientSpecialDELAYED(CORE[])
+{
+	if (is_user_connected(CORE[0]))
+	{
+		giveClientSPECIAL(CORE[0], CORE[1]);
+	}
+	return 0;
+}
+
+public __getSpecialID()
+{
+	static Name[65];
+	get_string(1, Name, 64);
+	static ID;
+	ID = 0;
+	while (ID < SpecialExtCTR)
+	{
+		if (equali(coreSpecialExtension[ID][1], Name, "HamFilter"))
+		{
+			return ID;
+		}
+		ID += 1;
+	}
+	return -1;
+}
+
+public __beginSpecialCreation(Plugin, Params)
+{
+	if (!inSpecialCreation)
+	{
+		log_error(10, "< Ascend:SX > beginSpecialCreation outside @SpecialCreation");
+		return 0;
+	}
+	if (inSpecialCreationBegin)
+	{
+		log_error(10, "< Ascend:SX > beginSpecialCreation not closed");
+		return 0;
+	}
+	inSpecialCreationBegin = true;
+	tmpSpecialExtChargeCTR = 0;
+	tmpSpecialExtControlCTR = 0;
+	tmpSpecialExtension[0] = Plugin;
+	get_string(1, 1157716 + 4, 64);
+	static ID;
+	ID = 0;
+	while (ID < SpecialExtCTR)
+	{
+		if (equali(coreSpecialExtension[ID][1], 1157716 + 4, "HamFilter"))
+		{
+			inSpecialCreationBegin = false;
+			log_error(10, "< Ascend:SX > Special with this Name already exists");
+			return 0;
+		}
+		ID += 1;
+	}
+	get_string(2, 1157716 + 264, 256);
+	static Forward;
+	static ChargeHook[65];
+	get_string("", ChargeHook, 64);
+	Forward = CreateOneForward(Plugin, ChargeHook, 0, 0, 0, 0);
+	new var1;
+	if (Forward < 0 && ChargeHook[0])
+	{
+		inSpecialCreationBegin = false;
+		log_error(10, "< Ascend:SX > Invalid CargeHook Method");
+		return 0;
+	}
+	tmpSpecialExtension[323] = Forward;
+	static Icon[33];
+	get_string(4, Icon, 32);
+	if (contain(Icon, "special_"))
+	{
+		inSpecialCreationBegin = false;
+		log_error(10, "< Ascend:SX > Icon does not begin with \"special_\"");
+		return 0;
+	}
+	tmpSpecialExtension[324] = createIcon(0, Icon, -1, -1);
+	tmpSpecialExtension[325] = get_param(5);
+	return 1;
+}
+
+public __addSpecialCharge(Plugin, Params)
+{
+	if (!inSpecialCreationBegin)
+	{
+		log_error(10, "< Ascend:SX > beginSpecialCreation not open");
+		return 0;
+	}
+	if (tmpSpecialExtChargeCTR >= 2)
+	{
+		log_error(10, "< Ascend:SX > Max Charges for this Special reached");
+		return 0;
+	}
+	tmpSpecialExtensionCharge[tmpSpecialExtChargeCTR][1] = get_param(1);
+	static Float:FullCharge;
+	FullCharge = get_param_f(2);
+	if (FullCharge <= 0.1)
+	{
+		tmpSpecialExtensionCharge[tmpSpecialExtChargeCTR][2] = 0;
+	}
+	else
+	{
+		tmpSpecialExtensionCharge[tmpSpecialExtChargeCTR][2] = floatround(floatmul(1092616192, FullCharge), "HamFilter");
+	}
+	tmpSpecialExtensionCharge[tmpSpecialExtChargeCTR][3] = get_param("");
+	tmpSpecialExtensionCharge[tmpSpecialExtChargeCTR][4] = get_param(4);
+	tmpSpecialExtChargeCTR += 1;
+	return 1;
+}
+
+public __addSpecialControl(Plugin, Params)
+{
+	if (!inSpecialCreationBegin)
+	{
+		log_error(10, "< Ascend:SX > beginSpecialCreation not open");
+		return 0;
+	}
+	if (tmpSpecialExtControlCTR >= 2)
+	{
+		log_error(10, "< Ascend:SX > Max Controls for this Special reached");
+		return 0;
+	}
+	tmpSpecialExtControlCTR += 1;
+	tmpSpecialExtensionControl[tmpSpecialExtControlCTR][1] = get_param(1);
+	return 1;
+}
+
+public __addSpecialHook(Plugin, Params)
+{
+	if (!inSpecialCreationBegin)
+	{
+		log_error(10, "< Ascend:SX > beginSpecialCreation not open");
+		return 0;
+	}
+	static CSpecialHook:Hook;
+	static Forward;
+	static Method[65];
+	Hook = get_param(1);
+	get_string(2, Method, 64);
+	switch (Hook)
+	{
+		case 0:
+		{
+			Forward = CreateOneForward(Plugin, Method, 0, 0, 2);
+		}
+		default:
+		{
+		}
+	}
+	if (0 > Forward)
+	{
+		log_error(10, "< Ascend:SX > Invalid Hook Method \"%s\"", Method);
+		return 0;
+	}
+	tmpSpecialExtension[330][get_param(1)] = Forward;
+	return 1;
+}
+
+public __endSpecialCreation(Plugin, Params)
+{
+	if (!inSpecialCreationBegin)
+	{
+		log_error(10, "< Ascend:SX > beginSpecialCreation not open");
+		return 0;
+	}
+	if (SpecialExtCTR >= 64)
+	{
+		log_error(10, "< Ascend:SX > Max Specials reached");
+		return 0;
+	}
+	coreSpecialExtension[SpecialExtCTR][326] = SpecialExtChargeCTR;
+	coreSpecialExtension[SpecialExtCTR][327] = tmpSpecialExtChargeCTR;
+	coreSpecialExtension[SpecialExtCTR][328] = SpecialExtControlCTR;
+	coreSpecialExtension[SpecialExtCTR][329] = tmpSpecialExtControlCTR;
+	static i;
+	i = 0;
+	while (i < tmpSpecialExtChargeCTR)
+	{
+		coreSpecialExtensionCharge[SpecialExtChargeCTR][0] = SpecialExtCTR;
+		SpecialExtChargeCTR = SpecialExtChargeCTR + 1;
+		i += 1;
+	}
+	i = 0;
+	while (i < tmpSpecialExtControlCTR)
+	{
+		coreSpecialExtensionControl[SpecialExtControlCTR][0] = SpecialExtCTR;
+		SpecialExtControlCTR = SpecialExtControlCTR + 1;
+		i += 1;
+	}
+	inSpecialCreationBegin = false;
+	SpecialExtCTR = SpecialExtCTR + 1;
+	return SpecialExtCTR + -1;
+}
+
+public @AscendInitiated()
+{
+	inSpecialCreation = true;
+	static plugin;
+	static end;
+	static func_id;
+	end = get_pluginsnum();
+	plugin = 0;
+	while (plugin < end)
+	{
+		func_id = get_func_id("@SpecialCreation", plugin);
+		if (!(0 > func_id))
+		{
+			if (!(callfunc_begin_i(func_id, plugin) != 1))
+			{
+				inSpecialCreationBegin = false;
+				callfunc_end();
+				inSpecialCreationBegin = false;
+			}
+		}
+		plugin += 1;
+	}
+	inSpecialCreation = false;
+	return 0;
+}
+
+sxFireForward(Client, Special, CSpecialState:Status, Buttons, Float:Charge)
+{
+	if (1 > coreSpecialExtension[Special][323])
+	{
+		return 0;
+	}
+	static Value;
+	ExecuteForward(coreSpecialExtension[Special][323], Value, Client, Status, Buttons, Charge);
+	return Value;
+}
+
+Float:sxChargePercent(Client)
+{
+	if (0 > coreClient[Client][32])
+	{
+		return 0.0;
+	}
+	return floatdiv(float(coreClient[Client][33]), float(coreSpecialExtensionCharge[coreClient[Client][32]][2]));
+}
+
+sxChargeMsg(Client)
+{
+	message_begin(1, MSGID_Charge, 1162584, Client);
+	write_byte(floatround(floatmul(1120403456, sxChargePercent(Client)), "HamFilter"));
+	message_end();
+	return 0;
+}
+
+sxAbort(Client)
+{
+	static Special;
+	Special = coreClient[Client][35];
+	if (0 > Special)
+	{
+		return 0;
+	}
+	sxFireForward(Client, Special, CSpecialState:4, 0, -1.0);
+	coreClientSpecials[Client][Special][2] = 0;
+	coreClient[Client][35] = -1;
+	coreClient[Client][33] = 0;
+	coreClient[Client][32] = -1;
+	return 0;
+}
+
+sxChargeAbort(Client)
+{
+	setClientXFROZEN(Client, "HamFilter");
+	sxFireForward(Client, coreSpecialExtensionCharge[coreClient[Client][32]][0], CSpecialState:2, coreSpecialExtensionCharge[coreClient[Client][32]][1], sxChargePercent(Client));
+	coreClient[Client][32] = -1;
+	coreClient[Client][33] = 0;
+	sxChargeMsg(Client);
+	return 0;
+}
+
+bool:validateClient(Client)
+{
+	if (!is_user_connected(Client))
+	{
+		log_error(10, "< Ascend:SX > Invalid Client > %i", Client);
+		return false;
+	}
+	return true;
+}
+
+bool:validateSpecial(Special)
+{
+	new var1;
+	if (Special < 0 || Special >= SpecialExtCTR)
+	{
+		log_error(10, "< Ascend:SX > Invalid Special > %i", Special);
+		return false;
+	}
+	return true;
+}
+
+sxPreThink(Client)
+{
+	new var1;
+	if (!is_user_connected(Client) || !is_user_alive(Client))
+	{
+		coreClient[Client][32] = -1;
+		return 0;
+	}
+	static Special;
+	Special = coreClient[Client][35];
+	if (0 > Special)
+	{
+		if (sxNextThink[Client] > get_gametime())
+		{
+			return 0;
+		}
+		sxCharge(Client);
+		sxNextThink[Client] = floatadd(1036831949, get_gametime());
+	}
+	else
+	{
+		if (!coreSpecialExtension[Special][329])
+		{
+			return 0;
+		}
+		static end;
+		static i;
+		end = coreSpecialExtension[Special][329][coreSpecialExtension[Special][328]];
+		i = coreSpecialExtension[Special][328];
+		while (i < end)
+		{
+			if (coreSpecialExtensionControl[i][1] == pev(Client, 81) & coreSpecialExtensionControl[i][1])
+			{
+				sxFireForward(Client, Special, CSpecialState:3, coreSpecialExtensionControl[i][1], -1.0);
+			}
+			i += 1;
+		}
+	}
+	return 0;
+}
+
+sxCharge(Client)
+{
+	static Special;
+	Special = coreClient[Client][34];
+	if (0 > Special)
+	{
+		return 0;
+	}
+	if (coreClientSpecials[Client][Special][0] != 1)
+	{
+		return 0;
+	}
+	if (0 > coreClient[Client][32])
+	{
+		if (0 <= coreClient[Client][35])
+		{
+			return 0;
+		}
+		new var1;
+		if (coreClient[Client][11] || coreClient[Client][26])
+		{
+			return 0;
+		}
+		static end;
+		static i;
+		end = coreSpecialExtension[Special][327][coreSpecialExtension[Special][326]];
+		i = coreSpecialExtension[Special][326];
+		while (i < end)
+		{
+			if (coreSpecialExtensionCharge[i][1] == pev(Client, 81) & coreSpecialExtensionCharge[i][1])
+			{
+				if (coreClientSpecials[Client][Special][1] > get_gametime())
+				{
+					if (NextCoolDownNotify[Client] < get_gametime())
+					{
+						DevMsg(Client, "< Ascend > You have to wait %.1f seconds before using %s again", floatsub(coreClientSpecials[Client][Special][1], get_gametime()), coreSpecialExtension[Special][1]);
+						NextCoolDownNotify[Client] = floatadd(1065353216, get_gametime());
+					}
+				}
+				if (!(getClientKI(Client) <= coreSpecialExtensionCharge[i][3]))
+				{
+					if (sxFireForward(Client, Special, CSpecialState:0, coreSpecialExtensionCharge[i][1], -1.0) == 1)
+					{
+						coreClient[Client][32] = i;
+						coreClient[Client][33] = 0;
+						if (!coreSpecialExtensionCharge[i][4])
+						{
+							setClientXFROZEN(Client, 1);
+						}
+					}
+				}
+			}
+			i += 1;
+		}
+	}
+	else
+	{
+		static Charge;
+		Charge = coreClient[Client][32];
+		if (coreSpecialExtensionCharge[Charge][1] == pev(Client, 81) & coreSpecialExtensionCharge[Charge][1])
+		{
+			if (sxFireForward(Client, Special, CSpecialState:0, coreSpecialExtensionCharge[Charge][1], sxChargePercent(Client)))
+			{
+				if (coreSpecialExtensionCharge[Charge][2] > coreClient[Client][33])
+				{
+					coreClient[Client][33]++;
+					if (getClientKI(Client) <= coreSpecialExtensionCharge[Charge][3])
+					{
+						setClientXFROZEN(Client, "HamFilter");
+						sxFireForward(Client, Special, CSpecialState:2, coreSpecialExtensionCharge[Charge][1], sxChargePercent(Client));
+						coreClient[Client][33] = 0;
+						coreClient[Client][32] = -1;
+						sxChargeMsg(Client);
+					}
+					setClientKI(Client, floatsub(getClientKI(Client), coreSpecialExtensionCharge[Charge][3]));
+				}
+				sxChargeMsg(Client);
+			}
+			else
+			{
+				if (sxChargePercent(Client) > 0)
+				{
+					setClientXFROZEN(Client, "HamFilter");
+					sxFireForward(Client, Special, CSpecialState:2, coreSpecialExtensionCharge[Charge][1], sxChargePercent(Client));
+					coreClient[Client][33] = 0;
+					coreClient[Client][32] = -1;
+					sxChargeMsg(Client);
+				}
+			}
+		}
+		setClientXFROZEN(Client, "HamFilter");
+		if (sxChargePercent(Client) > 0)
+		{
+			sxFireForward(Client, Special, CSpecialState:1, coreSpecialExtensionCharge[Charge][1], sxChargePercent(Client));
+		}
+		coreClient[Client][32] = -1;
+		coreClient[Client][33] = 0;
+		sxChargeMsg(Client);
+	}
+	return 0;
+}
+
+public __getClientSPECIALSTATE()
+{
+	new var1;
+	if (!validateClient(get_param(1)) || !validateSpecial(get_param(2)))
+	{
+		return 0;
+	}
+	return coreClientSpecials[get_param(1)][get_param(2)][2];
+}
+
+public __setClientSPECIALSTATE()
+{
+	static Client;
+	Client = get_param(1);
+	new var1;
+	if (!validateClient(Client) || !validateSpecial(get_param(2)))
+	{
+		return 0;
+	}
+	if (get_param(""))
+	{
+		if (-1 < coreClient[Client][35])
+		{
+			log_error(10, "< Ascend:SX > Client already has an active Special");
+			return 0;
+		}
+		coreClient[Client][32] = -1;
+		coreClient[Client][33] = 0;
+		sxChargeMsg(Client);
+		setClientXFROZEN(Client, "HamFilter");
+		coreClient[Client][35] = get_param(2);
+	}
+	else
+	{
+		if (get_param(2) != coreClient[Client][35])
+		{
+			return 0;
+		}
+		coreClient[Client][35] = -1;
+		coreClient[Client][32] = -1;
+		coreClient[Client][33] = 0;
+		sxChargeMsg(Client);
+	}
+	new var2;
+	if (get_param(""))
+	{
+		var2 = 1;
+	}
+	else
+	{
+		var2 = 0;
+	}
+	coreClientSpecials[Client][get_param(2)][2] = var2;
+	return var2;
+}
+
+public __setClientSPECIALCOOLDOWN()
+{
+	new var1;
+	if (!validateClient(get_param(1)) || !validateSpecial(get_param(2)))
+	{
+		return 0;
+	}
+	coreClientSpecials[get_param(1)][get_param(2)][1] = floatadd(get_gametime(), get_param_f(""));
+	return 1;
+}
+
+public __giveClientSPECIAL()
+{
+	static Special;
+	static Client;
+	Client = get_param(1);
+	Special = get_param(2);
+	return giveClientSPECIAL(Client, Special);
+}
+
+giveClientSPECIAL(Client, Special)
+{
+	new var1;
+	if (!validateClient(Client) || !validateSpecial(Special))
+	{
+		return 0;
+	}
+	coreClientSpecials[Client][Special][0] = 1;
+	giveClientICON(Client, coreSpecialExtension[Special][324], 1);
+	return 1;
+}
+
+public __hasClientSPECIAL()
+{
+	new var1;
+	if (!validateClient(get_param(1)) || !validateSpecial(get_param(2)))
+	{
+		return 0;
+	}
+	return coreClientSpecials[get_param(1)][get_param(2)][0];
+}
+
+public SX_IconHook(Client, ClientIcon, PreClientIcon)
+{
+	if (0 <= coreClient[Client][35])
+	{
+		if (coreSpecialExtension[coreClient[Client][35]][324] == PreClientIcon)
+		{
+			sxAbort(Client);
+			coreClient[Client][34] = -1;
+		}
+		return 0;
+	}
+	if (0 > coreClient[Client][32])
+	{
+		coreClient[Client][34] = -1;
+		static i;
+		static Special;
+		Special = -1;
+		i = 0;
+		while (i < SpecialExtCTR)
+		{
+			if (ClientIcon == coreSpecialExtension[i][324])
+			{
+				Special = i;
+				if (0 > Special)
+				{
+					return 0;
+				}
+				if (coreClientSpecials[Client][Special][0])
+				{
+					coreClient[Client][34] = Special;
+				}
+			}
+			i += 1;
+		}
+		if (0 > Special)
+		{
+			return 0;
+		}
+		if (coreClientSpecials[Client][Special][0])
+		{
+			coreClient[Client][34] = Special;
+		}
+	}
+	else
+	{
+		static Special;
+		static Charge;
+		Charge = coreClient[Client][32];
+		Special = coreSpecialExtensionCharge[Charge][0];
+		if (coreSpecialExtension[Special][324] == PreClientIcon)
+		{
+			sxChargeAbort(Client);
+			coreClient[Client][34] = -1;
+		}
+	}
+	return 0;
+}
+
+Special_forceClientCLASS(Client)
+{
+	if (0 <= coreClient[Client][32])
+	{
+		if (sxChargePercent(Client) > 0)
+		{
+			sxChargeAbort(Client);
+		}
+		coreClient[Client][32] = -1;
+		coreClient[Client][33] = 0;
+	}
+	if (0 <= coreClient[Client][35])
+	{
+		sxAbort(Client);
+	}
+	static Special;
+	Special = 0;
+	while (Special < SpecialExtCTR)
+	{
+		coreClientSpecials[Client][Special][0] = 0;
+		coreClientSpecials[Client][Special][2] = 0;
+		Special += 1;
+	}
+	coreClient[Client][34] = -1;
+	return 0;
+}
+
+public __getClientSPECIALCFG()
+{
+	return coreClientSpecialConfig[get_param(1)][get_param(2)][get_param("")];
+}
+
+Aura_PreCache()
+{
+	SPR_SwoopTrail = precache_model("sprites/ecx.swooptrail.spr");
+	CVAR_SwoopTrail = register_cvar(".Ascend.FX.Swooptrails", 1163992, 4, "HamFilter");
+	return 0;
+}
+
+public Hook_Aura(Client)
+{
+	set_pev(Client, 78, 0);
+	static Class[3];
+	static Aura;
+	static End;
+	static Owner;
+	End = global_get(6);
+	Aura = MaxPlayers + 1;
+	while (Aura <= End)
+	{
+		if (pev_valid(Aura))
+		{
+			pev(Aura, 1, Class, 2);
+			new var1;
+			if (Client == pev(Aura, 18) && !Class[0])
+			{
+				AuraCore[Owner] = Aura;
+				engfunc(2, Aura, coreClientLevel[Client][85]);
+				set_pev(Aura, 71, coreClientLevel[Client][83]);
+				set_pev(Aura, 77, coreClientLevel[Client][84]);
+			}
+		}
+		Aura += 1;
+	}
+	return 0;
+}
+
+Aura_PreThink(Client)
+{
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	new var1;
+	if (!getClientSWOOPING(Client) && ClientHasSwoopTrail[Client])
+	{
+		message_begin("HamFilter", 23, 1164156, "HamFilter");
+		write_byte(99);
+		write_short(Client);
+		message_end();
+		ClientHasSwoopTrail[Client] = 0;
+	}
+	new var2;
+	if (getClientSWOOPING(Client) && get_pcvar_num(CVAR_SwoopTrail))
+	{
+		if (!ClientHasSwoopTrail[Client])
+		{
+			message_begin("HamFilter", 23, 1164156, "HamFilter");
+			write_byte(22);
+			write_short(Client);
+			write_short(SPR_SwoopTrail);
+			write_byte(9999);
+			write_byte(5);
+			write_byte(floatround(coreClientLevel[Client][79], "HamFilter"));
+			write_byte(floatround(coreClientLevel[Client][80], "HamFilter"));
+			write_byte(floatround(coreClientLevel[Client][81], "HamFilter"));
+			write_byte(floatround(coreClientLevel[Client][82], "HamFilter"));
+			message_end();
+			ClientHasSwoopTrail[Client] = 1;
+		}
+	}
+	new var3;
+	if (getClientATKCHARGE(Client) && !getClientTURBO(Client) && !getClientSWOOPING(Client))
+	{
+		new var4;
+		if (0 == coreClientLevel[Client][158] && 0 == coreClientLevel[Client][159] && 0 == coreClientLevel[Client][160])
+		{
+			set_pev(Client, 77, 0);
+			set_pev(Client, 78, 0);
+		}
+		static Float:Color[3];
+		Color[0] = coreClientLevel[Client][158];
+		Color[1] = coreClientLevel[Client][159];
+		Color[2] = coreClientLevel[Client][160];
+		set_pev(Client, 77, 0);
+		set_pev(Client, 78, 19);
+		set_pev(Client, 134, Color);
+		set_pev(Client, xs__ITaskId, coreClientLevel[Client][161]);
+	}
+	return 0;
+}
+
+public Hook_PowerUp()
+{
+	static Client;
+	Client = get_msg_arg_int(1);
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	set_msg_arg_int(2, 1, coreClientLevel[Client][151]);
+	set_msg_arg_int("", 1, coreClientLevel[Client][152]);
+	set_msg_arg_int(4, 1, coreClientLevel[Client][153]);
+	return 0;
+}
+
+public TASK_UpdateKi()
+{
+	if (!get_pcvar_num(CVAR_KiMod))
+	{
+		return 0;
+	}
+	static Client;
+	Client = 1;
+	while (Client <= MaxPlayers)
+	{
+		if (is_user_connected(Client))
+		{
+			if (!(is_user_bot(Client)))
+			{
+				setClientNEXTKIUPDATE(Client, floatadd(1092616192, get_gametime()));
+				new var1;
+				if (!(coreClient[Client][11] || coreClient[Client][27] || getClientTHROWAWAY(Client) || getClientPROTECT(Client) || getClientATKCHARGE(Client) || getClientFROZEN(Client) || coreClient[Client][26] || coreClient[Client][0] < 0))
+				{
+					if (getClientPOWERUP(Client))
+					{
+						KiUpdate(Client, 50.0);
+					}
+					else
+					{
+						if (getClientSWOOPING(Client))
+						{
+							KiUpdate(Client, -10.0);
+						}
+						else
+						{
+							if (getClientFLY(Client))
+							{
+								KiUpdate(Client, -1.0);
+							}
+							KiUpdate(Client, 1.0);
+						}
+						KiUpdate(Client, coreClientLevel[Client][66]);
+					}
+					if (getClientTURBO(Client))
+					{
+						KiUpdate(Client, -4.0);
+					}
+				}
+			}
+		}
+		Client += 1;
+	}
+	return 0;
+}
+
+KiUpdate(Client, Float:Ki)
+{
+	static Float:cKi;
+	cKi = floatadd(getClientKI(Client), Ki);
+	if (cKi > 1000.0)
+	{
+		cKi = 1000.0;
+	}
+	if (cKi < 0.0)
+	{
+		cKi = 0.0;
+	}
+	setClientKI(Client, cKi);
+	return 0;
+}
+
+FX_PreCache()
+{
+	SPR_Lightning_1 = precache_model("sprites/lgt_1.spr");
+	SPR_Lightning_2 = precache_model("sprites/lgt_2.spr");
+	SPR_Lightning_3 = precache_model("sprites/lgt_3.spr");
+	precache_sound("evolution/lightning.wav");
+	return 0;
+}
+
+public TASK_UpdateGlow()
+{
+	if (!get_pcvar_num(CVAR_Glow))
+	{
+		return 0;
+	}
+	static Client;
+	Client = 1;
+	while (Client <= MaxPlayers)
+	{
+		if (is_user_connected(Client))
+		{
+			new var1;
+			if (!(0 == coreClientLevel[Client][158] && 0 == coreClientLevel[Client][159] && 0 == coreClientLevel[Client][160]))
+			{
+				new var2;
+				if (!(coreClient[Client][11] || coreClient[Client][27] || coreClient[Client][0] < 0 || getClientTURBO(Client) || getClientSWOOPING(Client) || getClientATKCHARGE(Client)))
+				{
+					static Float:Color[3];
+					Color[0] = coreClientLevel[Client][158];
+					Color[1] = coreClientLevel[Client][159];
+					Color[2] = coreClientLevel[Client][160];
+					set_pev(Client, 77, 0);
+					set_pev(Client, 78, 19);
+					set_pev(Client, 134, Color);
+					set_pev(Client, xs__ITaskId, coreClientLevel[Client][161]);
+				}
+			}
+		}
+		Client += 1;
+	}
+	return 0;
+}
+
+public TASK_UpdateLightning()
+{
+	static Float:Vector[3];
+	static iVector[3];
+	static Client;
+	static AuraLight;
+	static Lightning;
+	static Range;
+	AuraLight = get_pcvar_num(CVAR_AuraLight);
+	Lightning = get_pcvar_num(CVAR_Lightning);
+	Client = 1;
+	while (Client <= MaxPlayers)
+	{
+		if (is_user_connected(Client))
+		{
+			new var1;
+			if (!(coreClient[Client][27] || coreClient[Client][0] < 0 || coreClient[Client][26] || coreClient[Client][11] || getClientPROTECT(Client) || getClientMELEE(Client)))
+			{
+				pev(Client, 118, Vector);
+				FVecIVec(Vector, iVector);
+				new var3;
+				if (AuraLight && (getClientTURBO(Client) || getClientSWOOPING(Client) || getClientPOWERUP(Client)))
+				{
+					message_begin("HamFilter", 23, 1164156, "HamFilter");
+					write_byte(27);
+					write_coord(floatround(Vector[0], "HamFilter"));
+					write_coord(floatround(Vector[1], "HamFilter"));
+					write_coord(floatround(Vector[2], "HamFilter"));
+					write_byte(20);
+					write_byte(coreClientLevel[Client][151]);
+					write_byte(coreClientLevel[Client][152]);
+					write_byte(coreClientLevel[Client][153]);
+					write_byte(6);
+					write_byte(4);
+					message_end();
+				}
+				if (Lightning)
+				{
+					new var4;
+					if (!(!coreClientLevel[Client][154] && !coreClientLevel[Client][155] && !coreClientLevel[Client][156]))
+					{
+						pev(Client, 120, Vector);
+						if (!(vector_length(Vector) > 1120403456))
+						{
+							Range = coreClientLevel[Client][157];
+							if (1 > random_num("HamFilter", 1))
+							{
+								message_begin("HamFilter", 23, 1164156, "HamFilter");
+								write_byte(17);
+								write_coord(random_num(-Range, Range) + iVector[0]);
+								write_coord(random_num(-Range, Range) + iVector[1]);
+								write_coord(random_num(-15, 15) + iVector[2]);
+								write_short(SPR_Lightning_2);
+								write_byte(coreClientLevel[Client][154]);
+								write_byte(255);
+								message_end();
+							}
+							if (1 > random_num("HamFilter", 2))
+							{
+								message_begin("HamFilter", 23, 1164156, "HamFilter");
+								write_byte(17);
+								write_coord(random_num(-Range, Range) + iVector[0]);
+								write_coord(random_num(-Range, Range) + iVector[1]);
+								write_coord(random_num(-10, 10) + iVector[2]);
+								write_short(SPR_Lightning_1);
+								write_byte(coreClientLevel[Client][155]);
+								write_byte(255);
+								message_end();
+								if (floatadd(1065353216, LastLgtSound[Client]) < get_gametime())
+								{
+									LastLgtSound[Client] = get_gametime();
+									emit_sound(Client, 4, "evolution/lightning.wav", 1065353216, 1061997773, "HamFilter", 100);
+								}
+							}
+							if (1 > random_num("HamFilter", 2))
+							{
+								message_begin("HamFilter", 23, 1164156, "HamFilter");
+								write_byte(17);
+								write_coord(random_num(-Range, Range) + iVector[0]);
+								write_coord(random_num(-Range, Range) + iVector[1]);
+								write_coord(random_num(-10, 10) + iVector[2]);
+								write_short(SPR_Lightning_3);
+								write_byte(coreClientLevel[Client][156]);
+								write_byte(255);
+								message_end();
+							}
+						}
+					}
+				}
+			}
+		}
+		Client += 1;
+	}
+	return 0;
+}
+
+resetRendering(Client)
+{
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	new var1;
+	if (getClientTURBO(Client) || getClientSWOOPING(Client))
+	{
+		return 0;
+	}
+	set_pev(Client, 77, 0);
+	set_pev(Client, 78, 0);
+	return 0;
+}
+
+setAnimation(Client, Sequence, Float:FrameRate)
+{
+	if (Sequence > 255)
+	{
+		return 1;
+	}
+	if (0 > Sequence)
+	{
+		AnimationCore[Client] = -1;
+	}
+	else
+	{
+		AnimationCore[Client] = Sequence;
+		set_pev(Client, 38, FrameRate);
+		FrameRateCore[Client] = FrameRate;
+	}
+	return 1;
+}
+
+public AddToFullPack(es_handle, e, Client, host, hostflags, player, pSet)
+{
+	if (!is_user_connected(Client))
+	{
+		return 1;
+	}
+	if (0 > AnimationCore[Client])
+	{
+		return 1;
+	}
+	set_es(es_handle, 7, AnimationCore[Client]);
+	set_es(es_handle, 37, AnimationCore[Client]);
+	set_es(es_handle, 21, FrameRateCore[Client]);
+	set_pev(Client, 38, FrameRateCore[Client]);
+	return 2;
+}
+
+Animation_ClientConnect(Client)
+{
+	AnimationCore[Client] = -1;
+	return 0;
+}
+
+getClientAIM(Client)
+{
+	static CORE[2];
+	get_user_aiming(Client, CORE, 1165064 + 4, 9999);
+	return CORE[0];
+}
+
+validOrigin(Float:Origin[3])
+{
+	static Content;
+	Content = engfunc(xs__ITaskId, Origin);
+	new var1;
+	return Content == -1 || Content == -3;
+}
+
+setClientAIM(Client, Entity)
+{
+	static Float:vecOrigin[3];
+	static Float:vecTarget[3];
+	static Float:angResult[3];
+	pev(Client, 118, vecOrigin);
+	pev(Entity, 118, vecTarget);
+	vecOrigin[0] = floatsub(vecTarget[0], vecOrigin[0]);
+	vecOrigin[1] = floatsub(vecTarget[1], vecOrigin[1]);
+	vecOrigin[2] = floatsub(vecOrigin[2], vecTarget[2]);
+	engfunc(8, vecOrigin, angResult);
+	set_pev(Client, 124, angResult);
+	set_pev(Client, 65, 1);
+	return 0;
+}
+
+Teleport_PreThink(Client)
+{
+	new var1;
+	if (!coreClientLevel[Client][76] || coreClient[Client][27])
+	{
+		return 0;
+	}
+	if (!pev(Client, 81) & 2048)
+	{
+		return 0;
+	}
+	new var2;
+	if (!getClientSWOOPING(Client) || coreClient[Client][10] > get_gametime())
+	{
+		return 0;
+	}
+	static Enemy;
+	Enemy = getNextEnemy(Client);
+	if (!Enemy)
+	{
+		return 0;
+	}
+	if (fm_entity_range(Enemy, Client) > float(coreClientLevel[Client][70]))
+	{
+		return 0;
+	}
+	setClientAIM(Client, Enemy);
+	coreClient[Client][10] = floatadd(1056964608, get_gametime());
+	return 0;
+}
+
+SurroundEntity(Entity, Float:Range, Float:Angles[2], Float:vecResult[3])
+{
+	static Float:vecTarget[3];
+	static Float:angTarget[3];
+	pev(Entity, 118, vecTarget);
+	pev(Entity, 124, angTarget);
+	new var2 = angTarget[1];
+	var2 = floatadd(var2, floatadd(1127481344, random_float(Angles[0], Angles[1])));
+	angle_vector(angTarget, 1, vecResult);
+	new var3 = vecResult;
+	var3[0] = floatmul(var3[0], Range);
+	new var4 = vecResult[1];
+	var4 = floatmul(var4, Range);
+	vecResult[2] = 0.0;
+	new var5 = vecResult;
+	var5[0] = floatadd(var5[0], vecTarget[0]);
+	new var6 = vecResult[1];
+	var6 = floatadd(var6, vecTarget[1]);
+	new var7 = vecResult[2];
+	var7 = floatadd(var7, vecTarget[2]);
+	new var1;
+	if (fm_trace_hull(vecResult, 1, 0, 0) && validOrigin(vecResult))
+	{
+		return 1;
+	}
+	return 0;
+}
+
+getTeleportRange(Client)
+{
+	return coreClientLevel[Client][70];
+}
+
+getTeleportKI(Client)
+{
+	return coreClientLevel[Client][71];
+}
+
+getTeleportSense(Client)
+{
+	return coreClientLevel[Client][74];
+}
+
+getAdvTeleportSense(Client)
+{
+	return coreClientLevel[Client][75];
+}
+
+VectorOnLine(Float:StartVector[3], Float:EndVector[3], StartOffset, Float:ResultVecor[3])
+{
+	static i;
+	static Float:DeltaVector[3];
+	i = 0;
+	while (i < 3)
+	{
+		DeltaVector[i] = floatsub(EndVector[i], StartVector[i]);
+		i += 1;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		ResultVecor[i] = floatadd(StartVector[i], floatdiv(DeltaVector[i] * StartOffset, vector_length(DeltaVector)));
+		i += 1;
+	}
+	return 0;
+}
+
+getNextEnemy(Client)
+{
+	static Enemy;
+	static Float:rang;
+	static Ret;
+	static Float:minr;
+	minr = float(getTeleportRange(Client));
+	Ret = 0;
+	Enemy = 1;
+	while (Enemy <= MaxPlayers)
+	{
+		if (is_user_connected(Enemy))
+		{
+			new var1;
+			if (!(!is_user_alive(Enemy) || Client != Enemy))
+			{
+				new var2;
+				if (!(getGameMODE() > 0 && getClientTEAM(Client) == getClientTEAM(Enemy)))
+				{
+					rang = fm_entity_range(Enemy, Client);
+					if (rang < minr)
+					{
+						Ret = Enemy;
+						minr = rang;
+					}
+				}
+			}
+		}
+		Enemy += 1;
+	}
+	return Ret;
+}
+
+public cmdTeleport(Client)
+{
+	static ClientTarget;
+	static i;
+	static Float:Speed;
+	if (!is_user_connected(Client))
+	{
+		return 1;
+	}
+	new var1;
+	if (coreClient[Client][27] || coreClient[Client][26] || !coreClient[Client][17] || coreClient[Client][8] > get_gametime())
+	{
+		return 1;
+	}
+	new var2;
+	if (coreClient[Client][11] || getClientWALLGND(Client) || getClientTHROW(Client) || getClientMELEE(Client) || getClientATKSHOOT(Client) || getClientPOWERUP(Client) || getClientBEAMJUMP(Client) || getClientBLOCK(Client) || getClientKIBLOCK(Client) || getClientFROZEN(Client) || getClientKI(Client) < getTeleportKI(Client))
+	{
+		return 1;
+	}
+	new var3;
+	if (getClientATKCHARGE(Client) && !coreClientLevel[Client][72])
+	{
+		return 1;
+	}
+	new var4;
+	if (getClientSWOOPING(Client) && !coreClientLevel[Client][73])
+	{
+		return 1;
+	}
+	static Float:Velocity[3];
+	pev(Client, 120, Velocity);
+	static Core[1];
+	Core[0] = Client;
+	static Float:CoreOrigin[3];
+	static Float:CoreVelocity[3];
+	static Float:TempOrigin[3];
+	static Float:TargetOrigin[3];
+	pev(Client, 118, CoreOrigin);
+	pev(Client, 120, CoreVelocity);
+	Speed = vector_length(CoreVelocity);
+	ClientTarget = getClientAIM(Client);
+	new var5;
+	if (getTeleportSense(Client) && is_user_connected(ClientTarget))
+	{
+		if (fm_entity_range(Client, ClientTarget <= getTeleportRange(Client)))
+		{
+			static Float:vecResult[3];
+			if (SurroundEntity(ClientTarget, 70.0, 1165260, vecResult))
+			{
+				createWarpFX(Client);
+				engfunc(26, Client, vecResult);
+				setClientAIM(Client, ClientTarget);
+				setClientKI(Client, floatsub(getClientKI(Client), 1069547520 * getTeleportKI(Client)));
+				coreClient[Client][8] = floatadd(get_gametime(), get_pcvar_float(CVAR_TeleDelay));
+				return 1;
+			}
+		}
+	}
+	ClientTarget = getNextEnemy(Client);
+	new var6;
+	if (getAdvTeleportSense(Client) && is_user_connected(ClientTarget) && Speed <= 100.0)
+	{
+		static Float:vecResult[3];
+		if (SurroundEntity(ClientTarget, 70.0, 1165280, vecResult))
+		{
+			createWarpFX(Client);
+			engfunc(26, Client, vecResult);
+			setClientAIM(Client, ClientTarget);
+			setClientKI(Client, floatsub(getClientKI(Client), 1073741824 * getTeleportKI(Client)));
+			coreClient[Client][8] = floatadd(get_gametime(), get_pcvar_float(CVAR_TeleDelay));
+			return 1;
+		}
+	}
+	i = 0;
+	while (i < 3)
+	{
+		new var8 = CoreVelocity[i];
+		var8 = floatdiv(var8, Speed);
+		i += 1;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		new var9 = CoreVelocity[i];
+		var9 = floatmul(var9, 1092616192 + getTeleportRange(Client));
+		i += 1;
+	}
+	i = 0;
+	while (i < 3)
+	{
+		TempOrigin[i] = floatadd(CoreOrigin[i], CoreVelocity[i]);
+		i += 1;
+	}
+	if (Speed <= 10.0)
+	{
+		static AimOrigin[3];
+		get_user_origin(Client, AimOrigin, "");
+		i = 0;
+		while (i < 3)
+		{
+			TempOrigin[i] = float(AimOrigin[i]);
+			i += 1;
+		}
+	}
+	static Float:vecImpact[3];
+	fm_trace_line(Client, CoreOrigin, TempOrigin, vecImpact);
+	if (vector_length(vecImpact) < 1036831949)
+	{
+		i = 0;
+		while (i < 3)
+		{
+			vecImpact[i] = TempOrigin[i];
+			i += 1;
+		}
+	}
+	static distance;
+	static start;
+	start = getTeleportRange(Client);
+	distance = floatround(vector_distance(CoreOrigin, vecImpact), "HamFilter");
+	if (getTeleportRange(Client) > distance)
+	{
+		start = distance;
+	}
+	i = start;
+	while (0 < i)
+	{
+		VectorOnLine(CoreOrigin, vecImpact, i, TargetOrigin);
+		new var7;
+		if (fm_trace_hull(TargetOrigin, 1, 0, 0) && validOrigin(TargetOrigin))
+		{
+			setClientWarp(Client, TargetOrigin);
+			coreClient[Client][8] = floatadd(get_gametime(), get_pcvar_float(CVAR_TeleDelay));
+			return 1;
+		}
+		i = i + -30;
+	}
+	coreClient[Client][8] = floatadd(get_gametime(), get_pcvar_float(CVAR_TeleDelay));
+	return 1;
+}
+
+setClientWarp(Client, Float:TargetVector[3])
+{
+	createWarpFX(Client);
+	engfunc(26, Client, TargetVector);
+	setClientKI(Client, getClientKI(Client) - getTeleportKI(Client));
+	return 0;
+}
+
+Float:getNextThink(Float:Delay)
+{
+	static Float:Time;
+	global_get(9, Time);
+	return floatadd(Time, Delay);
+}
+
+createWarpFX(Client)
+{
+	static AfterImage;
+	AfterImage = engfunc(21, engfunc(43, "env_model"));
+	if (!pev_valid(AfterImage))
+	{
+		return 0;
+	}
+	static Model[65];
+	static ClientModel[23];
+	getClientMODEL(Client, ClientModel);
+	formatex(Model, 64, "models/player/%s/%s.mdl", ClientModel, ClientModel);
+	set_pev(AfterImage, 1, "AdvancedAfterFX");
+	set_pev(AfterImage, 18, Client);
+	engfunc(2, AfterImage, Model);
+	set_pev(AfterImage, 69, 5);
+	set_pev(AfterImage, 131, 1165880);
+	set_pev(AfterImage, 132, 1165892);
+	set_pev(AfterImage, 70, 1);
+	static Float:vecAngles[3];
+	pev(Client, 124, vecAngles);
+	set_pev(AfterImage, 124, vecAngles);
+	static Float:vecOrigin[3];
+	pev(Client, 118, vecOrigin);
+	engfunc(26, AfterImage, vecOrigin);
+	set_pev(AfterImage, 77, 4);
+	set_pev(AfterImage, xs__ITaskId, 1132396544);
+	dllfunc(1, AfterImage);
+	set_pev(AfterImage, 106, 120);
+	set_pev(AfterImage, 107, 120);
+	set_pev(AfterImage, 108, 120);
+	set_pev(AfterImage, 109, 120);
+	set_pev(AfterImage, 75, pev(Client, 75));
+	static Float:Frame;
+	pev(Client, 36, Frame);
+	set_pev(AfterImage, 36, Frame);
+	switch (get_pcvar_num(CVAR_TeleStyle))
+	{
+		case 0:
+		{
+			static Float:CoreVelocity[3];
+			pev(Client, 120, CoreVelocity);
+			set_pev(AfterImage, 120, CoreVelocity);
+			set_pev(AfterImage, 38, 1065353216);
+		}
+		default:
+		{
+			set_pev(AfterImage, 38, 0);
+		}
+	}
+	static Sound[32];
+	formatex(Sound, 31, "evolution/teleport.%i.wav", random_num(1, ""));
+	emit_sound(Client, "", Sound, 1065353216, 1061997773, "HamFilter", 100);
+	set_pev(AfterImage, 33, getNextThink(1.0));
+	return 1;
+}
+
+public afterFxThink(Entity)
+{
+	if (!pev_valid(Entity))
+	{
+		return 1;
+	}
+	set_pev(Entity, 33, getNextThink(floatdiv(1065353216, 1106247680)));
+	static Float:Opacity;
+	pev(Entity, xs__ITaskId, Opacity);
+	Opacity = floatsub(Opacity, 1093664768);
+	if (Opacity <= 0.0)
+	{
+		engfunc(20, Entity);
+	}
+	else
+	{
+		set_pev(Entity, xs__ITaskId, Opacity);
+	}
+	return 1;
+}
+
+public ChargePushLoop(Core[])
+{
+	new Client = Core[0];
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	if (!is_user_alive(Client))
+	{
+		return 0;
+	}
+	radiusPush(Client, 400.0, float(getClientACPL(Client)));
+	return 0;
+}
+
+radiusPush(Target, Float:Radius, Float:Strength)
+{
+	static ClassName[32];
+	new End = global_get(6);
+	new Float:AStrength = Strength;
+	if (get_maxplayers() >= Target)
+	{
+		AStrength = floatdiv(AStrength, 1176256512);
+	}
+	new Entity = 1;
+	while (Entity <= End)
+	{
+		if (pev_valid(Entity))
+		{
+			if (!(Entity == Target))
+			{
+				if (!(pev(Entity, 18) == Target))
+				{
+					if (!(fm_entity_range(Target, Entity) > Radius))
+					{
+						if (is_user_connected(Entity))
+						{
+							if (!float(getClientACPL(Entity) / 1176256512 >= floatmul(1069547520, AStrength)))
+							{
+								pushPlayer(Target, Entity);
+							}
+						}
+						else
+						{
+							static Float:dmg;
+							pev(Entity, 50, dmg);
+							if (!(dmg >= AStrength))
+							{
+								pev(Entity, 1, ClassName, 31);
+								new PushClass;
+								while (PushClass < 23)
+								{
+									if (equal(ClassName, PushCore[PushClass], "HamFilter"))
+									{
+										pushEntity(Target, Entity);
+									}
+									PushClass++;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		Entity++;
+	}
+	return 0;
+}
+
+pushEntity(Target, Entity)
+{
+	static Float:vecVelocity[3];
+	static Float:vecTarget[3];
+	static Float:vecEntity[3];
+	pev(Target, 118, vecTarget);
+	pev(Entity, 118, vecEntity);
+	xs_vec_sub(vecEntity, vecTarget, vecVelocity);
+	xs_vec_normalize(vecVelocity, vecVelocity);
+	xs_vec_mul_scalar(vecVelocity, 600.0, vecVelocity);
+	set_pev(Entity, 120, vecVelocity);
+	return 0;
+}
+
+pushPlayer(Target, Player)
+{
+	new var1;
+	if (!is_user_alive(Player) || coreClient[Player][11] || getClientATKSHOOT(Player) || getClientMELEE(Player) || getClientFROZEN(Player) || getClientATKCHARGE(Player))
+	{
+		return 0;
+	}
+	set_pev(Player, 69, 5);
+	static Float:vecVelocity[3];
+	static Float:vecTarget[3];
+	static Float:vecEntity[3];
+	pev(Target, 118, vecTarget);
+	pev(Player, 118, vecEntity);
+	xs_vec_sub(vecEntity, vecTarget, vecVelocity);
+	xs_vec_normalize(vecVelocity, vecVelocity);
+	xs_vec_mul_scalar(vecVelocity, 800.0, vecVelocity);
+	set_pev(Player, 120, vecVelocity);
+	new Core[1];
+	Core[0] = Player;
+	set_task(1069547520, "resetMoveType", 9827345, Core, 1, 1157364, "HamFilter");
+	return 0;
+}
+
+public resetMoveType(Core[])
+{
+	new var1;
+	if (!is_user_connected(Core[0]) || getClientSWOOPING(Core[0]))
+	{
+		return 1;
+	}
+	if (getClientFLY(Core[0]))
+	{
+		set_pev(Core[0], 69, 14);
+	}
+	else
+	{
+		set_pev(Core[0], 69, 3);
+	}
+	return 1;
+}
+
+public ResetChargePushDelay(Core[])
+{
+	PushDelay[Core[0]] = 0;
+	return 0;
+}
+
+public StopPushAnimation(Core[])
+{
+	if (!is_user_connected(Core[0]))
+	{
+		return 1;
+	}
+	if (!getClientPOWERUP(Core[0]))
+	{
+		return 1;
+	}
+	set_pev(Core[0], 75, 27);
+	return 1;
+}
+
+public PushFX(Core[])
+{
+	if (!is_user_connected(Core[0]))
+	{
+		return 0;
+	}
+	AddFx(Core[0], "fxBlow");
+	return 0;
+}
+
+ChargePush(Client)
+{
+	PushDelay[Client] = 1;
+	emit_sound(Client, 5, "evolution/push.wav", 1065353216, 1061997773, "HamFilter", 100);
+	new Core[1];
+	Core[0] = Client;
+	if (isDeveloper(Client))
+	{
+		set_task(1075838976, "ResetChargePushDelay", uniqueTaskID(Client, 267), Core, 1, 1168100, 1);
+	}
+	else
+	{
+		set_task(1084227584, "ResetChargePushDelay", uniqueTaskID(Client, 267), Core, 1, 1168192, 1);
+	}
+	set_task(1065353216, "StopPushAnimation", "HamFilter", Core, 1, 1168272, 1);
+	set_task(1036831949, "ChargePushLoop", "HamFilter", Core, 1, 1168340, 10);
+	set_task(1036831949, "PushFX", "HamFilter", Core, 1, 1168376, "");
+	return 0;
+}
+
+Push_PreThink(Client)
+{
+	new var1;
+	if (getClientPOWERUP(Client) && !PushPowerUp[Client] && !pev(Client, 81) & 1)
+	{
+		PushPowerUp[Client] = 1;
+	}
+	else
+	{
+		if (!getClientPOWERUP(Client))
+		{
+			PushPowerUp[Client] = 0;
+		}
+	}
+	new var2;
+	if (PushPowerUp[Client] && pev(Client, 81) & 1)
+	{
+		static Float:vecVelocityPUSH[3];
+		pev(Client, 120, vecVelocityPUSH);
+		new var3;
+		if (!PushDelay[Client] && coreClient[Client][16] && is_user_alive(Client) && vector_length(vecVelocityPUSH) <= 1092616192 && !getClientPROTECT(Client) && !coreClient[Client][26])
+		{
+			ChargePush(Client);
+		}
+	}
+	return 0;
+}
+
+Push_ClientConnect(Client)
+{
+	coreClient[Client][16] = 1;
+	PushDelay[Client] = 0;
+	PushPowerUp[Client] = 0;
+	return 0;
+}
+
+searchWeaponTarget(Entity, Flags, Float:vecStart[3], Float:MaxDistance)
+{
+	static End;
+	static Start;
+	new Float:MinRange = 99999.0;
+	new Float:Range = 0.0;
+	new var1;
+	if (Flags & 1 && Flags & 2)
+	{
+		Start = 1;
+	}
+	else
+	{
+		if (Flags & 2)
+		{
+			Start = MaxPlayers + 1;
+		}
+		Start = 1;
+	}
+	if (Flags & 2)
+	{
+		End = global_get(6);
+	}
+	else
+	{
+		End = get_maxplayers();
+	}
+	new Owner = pev(Entity, 18);
+	if (is_user_connected(Entity))
+	{
+		Owner = Entity;
+	}
+	if (!is_user_connected(Owner))
+	{
+		return 0;
+	}
+	new Team = getClientTEAM(Owner);
+	new GameMode = getGameMODE();
+	new TargetOwner;
+	static Class[32];
+	static Float:vecTarget[3];
+	static Float:vecTemp[3];
+	new PrefTarget;
+	new Target = Start;
+	while (Target < End)
+	{
+		if (pev_valid(Target))
+		{
+			if (!(Owner == Target))
+			{
+				if (Target <= MaxPlayers)
+				{
+					new var2;
+					if (!(!is_user_connected(Target) || !is_user_alive(Target) || getClientMELEE(Target) || getClientGOD(Target) || getClientPROTECT(Target)))
+					{
+						if (GameMode)
+						{
+							if (getClientTEAM(Target) == Team)
+							{
+							}
+						}
+					}
+				}
+				else
+				{
+					TargetOwner = pev(Target, 18);
+					if (!(Owner == TargetOwner))
+					{
+						if (is_user_connected(TargetOwner))
+						{
+							if (GameMode)
+							{
+								if (getClientTEAM(TargetOwner) == Team)
+								{
+								}
+							}
+							pev(Target, 1, Class, 31);
+						}
+					}
+				}
+				pev(Target, 118, vecTarget);
+				if (!(fm_trace_line(Entity, vecStart, vecTarget, vecTemp) != Target))
+				{
+					Range = vector_distance(vecTarget, vecStart);
+					new var3;
+					if (Range < MaxDistance && Range < MinRange)
+					{
+						MinRange = Range;
+						PrefTarget = Target;
+					}
+				}
+			}
+		}
+		Target++;
+	}
+	return PrefTarget;
+}
+
+setEntityVELOCITY(Entity, Target, Float:Speed)
+{
+	static Float:vecOrigin[3];
+	static Float:vecTarget[3];
+	pev(Entity, 118, vecOrigin);
+	pev(Target, 118, vecTarget);
+	vecOrigin[0] = floatsub(vecTarget[0], vecOrigin[0]);
+	vecOrigin[1] = floatsub(vecTarget[1], vecOrigin[1]);
+	vecOrigin[2] = floatsub(vecTarget[2], vecOrigin[2]);
+	new Float:Length = vector_length(vecOrigin);
+	new var1 = vecOrigin;
+	var1[0] = floatdiv(var1[0], Length);
+	new var2 = vecOrigin[1];
+	var2 = floatdiv(var2, Length);
+	new var3 = vecOrigin[2];
+	var3 = floatdiv(var3, Length);
+	new var4 = vecOrigin;
+	var4[0] = floatmul(var4[0], Speed);
+	new var5 = vecOrigin[1];
+	var5 = floatmul(var5, Speed);
+	new var6 = vecOrigin[2];
+	var6 = floatmul(var6, Speed);
+	set_pev(Entity, 69, 5);
+	set_pev(Entity, 120, vecOrigin);
+	return 0;
+}
+
+setWeaponHOMING(Entity, bool:Enable, Float:Speed, Start, Flags)
+{
+	if (!pev_valid(Entity))
+	{
+		return 0;
+	}
+	if (!Enable)
+	{
+		remove_task(Entity + 100000, "HamFilter");
+		return 1;
+	}
+	new Client = pev(Client, 18);
+	static ivecOrigin[3];
+	static Float:vecOrigin[3];
+	switch (Start)
+	{
+		case 0:
+		{
+			get_user_origin(Client, ivecOrigin, "HamFilter");
+			IVecFVec(ivecOrigin, vecOrigin);
+		}
+		case 1:
+		{
+			get_user_origin(Client, ivecOrigin, "");
+			IVecFVec(ivecOrigin, vecOrigin);
+		}
+		case 2:
+		{
+			pev(Entity, 118, vecOrigin);
+			Flags |= 4;
+		}
+		default:
+		{
+		}
+	}
+	new Target = searchWeaponTarget(Entity, Flags, vecOrigin, 20000.0);
+	if (!Target)
+	{
+		return 0;
+	}
+	static Options[3];
+	Options[0] = Target;
+	Options[1] = Flags;
+	Options[2] = Speed;
+	set_pev(Entity, 139, Options);
+	new CORE[1];
+	CORE[0] = Entity;
+	set_task(1036831949, "TASK_Homing", Entity + 100000, CORE, 1, 1168664, "HamFilter");
+	return 1;
+}
+
+public TASK_Homing(CORE[])
+{
+	new Entity = CORE[0];
+	if (!pev_valid(Entity))
+	{
+		remove_task(Entity + 100000, "HamFilter");
+		return 0;
+	}
+	static Float:vecOrigin[3];
+	static Options[3];
+	pev(Entity, 139, Options);
+	new Target;
+	new Flags;
+	new Float:Speed = 0.0;
+	Target = Options[0];
+	Flags = Options[1];
+	Speed = Options[2];
+	if (Flags & 4)
+	{
+		pev(Entity, 118, vecOrigin);
+		Target = searchWeaponTarget(Entity, Flags, vecOrigin, 20000.0);
+	}
+	if (!pev_valid(Target))
+	{
+		remove_task(Entity + 100000, "HamFilter");
+		return 0;
+	}
+	static Float:vecVelocity[3];
+	pev(Entity, 120, vecVelocity);
+	if (fm_entity_range(Entity, Target) < 1117782016)
+	{
+		remove_task(Entity + 100000, "HamFilter");
+		return 0;
+	}
+	setClientAIM(Entity, Target);
+	setEntityVELOCITY(Entity, Target, Speed);
+	return 0;
+}
+
+Float:clampf(Float:Value, Float:Min, Float:Max)
+{
+	if (Value < Min)
+	{
+		return Min;
+	}
+	if (Value > Max)
+	{
+		return Max;
+	}
+	return Value;
+}
+
+Float:FORMULA_Damage(Float:b, Float:m, Float:pl, Float:k, Float:Charge)
+{
+	return floatmul(floatmul(floatadd(m, floatmul(floatsub(b, m), floatpower(1076754516, floatmul(-1 / floatmul(m, k), floatdiv(pl, 1232348160))))), get_pcvar_float(CVAR_DmgMp)), floatdiv(Charge, 1120403456));
+}
+
+getDamageCore(Weapon[])
+{
+	new i;
+	while (i < 110)
+	{
+		if (equal(Weapon, DamageCore[i], "HamFilter"))
+		{
+			DATA[0] = str_to_float(DamageCore[i + 1]);
+			DATA[1] = str_to_float(DamageCore[i + 2]);
+			DATA[2] = str_to_float(DamageCore[i + 3]);
+			DATA[3] = str_to_float(DamageCore[i + 4]);
+			return 0;
+		}
+		i += 5;
+	}
+	return 0;
+}
+
+Damage_Init()
+{
+	register_message(get_user_msgid("Ball"), "HooK_FX_Ball");
+	register_message(get_user_msgid("EETrail"), "HooK_FX_EETrail");
+	register_message(get_user_msgid("Flare"), "HooK_FX_Flare");
+	register_message(get_user_msgid("SBCTrail"), "HooK_FX_SBCTrail");
+	register_message(get_user_msgid("Explosion"), "HooK_FX_Explosion");
+	register_message(get_user_msgid("KillTrail"), "HooK_FX_KillTrail");
+	register_message(get_user_msgid("AddEffect"), "HooK_FX_AddEffect");
+	register_event("Charge", "HooK_DamageCharge", 1172380, 1172388);
+	CVAR_DmgMp = register_cvar(".Ascend.Damage.Multiplier", "1.0", 4, "HamFilter");
+	MSGID_Xplosion = get_user_msgid("Explosion");
+	MSGID_Ball = get_user_msgid("Ball");
+	return 0;
+}
+
+public __setWeaponHOMING()
+{
+	setWeaponHOMING(get_param(1), true, get_param_f(2), get_param(""), get_param(4));
+	return 1;
+}
+
+public __setWeaponXPC()
+{
+	DATA[3] = float(get_param(1));
+	return 1;
+}
+
+public __setWeaponXPM()
+{
+	DATA[4] = get_param_f(1);
+	return 1;
+}
+
+public __setWeaponDMG()
+{
+	DATA[0] = get_param_f(1);
+	DATA[1] = get_param_f("");
+	DATA[2] = get_param_f(2);
+	return 1;
+}
+
+public __attachWeaponHEAD()
+{
+	static Model[65];
+	get_string(2, Model, 64);
+	new Entity = get_param(1);
+	if (!pev_valid(Entity))
+	{
+		return 0;
+	}
+	new Head = engfunc(21, engfunc(43, "env_sprite"));
+	if (!Head)
+	{
+		return 0;
+	}
+	set_pev(Head, 1, "CustomWeaponHead");
+	set_pev(Head, 18, Entity);
+	set_pev(Head, 70, 0);
+	engfunc(2, Head, Model);
+	set_pev(Head, 77, get_param(""));
+	set_pev(Head, xs__ITaskId, get_param_f(4));
+	set_pev(Head, 39, get_param_f(5));
+	set_pev(Head, 38, get_param_f(6));
+	dllfunc(1, Head);
+	set_pev(Head, 69, 12);
+	set_pev(Head, 17, Entity);
+	set_pev(Entity, 102, Head);
+	return 1;
+}
+
+public __setBallStyle()
+{
+	CustomStyle[0] = get_param(1);
+	CustomStyle[1] = get_param(2);
+	return 1;
+}
+
+public HooK_DamageCharge(Client)
+{
+	if (!read_data(1))
+	{
+		return 0;
+	}
+	g_ClientCHARGE[Client] = read_data(1);
+	return 0;
+}
+
+public HooK_FX_Ball()
+{
+	MSGQueue[MSGCounter][0] = get_msg_arg_int(1);
+	MSGQueue[MSGCounter][1] = get_msg_arg_int(2);
+	MSGCounter += 1;
+	MSGQueue[MSGCounter][2] = get_msg_arg_int("");
+	return 1;
+}
+
+HooK_Ball_Queued(Entity, Sprite, Size)
+{
+	updateDamage(Entity);
+	new Client = pev(Entity, 18);
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	if (!coreClassExtensions[coreClient[Client][0]][361])
+	{
+		return 0;
+	}
+	pev(Entity, 1, globalClass, 31);
+	CustomStyle[0] = Sprite;
+	CustomStyle[1] = Size;
+	if (0 < coreClassExtensions[coreClient[Client][0]][370])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][370], FWD_Return, Client, Entity, globalClass, Sprite, Size);
+	}
+	message_begin("HamFilter", MSGID_Ball, 1164156, "HamFilter");
+	write_short(Entity);
+	write_short(CustomStyle[0]);
+	write_short(CustomStyle[1]);
+	message_end();
+	return 0;
+}
+
+public HooK_FX_Flare()
+{
+	new Entity = get_msg_arg_int(1);
+	new Client = pev(Entity, 18);
+	updateDamage(Entity);
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	if (!coreClassExtensions[coreClient[Client][0]][361])
+	{
+		return 0;
+	}
+	pev(Entity, 1, globalClass, 31);
+	if (0 < coreClassExtensions[coreClient[Client][0]][369])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][369], FWD_Return, Client, Entity, globalClass, get_msg_arg_int(4));
+	}
+	return 0;
+}
+
+public HooK_FX_EETrail()
+{
+	new Entity = get_msg_arg_int(2);
+	new Client = pev(Entity, 18);
+	updateDamage(Entity);
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	if (!coreClassExtensions[coreClient[Client][0]][361])
+	{
+		return 0;
+	}
+	pev(Entity, 1, globalClass, 31);
+	if (0 < coreClassExtensions[coreClient[Client][0]][368])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][368], FWD_Return, Client, Entity, globalClass, get_msg_arg_int(9));
+	}
+	return 0;
+}
+
+public HooK_FX_SBCTrail()
+{
+	new Entity = get_msg_arg_int(2);
+	new Client = pev(Entity, 18);
+	updateDamage(Entity);
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	if (!coreClassExtensions[coreClient[Client][0]][361])
+	{
+		return 0;
+	}
+	pev(Entity, 1, globalClass, 31);
+	if (0 < coreClassExtensions[coreClient[Client][0]][371])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][371], FWD_Return, Client, Entity, globalClass);
+	}
+	return 0;
+}
+
+public HooK_FX_Explosion()
+{
+	return 1;
+}
+
+public HooK_FX_KillTrail()
+{
+	new Entity = get_msg_arg_int(1);
+	static Float:vecOrigin[3];
+	pev(Entity, 118, vecOrigin);
+	static Float:Style[3];
+	pev(Entity, 138, Style);
+	static Class[32];
+	pev(Entity, 1, Class, 31);
+	if (equal(Class, "shieldattack", "HamFilter"))
+	{
+		Style[0] = 1082130432;
+	}
+	static Float:Velocity[3];
+	pev(Entity, 120, Velocity);
+	new var1;
+	if ((equal(Class, "Spirit Bomb", "HamFilter") || equal(Class, "Death Ball", "HamFilter")) && vector_length(Velocity) < 1065353216)
+	{
+		return 0;
+	}
+	static Float:Damage;
+	pev(Entity, 50, Damage);
+	message_begin(2, MSGID_Xplosion, 1164156, "HamFilter");
+	write_coord(floatround(vecOrigin[0], "HamFilter"));
+	write_coord(floatround(vecOrigin[1], "HamFilter"));
+	write_coord(floatround(vecOrigin[2], "HamFilter"));
+	write_long(floatround(clampf(Damage, floatmul(1073741824, floatmul(1124204544, Style[1])), 100000.0), "HamFilter"));
+	write_byte(floatround(Style[0], "HamFilter"));
+	message_end();
+	setWeaponHOMING(Entity, false, 0.0, 0, 0);
+	new CWeapon = pev(Entity, 102);
+	if (pev_valid(CWeapon))
+	{
+		engfunc(20, CWeapon);
+	}
+	set_pev(Entity, 102, 0);
+	return 0;
+}
+
+public updateDamage(Entity)
+{
+	if (!pev_valid(Entity))
+	{
+		return 0;
+	}
+	static Class[32];
+	pev(Entity, 1, Class, 31);
+	new Client = pev(Entity, 18);
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	new Power = getClientACPL(Client);
+	new Charge = g_ClientCHARGE[Client];
+	new var1;
+	if (equal(Class, "kiblast", "HamFilter") || equal(Class, "scattershot", "HamFilter"))
+	{
+		Charge = 100;
+	}
+	getDamageCore(Class);
+	if (DATA[0] >= 0.0)
+	{
+		set_pev(Entity, 50, FORMULA_Damage(DATA[0], DATA[2], float(Power), DATA[1], float(Charge)));
+	}
+	static Float:vecStyle[3];
+	vecStyle[0] = DATA[3];
+	set_pev(Entity, 138, vecStyle);
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	if (!coreClassExtensions[coreClient[Client][0]][361])
+	{
+		return 0;
+	}
+	DATA[4] = 1065353216;
+	if (0 < coreClassExtensions[coreClient[Client][0]][367])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][367], FWD_Return, Client, Entity, Class, Power, Charge);
+	}
+	if (DATA[0] >= 0.0)
+	{
+		set_pev(Entity, 50, FORMULA_Damage(DATA[0], DATA[2], float(Power), DATA[1], float(Charge)));
+	}
+	vecStyle[0] = DATA[3];
+	vecStyle[1] = DATA[4];
+	set_pev(Entity, 138, vecStyle);
+	return 0;
+}
+
+public HooK_FX_AddEffect()
+{
+	if (get_msg_arg_int(1) != 2)
+	{
+		return 0;
+	}
+	new Entity = get_msg_arg_int(2);
+	static Float:Damage;
+	static Float:Style[3];
+	pev(Entity, 138, Style);
+	pev(Entity, 50, Damage);
+	set_msg_arg_int(6, "", floatround(clampf(floatmul(Damage, Style[1]), 130.0, 100000.0), "HamFilter"));
+	static Float:vecOrigin[3];
+	pev(Entity, 118, vecOrigin);
+	set_msg_arg_float("", 6, vecOrigin[0]);
+	set_msg_arg_float(4, 6, vecOrigin[1]);
+	set_msg_arg_float(5, 6, vecOrigin[2]);
+	return 0;
+}
+
+public HooK_FX_Death()
+{
+	new Killer = get_msg_arg_int(1);
+	new Client = get_msg_arg_int(2);
+	if (0 > coreClient[Killer][0])
+	{
+		return 0;
+	}
+	if (!coreClassExtensions[coreClient[Killer][0]][361])
+	{
+		return 0;
+	}
+	static Weapon[32];
+	get_msg_arg_string("", Weapon, 31);
+	if (0 < coreClassExtensions[coreClient[Killer][0]][372])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Killer][0]][372], FWD_Return, Client, Killer, Weapon);
+	}
+	return 0;
+}
+
+public cmdBoost(Client)
+{
+	new var1;
+	if (!get_pcvar_num(CVAR_Boost) || !coreClient[Client][18] || coreClient[Client][26] || 0 == coreClientLevel[Client][69] || coreClient[Client][0] < 0 || coreClient[Client][9] > get_gametime())
+	{
+		return 0;
+	}
+	new var2;
+	if (!getClientSWOOPING(Client) || getClientKI(Client) < 100)
+	{
+		return 0;
+	}
+	static Float:vecVelocity[3];
+	pev(Client, 120, vecVelocity);
+	setClientKI(Client, getClientKI(Client) - 100);
+	new i;
+	while (i < 3)
+	{
+		new var3 = vecVelocity[i];
+		var3 = floatmul(var3, coreClientLevel[Client][69]);
+		i++;
+	}
+	set_pev(Client, 120, vecVelocity);
+	if (!isDeveloper(Client))
+	{
+		coreClient[Client][9] = floatadd(1092616192, get_gametime());
+	}
+	emit_sound(Client, "", "evolution/boost.wav", 1065353216, 1061997773, "HamFilter", 100);
+	return 0;
+}
+
+gorePreCache()
+{
+	SPR_Blood = precache_model("sprites/blood.spr");
+	SPR_BloodSpray = precache_model("sprites/bloodspray.spr");
+	return 0;
+}
+
+goreInit()
+{
+	CVAR_GoreBleed = register_cvar(".Ascend.Gore.Bleed", 1174236, 4, "HamFilter");
+	set_task(1077936128, "THREAD_Bleed", "HamFilter", 1174304, "HamFilter", 1174296, "HamFilter");
+	return 0;
+}
+
+goreDeath(Client)
+{
+	if (getClientSPECTATOR(Client))
+	{
+		return 0;
+	}
+	GoreDMG(Client, 50);
+	return 0;
+}
+
+gorePreThink(Client)
+{
+	new Health = getClientHP(Client);
+	new var1;
+	if (Health < PreHealth[Client] && getClientMHP(Client) == PreMaxHealth[Client])
+	{
+		GoreDMG(Client, PreHealth[Client] - Health);
+	}
+	PreHealth[Client] = getClientHP(Client);
+	PreMaxHealth[Client] = getClientMHP(Client);
+	return 0;
+}
+
+public THREAD_Bleed()
+{
+	if (!get_pcvar_num(CVAR_GoreBleed))
+	{
+		return 0;
+	}
+	static Client;
+	static Health;
+	Client = 1;
+	while (Client <= MaxPlayers)
+	{
+		new var1;
+		if (!is_user_connected(Client) || !is_user_alive(Client))
+		{
+		}
+		else
+		{
+			Health = getClientHP(Client);
+			new var2;
+			if (Health > 0 && Health <= 10)
+			{
+				GoreBLEED(Client, Health);
+			}
+		}
+		Client += 1;
+	}
+	return 0;
+}
+
+public GoreDMG(Client, HealthLoss)
+{
+	GORE_FX_BloodStream(Client, 2, 69, HealthLoss);
+	return 0;
+}
+
+public GoreBLEED(Client, Health)
+{
+	GORE_FX_BloodStream(Client, 3, 69, 10);
+	return 0;
+}
+
+GORE_FX_Blood(Client, SpriteA, SpriteB, Color, Size)
+{
+	static Origin[3];
+	get_user_origin(Client, Origin, "HamFilter");
+	message_begin("HamFilter", 23, 1164156, "HamFilter");
+	write_byte(115);
+	write_coord(Origin[0]);
+	write_coord(Origin[1]);
+	write_coord(Origin[2]);
+	write_short(SpriteA);
+	write_short(SpriteB);
+	write_byte(Color);
+	write_byte(Size);
+	message_end();
+	return 0;
+}
+
+GORE_FX_Splash(Client, Radius, Color, Life)
+{
+	static Origin[3];
+	get_user_origin(Client, Origin, "HamFilter");
+	message_begin("HamFilter", 23, 1164156, "HamFilter");
+	write_byte(122);
+	write_coord(Origin[0]);
+	write_coord(Origin[1]);
+	write_coord(Origin[2]);
+	write_short(Radius);
+	write_byte(Color);
+	write_byte(Life);
+	message_end();
+	return 0;
+}
+
+GORE_FX_BloodStream(Client, Count, Color, Speed)
+{
+	static Origin[3];
+	get_user_origin(Client, Origin, "HamFilter");
+	static Angle[3];
+	Angle[0] = random_num(-180, 180);
+	Angle[1] = random_num(-180, 180);
+	Angle[2] = random_num(-20, 20);
+	new i = 1;
+	while (i <= Count)
+	{
+		message_begin("HamFilter", 23, 1164156, "HamFilter");
+		write_byte(101);
+		write_coord(Origin[0]);
+		write_coord(Origin[1]);
+		write_coord(Origin[2]);
+		write_coord(i * 10 + Angle[0]);
+		write_coord(Angle[1] - i * 10);
+		write_coord(Angle[2]);
+		write_byte(Color);
+		write_byte(i + Speed);
+		message_end();
+		i++;
+	}
+	return 0;
+}
+
+public cmdGORE(Client)
+{
+	GORE_FX_Blood(Client, SPR_BloodSpray, SPR_Blood, 229, 12);
+	GORE_FX_Splash(Client, 200, 69, 7);
+	GORE_FX_BloodStream(Client, 5, 69, 80);
+	return 1;
+}
+
+createIcon(Id, Source[], O1, O2)
+{
+	if (IconCTR >= 256)
+	{
+		return 0;
+	}
+	if (!Id)
+	{
+		copy(GlobalIconRegister[IconCTR], 32, Source);
+		GlobalIconRegister[IconCTR][33] = O1;
+		GlobalIconRegister[IconCTR][34] = O2;
+		IconCTR = IconCTR + 1;
+		return IconCTR + -1;
+	}
+	copy(GlobalIconRegister[Id], 32, Source);
+	GlobalIconRegister[Id][33] = O1;
+	GlobalIconRegister[Id][34] = O2;
+	return Id;
+}
+
+getGlobalIconIndexFromSource(Source[])
+{
+	static Index;
+	Index = 1;
+	while (Index <= IconCTR)
+	{
+		if (equal(GlobalIconRegister[Index], Source, "HamFilter"))
+		{
+			return Index;
+		}
+		Index += 1;
+	}
+	return 0;
+}
+
+getClientIconFromGlobalIcon(Client, Icon)
+{
+	static Index;
+	Index = 1;
+	while (ClientIconCTR[Client] >= Index)
+	{
+		new var2;
+		if (Icon == ClientIconRegister[Client][Index][0] && (ClientIconRegister[Client][Index][2] || Index < 35))
+		{
+			return Index;
+		}
+		Index += 1;
+	}
+	return 0;
+}
+
+fireIconCallback(Client, Icon, PreIcon)
+{
+	static i;
+	i = 0;
+	while (i < IconHookCTR)
+	{
+		ExecuteForward(IconHook[i], FWD_Return, Client, Icon, PreIcon);
+		i += 1;
+	}
+	return 0;
+}
+
+hasClientGlobalIcon(Client, Icon)
+{
+	static Index;
+	Index = 1;
+	while (ClientIconCTR[Client] >= Index)
+	{
+		if (Icon == ClientIconRegister[Client][Index][0])
+		{
+			return ClientIconRegister[Client][Index][1];
+		}
+		Index += 1;
+	}
+	return 0;
+}
+
+Icon_Natives()
+{
+	createIcon(1, "weapon_melee", 0, 0);
+	createIcon(2, "weapon_sword", 0, 1);
+	createIcon(3, "weapon_kiblast", 1, 0);
+	createIcon(4, "weapon_genericbeam", 2, 0);
+	createIcon(5, "weapon_gallitgun", 3, 0);
+	createIcon(6, "weapon_kamehameha", 3, 1);
+	createIcon(7, "weapon_destructodisc", 4, 0);
+	createIcon(8, "weapon_solarflare", 5, 0);
+	createIcon(9, "weapon_eyelaser", 4, 2);
+	createIcon(10, "weapon_friezadisc", 4, 1);
+	createIcon(11, "weapon_specialbeamcannon", 3, 2);
+	createIcon(12, "weapon_spiritbomb", 4, 3);
+	createIcon(13, "weapon_bigbang", 4, 4);
+	createIcon(14, "weapon_fingerlaser", 3, 4);
+	createIcon(15, "weapon_finalflash", 5, 1);
+	createIcon(16, "weapon_masenko", 5, 2);
+	createIcon(17, "weapon_deathball", 5, 3);
+	createIcon(18, "weapon_burningattack", 3, 3);
+	createIcon(19, "weapon_scatterbeam", 6, 0);
+	createIcon(20, "weapon_candy", 4, 5);
+	createIcon(21, "weapon_scattershot", 6, 3);
+	createIcon(22, "weapon_powerbeam", 5, 4);
+	createIcon(23, "weapon_mouthblast", 3, 5);
+	createIcon(24, "weapon_finishingbuster", 4, 6);
+	createIcon(25, "weapon_sensu", 8, 0);
+	createIcon(26, "weapon_dragonball", 7, 0);
+	createIcon(27, "weapon_bodypart", 5, 5);
+	createIcon(28, "weapon_shieldattack", 4, 7);
+	createIcon(29, "weapon_regeneration", 6, 1);
+	createIcon(30, "weapon_renzoku", 1, 2);
+	createIcon(32, "weapon_kametorpedo", 6, 2);
+	createIcon(33, "weapon_telekinesis", 6, 4);
+	createIcon(34, "weapon_flamethrower", 6, 5);
+	register_native("createCustomICON", "__createCustomICON", "HamFilter");
+	register_native("replaceClientICON", "__replaceClientICON", "HamFilter");
+	register_native("removeClientICON", "__removeClientICON", "HamFilter");
+	register_native("giveClientICON", "__giveClientICON", "HamFilter");
+	register_native("addIconHOOK", "__addIconHOOK", "HamFilter");
+	register_native("getIconINDEX", "__getIconINDEX", "HamFilter");
+	register_native("getClientICON", "__getClientICON", "HamFilter");
+	register_native("setClientICON", "__setClientICON", "HamFilter");
+	register_native("getClientPICON", "__getClientPICON", "HamFilter");
+	register_native("hasClientICON", "__hasClientICON", "HamFilter");
+	return 0;
+}
+
+Icon_Init()
+{
+	MSGID_WeaponList = MSGID("WeaponList");
+	MSGID_WeapUpdate = MSGID("WeapUpdate");
+	MSGID_CurWeapon = MSGID("CurWeapon");
+	register_message(MSGID_CurWeapon, "CurWeapon");
+	register_message(MSGID_WeapUpdate, "WeapUpdate");
+	register_forward(102, "ClientCommand", "HamFilter");
+	return 0;
+}
+
+Icon_forceClientCLASS(Client)
+{
+	BlockCurWeapon[Client] = 0;
+	purgeClientICONS(Client);
+	if (0 < coreClassExtensions[coreClient[Client][0]][373])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][373], FWD_Return, Client, coreClient[Client][3]);
+	}
+	return 0;
+}
+
+public WeapUpdate()
+{
+	return 1;
+}
+
+public CurWeapon(ID, MSG, Client)
+{
+	if (0 < BlockCurWeapon[Client])
+	{
+		BlockCurWeapon[Client] -= 1;
+		return 1;
+	}
+	return 0;
+}
+
+public ClientCommand(Client)
+{
+	static Icon;
+	static Command[33];
+	read_argv("HamFilter", Command, 32);
+	new var1;
+	if (contain(Command, "c_weapon_") && contain(Command, "special_") && contain(Command, "fusion_"))
+	{
+		Icon = getGlobalIconIndexFromSource(Command);
+		if (!Icon)
+		{
+			return 4;
+		}
+		if (!hasClientGlobalIcon(Client, Icon))
+		{
+			return 4;
+		}
+		CurrentClientIcon[Client] = Icon;
+		if (PreviousClientIcon[Client] != CurrentClientIcon[Client])
+		{
+			fireIconCallback(Client, CurrentClientIcon[Client], PreviousClientIcon[Client]);
+			PreviousClientIcon[Client] = CurrentClientIcon[Client];
+		}
+		if (0 < ClientIconOverride[Client][Icon][1])
+		{
+			engclient_cmd(Client, GlobalIconRegister[ClientIconOverride[Client][Icon][1]], 1352660, 1352664);
+			BlockCurWeapon[Client] = 2;
+		}
+		return 4;
+	}
+	if (contain(Command, "weapon_"))
+	{
+		return 1;
+	}
+	Icon = getGlobalIconIndexFromSource(Command);
+	if (!Icon)
+	{
+		return 1;
+	}
+	CurrentClientIcon[Client] = Icon;
+	if (PreviousClientIcon[Client] != CurrentClientIcon[Client])
+	{
+		fireIconCallback(Client, CurrentClientIcon[Client], PreviousClientIcon[Client]);
+		PreviousClientIcon[Client] = CurrentClientIcon[Client];
+	}
+	return 1;
+}
+
+registerClientICON(Client, Icon)
+{
+	if (Icon < 35)
+	{
+		return Icon;
+	}
+	static ClientIcon;
+	ClientIcon = getClientIconFromGlobalIcon(Client, Icon);
+	if (0 < ClientIcon)
+	{
+		return ClientIcon;
+	}
+	if (1 > ClientIconCTR[Client])
+	{
+		ClientIconCTR[Client] = 35;
+	}
+	else
+	{
+		ClientIconCTR[Client] += 1;
+	}
+	ClientIcon = ClientIconCTR[Client];
+	ClientIconRegister[Client][ClientIcon][0] = Icon;
+	ClientIconRegister[Client][ClientIcon][2] = 1;
+	if (0 > GlobalIconRegister[Icon][33])
+	{
+		message_begin(1, MSGID_WeaponList, 1352704, Client);
+		write_string(GlobalIconRegister[Icon]);
+		write_byte(9);
+		new var1 = ClientCustomIcons[Client];
+		var1++;
+		write_byte(var1);
+		write_byte(ClientIcon);
+		write_byte("HamFilter");
+		message_end();
+	}
+	else
+	{
+		message_begin(1, MSGID_WeaponList, 1352716, Client);
+		write_string(GlobalIconRegister[Icon]);
+		write_byte(GlobalIconRegister[Icon][33]);
+		write_byte(GlobalIconRegister[Icon][34]);
+		write_byte(ClientIcon);
+		write_byte("HamFilter");
+		message_end();
+	}
+	return ClientIcon;
+}
+
+bool:giveClientICON(Client, Icon, Base)
+{
+	static Index;
+	Index = 0;
+	if (0 < Base)
+	{
+		ClientIconOverride[Client][Icon][1] = Base;
+	}
+	if (0 < ClientIconOverride[Client][Icon][0])
+	{
+		Index = registerClientICON(Client, ClientIconOverride[Client][Icon][0]);
+	}
+	else
+	{
+		Index = registerClientICON(Client, Icon);
+	}
+	if (Index < 1)
+	{
+		return false;
+	}
+	ClientIconRegister[Client][Index][1] = 1;
+	if (0 < ClientIconOverride[Client][Icon][0])
+	{
+		ClientIconRegister[Client][Index][0] = ClientIconOverride[Client][Icon][0];
+	}
+	else
+	{
+		ClientIconRegister[Client][Index][0] = Icon;
+	}
+	MsgGiveClientICON(Client, Index);
+	return true;
+}
+
+purgeClientICONS(Client)
+{
+	PreviousClientIcon[Client] = 0;
+	CurrentClientIcon[Client] = 0;
+	static Index;
+	Index = 1;
+	while (Index <= 64)
+	{
+		if (ClientIconRegister[Client][Index][1])
+		{
+			ClientIconRegister[Client][Index][1] = 0;
+			MsgRemoveClientICON(Client, Index);
+		}
+		Index += 1;
+	}
+	Index = 1;
+	while (Index <= 33)
+	{
+		ClientIconOverride[Client][Index][1] = 0;
+		ClientIconOverride[Client][Index][0] = 0;
+		Index += 1;
+	}
+	ClientIconCTR[Client] = 35;
+	ClientCustomIcons[Client] = 0;
+	return 0;
+}
+
+bool:removeClientICON(Client, Icon)
+{
+	static Index;
+	Index = 1;
+	while (ClientIconCTR[Client] >= Index)
+	{
+		new var1;
+		if (Icon == ClientIconRegister[Client][Index][0] && ClientIconRegister[Client][Index][1])
+		{
+			ClientIconRegister[Client][Index][1] = 0;
+			if (CurrentClientIcon[Client] == Icon)
+			{
+				message_begin(1, MSGID_CurWeapon, 1352740, Client);
+				write_byte("HamFilter");
+				write_byte(Index);
+				write_byte(-1);
+				message_end();
+			}
+			MsgRemoveClientICON(Client, Index);
+			return true;
+		}
+		Index += 1;
+	}
+	return false;
+}
+
+public __getClientICON()
+{
+	return CurrentClientIcon[get_param(1)];
+}
+
+public __getClientPICON()
+{
+	return PreviousClientIcon[get_param(1)];
+}
+
+public __setClientICON()
+{
+	static INext;
+	static ICurrent;
+	static Icon;
+	static Client;
+	Client = get_param(1);
+	Icon = get_param(2);
+	if (Icon == CurrentClientIcon[Client])
+	{
+		return 1;
+	}
+	if (Icon == CurrentClientIcon[Client])
+	{
+		return 1;
+	}
+	ICurrent = getClientIconFromGlobalIcon(Client, CurrentClientIcon[Client]);
+	INext = getClientIconFromGlobalIcon(Client, Icon);
+	if (0 >= INext)
+	{
+		return 0;
+	}
+	message_begin(1, MSGID_CurWeapon, 1352768, Client);
+	write_byte("HamFilter");
+	write_byte(ICurrent);
+	write_byte(-1);
+	message_end();
+	message_begin(1, MSGID_CurWeapon, 1352780, Client);
+	write_byte(1);
+	write_byte(INext);
+	write_byte(-1);
+	message_end();
+	CurrentClientIcon[Client] = Icon;
+	if (PreviousClientIcon[Client] != CurrentClientIcon[Client])
+	{
+		fireIconCallback(Client, CurrentClientIcon[Client], PreviousClientIcon[Client]);
+		PreviousClientIcon[Client] = CurrentClientIcon[Client];
+	}
+	client_cmd(Client, GlobalIconRegister[Icon]);
+	return 1;
+}
+
+public __getIconINDEX()
+{
+	static Source[33];
+	get_string(1, Source, 32);
+	return getGlobalIconIndexFromSource(Source);
+}
+
+MsgGiveClientICON(Client, Index)
+{
+	message_begin(1, MSGID_WeapUpdate, 1352924, Client);
+	write_char(Index);
+	message_end();
+	return 0;
+}
+
+MsgRemoveClientICON(Client, Index)
+{
+	message_begin(1, MSGID_WeapUpdate, 1352936, Client);
+	write_char(-Index);
+	message_end();
+	return 0;
+}
+
+public __createCustomICON()
+{
+	static i;
+	if (IconCTR >= 256)
+	{
+		return -1;
+	}
+	static Order[2];
+	static Source[33];
+	get_string(1, Source, 32);
+	get_array(2, Order, 2);
+	i = 1;
+	while (i <= IconCTR)
+	{
+		if (equali(GlobalIconRegister[i], Source, "HamFilter"))
+		{
+			return i;
+		}
+		i += 1;
+	}
+	return createIcon(0, Source, Order[0], Order[1]);
+}
+
+public __replaceClientICON()
+{
+	static Replace;
+	static Icon;
+	static Client;
+	Client = get_param(1);
+	Icon = get_param(2);
+	Replace = get_param("");
+	ClientIconOverride[Client][Icon][1] = Replace;
+	ClientIconOverride[Client][Replace][0] = Icon;
+	return 1;
+}
+
+public __giveClientICON()
+{
+	return giveClientICON(get_param(1), get_param(2), get_param(""));
+}
+
+public __removeClientICON()
+{
+	return removeClientICON(get_param(1), get_param(2));
+}
+
+public __hasClientICON()
+{
+	static Icon;
+	static Client;
+	Client = get_param(1);
+	Icon = get_param(2);
+	return hasClientGlobalIcon(Client, Icon);
+}
+
+public __addIconHOOK(Plugin)
+{
+	if (IconHookCTR >= 64)
+	{
+		return 0;
+	}
+	static Forward;
+	static Method[65];
+	get_string(1, Method, 64);
+	Forward = CreateOneForward(Plugin, Method, 0, 0, 0);
+	if (0 > Forward)
+	{
+		log_error(10, "< Ascend:SX > Invalid IconHook Method");
+		return 0;
+	}
+	IconHookCTR += 1;
+	IconHook[IconHookCTR] = Forward;
+	return 1;
+}
+
+___PutHeader(File)
+{
+	static Time[32];
+	get_time("< %m/%d/%Y - %H:%M:%S > ", Time, 31);
+	fputs(File, Time);
+	fputs(File, ___Database);
+	return 0;
+}
+
+___ConnectError(ErrorCode, Error[])
+{
+	new File = fopen("core/Connect.log", 1355880);
+	if (!File)
+	{
+		return 0;
+	}
+	static Log[512];
+	formatex(Log, 511, "\n   > %i > $s\n\n", ErrorCode, Error);
+	___PutHeader(File);
+	fputs(File, Log);
+	fclose(File);
+	return 0;
+}
+
+Handle:SQLA_Initiate(Database[], Host[], User[], Password[])
+{
+	copy(___Database, 255, Database);
+	new var1 = SQL_MakeDbTuple(Host, User, Password, Database, "HamFilter");
+	___Tuple = var1;
+	return var1;
+}
+
+Handle:SQLA_Tuple()
+{
+	return ___Tuple;
+}
+
+SQLA_ThreadedQuery(Query[])
+{
+	static sQuery[1025];
+	vformat(sQuery, 1024, Query, 2);
+	return SQL_ThreadQuery(___Tuple, "___ThreadedQueryHandle", sQuery, 1362192, "HamFilter");
+}
+
+public ___ThreadedQueryHandle(FailState, Handle:Query, Error[], ErrorCode, QueryString[], QueryStringLength)
+{
+	if (FailState == -2)
+	{
+		___ConnectError(ErrorCode, Error);
+	}
+	else
+	{
+		if (FailState == -1)
+		{
+			new File = fopen("core/ThreadedQuery.log", 1362288);
+			if (!File)
+			{
+				return 0;
+			}
+			___PutHeader(File);
+			fputs(File, "\n   > ");
+			fputs(File, Error);
+			fputs(File, "\n\n");
+			fclose(File);
+		}
+	}
+	return 0;
+}
+
+bool:SQLA_SetAffinity(driver[])
+{
+	static active_driver[16];
+	SQL_GetAffinity(active_driver, 15);
+	if (!equali(active_driver, driver, "HamFilter"))
+	{
+		return SQL_SetAffinity(driver);
+	}
+	return true;
+}
+
+bool:SQLite_ValidEntity(entity[])
+{
+	new Handle:DB = SQL_Connect(___Tuple, ___ErrorCode, ___Error, 255);
+	if (!DB)
+	{
+		return false;
+	}
+	new Handle:Query = SQL_PrepareQuery(DB, "SELECT name FROM sqlite_master WHERE type = 'table' AND name = '%s' LIMIT 1;", entity);
+	new var1;
+	if (!SQL_Execute(Query) || !SQL_NumResults(Query))
+	{
+		SQL_FreeHandle(Query);
+		return false;
+	}
+	SQL_FreeHandle(Query);
+	SQL_FreeHandle(DB);
+	return true;
+}
+
+bool:SQLite_CheckIntegrity()
+{
+	new Handle:DB = SQL_Connect(___Tuple, ___ErrorCode, ___Error, 255);
+	if (!DB)
+	{
+		return false;
+	}
+	new Handle:Query = SQL_PrepareQuery(DB, "PRAGMA integrity_check");
+	new var1;
+	if (!SQL_Execute(Query) || !SQL_NumResults(Query))
+	{
+		SQL_FreeHandle(Query);
+		SQL_FreeHandle(DB);
+		new File = fopen("core/IntegrityCheck.log", 1362896);
+		if (!File)
+		{
+			return false;
+		}
+		___PutHeader(File);
+		fputs(File, "\n   > Query failed\n\n");
+		fclose(File);
+		return false;
+	}
+	static Value[512];
+	SQL_ReadResult(Query, "HamFilter", Value, 511);
+	SQL_FreeHandle(Query);
+	SQL_FreeHandle(DB);
+	if (!equali(Value, "ok", "HamFilter"))
+	{
+		new File = fopen("core/Integrity.log", 1365124);
+		if (File)
+		{
+			return false;
+		}
+		___PutHeader(File);
+		fputs(File, "\n   > ");
+		fputs(File, Value);
+		fputs(File, "\n\n");
+		fclose(File);
+		return false;
+	}
+	return true;
+}
+
+StaticClientsInit()
+{
+	static QueryPointer;
+	static File;
+	static Error[256];
+	static ErrorCode;
+	static Handle:Query;
+	static Handle:DB;
+	if (!SQLiteLoaded)
+	{
+		return 0;
+	}
+	if (!SQLA_SetAffinity("sqlite"))
+	{
+		log_to_file(DatabaseLogFile, "SQLite Driver missing!");
+		return 0;
+	}
+	if (!file_exists(DatabaseFile))
+	{
+		log_to_file(DatabaseLogFile, "%s missing > creation attempt!", DatabaseFile);
+		File = fopen(DatabaseFile, 1377456);
+		if (!File)
+		{
+			log_to_file(DatabaseLogFile, "%s failed to create!", DatabaseFile);
+			return 0;
+		}
+		fclose(File);
+		SQLA_Initiate("core/core.sqlite", 1377548, 1377552, 1377556);
+		DB = SQL_Connect(SQLA_Tuple(), ErrorCode, Error, 255);
+		if (!DB)
+		{
+			log_to_file(DatabaseLogFile, Error);
+			return 0;
+		}
+		QueryPointer = 0;
+		while (QueryPointer < 3)
+		{
+			Query = SQL_PrepareQuery(DB, CreateDatabaseScript[QueryPointer]);
+			if (!SQL_Execute(Query))
+			{
+				ErrorCode = SQL_QueryError(Query, Error, 255);
+				log_to_file(DatabaseLogFile, Error);
+				return 0;
+			}
+			SQL_FreeHandle(Query);
+			QueryPointer += 1;
+		}
+		SQL_FreeHandle(DB);
+	}
+	else
+	{
+		SQLA_Initiate("core/core.sqlite", 1377548, 1377552, 1377556);
+	}
+	if (!SQLite_CheckIntegrity())
+	{
+		log_to_file(DatabaseLogFile, "%s damaged!!! > pease restore backup or delete database", DatabaseFile);
+		return 0;
+	}
+	if (!SQLite_ValidEntity("Client"))
+	{
+		log_to_file(DatabaseLogFile, "%s missing \"Client\" entity!", DatabaseFile);
+		return 0;
+	}
+	SQLiteValid = true;
+	set_task(1092616192, "StaticClientsUpdate", "HamFilter", 1174304, "HamFilter", 1378004, "HamFilter");
+	return 0;
+}
+
+StaticClientsAuth(Client)
+{
+	if (!SQLiteValid)
+	{
+		return 0;
+	}
+	static Auth[64];
+	get_user_authid(Client, Auth, 63);
+	if (0 > contain(Auth, "STEAM_0:"))
+	{
+		new var1;
+		if (Client == 1 && !is_dedicated_server())
+		{
+			SQLA_ThreadedQuery("INSERT OR IGNORE INTO Client ( Steam ) VALUES ( 'STEAM_ID_LANSERVER' )");
+			copy(myClientAuths[Client], 63, "STEAM_ID_LANSERVER");
+			return 0;
+		}
+		return 0;
+	}
+	SQLA_ThreadedQuery("INSERT OR IGNORE INTO Client ( Steam ) VALUES ( '%s' )", Auth);
+	copy(myClientAuths[Client], 63, Auth);
+	return 0;
+}
+
+StaticClientsDisconnect(Client)
+{
+	myClientAuths[Client][0] = 0;
+	return 0;
+}
+
+public StaticClientsUpdate()
+{
+	new var1;
+	if (!get_pcvar_num(CVAR_StaticClients) || !SQLiteValid)
+	{
+		return 0;
+	}
+	static Client;
+	Client = 1;
+	while (Client <= MaxPlayers)
+	{
+		if (is_user_connected(Client))
+		{
+			if (myClientAuths[Client][0])
+			{
+				new var2;
+				if (!(coreClient[Client][27] || coreClient[Client][0] < 0 || coreClient[Client][3] < 0 || coreClient[Client][11] || coreClient[Client][26] || coreClient[Client][35] >= 0 || coreClassExtensions[coreClient[Client][0]][358]))
+				{
+					SQLA_ThreadedQuery("UPDATE Client SET Class = '%s', Level = %i, PowerLevel = %i, AfterDeathPowerLevel = %i, Health = %i WHERE Steam = '%s'", coreClassExtensions[coreClient[Client][0]][1], coreClient[Client][3], getClientPL(Client), getClientADPL(Client), getClientHP(Client), myClientAuths[Client]);
+					set_hudmessage(255, 30, 30, 1064346583, 1025758986, "HamFilter", 1065353216, 1036831949, 1065353216, 1065353216, "HamFilter");
+					show_hudmessage(Client, 1379364);
+				}
+			}
+		}
+		Client += 1;
+	}
+	return 0;
+}
+
+StaticClientSpawn(Client)
+{
+	static CORE[1];
+	CORE[0] = Client;
+	static Query[256];
+	formatex(Query, 255, "SELECT Class, Level, PowerLevel, AfterDeathPowerLevel, Health FROM Client WHERE Steam = '%s'", myClientAuths[Client]);
+	SQL_ThreadQuery(SQLA_Tuple(), "TQH_Spawn", Query, CORE, 1);
+	return 0;
+}
+
+public TQH_Spawn(FailState, Handle:Query, Error, ErrorCode, Data[], Size)
+{
+	static Level;
+	static ID;
+	static ClassIndex;
+	static Client;
+	Client = Data[0];
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	new var1;
+	if (FailState || SQL_NumResults(Query) == 1)
+	{
+		ShowClassSelection(Client);
+	}
+	else
+	{
+		static Class[33];
+		SQL_ReadResult(Query, "HamFilter", Class, 32);
+		ClassIndex = -1;
+		ID = 0;
+		while (ID < ClassExtensionCTR)
+		{
+			if (equal(Class, coreClassExtensions[ID][1], "HamFilter"))
+			{
+				ClassIndex = ID;
+				if (0 > ClassIndex)
+				{
+					ShowClassSelection(Client);
+					return 0;
+				}
+				Level = SQL_ReadResult(Query, 1);
+				new var2;
+				if (Level < 0 || Level >= coreClassExtensions[ClassIndex][356])
+				{
+					ShowClassSelection(Client);
+					return 0;
+				}
+				coreClient[Client][1] = coreClient[Client][0];
+				coreClient[Client][4] = coreClient[Client][3];
+				coreClient[Client][2] = ClassIndex;
+				coreClient[Client][5] = Level;
+				coreClient[Client][20] = 1;
+				coreClient[Client][22] = SQL_ReadResult(Query, 2);
+				coreClient[Client][23] = SQL_ReadResult(Query, "");
+				coreClient[Client][24] = SQL_ReadResult(Query, 4);
+				message_begin(1, MSGID_ScreenFade, 1380960, Client);
+				write_short(2048);
+				write_short(1024);
+				write_short("HamFilter");
+				write_byte(255);
+				write_byte(255);
+				write_byte(255);
+				write_byte(200);
+				message_end();
+				client_cmd(Client, "cell");
+			}
+			ID += 1;
+		}
+		if (0 > ClassIndex)
+		{
+			ShowClassSelection(Client);
+			return 0;
+		}
+		Level = SQL_ReadResult(Query, 1);
+		new var2;
+		if (Level < 0 || Level >= coreClassExtensions[ClassIndex][356])
+		{
+			ShowClassSelection(Client);
+			return 0;
+		}
+		coreClient[Client][1] = coreClient[Client][0];
+		coreClient[Client][4] = coreClient[Client][3];
+		coreClient[Client][2] = ClassIndex;
+		coreClient[Client][5] = Level;
+		coreClient[Client][20] = 1;
+		coreClient[Client][22] = SQL_ReadResult(Query, 2);
+		coreClient[Client][23] = SQL_ReadResult(Query, "");
+		coreClient[Client][24] = SQL_ReadResult(Query, 4);
+		message_begin(1, MSGID_ScreenFade, 1380960, Client);
+		write_short(2048);
+		write_short(1024);
+		write_short("HamFilter");
+		write_byte(255);
+		write_byte(255);
+		write_byte(255);
+		write_byte(200);
+		message_end();
+		client_cmd(Client, "cell");
+	}
+	return 0;
+}
+
+getMeleeEnemy(Client)
+{
+	if (!pev_valid(Client))
+	{
+		return 0;
+	}
+	new Float:dist = 9999.0;
+	new Float:dist2 = 0.0;
+	static Float:orig2[3];
+	static Float:orig1[3];
+	new player;
+	pev(Client, 118, orig1);
+	new i = 1;
+	while (i <= MaxPlayers)
+	{
+		new var1;
+		if (Client != i && pev_valid(i) && is_user_alive(i) && getClientPROTECT(i))
+		{
+			pev(i, 118, orig2);
+			if ((dist2 = get_distance_f(orig1, orig2)) < dist)
+			{
+				dist = dist2;
+				player = i;
+			}
+		}
+		i++;
+	}
+	return player;
+}
+
+public HOOK_MeleeAtkHud(ID, Destination, Client)
+{
+	new var1;
+	if (!pev_valid(Client) || !is_user_connected(Client))
+	{
+		return 0;
+	}
+	new enemy = getMeleeEnemy(Client);
+	if (!enemy)
+	{
+		return 0;
+	}
+	new type = get_msg_arg_int(1);
+	new difference = coreClientLevel[enemy][78] - coreClientLevel[Client][77];
+	new var2;
+	if (type == 2 && difference && MeleeSense[Client][0])
+	{
+		new pos = MeleeSense[Client][1];
+		new ARROW_COLOR:color = MeleeSense[Client][38][pos];
+		if (0 < difference)
+		{
+			new var3;
+			if ((difference == 1 && color == ARROW_COLOR:2) || (difference == 2 && color) || difference == 3)
+			{
+				set_msg_arg_int(2, 1, 16);
+			}
+		}
+		else
+		{
+			difference = -difference;
+			new var6;
+			if ((difference == 1 && color) || (difference == 2 && color != ARROW_COLOR:2) || difference == 3)
+			{
+				new dir = MeleeSense[Client][6][pos];
+				if (dir >= 8)
+				{
+					dir += -8;
+				}
+				set_msg_arg_int(2, 1, dir);
+			}
+		}
+		MeleeSense[Client][1] = pos + 1;
+	}
+	if (type == 4)
+	{
+		MeleeSense[Client][2] = get_msg_arg_int(2);
+		MeleeSense[Client][3] = get_msg_arg_int("");
+		MeleeSense[Client][4] = get_msg_arg_int(4);
+		MeleeSense[Client][0] = 0;
+		MeleeSense[Client][1] = 0;
+	}
+	if (type == 5)
+	{
+		new count = MeleeSense[enemy][0];
+		MeleeSense[enemy][6][count] = get_msg_arg_int(2);
+		new diff = get_msg_arg_int("");
+		if (MeleeSense[Client][2] > diff)
+		{
+			MeleeSense[enemy][38][count] = 0;
+		}
+		else
+		{
+			if (MeleeSense[Client][3] > diff)
+			{
+				MeleeSense[enemy][38][count] = 1;
+			}
+			MeleeSense[enemy][38][count] = 2;
+		}
+		MeleeSense[enemy][0] = count + 1;
+	}
+	return 0;
+}
+
+public Melee_ClientConnect(Client)
+{
+	MeleeSense[Client][0] = 0;
+	return 0;
+}
+
+ArrowInit()
+{
+	register_forward(104, "ArrowPreThink", "HamFilter");
+	register_forward(101, "ArrowPutInServer", "HamFilter");
+	gmsgMeleeAtkHud = MSGID("MeleeAtkHud");
+	return 0;
+}
+
+ArrowNatives()
+{
+	register_native("addArrows", "__addArrows", "HamFilter");
+	return 0;
+}
+
+public ArrowPreThink(Client)
+{
+	if (!pev_valid(Client))
+	{
+		return 0;
+	}
+	new var1;
+	if (!is_user_alive(Client) || getClientMELEE(Client) || !Arrows[Client][0])
+	{
+		ExitArrows(Client, true);
+		return 0;
+	}
+	new Float:Time = get_gametime();
+	if (Time < NextCheck[Client])
+	{
+		return 0;
+	}
+	NextCheck[Client] = floatadd(1036831949, get_gametime());
+	new CurrentPos = Arrows[Client][1];
+	if (Arrows[Client][0] == CurrentPos)
+	{
+		ExitArrows(Client, false);
+		return 0;
+	}
+	new button = pev(Client, 81) & 1560;
+	new var2;
+	if (Arrows[Client][2] != button && !button)
+	{
+		Arrows[Client][2] = button;
+		return 0;
+	}
+	new flags = DirectionsToFlags(Arrows[Client][5][CurrentPos]);
+	new var3;
+	if (flags & button)
+	{
+		var3 = MissingTAG:1;
+	}
+	else
+	{
+		var3 = MissingTAG:2;
+	}
+	BlockStatus(Client, var3, CurrentPos);
+	Arrows[Client][2] = button;
+	Arrows[Client][1] = CurrentPos + 1;
+	return 0;
+}
+
+public ArrowPutInServer(Client)
+{
+	Arrows[Client][0] = 0;
+	Arrows[Client][3] = 0;
+	return 0;
+}
+
+public __addArrows(iPlugin, iParams)
+{
+	new Client = get_param(1);
+	new fwd;
+	static func[33];
+	get_string(2, func, 32);
+	new var1;
+	if (!pev_valid(Client) || !is_user_alive(Client) || getClientMELEE(Client))
+	{
+		return 0;
+	}
+	fwd = CreateOneForward(iPlugin, func, 0, 0);
+	if (0 > fwd)
+	{
+		abort(25, "< Arrow System > CreateOneForward failed");
+		return 0;
+	}
+	Arrows[Client][3] = fwd;
+	InitArrows(Client);
+	new i = 3;
+	while (i <= iParams)
+	{
+		AddArrow(Client, get_param_byref(i));
+		i++;
+	}
+	return 1;
+}
+
+BlockStatus(Client, BLOCK_STATUS:iBlockStatus, id)
+{
+	message_begin(1, gmsgMeleeAtkHud, 1396096, Client);
+	write_byte("");
+	write_byte(iBlockStatus);
+	write_byte(id);
+	message_end();
+	if (iBlockStatus == BLOCK_STATUS:2)
+	{
+		Arrows[Client][4]++;
+	}
+	return 0;
+}
+
+AddArrow(Client, ADV_MELEE_DIRECTION:direction)
+{
+	message_begin(1, gmsgMeleeAtkHud, 1396108, Client);
+	write_byte(2);
+	write_byte(direction);
+	message_end();
+	new Count = Arrows[Client][0];
+	if (direction == ADV_MELEE_DIRECTION:16)
+	{
+		direction = random(8);
+	}
+	Arrows[Client][5][Count] = direction;
+	Arrows[Client][0] = Count + 1;
+	return 0;
+}
+
+InitArrows(Client)
+{
+	message_begin(1, gmsgMeleeAtkHud, 1396120, Client);
+	write_byte("HamFilter");
+	message_end();
+	Arrows[Client][0] = 0;
+	Arrows[Client][1] = 0;
+	Arrows[Client][2] = 0;
+	Arrows[Client][4] = 0;
+	NextCheck[Client] = floatadd(1036831949, get_gametime());
+	return 0;
+}
+
+ExitArrows(Client, bool:fail)
+{
+	new fwd;
+	new ret;
+	fwd = Arrows[Client][3];
+	if (!fwd)
+	{
+		return 0;
+	}
+	ArrowsHudRemove(Client);
+	new var1;
+	if (Arrows[Client][0] && !fail)
+	{
+		Arrows[Client][0] = 0;
+		ExecuteForward(fwd, ret, Client, Arrows[Client][4]);
+	}
+	else
+	{
+		ExecuteForward(fwd, ret, Client, -1);
+	}
+	DestroyForward(fwd);
+	Arrows[Client][3] = 0;
+	return 0;
+}
+
+ArrowsHudRemove(Client)
+{
+	message_begin(1, gmsgMeleeAtkHud, 1396132, Client);
+	write_byte("HamFilter");
+	message_end();
+	return 0;
+}
+
+DirectionsToFlags(ADV_MELEE_DIRECTION:iDirection)
+{
+	new iFlag;
+	if (iDirection == ADV_MELEE_DIRECTION:16)
+	{
+		iFlag = 1;
+		return iFlag;
+	}
+	if (iDirection == ADV_MELEE_DIRECTION:17)
+	{
+		iFlag = 2048;
+		return iFlag;
+	}
+	if (iDirection < ADV_MELEE_DIRECTION:8)
+	{
+		iFlag = 1;
+	}
+	else
+	{
+		iFlag = 2048;
+	}
+	switch (iDirection)
+	{
+		case 0, 8:
+		{
+			iFlag |= 8;
+		}
+		case 1, 9:
+		{
+			iFlag |= 520;
+		}
+		case 2, 10:
+		{
+			iFlag |= 512;
+		}
+		case 3, 11:
+		{
+			iFlag |= 528;
+		}
+		case 4, 12:
+		{
+			iFlag |= 16;
+		}
+		case 5, 13:
+		{
+			iFlag |= 1040;
+		}
+		case 6, 14:
+		{
+			iFlag |= 1024;
+		}
+		case 7, 15:
+		{
+			iFlag |= 1032;
+		}
+		default:
+		{
+		}
+	}
+	return iFlag;
+}
+
+forceClientCLASS(Client, _Class, _Level, bool:WUP, HPAdjust)
+{
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	static Float:HPMOD;
+	static ID;
+	static Level;
+	static Class;
+	new var1;
+	if (_Class < 0 || _Class >= ClassExtensionCTR)
+	{
+		log_error(10, "< Ascend > Invalid Class > %i > Maximum Class > %i", _Class, ClassExtensionCTR + -1);
+		return 0;
+	}
+	Class = _Class;
+	new var2;
+	if (_Level < 0 || _Level >= coreClassExtensions[Class][356])
+	{
+		log_error(10, "< Ascend > Invalid Level > %i > Maximum Level > %i", _Level, coreClassExtensions[Class][356] - 1);
+		return 0;
+	}
+	Level = _Level;
+	ID = Level + Class * 8;
+	coreClient[Client][0] = Class;
+	coreClient[Client][3] = Level;
+	if (!coreClassExtensions[Class][358])
+	{
+		coreClient[Client][2] = Class;
+		coreClient[Client][5] = Level;
+	}
+	HPMOD = floatdiv(float(getClientHP(Client)), float(getClientMHP(Client)));
+	setClientMODEL(Client, coreClassLevels[ID][33]);
+	setClientMHP(Client, coreClassLevels[ID][63]);
+	setClientSPEED(Client, coreClassLevels[ID][62]);
+	updateTransformBar(Client);
+	Special_forceClientCLASS(Client);
+	new var3;
+	if (WUP && !coreClient[Client][27])
+	{
+		stripClientITEMS(Client);
+		Icon_forceClientCLASS(Client);
+		ExecuteForward(coreClassExtensions[Class][362], FWD_Return, Client, Level);
+	}
+	setClientPROTECT(Client, "HamFilter");
+	if (HPAdjust)
+	{
+		static Health;
+		Health = floatround(HPMOD * getClientMHP(Client), "HamFilter");
+		if (Health < 1)
+		{
+			Health = 1;
+		}
+		setClientHP(Client, Health);
+	}
+	resetRendering(Client);
+	if (coreClient[Client][11])
+	{
+		coreClient[Client][11] = 0;
+		emit_sound(Client, "", "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 4, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 1, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 2, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		ExecuteForward(coreClassExtensions[coreClient[Client][1]][365], FWD_Return, Client, coreClient[Client][4]);
+		setClientPROTECT(Client, "HamFilter");
+		setClientFROZEN(Client, "HamFilter");
+		setClientGOD(Client, "HamFilter");
+		setAscendDelay(Client, 3.0);
+		setDescendDelay(Client, 3.0);
+		remove_task(uniqueTaskID(Client, 102), "HamFilter");
+	}
+	if (coreClient[Client][0] != coreClient[Client][1])
+	{
+		ExecuteForward(FWD_ClassChange, FWD_Return, Client, coreClient[Client][1], coreClient[Client]);
+		coreClient[Client][1] = coreClient[Client][0];
+	}
+	if (coreClient[Client][3] != coreClient[Client][4])
+	{
+		ExecuteForward(FWD_LevelChange, FWD_Return, Client, coreClient[Client][4], coreClient[Client][3]);
+		coreClient[Client][4] = coreClient[Client][3];
+	}
+	return 1;
+}
+
+updateTransformBar(Client)
+{
+	new var1;
+	if (!is_user_connected(Client) || coreClient[Client][0] < 0)
+	{
+		return 0;
+	}
+	static Offset;
+	new var2;
+	Offset = coreClassExtensions[coreClient[Client][0]][356] != coreClient[Client][3] - 1 && coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][64];
+	message_begin(1, MSGID_Transform, 1396880, Client);
+	write_byte("HamFilter");
+	write_long(coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8][Offset]][59]);
+	if (1300 <= getGameVERSION())
+	{
+		write_long("HamFilter");
+	}
+	message_end();
+	return 1;
+}
+
+setAscendDelay(Client, Float:Time)
+{
+	coreClient[Client][6] = floatadd(get_gametime(), Time);
+	return 0;
+}
+
+setDescendDelay(Client, Float:Time)
+{
+	coreClient[Client][7] = floatadd(get_gametime(), Time);
+	return 0;
+}
+
+public FinishTransformation(CORE[])
+{
+	static cPL;
+	static Client;
+	Client = CORE[0];
+	new var1;
+	if (!is_user_connected(Client) || !coreClient[Client][11])
+	{
+		return 0;
+	}
+	cPL = floatround(coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][61] * getClientPL(Client), "HamFilter");
+	new var2;
+	if ((!coreClassExtensions[coreClient[Client][0]][357] || coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][65]) && !coreClassExtensions[coreClient[Client][0]][358])
+	{
+		setClientSPL(Client, cPL);
+	}
+	else
+	{
+		setClientPL(Client, cPL);
+	}
+	coreClient[Client][11] = 0;
+	radiusPush(Client, 150.0, 1.0E8);
+	setClientFROZEN(Client, "HamFilter");
+	setClientXFROZEN(Client, "HamFilter");
+	setClientPROTECT(Client, "HamFilter");
+	setClientGOD(Client, "HamFilter");
+	ResetCamIdealDist(Client);
+	updateTransformBar(Client);
+	setAscendDelay(Client, 1.5);
+	setDescendDelay(Client, 1.5);
+	forceClientCLASS(Client, coreClient[Client][0], coreClient[Client][3], true, 1);
+	if (0 < coreClassExtensions[coreClient[Client][0]][364])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][364], FWD_Return, Client, coreClient[Client][3]);
+	}
+	return 0;
+}
+
+ResetCamIdealDist(Client)
+{
+	static Distance;
+	static szClientInfo[33];
+	get_user_info(Client, "cam_idealdist", szClientInfo, 32);
+	Distance = str_to_num(szClientInfo);
+	if (0 < Distance)
+	{
+		client_cmd(Client, "cam_idealdist %i", Distance);
+	}
+	else
+	{
+		client_cmd(Client, "cam_idealdist 40");
+	}
+	return 0;
+}
+
+ShowClassSelection(Client)
+{
+	if (coreClientCS[Client][0])
+	{
+		if (0 > coreClient[Client][0])
+		{
+			DevMsg(Client, "< Ascend > You have to select a Character first");
+			return 1;
+		}
+		CloseClassSelection(Client);
+	}
+	else
+	{
+		if (getClientSPECTATOR(Client))
+		{
+			coreClient[Client][20] = 1;
+			if (pev(Client, 89) != 9)
+			{
+				message_begin(1, MSGID_ScreenFade, 1400948, Client);
+				write_short(2048);
+				write_short(1024);
+				write_short("HamFilter");
+				write_byte(255);
+				write_byte(255);
+				write_byte(255);
+				write_byte(200);
+				message_end();
+				client_cmd(Client, "cell");
+			}
+			else
+			{
+				if (!coreClient[Client][27])
+				{
+					silentClientKILL(Client);
+					message_begin(2, MSGID_DeathMsg, 1164156, "HamFilter");
+					write_byte(Client);
+					write_byte(Client);
+					write_string("Class Change");
+					message_end();
+				}
+			}
+			return 1;
+		}
+		new var1;
+		if (coreClientCS[Client][6] > get_gametime() && !isDeveloper(Client))
+		{
+			DevMsg(Client, "< Ascend > You cannot change your Character within the next %.1f seconds", floatsub(coreClientCS[Client][6], get_gametime()));
+			return 1;
+		}
+		OpenClassSelection(Client);
+	}
+	return 1;
+}
+
+CloseClassSelection(Client)
+{
+	set_hudmessage(230, 230, 230, -1082130432, -1096894382, "HamFilter", "HamFilter", "HamFilter", "HamFilter", "HamFilter", 6);
+	show_hudmessage(Client, 1401324);
+	set_hudmessage(230, 230, 230, -1082130432, -1096894382, "HamFilter", "HamFilter", "HamFilter", "HamFilter", "HamFilter", 7);
+	show_hudmessage(Client, 1401328);
+	setClientPROTECT(Client, "HamFilter");
+	setClientGOD(Client, "HamFilter");
+	setClientXFROZEN(Client, "HamFilter");
+	set_pev(Client, 77, 0);
+	set_pev(Client, xs__ITaskId, 1132396544);
+	engfunc(48, Client, Client);
+	coreClientCS[Client][0] = 0;
+	coreClientCS[Client][8] = 0;
+	coreClientCS[Client][9] = 0;
+	coreClientCS[Client][6] = floatadd(1101004800, get_gametime());
+	set_pev(Client, 79, -2147483648);
+	client_cmd(Client, "mp3 stop");
+	return 0;
+}
+
+OpenClassSelection(Client)
+{
+	if (!pev_valid(core3DS[5]))
+	{
+		DevMsg(Client, "< Ascend > Critical > Camera Missing");
+		return 0;
+	}
+	coreClientCS[Client][0] = 1;
+	coreClientCS[Client][8] = 0;
+	coreClientCS[Client][9] = 0;
+	setClientFROZEN(Client, "HamFilter");
+	setClientXFROZEN(Client, 1);
+	engfunc(48, Client, 1400704 + 20);
+	set_pev(Client, 79, 0);
+	set_pev(Client, 77, 2);
+	set_pev(Client, xs__ITaskId, 1036831949);
+	setClientPROTECT(Client, 1);
+	setClientGOD(Client, 1);
+	if (0 <= coreClient[Client][0])
+	{
+		if (equal(coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]], "<<FusionFailure>>", "HamFilter"))
+		{
+			coreClientCS[Client][1] = coreClient[Client][0];
+			coreClientCS[Client][2] = 0;
+		}
+		else
+		{
+			coreClientCS[Client][1] = coreClient[Client][0];
+			coreClientCS[Client][2] = coreClient[Client][3];
+		}
+	}
+	else
+	{
+		coreClientCS[Client][1] = 0;
+		coreClientCS[Client][2] = 0;
+	}
+	UpdatePanelHelp(Client);
+	UpdateClassSelection(Client);
+	fxLight(Client);
+	static Command[256];
+	formatex(Command, 255, _CMD_Open, coreClassExtensions[coreClientCS[Client][1]][291]);
+	client_cmd(Client, Command);
+	static CORE[1];
+	CORE[0] = Client;
+	if (0 > coreClient[Client][0])
+	{
+		set_task(1073741824, "UpdateCharDelayed", "HamFilter", CORE, 1, 1157364, "HamFilter");
+	}
+	return 0;
+}
+
+public UpdateCharDelayed(CORE[])
+{
+	new Client = CORE[0];
+	if (!coreClientCS[Client][0])
+	{
+		return 0;
+	}
+	UpdatePanelHelp(Client);
+	UpdateClassSelection(Client);
+	return 0;
+}
+
+ClassSelectionInit()
+{
+	static Float:vOrigin[3];
+	static Entity;
+	Entity = engfunc(12, 0, "classname", "light_environment");
+	if (!pev_valid(Entity))
+	{
+		Entity = engfunc(12, 0, "classname", "info_player_start");
+	}
+	if (pev_valid(Entity))
+	{
+		pev(Entity, 118, vOrigin);
+	}
+	core3DS[3] = engfunc(21, engfunc(43, "info_target"));
+	engfunc(2, 1400704 + 12, _MDL_Podium);
+	set_pev(core3DS[3], 1, "corePodium");
+	pev(Entity, 118, vOrigin);
+	engfunc(26, 1400704 + 12, vOrigin);
+	set_pev(core3DS[3], 124, 1403020);
+	set_pev(core3DS[3], 77, 2);
+	set_pev(core3DS[3], xs__ITaskId, 1036831949);
+	set_pev(core3DS[3], 38, 1065353216);
+	dllfunc(1, 1400704 + 12);
+	core3DS[5] = engfunc(21, engfunc(43, "info_target"));
+	set_pev(core3DS[5], 1, "coreCamera");
+	engfunc(2, 1400704 + 20, _MDL_None);
+	new var1 = vOrigin;
+	var1[0] = floatsub(var1[0], 1123024896);
+	new var2 = vOrigin[2];
+	var2 = floatadd(1114636288, var2);
+	engfunc(26, 1400704 + 20, vOrigin);
+	set_pev(core3DS[5], 77, 2);
+	set_pev(core3DS[5], xs__ITaskId, 1036831949);
+	set_pev(core3DS[5], 124, 1403124);
+	dllfunc(1, 1400704 + 20);
+	core3DS[9] = engfunc(21, engfunc(43, "info_target"));
+	set_pev(core3DS[9], 1, "coreCameraCloseUp");
+	engfunc(2, 1400704 + 36, _MDL_None);
+	pev(core3DS[5], 118, vOrigin);
+	new var3 = vOrigin;
+	var3[0] = floatadd(1118437376, var3[0]);
+	new var4 = vOrigin[2];
+	var4 = floatsub(var4, 1084227584);
+	static Float:vOrg2[3];
+	new var5 = vOrigin;
+	var5[0] = floatsub(var5[0], 1084227584);
+	new var6 = vOrigin[2];
+	var6 = floatadd(1093664768, var6);
+	engfunc(26, 1400704 + 36, vOrigin);
+	set_pev(core3DS[9], 77, 2);
+	set_pev(core3DS[9], 124, 1403268);
+	dllfunc(1, 1400704 + 36);
+	core3DS[10] = engfunc(21, engfunc(43, "env_sprite"));
+	set_pev(core3DS[10], 1, "corePanelCorona");
+	engfunc(2, 1400704 + 40, _SPR_Corona);
+	new var7 = vOrigin[2];
+	var7 = floatadd(1101004800, var7);
+	new var8 = vOrigin;
+	var8[0] = floatsub(var8[0], 1106247680);
+	engfunc(26, 1400704 + 40, vOrigin);
+	set_pev(core3DS[10], 77, 2);
+	set_pev(core3DS[10], xs__ITaskId, 1117782016);
+	set_pev(core3DS[10], 39, 1036831949);
+	dllfunc(1, 1400704 + 40);
+	core3DS[12] = engfunc(21, engfunc(43, "env_sprite"));
+	set_pev(core3DS[12], 1, "corePanelHelp");
+	engfunc(2, 1400704 + 48, _SPR_Panel);
+	new var9 = vOrigin[2];
+	var9 = floatadd(1084227584, var9);
+	new var10 = vOrigin[1];
+	var10 = floatsub(var10, 1107820544);
+	new var11 = vOrigin;
+	var11[0] = floatsub(var11[0], 1106247680);
+	engfunc(26, 1400704 + 48, vOrigin);
+	set_pev(core3DS[12], 77, 2);
+	set_pev(core3DS[12], xs__ITaskId, 1117782016);
+	set_pev(core3DS[12], 39, 1038174126);
+	dllfunc(1, 1400704 + 48);
+	core3DS[11] = engfunc(21, engfunc(43, "env_sprite"));
+	set_pev(core3DS[11], 1, "corePanelClass");
+	engfunc(2, 1400704 + 44, _SPR_Panel);
+	new var12 = vOrigin[2];
+	var12 = floatsub(var12, 1092616192);
+	new var13 = vOrigin;
+	var13[0] = floatsub(var13[0], 1101004800);
+	engfunc(26, 1400704 + 44, vOrigin);
+	set_pev(core3DS[11], 77, 2);
+	set_pev(core3DS[11], xs__ITaskId, 1117782016);
+	set_pev(core3DS[11], 39, 1034147594);
+	dllfunc(1, 1400704 + 44);
+	pev(core3DS[3], 118, vOrigin);
+	core3DS[4] = engfunc(21, engfunc(43, "info_target"));
+	set_pev(core3DS[4], 1, "coreAura");
+	engfunc(2, 1400704 + 16, _MDL_None);
+	new var14 = vOrigin;
+	var14[0] = var14[0] - 20;
+	vOrigin[2] += 54;
+	engfunc(26, 1400704 + 16, vOrigin);
+	set_pev(core3DS[4], 77, 5);
+	set_pev(core3DS[4], xs__ITaskId, 1106247680);
+	set_pev(core3DS[4], 39, 1050253722);
+	set_pev(core3DS[4], 38, 1065353216);
+	dllfunc(1, 1400704 + 16);
+	static Avatar;
+	new i;
+	while (i < 3)
+	{
+		Avatar = 0;
+		Avatar = engfunc(21, engfunc(43, "info_target"));
+		set_pev(Avatar, 1, "coreAvatar");
+		engfunc(2, Avatar, _MDL_None);
+		pev(core3DS[3], 118, vOrigin);
+		switch (i)
+		{
+			case 0:
+			{
+				vOrigin[1] += 27;
+				vOrigin[2] += 44;
+			}
+			case 1:
+			{
+				vOrigin[1] -= 27;
+				vOrigin[2] += 44;
+			}
+			case 2:
+			{
+				new var15 = vOrigin;
+				var15[0] = var15[0] - 20;
+				vOrigin[2] += 54;
+			}
+			default:
+			{
+			}
+		}
+		engfunc(26, Avatar, vOrigin);
+		setClientAIM(Avatar, core3DS[5]);
+		set_pev(Avatar, 106, 120);
+		set_pev(Avatar, 107, 120);
+		set_pev(Avatar, 108, 120);
+		set_pev(Avatar, 109, 120);
+		set_pev(Avatar, 77, 2);
+		set_pev(Avatar, xs__ITaskId, 1036831949);
+		set_pev(Avatar, 39, 1070386381);
+		set_pev(Avatar, 38, 1065353216);
+		dllfunc(1, Avatar);
+		if (i == 2)
+		{
+			set_pev(Avatar, 75, 2);
+			set_pev(Avatar, 76, 2);
+		}
+		else
+		{
+			set_pev(Avatar, 75, 3);
+			set_pev(Avatar, 76, 3);
+		}
+		core3DS[i] = Avatar;
+		i++;
+	}
+	return 0;
+}
+
+public ClassSelectionAtFP(es_handle, e, Entity, Client, hostflags, player, pSet)
+{
+	static Class;
+	if (coreClientCS[Client][0])
+	{
+		if (core3DS[3] == Entity)
+		{
+			set_es(es_handle, 15, 0);
+			set_es(es_handle, 16, 1132396544);
+			return 2;
+		}
+		if (0 >= ClassExtensionCTR)
+		{
+			return 1;
+		}
+		if (core3DS[2] == Entity)
+		{
+			set_es(es_handle, 15, 0);
+			set_es(es_handle, 6, coreClassLevels[coreClientCS[Client][2][coreClientCS[Client][1] * 8]][56]);
+			set_es(es_handle, 16, 1132396544);
+			if (pev(Client, 81) & 32)
+			{
+				set_es(es_handle, 7, 25);
+			}
+			return 2;
+		}
+		if (core3DS[4] == Entity)
+		{
+			if (pev(Client, 81) & 32)
+			{
+				set_es(es_handle, 6, coreClassLevels[coreClientCS[Client][2][coreClientCS[Client][1] * 8]][150]);
+				set_es(es_handle, 10, coreClassLevels[coreClientCS[Client][2][coreClientCS[Client][1] * 8]][83]);
+			}
+			return 2;
+		}
+		if (core3DS[0] == Entity)
+		{
+			Class = coreClientCS[Client][1] - 1;
+			if (0 > Class)
+			{
+				Class = ClassExtensionCTR + -1;
+			}
+			set_es(es_handle, 6, coreClassLevels[Class * 8][56]);
+			set_es(es_handle, 16, 1132396544);
+			return 2;
+		}
+		if (core3DS[1] == Entity)
+		{
+			Class = coreClientCS[Client][1] + 1;
+			if (Class >= ClassExtensionCTR)
+			{
+				Class = 0;
+			}
+			set_es(es_handle, 6, coreClassLevels[Class * 8][56]);
+			set_es(es_handle, 16, 1132396544);
+			return 2;
+		}
+	}
+	else
+	{
+		new var1;
+		if (core3DS[12] != Entity && core3DS[11] != Entity && core3DS[10] != Entity)
+		{
+			set_es(es_handle, 16, 0);
+			return 2;
+		}
+	}
+	return 1;
+}
+
+UpdateClassSelection(Client)
+{
+	if (coreClientCS[Client][8])
+	{
+		return 0;
+	}
+	static Message[256];
+	static Color[3];
+	if (coreClientCS[Client][9])
+	{
+		Color[0] = 255;
+		Color[1] = 10;
+		Color[2] = 10;
+	}
+	else
+	{
+		Color[0] = 100;
+		Color[1] = 100;
+		Color[2] = 240;
+	}
+	if (0 >= ClassExtensionCTR)
+	{
+		set_hudmessage(Color[0], Color[1], Color[2], -1082130432, 1058977874, "HamFilter", "HamFilter", 1163984896, "HamFilter", "HamFilter", 6);
+		show_hudmessage(Client, "No Classes loaded\nsee core/plugins/CX\n\n<<     0 of 0     >>");
+		return 0;
+	}
+	set_hudmessage(Color[0], Color[1], Color[2], -1082130432, 1058977874, "HamFilter", "HamFilter", 1163984896, "HamFilter", "HamFilter", 6);
+	formatex(Message, 255, "%s\n%s\n\n<<     %i of %i     >>", coreClassExtensions[coreClientCS[Client][1]][1], coreClassLevels[coreClientCS[Client][2][coreClientCS[Client][1] * 8]], coreClientCS[Client][1] + 1, ClassExtensionCTR);
+	show_hudmessage(Client, Message);
+	return 0;
+}
+
+UpdatePanelHelp(Client)
+{
+	if (coreClientCS[Client][8])
+	{
+		return 0;
+	}
+	set_hudmessage(80, 80, 240, -1110651699, -1082130432, "HamFilter", "HamFilter", 1163984896, "HamFilter", "HamFilter", 7);
+	show_hudmessage(Client, _MSG_3DHelp);
+	return 0;
+}
+
+ClassSelectionTurbo(Client)
+{
+	new var1;
+	if (!isDeveloper(Client) || !coreClientCS[Client][0])
+	{
+		return 0;
+	}
+	if (0 > coreClient[Client][0])
+	{
+		DevMsg(Client, "< Ascend > Spawn first for Developermode!");
+		return 0;
+	}
+	if (!coreClientCS[Client][9])
+	{
+		coreClientCS[Client][9] = 1;
+		UpdateClassSelection(Client);
+	}
+	else
+	{
+		coreClientCS[Client][9] = 0;
+		UpdateClassSelection(Client);
+	}
+	return 0;
+}
+
+SwitchClass(Client)
+{
+	static Command[129];
+	formatex(Command, 128, _CMD_Next, coreClassExtensions[coreClientCS[Client][1]][291]);
+	client_cmd(Client, Command);
+	message_begin(1, MSGID_ScreenFade, 1405856, Client);
+	write_short(2048);
+	write_short(1024);
+	write_short("HamFilter");
+	write_byte(255);
+	write_byte(255);
+	write_byte(255);
+	write_byte(200);
+	message_end();
+	return 0;
+}
+
+fxLight(Client)
+{
+	static LevelPointer;
+	LevelPointer = coreClientCS[Client][2][coreClientCS[Client][1] * 8];
+	message_begin(1, 23, 1164156, Client);
+	write_byte(27);
+	write_coord(floatround(floatsub(core3DS[6], 1097859072), "HamFilter"));
+	write_coord(floatround(core3DS[7], "HamFilter"));
+	write_coord(floatround(core3DS[8], "HamFilter"));
+	write_byte(50);
+	if (pev(Client, 81) & 32)
+	{
+		write_byte(coreClassLevels[LevelPointer][151]);
+		write_byte(coreClassLevels[LevelPointer][152]);
+		write_byte(coreClassLevels[LevelPointer][153]);
+	}
+	else
+	{
+		write_byte(120);
+		write_byte(120);
+		write_byte(120);
+	}
+	write_byte(15);
+	write_byte("HamFilter");
+	message_end();
+	static Lightning[3];
+	Lightning[0] = coreClassLevels[LevelPointer][154];
+	Lightning[1] = coreClassLevels[LevelPointer][155];
+	Lightning[2] = coreClassLevels[LevelPointer][156];
+	new var1;
+	if (!Lightning[0] && !Lightning[1] && !Lightning[2])
+	{
+		return 0;
+	}
+	static Range;
+	Range = coreClassLevels[LevelPointer][157];
+	if (!pev_valid(core3DS[2]))
+	{
+		return 0;
+	}
+	static Float:fVector[3];
+	static iVector[3];
+	pev(core3DS[2], 118, fVector);
+	FVecIVec(fVector, iVector);
+	if (1 > random_num("HamFilter", 1))
+	{
+		message_begin(1, 23, 1164156, Client);
+		write_byte(17);
+		write_coord(random_num(-Range, Range) + iVector[0]);
+		write_coord(random_num(-Range, Range) + iVector[1]);
+		write_coord(random_num(-15, 15) + iVector[2]);
+		write_short(SPR_Lightning_2);
+		write_byte(Lightning[0]);
+		write_byte(255);
+		message_end();
+	}
+	if (1 > random_num("HamFilter", 2))
+	{
+		message_begin(1, 23, 1164156, Client);
+		write_byte(17);
+		write_coord(random_num(-Range, Range) + iVector[0]);
+		write_coord(random_num(-Range, Range) + iVector[1]);
+		write_coord(random_num(-10, 10) + iVector[2]);
+		write_short(SPR_Lightning_1);
+		write_byte(Lightning[1]);
+		write_byte(255);
+		message_end();
+	}
+	if (1 > random_num("HamFilter", 2))
+	{
+		message_begin(1, 23, 1164156, Client);
+		write_byte(17);
+		write_coord(random_num(-Range, Range) + iVector[0]);
+		write_coord(random_num(-Range, Range) + iVector[1]);
+		write_coord(random_num(-10, 10) + iVector[2]);
+		write_short(SPR_Lightning_3);
+		write_byte(Lightning[2]);
+		write_byte(255);
+		message_end();
+	}
+	return 0;
+}
+
+ClassSelectionThink(Client)
+{
+	if (!coreClientCS[Client][0])
+	{
+		return 0;
+	}
+	set_pev(Client, 120, 1405912);
+	if (coreClientCS[Client][4] < get_gametime())
+	{
+		fxLight(Client);
+		coreClientCS[Client][4] = floatadd(1056964608, get_gametime());
+	}
+	if (0 >= ClassExtensionCTR)
+	{
+		return 0;
+	}
+	if (coreClientCS[Client][5] > get_gametime())
+	{
+		return 0;
+	}
+	coreClientCS[Client][5] = floatadd(1045220557, get_gametime());
+	new Buttons = pev(Client, 81);
+	if (Buttons & 512)
+	{
+		coreClientCS[Client][2] = 0;
+		if (0 < coreClientCS[Client][1])
+		{
+			coreClientCS[Client][1]--;
+		}
+		else
+		{
+			coreClientCS[Client][1] = ClassExtensionCTR + -1;
+		}
+		UpdateClassSelection(Client);
+		SwitchClass(Client);
+	}
+	else
+	{
+		if (Buttons & 1024)
+		{
+			coreClientCS[Client][2] = 0;
+			if (ClassExtensionCTR + -1 <= coreClientCS[Client][1])
+			{
+				coreClientCS[Client][1] = 0;
+			}
+			else
+			{
+				coreClientCS[Client][1]++;
+			}
+			UpdateClassSelection(Client);
+			SwitchClass(Client);
+		}
+		if (Buttons & 8)
+		{
+			if (coreClassExtensions[coreClientCS[Client][1]][356] > coreClientCS[Client][2][0])
+			{
+				if (!equal(coreClassLevels[coreClientCS[Client][2][coreClientCS[Client][1] * 8][0]], "<<FusionFailure>>", "HamFilter"))
+				{
+					coreClientCS[Client][2]++;
+				}
+			}
+			UpdateClassSelection(Client);
+		}
+		if (Buttons & 16)
+		{
+			if (0 <= coreClientCS[Client][2] - 1)
+			{
+				coreClientCS[Client][2]--;
+			}
+			UpdateClassSelection(Client);
+		}
+		if (Buttons & 2)
+		{
+			if (!coreClientCS[Client][8])
+			{
+				engfunc(48, Client, 1400704 + 36);
+				coreClientCS[Client][8] = 1;
+				set_hudmessage(230, 230, 230, -1082130432, -1096894382, "HamFilter", "HamFilter", "HamFilter", "HamFilter", "HamFilter", 6);
+				show_hudmessage(Client, 1405996);
+				set_hudmessage(230, 230, 230, -1082130432, -1096894382, "HamFilter", "HamFilter", "HamFilter", "HamFilter", "HamFilter", 7);
+				show_hudmessage(Client, 1406000);
+			}
+			else
+			{
+				engfunc(48, Client, 1400704 + 20);
+				coreClientCS[Client][8] = 0;
+				UpdateClassSelection(Client);
+				UpdatePanelHelp(Client);
+			}
+		}
+		if (Buttons & 2048)
+		{
+			coreClientCS[Client][5] = floatadd(1069547520, get_gametime());
+			static File[256];
+			formatex(File, 255, "core/cache/%d.cx", coreClientCS[Client][1]);
+			show_motd(Client, File, "< Class Sheet >");
+		}
+		if (Buttons & 1)
+		{
+			if (coreClientCS[Client][9])
+			{
+				message_begin(1, MSGID_ScreenFade, 1407160, Client);
+				write_short(2048);
+				write_short(1024);
+				write_short("HamFilter");
+				write_byte(255);
+				write_byte(255);
+				write_byte(255);
+				write_byte(200);
+				message_end();
+				CloseClassSelection(Client);
+				forceClientCLASS(Client, coreClientCS[Client][1], coreClientCS[Client][2], true, 0);
+				setClientHP(Client, getClientMHP(Client));
+				decl PL;
+				new var1;
+				if (coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][61] <= 0)
+				{
+					var1 = 1065353216;
+				}
+				else
+				{
+					var1 = coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][61];
+				}
+				PL = floatround(var1 * coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][59], "HamFilter");
+				new var2;
+				if (!coreClassExtensions[coreClient[Client][0]][357] || coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][65])
+				{
+					setClientSPL(Client, PL);
+				}
+				else
+				{
+					setClientPL(Client, PL);
+				}
+				return 0;
+			}
+			if (coreClientCS[Client][1] == coreClient[Client][0])
+			{
+				client_cmd(Client, _CMD_Invalid);
+				coreClientCS[Client][5] = floatadd(1069547520, get_gametime());
+				return 0;
+			}
+			if (coreClassExtensions[coreClientCS[Client][1]][358])
+			{
+				client_cmd(Client, _CMD_Invalid);
+				coreClientCS[Client][5] = floatadd(1069547520, get_gametime());
+				return 0;
+			}
+			client_cmd(Client, _CMD_Select);
+			CloseClassSelection(Client);
+			coreClient[Client][1] = coreClient[Client][0];
+			coreClient[Client][4] = coreClient[Client][3];
+			coreClient[Client][2] = coreClientCS[Client][1];
+			coreClient[Client][5] = 0;
+			coreClient[Client][20] = 1;
+			if (pev(Client, 89) != 9)
+			{
+				message_begin(1, MSGID_ScreenFade, 1407172, Client);
+				write_short(2048);
+				write_short(1024);
+				write_short("HamFilter");
+				write_byte(255);
+				write_byte(255);
+				write_byte(255);
+				write_byte(200);
+				message_end();
+				client_cmd(Client, "cell");
+			}
+			if (!coreClient[Client][27])
+			{
+				silentClientKILL(Client);
+				message_begin(2, MSGID_DeathMsg, 1164156, "HamFilter");
+				write_byte(Client);
+				write_byte(Client);
+				write_string("Class Change");
+				message_end();
+			}
+		}
+	}
+	return 0;
+}
+
+public selectionSearch(Client)
+{
+	if (!coreClientCS[Client][0])
+	{
+		return 0;
+	}
+	new var1;
+	if (ClassExtensionCTR <= 0 || coreClientCS[Client][7] > get_gametime())
+	{
+		return 1;
+	}
+	floatadd(1065353216, get_gametime());
+	static Start;
+	static Class;
+	static String[65];
+	read_argv(1, String, 64);
+	Start = coreClientCS[Client][1];
+	Class = Start + 1;
+	while (Class < ClassExtensionCTR)
+	{
+		if (containi(coreClassExtensions[Class][1], String) != -1)
+		{
+			coreClientCS[Client][2] = 0;
+			coreClientCS[Client][1] = Class;
+			UpdateClassSelection(Client);
+			SwitchClass(Client);
+			return 1;
+		}
+		Class += 1;
+	}
+	Class = 0;
+	while (Class < Start)
+	{
+		if (containi(coreClassExtensions[Class][1], String) != -1)
+		{
+			coreClientCS[Client][2] = 0;
+			coreClientCS[Client][1] = Class;
+			UpdateClassSelection(Client);
+			SwitchClass(Client);
+			return 1;
+		}
+		Class += 1;
+	}
+	return 1;
+}
+
+public plugin_init()
+{
+	register_plugin("CORE.Ascend", "3.0", "core | L o D");
+	initReVision("Ascend");
+	MaxPlayers = get_maxplayers();
+	FWD_AscendInitiated = CreateMultiForward("@AscendInitiated", "HamFilter");
+	FWD_ClassChange = CreateMultiForward("@ClassChange", "HamFilter", 0, 0, 0);
+	FWD_LevelChange = CreateMultiForward("@LevelChange", "HamFilter", 0, 0, 0);
+	FWD_ClientDeath = CreateMultiForward("@ClientDeath", "HamFilter", 0);
+	register_forward(104, "ClientPreThink", "HamFilter");
+	register_forward(105, "ClientPostThink", "HamFilter");
+	register_forward(92, "Think", "HamFilter");
+	register_forward(94, "Touch", "HamFilter");
+	register_forward(109, "GetGameDescription", "HamFilter");
+	register_forward(28, "EmitSound", "HamFilter");
+	register_forward("", "SetModel", "HamFilter");
+	register_forward(124, "AddToFullPack", 1);
+	register_forward(124, "ClassSelectionAtFP", 1);
+	if (1300 <= getGameVERSION())
+	{
+		register_clcmd("+turbo", "cmdTurbo", -1, 1408412, -1);
+	}
+	else
+	{
+		register_clcmd("turbo", "cmdTurbo", -1, 1408412, -1);
+	}
+	register_clcmd("+powerup", "cmdPower", -1, 1408412, -1);
+	register_clcmd("-powerup", "cmdPowerOff", -1, 1408412, -1);
+	register_clcmd("+block", "cmdBlock", -1, 1408412, -1);
+	register_clcmd("-block", "cmdBlockOff", -1, 1408412, -1);
+	register_clcmd("togglefly", "cmdFly", -1, 1408412, -1);
+	register_clcmd("ascend", "cmdAscend", -1, 1408412, -1);
+	register_clcmd("descend", "cmdDescend", -1, 1408412, -1);
+	MSGID_ScreenFade = MSGID("ScreenFade");
+	MSGID_DeathMsg = MSGID("DeathMsg");
+	MSGID_Transform = MSGID("Transform");
+	MSGID_Charge = MSGID("Charge");
+	MSGID_PowerUp = MSGID("Powerup");
+	MSGID_MeleeAtkHud = MSGID("MeleeAtkHud");
+	register_message(MSGID("VGUIMenu"), "VGUIMenu");
+	register_message(MSGID_DeathMsg, "ClientDeath");
+	register_message(MSGID("ScoreInfo"), "ScoreInfo");
+	register_message(MSGID_Charge, "Charge");
+	register_message(MSGID("PowerLevel"), "PowerLevel");
+	register_message(MSGID("PowerStrug"), "PowerStrug");
+	register_message(MSGID("Powerup"), "Hook_PowerUp");
+	register_message(MSGID("MeleeAtkHud"), "HOOK_MeleeAtkHud");
+	register_clcmd("change_team", "cmdChangeTeam", -1, 1408412, -1);
+	register_clcmd("jointeam", "cmdChangeTeam", -1, 1408412, -1);
+	register_clcmd("spectate", "cmdChangeTeam", -1, 1408412, -1);
+	register_clcmd("change_class", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("buu", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("goku", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("gohan", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("krillin", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("frieza", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("piccolo", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("trunks", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("vegeta", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("cell", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("a18", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("ginyu", "cmdChangeClass", -1, 1408412, -1);
+	register_clcmd("say", "selectionSearch", -1, 1408412, -1);
+	register_clcmd("say_team", "selectionSearch", -1, 1408412, -1);
+	register_clcmd("forceclass", "cmdForceClass", -1, 1408412, -1);
+	register_clcmd("fullupdate", "cmdFullUpdate", -1, 1408412, -1);
+	CVAR_HyperMode = register_cvar(".Ascend.HyperMode", 1411596, 4, "HamFilter");
+	CVAR_StaticClients = register_cvar(".Ascend.SQLite", 1411664, 4, "HamFilter");
+	set_task(1036831949, "TASK_UpdateKi", "HamFilter", 1174304, "HamFilter", 1411728, "HamFilter");
+	CVAR_KiMod = register_cvar(".Ascend.Ki", 1411780, 4, "HamFilter");
+	set_task(1065353216, "initClassExtensions", "HamFilter", 1174304, "HamFilter", 1157364, "HamFilter");
+	set_task(1036831949, "TASK_UpdateGlow", "HamFilter", 1174304, "HamFilter", 1411932, "HamFilter");
+	set_task(1053609165, "TASK_UpdateLightning", "HamFilter", 1174304, "HamFilter", 1412024, "HamFilter");
+	CVAR_Lightning = register_cvar(".Ascend.FX.Lightning", 1412116, 4, "HamFilter");
+	CVAR_Glow = register_cvar(".Ascend.FX.Glow", 1412188, 4, "HamFilter");
+	CVAR_AuraLight = register_cvar(".Ascend.FX.AuraLight", 1412280, 4, "HamFilter");
+	register_clcmd("teleport", "cmdTeleport", -1, 1408412, -1);
+	CVAR_TeleDelay = register_cvar(".Ascend.Teleport.Delay", "0.1", 4, "HamFilter");
+	CVAR_TeleStyle = register_cvar(".Ascend.Teleport.Style", 1412572, 4, "HamFilter");
+	CVAR_Boost = register_cvar(".Ascend.Boost", 1412636, 4, "HamFilter");
+	CVAR_PerfectTrans = register_cvar(".Ascend.PerfectTransformation", 1412764, 4, "HamFilter");
+	StaticClientsInit();
+	Icon_Init();
+	Damage_Init();
+	goreInit();
+	ClassSelectionInit();
+	ArrowInit();
+	addIconHOOK("SX_IconHook");
+	RegisterHam(9, "player", "PlayerTakeDamage", "HamFilter");
+	return 0;
+}
+
+public PlayerTakeDamage(Client, Inflictor, Attacker, Float:DMG, DmgBits)
+{
+	if (!is_user_connected(Client))
+	{
+		return 1;
+	}
+	if (!is_user_connected(Attacker))
+	{
+		return 1;
+	}
+	static Float:Damage;
+	static Float:DEF;
+	static Float:ATK;
+	if (is_user_bot(Attacker))
+	{
+		ATK = 1.0;
+	}
+	else
+	{
+		ATK = coreClientLevel[Attacker][67];
+	}
+	DEF = coreClientLevel[Client][68];
+	Damage = floatmul(floatmul(DMG, ATK), floatsub(1065353216, DEF));
+	if (Damage <= 0.0)
+	{
+		return 4;
+	}
+	SetHamParamFloat(4, DMG);
+	return 2;
+}
+
+public cmdForceClass(Client)
+{
+	if (!isDeveloper(Client))
+	{
+		console_print(Client, "< Ascend > Classified");
+		return 1;
+	}
+	static szTarget[32];
+	read_argv(1, szTarget, 31);
+	static ClassFound;
+	static Class;
+	static szClass[32];
+	read_argv(2, szClass, 31);
+	ClassFound = 0;
+	Class = 0;
+	while (Class < ClassExtensionCTR)
+	{
+		if (containi(coreClassExtensions[Class][1], szClass) != -1)
+		{
+			ClassFound = 1;
+			if (!ClassFound)
+			{
+				console_print(Client, "< Ascend > Class cannot be found!");
+				return 1;
+			}
+			static Level;
+			static szLevel[32];
+			read_argv("", szLevel, 31);
+			Level = str_to_num(szLevel);
+			new var1;
+			if (Level < 0 || Level >= coreClassExtensions[Class][356])
+			{
+				console_print(Client, "< Ascend > Class does not have this Level!");
+				return 1;
+			}
+			if (equal(szTarget, "@self", "HamFilter"))
+			{
+				forceClientClassOnTarget(Client, Class, Level);
+			}
+			else
+			{
+				if (equal(szTarget, "@all", "HamFilter"))
+				{
+					static i;
+					static Count;
+					static Clients[32];
+					get_players(Clients, Count, 1413900, 1413904);
+					i = 0;
+					while (i < Count)
+					{
+						forceClientClassOnTarget(Clients[i], Class, Level);
+						i += 1;
+					}
+				}
+				if (equal(szTarget, "@all.", "HamFilter"))
+				{
+					static i;
+					static Count;
+					static Clients[32];
+					get_players(Clients, Count, 1414068, 1413904);
+					i = 0;
+					while (i < Count)
+					{
+						if (Client != Clients[i])
+						{
+							forceClientClassOnTarget(Clients[i], Class, Level);
+						}
+						i += 1;
+					}
+				}
+				static Target;
+				Target = find_player("bl", szTarget);
+				if (Target)
+				{
+					if (find_player("blj", szTarget) != Target)
+					{
+						console_print(Client, "< Ascend > There are more Clients matching to your Target");
+						return 1;
+					}
+				}
+				else
+				{
+					new var2;
+					if ((Target = find_player(1414336, szTarget)) && szTarget[0] == 35 && szTarget[1])
+					{
+						Target = find_player(1414344, str_to_num(1413016 + 4));
+					}
+				}
+				if (!Target)
+				{
+					console_print(Client, "< Ascend > Target Search failed!");
+				}
+				forceClientClassOnTarget(Target, Class, Level);
+			}
+			return 1;
+		}
+		Class += 1;
+	}
+	if (!ClassFound)
+	{
+		console_print(Client, "< Ascend > Class cannot be found!");
+		return 1;
+	}
+	static Level;
+	static szLevel[32];
+	read_argv("", szLevel, 31);
+	Level = str_to_num(szLevel);
+	new var1;
+	if (Level < 0 || Level >= coreClassExtensions[Class][356])
+	{
+		console_print(Client, "< Ascend > Class does not have this Level!");
+		return 1;
+	}
+	if (equal(szTarget, "@self", "HamFilter"))
+	{
+		forceClientClassOnTarget(Client, Class, Level);
+	}
+	else
+	{
+		if (equal(szTarget, "@all", "HamFilter"))
+		{
+			static i;
+			static Count;
+			static Clients[32];
+			get_players(Clients, Count, 1413900, 1413904);
+			i = 0;
+			while (i < Count)
+			{
+				forceClientClassOnTarget(Clients[i], Class, Level);
+				i += 1;
+			}
+		}
+		if (equal(szTarget, "@all.", "HamFilter"))
+		{
+			static i;
+			static Count;
+			static Clients[32];
+			get_players(Clients, Count, 1414068, 1413904);
+			i = 0;
+			while (i < Count)
+			{
+				if (Client != Clients[i])
+				{
+					forceClientClassOnTarget(Clients[i], Class, Level);
+				}
+				i += 1;
+			}
+		}
+		static Target;
+		Target = find_player("bl", szTarget);
+		if (Target)
+		{
+			if (find_player("blj", szTarget) != Target)
+			{
+				console_print(Client, "< Ascend > There are more Clients matching to your Target");
+				return 1;
+			}
+		}
+		else
+		{
+			new var2;
+			if ((Target = find_player(1414336, szTarget)) && szTarget[0] == 35 && szTarget[1])
+			{
+				Target = find_player(1414344, str_to_num(1413016 + 4));
+			}
+		}
+		if (!Target)
+		{
+			console_print(Client, "< Ascend > Target Search failed!");
+		}
+		forceClientClassOnTarget(Target, Class, Level);
+	}
+	return 1;
+}
+
+forceClientClassOnTarget(Target, Class, Level)
+{
+	new var1;
+	if (is_user_alive(Target) && !getClientMELEE(Target) && !getClientMELEEPUSHBACK(Target))
+	{
+		forceClientCLASS(Target, Class, Level, true, 0);
+		setClientHP(Target, getClientMHP(Target));
+		decl PL;
+		new var2;
+		if (coreClassLevels[coreClient[Target][3][coreClient[Target][0] * 8]][61] <= 0)
+		{
+			var2 = 1065353216;
+		}
+		else
+		{
+			var2 = coreClassLevels[coreClient[Target][3][coreClient[Target][0] * 8]][61];
+		}
+		PL = floatround(var2 * coreClassLevels[coreClient[Target][3][coreClient[Target][0] * 8]][59], "HamFilter");
+		new var3;
+		if (!coreClassExtensions[coreClient[Target][0]][357] || coreClassLevels[coreClient[Target][3][coreClient[Target][0] * 8]][65])
+		{
+			setClientSPL(Target, PL);
+		}
+		else
+		{
+			setClientPL(Target, PL);
+		}
+	}
+	return 0;
+}
+
+public TraceLine(Float:v1[3], Float:v2[3], fNoMonsters, pentToSkip, ptr)
+{
+	set_tr2(ptr, 8, -1);
+	return 1;
+}
+
+public FilterModule(Module[])
+{
+	if (equali(Module, "sqlite", "HamFilter"))
+	{
+		SQLiteLoaded = false;
+		server_print("\n< Ascend > SQLite not loaded > disabling Static Clients");
+		return 1;
+	}
+	return 0;
+}
+
+public FilterNative(Native[], Index, Trap)
+{
+	if (!Trap)
+	{
+		server_print("< Ascend > Native %s is not implemented!", Native);
+		return 1;
+	}
+	return 0;
+}
+
+public client_authorized(Client)
+{
+	StaticClientsAuth(Client);
+	return 0;
+}
+
+public SetModel(Entity, Model[])
+{
+	static Class[32];
+	pev(Entity, 1, Class, 31);
+	if (equal(Class, "gib", "HamFilter"))
+	{
+		set_pev(Entity, 73, pev(Entity, 73) | 128);
+		return 1;
+	}
+	new var1;
+	if (equal(Model, "models/w_destructodisc.mdl", "HamFilter") || equal(Model, "models/w_friezadisc.mdl", "HamFilter") || equal(Model, "sprites/shieldattack.spr", "HamFilter"))
+	{
+		MDLCounter += 1;
+		MDLQueue[MDLCounter] = Entity;
+		return 1;
+	}
+	return 1;
+}
+
+public Think(Entity)
+{
+	static i;
+	if (MDLCounter)
+	{
+		i = 0;
+		while (i < MDLCounter)
+		{
+			if (pev_valid(MDLQueue[i]))
+			{
+				updateDamage(MDLQueue[i]);
+			}
+			i += 1;
+		}
+		MDLCounter = 0;
+	}
+	if (MSGCounter)
+	{
+		i = 0;
+		while (i < MSGCounter)
+		{
+			if (pev_valid(MSGQueue[i][0]))
+			{
+				HooK_Ball_Queued(MSGQueue[i][0], MSGQueue[i][1], MSGQueue[i][2]);
+			}
+			i += 1;
+		}
+		MSGCounter = 0;
+	}
+	HyperMode = get_pcvar_num(CVAR_HyperMode);
+	static Class[32];
+	pev(Entity, 1, Class, 31);
+	if (equal(Class, "AdvancedAfterFX", "HamFilter"))
+	{
+		afterFxThink(Entity);
+		return 4;
+	}
+	if (equal(Class, "item_sensubeanbag", "HamFilter"))
+	{
+		set_pev(Entity, 100, 0);
+		set_pev(Entity, xs__ITaskId, 1132396544);
+		return 4;
+	}
+	return 1;
+}
+
+public Touch(Touched, Other)
+{
+	static ClassOther[32];
+	static ClassTouched[32];
+	if (pev_valid(Touched))
+	{
+		pev(Touched, 1, ClassTouched, 31);
+		if (equal(ClassTouched, "AdvancedAfterFX", "HamFilter"))
+		{
+			set_pev(Touched, 73, pev(Touched, 73) | 128);
+		}
+	}
+	if (pev_valid(Other))
+	{
+		pev(Other, 1, ClassOther, 31);
+		if (pev_valid(Touched))
+		{
+			new var1;
+			if (equal(ClassTouched, "item_sensubeanbag", "HamFilter") && equal(ClassOther, "player", "HamFilter"))
+			{
+				if (pev(Touched, 100))
+				{
+					return 4;
+				}
+				if (is_user_alive(Other))
+				{
+					set_pev(Touched, 33, getNextThink(60.0));
+					set_pev(Touched, 100, 1);
+					set_pev(Touched, 77, 4);
+					set_pev(Touched, xs__ITaskId, 0);
+					setClientHP(Other, getClientMHP(Other));
+					setClientKI(Other, 1148846080);
+					emit_sound(Other, "", "weapons/sensu.wav", 1065353216, 1061997773, "HamFilter", 100);
+					return 4;
+				}
+			}
+			new var2;
+			if (equal(ClassTouched, "candy", "HamFilter") && equal(ClassOther, "player", "HamFilter"))
+			{
+				CandyFix(Touched, Other);
+			}
+		}
+	}
+	return 1;
+}
+
+public CandyFix(Entity, Client)
+{
+	new var1;
+	if (!is_user_connected(Client) || !pev_valid(Entity))
+	{
+		return 0;
+	}
+	new var2;
+	if (!is_user_alive(Client) || coreClient[Client][0] < 0)
+	{
+		return 0;
+	}
+	if (0 > coreClassExtensions[coreClient[Client][0]][376])
+	{
+		return 0;
+	}
+	ExecuteForward(coreClassExtensions[coreClient[Client][0]][376], FWD_Return, Client);
+	if (FWD_Return != 1)
+	{
+		return 0;
+	}
+	static Model[32];
+	pev(Entity, "", Model, 31);
+	if (equal(Model, "models/cookie.mdl", "HamFilter"))
+	{
+		setClientHP(Client, getClientMHP(Client));
+		EmitSound(Client, 3, "*/candyeat.wav");
+		engfunc(20, Entity);
+	}
+	else
+	{
+		if (equal(Model, "models/chocolate.mdl", "HamFilter"))
+		{
+			if (getClientMHP(Client) < getClientHP(Client) + 40)
+			{
+				setClientHP(Client, getClientMHP(Client));
+			}
+			else
+			{
+				setClientHP(Client, getClientHP(Client) + 40);
+			}
+			setClientSPL(Client, getClientPL(Client) + 50000);
+			EmitSound(Client, 3, "*/candyeat.wav");
+			engfunc(20, Entity);
+		}
+		if (equal(Model, "models/donut.mdl", "HamFilter"))
+		{
+			setClientSPL(Client, getClientPL(Client) + 100000);
+			EmitSound(Client, 3, "*/candyeat.wav");
+			engfunc(20, Entity);
+		}
+	}
+	return 0;
+}
+
+public Charge(ID, DEST, Client)
+{
+	new var1;
+	if (!is_user_connected(Client) || coreClient[Client][0] < 0)
+	{
+		return 0;
+	}
+	if (0 < coreClassExtensions[coreClient[Client][0]][374])
+	{
+		ExecuteForward(coreClassExtensions[coreClient[Client][0]][374], FWD_Return, Client);
+	}
+	return 0;
+}
+
+public EmitSound(Client, Channel, Sound[])
+{
+	new var1;
+	if (!is_user_connected(Client) || coreClient[Client][0] < 0)
+	{
+		return 1;
+	}
+	new var2;
+	if (equal(Sound, "weapons/aura.wav", "HamFilter") || equal(Sound, "weapons/swoop.wav", "HamFilter") || equal(Sound, "weapons/chainswoop.wav", "HamFilter"))
+	{
+		Hook_Aura(Client);
+	}
+	if (1 > coreClassExtensions[coreClient[Client][0]][375])
+	{
+		return 1;
+	}
+	static GenSound[65];
+	copy(GenSound, 64, Sound);
+	replace(GenSound, 64, "cell/", "*/");
+	static FMRES;
+	if (ExecuteForward(coreClassExtensions[coreClient[Client][0]][375], FMRES, Client, Channel, GenSound))
+	{
+		if (FMRES == 4)
+		{
+			return 4;
+		}
+	}
+	return 1;
+}
+
+public ClientPreThink(Client)
+{
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	new var1;
+	if (!coreClient[Client][27] && HyperMode && getClientBASICMELEE(Client) > 0)
+	{
+		setClientBASICMELEE(Client, "HamFilter");
+	}
+	gorePreThink(Client);
+	if (is_user_bot(Client))
+	{
+		return 0;
+	}
+	ClassSelectionThink(Client);
+	new var2;
+	if (!is_user_alive(Client) || coreClient[Client][0] < 0)
+	{
+		return 0;
+	}
+	sxPreThink(Client);
+	Teleport_PreThink(Client);
+	Push_PreThink(Client);
+	new var3;
+	if (getClientKI(Client) <= 0 && !coreClient[Client][11])
+	{
+		new var4;
+		if (getClientFLY(Client) && !coreClient[Client][25])
+		{
+			setClientFLY(Client, "HamFilter");
+		}
+		if (getClientSWOOPING(Client))
+		{
+			setClientSWOOPTIME(Client, "HamFilter");
+		}
+		if (getClientTURBO(Client))
+		{
+			engclient_cmd(Client, "turbo", 1352660, 1352664);
+		}
+		new var5;
+		if (coreClient[Client][3] > 0 && coreClassExtensions[coreClient[Client][0]][357] && !coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][65])
+		{
+			setAscendDelay(Client, 3.0);
+			resetRendering(Client);
+			setClientPL(Client, getClientADPL(Client));
+			emit_sound(Client, "", "weapons/descend.wav", 1065353216, 1061997773, "HamFilter", 100);
+			forceClientCLASS(Client, coreClient[Client][0], 0, true, 1);
+		}
+	}
+	return 0;
+}
+
+public ClientPostThink(Client)
+{
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	if (coreClientCS[Client][0])
+	{
+		set_pev(Client, 120, 1417332);
+	}
+	new var1;
+	if (!coreClient[Client][27] && HyperMode && getClientBASICMELEE(Client) > 0)
+	{
+		setClientBASICMELEE(Client, "HamFilter");
+	}
+	Aura_PreThink(Client);
+	coreClient[Client][28] = getClientPREPUNCH(Client);
+	coreClient[Client][29] = getClientMELEE(Client);
+	if (!getClientMELEEPUSHBACK(Client))
+	{
+		coreClient[Client][31] = 0;
+	}
+	new var2;
+	if (getClientHP(Client) < coreClient[Client][30] && getClientMELEEPUSHBACK(Client) && getClientTHROWAWAY(Client) && pev(Client, 69) == 2)
+	{
+		coreClient[Client][31]++;
+		if (2 <= coreClient[Client][31])
+		{
+			static CORE[2];
+			CORE[0] = Client;
+			CORE[1] = pev(Client, 69);
+			static Float:vecVeloctiy[3];
+			pev(Client, 120, vecVeloctiy);
+			new var3 = vecVeloctiy;
+			var3[0] = floatmul(var3[0], floatadd(1065353216, 1036831949 * coreClient[Client][31]));
+			new var4 = vecVeloctiy[1];
+			var4 = floatmul(var4, floatadd(1065353216, 1036831949 * coreClient[Client][31]));
+			new var5 = vecVeloctiy[2];
+			var5 = floatmul(var5, floatadd(1065353216, 1036831949 * coreClient[Client][31]));
+			set_pev(Client, 69, 14);
+			set_pev(Client, 120, vecVeloctiy);
+			set_task(1073741824, "TASK_Push", uniqueTaskID(Client, 1025), CORE, 2, 1157364, "HamFilter");
+		}
+	}
+	coreClient[Client][30] = getClientHP(Client);
+	return 0;
+}
+
+public client_connect(Client)
+{
+	coreClient[Client][0] = -1;
+	coreClient[Client][3] = -1;
+	coreClient[Client][1] = -1;
+	coreClient[Client][4] = -1;
+	coreClient[Client][2] = -1;
+	coreClient[Client][5] = -1;
+	coreClient[Client][11] = 0;
+	coreClient[Client][12] = 1;
+	coreClient[Client][13] = 1;
+	coreClient[Client][14] = 1;
+	coreClient[Client][15] = 1;
+	coreClient[Client][16] = 1;
+	coreClient[Client][17] = 1;
+	coreClient[Client][18] = 1;
+	coreClient[Client][20] = 0;
+	coreClient[Client][21] = 1;
+	coreClient[Client][26] = 0;
+	coreClient[Client][27] = 0;
+	coreClient[Client][25] = 0;
+	coreClientCS[Client][0] = 0;
+	coreClient[Client][32] = -1;
+	coreClient[Client][33] = 0;
+	coreClient[Client][35] = -1;
+	coreClient[Client][34] = -1;
+	Animation_ClientConnect(Client);
+	Push_ClientConnect(Client);
+	Melee_ClientConnect(Client);
+	client_cmd(Client, "mp3 play media/gameconnect.mp3");
+	return 0;
+}
+
+public client_disconnect(Client)
+{
+	Special_forceClientCLASS(Client);
+	StaticClientsDisconnect(Client);
+	if (coreClient[Client][11])
+	{
+		coreClient[Client][11] = 0;
+		remove_task(uniqueTaskID(Client, 102), "HamFilter");
+		emit_sound(Client, 2, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, "", "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 4, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 1, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		if (0 < coreClassExtensions[coreClient[Client][0]][365])
+		{
+			ExecuteForward(coreClassExtensions[coreClient[Client][0]][365], FWD_Return, Client, coreClient[Client][3]);
+		}
+	}
+	return 0;
+}
+
+public cmdChangeClass(Client)
+{
+	if (is_user_bot(Client))
+	{
+		return 0;
+	}
+	new var1;
+	if ((!coreClient[Client][14] || getClientRESPAWN(Client) || getClientMELEE(Client) || getClientMELEEPUSHBACK(Client) || coreClient[Client][26] || getClientPOWERUP(Client) || getClientTURBO(Client) || getClientSWOOPING(Client) || coreClient[Client][11]) && !coreClientCS[Client][0])
+	{
+		return 1;
+	}
+	static Command[32];
+	read_argv("HamFilter", Command, 31);
+	new var3;
+	if (equal(Command, "change_class", "HamFilter") && !pev(Client, 84) & 4096)
+	{
+		ShowClassSelection(Client);
+		return 1;
+	}
+	if (coreClient[Client][20] != 1)
+	{
+		return 1;
+	}
+	if (equal(Command, "cell", "HamFilter"))
+	{
+		return 0;
+	}
+	return 1;
+}
+
+public cmdChangeTeam(Client)
+{
+	if (is_user_bot(Client))
+	{
+		return 0;
+	}
+	new var1;
+	if (!coreClient[Client][14] || coreClient[Client][26])
+	{
+		return 1;
+	}
+	return 0;
+}
+
+public @silentClientKILL(Client)
+{
+	handleClientDeath(Client);
+	return 0;
+}
+
+public ClientDeath(ID, Destination, Entity)
+{
+	static Client;
+	static Killer;
+	Killer = get_msg_arg_int(1);
+	Client = get_msg_arg_int(2);
+	if (Killer < 1)
+	{
+		Killer = Client;
+	}
+	static Weapon[65];
+	get_msg_arg_string("", Weapon, 64);
+	strtolower(Weapon);
+	replace(Weapon, 64, 1418300, 1418308);
+	replace(Weapon, 64, 1418312, 1418320);
+	replace(Weapon, 64, 1418324, 1418332);
+	replace(Weapon, 64, 1418336, 1418344);
+	set_msg_arg_string("", Weapon);
+	if (equal(Weapon, "melee", "HamFilter"))
+	{
+		if (coreClient[Killer][28])
+		{
+			formatex(Weapon, 64, "prepunchmelee");
+			set_msg_arg_string("", Weapon);
+		}
+		else
+		{
+			if (coreClient[Killer][29])
+			{
+				formatex(Weapon, 64, "advancedmelee");
+				set_msg_arg_string("", Weapon);
+			}
+			if (0 < coreClient[Client][31])
+			{
+				formatex(Weapon, 64, "%ix basicmelee", coreClient[Client][31] + 1);
+				set_msg_arg_string("", Weapon);
+				coreClient[Client][31] = 0;
+			}
+			formatex(Weapon, 64, "basicmelee");
+			set_msg_arg_string("", Weapon);
+		}
+	}
+	else
+	{
+		if (equal(Weapon, "sword", "HamFilter"))
+		{
+			if (coreClient[Killer][28])
+			{
+				formatex(Weapon, 64, "preslashedsword");
+				set_msg_arg_string("", Weapon);
+			}
+			if (coreClient[Killer][29])
+			{
+				formatex(Weapon, 64, "advancedsword");
+				set_msg_arg_string("", Weapon);
+			}
+			if (0 < coreClient[Client][31])
+			{
+				formatex(Weapon, 64, "%ix sword", coreClient[Client][31] + 1);
+				set_msg_arg_string("", Weapon);
+				coreClient[Client][31] = 0;
+			}
+			formatex(Weapon, 64, "sword");
+			set_msg_arg_string("", Weapon);
+		}
+	}
+	if (0 <= coreClient[Killer][35])
+	{
+		if (0 <= coreSpecialExtension[coreClient[Killer][35]][330])
+		{
+			ExecuteForward(coreSpecialExtension[coreClient[Killer][35]][330], FWD_Return, Client, Killer, Weapon);
+		}
+	}
+	handleClientDeath(Client);
+	HooK_FX_Death();
+	return 0;
+}
+
+handleClientDeath(Client)
+{
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	goreDeath(Client);
+	CloseClassSelection(Client);
+	coreClient[Client][27] = 1;
+	Special_forceClientCLASS(Client);
+	if (coreClient[Client][11])
+	{
+		emit_sound(Client, "", "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 4, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 1, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 2, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		coreClient[Client][11] = 0;
+		setClientFROZEN(Client, "HamFilter");
+		setClientPROTECT(Client, "HamFilter");
+		setClientGOD(Client, "HamFilter");
+		remove_task(uniqueTaskID(Client, 102), "HamFilter");
+		if (0 < coreClassExtensions[coreClient[Client][0]][365])
+		{
+			ExecuteForward(coreClassExtensions[coreClient[Client][0]][365], FWD_Return, Client, coreClient[Client][3]);
+		}
+		new var1;
+		if (coreClassExtensions[coreClient[Client][0]][357] && !coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][65])
+		{
+			if (0 < coreClient[Client][3])
+			{
+				ExecuteForward(FWD_LevelChange, FWD_Return, Client, coreClient[Client][3], 0);
+				coreClient[Client][5] = 0;
+				emit_sound(Client, "", "weapons/descend.wav", 1065353216, 1061997773, "HamFilter", 100);
+			}
+		}
+		if (coreClient[Client][0] == coreClient[Client][2])
+		{
+			coreClient[Client][5] = coreClient[Client][4];
+		}
+	}
+	new var2;
+	if (coreClassExtensions[coreClient[Client][0]][357] && coreClient[Client][3] > 0 && !coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][65])
+	{
+		coreClient[Client][5] = 0;
+	}
+	else
+	{
+		if (coreClient[Client][0] == coreClient[Client][2])
+		{
+			coreClient[Client][5] = coreClient[Client][3];
+		}
+	}
+	ExecuteForward(FWD_ClientDeath, FWD_Return, Client);
+	Icon_forceClientCLASS(Client);
+	return 0;
+}
+
+public @ClientReSpawn(Client, bool:Valid)
+{
+	if (0 > coreClient[Client][2])
+	{
+		return 0;
+	}
+	if (!Valid)
+	{
+		coreClient[Client][35] = -1;
+		if (!getClientFLY(Client))
+		{
+			engclient_cmd(Client, "togglefly", 1352660, 1352664);
+		}
+		coreClient[Client][27] = 0;
+		setDescendDelay(Client, 10.0);
+		forceClientCLASS(Client, coreClient[Client][2], coreClient[Client][5], false, 0);
+		static CORE[1];
+		CORE[0] = Client;
+		set_task(1075838976, "StopRegenSound", "HamFilter", CORE, 1, 1157364, "HamFilter");
+		new var1;
+		if (coreClient[Client][22] && coreClient[Client][23])
+		{
+			setClientPL(Client, coreClient[Client][22]);
+			setClientADPL(Client, coreClient[Client][23]);
+			new var2;
+			if (coreClient[Client][24] < 1 || coreClient[Client][24] > getClientMHP(Client))
+			{
+				coreClient[Client][24] = getClientMHP(Client);
+			}
+			setClientHP(Client, coreClient[Client][24]);
+			coreClient[Client][24] = 0;
+			coreClient[Client][22] = 0;
+			coreClient[Client][23] = 0;
+			coreClient[Client][20] = 0;
+			message_begin(1, MSGID_ScreenFade, 1419284, Client);
+			write_short(16384);
+			write_short(1024);
+			write_short("HamFilter");
+			write_byte(255);
+			write_byte(255);
+			write_byte(255);
+			write_byte(250);
+			message_end();
+			emit_sound(Client, "", "weapons/regen.wav", 1065353216, 1061997773, "HamFilter", 100);
+		}
+		else
+		{
+			if (coreClient[Client][20])
+			{
+				setClientSPL(Client, coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][59]);
+				coreClient[Client][20] = 0;
+				setClientHP(Client, getClientMHP(Client));
+			}
+			setClientHP(Client, getClientMHP(Client));
+		}
+		updateTransformBar(Client);
+		ResetCamIdealDist(Client);
+	}
+	else
+	{
+		new var3;
+		if (coreClient[Client][0] < 0 || coreClient[Client][3] < 0)
+		{
+			return 0;
+		}
+		set_pev(Client, 79, -2147483648);
+		forceClientCLASS(Client, coreClient[Client][0], coreClient[Client][3], false, 0);
+		set_pev(Client, 77, 5);
+		set_pev(Client, xs__ITaskId, 1114636288);
+		new i = 35;
+		while (i <= 64)
+		{
+			MsgRemoveClientICON(Client, i);
+			i++;
+		}
+	}
+	return 0;
+}
+
+public StopRegenSound(CORE[])
+{
+	if (!is_user_connected(CORE[0]))
+	{
+		return 0;
+	}
+	emit_sound(CORE[0], "", "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+	return 0;
+}
+
+public @ClientReSpawned(Client)
+{
+	new var1;
+	if (coreClient[Client][0] < 0 || coreClient[Client][3] < 0)
+	{
+		return 0;
+	}
+	stripClientITEMS(Client);
+	new var2;
+	if (!getClientTURBO(Client) && !getClientSWOOPING(Client))
+	{
+		set_pev(Client, 77, 0);
+		set_pev(Client, xs__ITaskId, 1132396544);
+	}
+	ExecuteForward(coreClassExtensions[coreClient[Client][0]][362], FWD_Return, Client, coreClient[Client][3]);
+	Icon_forceClientCLASS(Client);
+	setDescendDelay(Client, 0.0);
+	return 0;
+}
+
+public client_infochanged(Client)
+{
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	if (0 > coreClient[Client][0])
+	{
+		return 0;
+	}
+	setClientMODEL(Client, coreClientLevel[Client][33]);
+	return 0;
+}
+
+public GetGameDescription()
+{
+	static String[64];
+	new var1;
+	if (get_pcvar_num(CVAR_StaticClients) && SQLiteValid)
+	{
+		var2 = 1419736;
+	}
+	else
+	{
+		var2 = 1419768;
+	}
+	formatex(String, 63, "ECX%s - ", var2);
+	switch (getGameMODE())
+	{
+		case 0:
+		{
+			add(String, 63, "FFA", "HamFilter");
+		}
+		case 1:
+		{
+			add(String, 63, "TDM", "HamFilter");
+		}
+		case 2:
+		{
+			add(String, 63, "CTDB", "HamFilter");
+		}
+		default:
+		{
+		}
+	}
+	forward_return(1, String);
+	return 4;
+}
+
+public cmdFullUpdate(Client)
+{
+	return 1;
+}
+
+public PowerStrug(ID, Destination, Client)
+{
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	if (get_msg_arg_int(1) == 127)
+	{
+		coreClient[Client][25] = 0;
+	}
+	else
+	{
+		coreClient[Client][25] = 1;
+	}
+	return 0;
+}
+
+public PowerLevel(ID, Destination, Client)
+{
+	if (coreClient[Client][27])
+	{
+		return 1;
+	}
+	return 0;
+}
+
+public VGUIMenu(ID, Destination, Client)
+{
+	if (is_user_bot(Client))
+	{
+		return 0;
+	}
+	if (get_msg_arg_int(1) == 3)
+	{
+		new var1;
+		if (coreClient[Client][21] && get_pcvar_num(CVAR_StaticClients) && SQLiteValid)
+		{
+			coreClient[Client][21] = 0;
+			StaticClientSpawn(Client);
+		}
+		else
+		{
+			ShowClassSelection(Client);
+		}
+		return 1;
+	}
+	return 0;
+}
+
+public ScoreInfo(ID, Destination, Entity)
+{
+	if (is_user_bot(get_msg_arg_int(1)))
+	{
+		return 0;
+	}
+	if (get_msg_arg_int(5))
+	{
+		set_msg_arg_int(5, "", 10);
+		return 0;
+	}
+	return 0;
+}
+
+public plugin_precache()
+{
+	precache_sound("evolution/null.wav");
+	precache_sound("evolution/push.wav");
+	precache_sound("buu/candyeat.wav");
+	precache_sound("evolution/teleport.1.wav");
+	precache_sound("evolution/teleport.2.wav");
+	precache_sound("evolution/teleport.3.wav");
+	precache_sound("evolution/boost.wav");
+	precache_model(_MDL_None);
+	precache_model(_MDL_Podium);
+	precache_model(_SPR_Corona);
+	precache_model(_SPR_Panel);
+	FX_PreCache();
+	Aura_PreCache();
+	gorePreCache();
+	return 0;
+}
+
+public cmdPower(Client)
+{
+	new var1;
+	if (coreClient[Client][11] || coreClient[Client][26])
+	{
+		return 1;
+	}
+	return 0;
+}
+
+public cmdPowerOff(Client)
+{
+	new var1;
+	if (coreClient[Client][11] || coreClient[Client][26])
+	{
+		return 1;
+	}
+	return 0;
+}
+
+public cmdFly(Client)
+{
+	new var1;
+	if (coreClient[Client][11] || coreClient[Client][26])
+	{
+		return 1;
+	}
+	cmdBoost(Client);
+	return 0;
+}
+
+public cmdBlock(Client)
+{
+	new var1;
+	if (coreClient[Client][11] || coreClient[Client][26])
+	{
+		return 1;
+	}
+	return 0;
+}
+
+public cmdBlockOff(Client)
+{
+	new var1;
+	if (coreClient[Client][11] || coreClient[Client][26])
+	{
+		return 1;
+	}
+	return 0;
+}
+
+public cmdTurbo(Client)
+{
+	ClassSelectionTurbo(Client);
+	new var1;
+	if (coreClient[Client][11] || coreClient[Client][26])
+	{
+		return 1;
+	}
+	return 0;
+}
+
+public TASK_Push(CORE[])
+{
+	static Client;
+	Client = CORE[0];
+	if (is_user_connected(Client))
+	{
+		if (!is_user_alive(Client))
+		{
+			return 0;
+		}
+		set_pev(Client, 69, 2);
+		set_pev(Client, 69, 14);
+	}
+	return 0;
+}
+
+public plugin_cfg()
+{
+	server_cmd("exec core/core.cfg");
+	return 0;
+}
+
+public cmdAscend(Client)
+{
+	if (0 > coreClient[Client][0])
+	{
+		return 1;
+	}
+	if (coreClient[Client][26])
+	{
+		return 1;
+	}
+	if (coreClient[Client][6] > get_gametime())
+	{
+		return 1;
+	}
+	new var1;
+	if (coreClient[Client][3] >= coreClassExtensions[coreClient[Client][0]][356] - 1 || !coreClient[Client][12] || coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][64])
+	{
+		return 1;
+	}
+	static Float:vecVelocity[3];
+	pev(Client, 120, vecVelocity);
+	if (vector_length(vecVelocity) >= 1106247680)
+	{
+		return 1;
+	}
+	new var2;
+	if (coreClient[Client][11] || getClientSWOOPING(Client) || getClientTURBO(Client) || !is_user_alive(Client) || getClientTHROWAWAY(Client) || getClientTHROW(Client) || getClientWALLGND(Client) || getClientATKSHOOT(Client) || getClientATKCHARGE(Client) || getClientPOWERUP(Client) || getClientINFREEFALL(Client) || getClientPROTECT(Client) || getClientFROZEN(Client) || getClientRESPAWN(Client) || getClientKIBLOCK(Client) || coreClient[Client][35] >= 0 || getClientKI(Client) < 1128792064)
+	{
+		return 1;
+	}
+	if (equal(coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8][0]], "<<FusionFailure>>", "HamFilter"))
+	{
+		return 1;
+	}
+	if (coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8][0]][59] <= getClientPL(Client))
+	{
+		if (0 < coreClassExtensions[coreClient[Client][0]][377])
+		{
+			static Level;
+			ExecuteForward(coreClassExtensions[coreClient[Client][0]][377], Level, Client, coreClient[Client][3], getClientPL(Client));
+			new var3;
+			if (Level < 0 || Level > coreClassExtensions[coreClient[Client][0]][356] - 1)
+			{
+				coreClient[Client][4] = coreClient[Client][3];
+				coreClient[Client][3]++;
+			}
+			else
+			{
+				coreClient[Client][4] = coreClient[Client][3];
+				coreClient[Client][3] = Level;
+			}
+		}
+		else
+		{
+			coreClient[Client][4] = coreClient[Client][3];
+			coreClient[Client][3]++;
+		}
+		if (!getClientFLY(Client))
+		{
+			engclient_cmd(Client, "togglefly", 1352660, 1352664);
+		}
+		coreClient[Client][11] = 1;
+		resetRendering(Client);
+		setClientFROZEN(Client, 1);
+		setClientXFROZEN(Client, 1);
+		setClientPROTECT(Client, 1);
+		setClientGOD(Client, 1);
+		set_pev(Client, 120, 1420632);
+		set_pev(Client, 125, 1420644);
+		client_cmd(Client, "cam_idealdist 70");
+		static Core[1];
+		Core[0] = Client;
+		new var4;
+		if (getClientPL(Client) >= coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][60] && coreClassExtensions[coreClient[Client][0]][357] && coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][60] > coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][59] && get_pcvar_num(CVAR_PerfectTrans))
+		{
+			setDescendDelay(Client, 60.0);
+			set_task(coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][58], "FinishTransformation", uniqueTaskID(Client, 102), Core, 1, 1157364, "HamFilter");
+			if (0 < coreClassExtensions[coreClient[Client][0]][363])
+			{
+				ExecuteForward(coreClassExtensions[coreClient[Client][0]][363], FWD_Return, Client, coreClient[Client][3], 1);
+			}
+		}
+		setDescendDelay(Client, 1.0);
+		set_task(coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][57], "FinishTransformation", uniqueTaskID(Client, 102), Core, 1, 1157364, "HamFilter");
+		if (0 < coreClassExtensions[coreClient[Client][0]][363])
+		{
+			ExecuteForward(coreClassExtensions[coreClient[Client][0]][363], FWD_Return, Client, coreClient[Client][3], 0);
+		}
+	}
+	return 1;
+}
+
+public cmdDescend(Client)
+{
+	if (0 > coreClient[Client][0])
+	{
+		return 1;
+	}
+	new var1;
+	if (!coreClient[Client][13] || getClientSWOOPING(Client) || getClientTURBO(Client))
+	{
+		return 1;
+	}
+	if (coreClient[Client][7] > get_gametime())
+	{
+		return 1;
+	}
+	if (coreClient[Client][11])
+	{
+		static Core[1];
+		Core[0] = Client;
+		emit_sound(Client, "", "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 4, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 1, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		emit_sound(Client, 2, "evolution/null.wav", 1065353216, 1061997773, "HamFilter", 100);
+		coreClient[Client][3] = coreClient[Client][4];
+		coreClient[Client][11] = 0;
+		setClientPROTECT(Client, "HamFilter");
+		setClientXFROZEN(Client, "HamFilter");
+		setClientFROZEN(Client, "HamFilter");
+		setClientGOD(Client, "HamFilter");
+		setAscendDelay(Client, 3.0);
+		setDescendDelay(Client, 3.0);
+		remove_task(uniqueTaskID(Client, 102), "HamFilter");
+		ResetCamIdealDist(Client);
+		if (0 < coreClassExtensions[coreClient[Client][0]][365])
+		{
+			ExecuteForward(coreClassExtensions[coreClient[Client][0]][365], FWD_Return, Client, coreClient[Client][3]);
+		}
+	}
+	else
+	{
+		new var2;
+		if (coreClient[Client][3] > 0 && coreClassExtensions[coreClient[Client][0]][357] && !coreClassLevels[coreClient[Client][3][coreClient[Client][0] * 8]][65] && !coreClient[Client][26])
+		{
+			setAscendDelay(Client, 3.0);
+			resetRendering(Client);
+			setClientPL(Client, getClientADPL(Client));
+			emit_sound(Client, "", "weapons/descend.wav", 1065353216, 1061997773, "HamFilter", 100);
+			forceClientCLASS(Client, coreClient[Client][0], 0, true, 1);
+		}
+	}
+	return 1;
+}
+
+public __forceClientCLASS()
+{
+	return forceClientCLASS(get_param(1), get_param(2), get_param(""), get_param(4), get_param(5));
+}
+
+public __emitClientSOUND()
+{
+	static Client;
+	Client = get_param(1);
+	new var1;
+	if (!is_user_connected(Client) || coreClient[Client][0] < 0)
+	{
+		return 0;
+	}
+	if (1 > coreClassExtensions[coreClient[Client][0]][375])
+	{
+		return 0;
+	}
+	static Sound[65];
+	get_string("", Sound, 64);
+	return ExecuteForward(coreClassExtensions[coreClient[Client][0]][375], FWD_Return, Client, get_param(2), Sound);
+}
+
+public __setClientANIMATION()
+{
+	return setAnimation(get_param(1), get_param(2), get_param_f(""));
+}
+
+public __getClientCLASS()
+{
+	return coreClient[get_param(1)][0];
+}
+
+public __getClientLEVEL()
+{
+	return coreClient[get_param(1)][3];
+}
+
+public __getClassExtensionCount()
+{
+	return ClassExtensionCTR;
+}
+
+public __getClassDATAc()
+{
+	return coreClassExtensions[get_param(1)][get_param(2)];
+}
+
+public __getClassDATAv()
+{
+	return set_array("", coreClassExtensions[get_param(1)][get_param(2)], get_param(4));
+}
+
+public __getLevelDATAc()
+{
+	return coreClassLevels[get_param(2) + get_param(1) * 8][get_param("")];
+}
+
+public __getLevelDATAv()
+{
+	return set_array(4, coreClassLevels[get_param(2) + get_param(1) * 8][get_param("")], get_param(5));
+}
+
+public __getClientDATAc()
+{
+	return coreClient[get_param(1)][get_param(2)];
+}
+
+public __setClientDATAc()
+{
+	new var1 = get_param("");
+	coreClient[get_param(1)][get_param(2)] = var1;
+	return var1;
+}
+
+public __getClientLEVELDATAc()
+{
+	return coreClientLevel[get_param(1)][get_param(2)];
+}
+
+public __setClientLEVELDATAc()
+{
+	new var1 = get_param("");
+	coreClientLevel[get_param(1)][get_param(2)] = var1;
+	return var1;
+}
+
+public __getClientLEVELDATAv()
+{
+	return set_array("", coreClientLevel[get_param(1)][get_param(2)], get_param(4));
+}
+
+public __setClientLEVELDATAv()
+{
+	return get_array("", coreClientLevel[get_param(1)][get_param(2)], get_param(4));
+}
+
+public __restoreClientLEVELDATA()
+{
+	static Client;
+	Client = get_param(1);
+	return 1;
+}
+
+public __updateClientLEVELDATA()
+{
+	static Float:HPMOD;
+	static Client;
+	Client = get_param(1);
+	HPMOD = floatdiv(float(getClientHP(Client)), float(getClientMHP(Client)));
+	setClientMODEL(Client, coreClientLevel[Client][33]);
+	setClientMHP(Client, coreClientLevel[Client][63]);
+	setClientSPEED(Client, coreClientLevel[Client][62]);
+	if (get_param(2))
+	{
+		setClientHP(Client, floatround(HPMOD * coreClientLevel[Client][63], "HamFilter"));
+	}
+	return 0;
+}
+
+public __setClientXFROZEN()
+{
+	static Client;
+	Client = get_param(1);
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	new var1;
+	if (get_param(2) && !coreClient[Client][26])
+	{
+		coreClient[Client][26] = 1;
+		if (!getClientFLY(Client))
+		{
+			setClientFLY(Client, 1);
+		}
+		set_pev(Client, 120, 1421564);
+		set_pev(Client, 125, 1421576);
+		setClientSPEEDMP(Client, "HamFilter");
+		setClientHiddenPOWERUP(Client, 1);
+	}
+	else
+	{
+		new var2;
+		if (!get_param(2) && coreClient[Client][26])
+		{
+			coreClient[Client][26] = 0;
+			setClientSPEEDMP(Client, 1065353216);
+			setClientHiddenPOWERUP(Client, "HamFilter");
+		}
+	}
+	return 1;
+}
+
+public __getClientXFROZEN(Plugin)
+{
+	static Client;
+	Client = get_param(1);
+	if (!is_user_connected(Client))
+	{
+		return 0;
+	}
+	return coreClient[Client][26];
+}
+
+public plugin_natives()
+{
+	register_library("Ascend");
+	register_native("forceClientCLASS", "__forceClientCLASS", "HamFilter");
+	register_native("emitClientSOUND", "__emitClientSOUND", "HamFilter");
+	register_native("setClientANIMATION", "__setClientANIMATION", "HamFilter");
+	register_native("getClientCLASS", "__getClientCLASS", "HamFilter");
+	register_native("getClientLEVEL", "__getClientLEVEL", "HamFilter");
+	register_native("getClassExtensionCount", "__getClassExtensionCount", "HamFilter");
+	register_native("getClientXFROZEN", "__getClientXFROZEN", "HamFilter");
+	register_native("setClientXFROZEN", "__setClientXFROZEN", "HamFilter");
+	register_native("getClassDATAc", "__getClassDATAc", "HamFilter");
+	register_native("getClassDATAv", "__getClassDATAv", "HamFilter");
+	register_native("getLevelDATAc", "__getLevelDATAc", "HamFilter");
+	register_native("getLevelDATAv", "__getLevelDATAv", "HamFilter");
+	register_native("getClientDATAc", "__getClientDATAc", "HamFilter");
+	register_native("setClientDATAc", "__setClientDATAc", "HamFilter");
+	register_native("getClientLEVELDATAc", "__getClientLEVELDATAc", "HamFilter");
+	register_native("getClientLEVELDATAv", "__getClientLEVELDATAv", "HamFilter");
+	register_native("setClientLEVELDATAc", "__setClientLEVELDATAc", "HamFilter");
+	register_native("setClientLEVELDATAv", "__setClientLEVELDATAv", "HamFilter");
+	register_native("restoreClientLEVELDATA", "__restoreClientLEVELDATA", "HamFilter");
+	register_native("updateClientLEVELDATA", "__updateClientLEVELDATA", "HamFilter");
+	register_native("createClass", "__createClass", "HamFilter");
+	register_native("addClassLevel", "__addClassLevel", "HamFilter");
+	register_native("addClassEffect", "__addClassEffect", "HamFilter");
+	register_native("addClassItem", "__addClassItem", "HamFilter");
+	register_native("addClassSpecial", "__addClassSpecial", "HamFilter");
+	register_native("beginSpecialCreation", "__beginSpecialCreation", "HamFilter");
+	register_native("addSpecialCharge", "__addSpecialCharge", "HamFilter");
+	register_native("addSpecialControl", "__addSpecialControl", "HamFilter");
+	register_native("addSpecialHook", "__addSpecialHook", "HamFilter");
+	register_native("endSpecialCreation", "__endSpecialCreation", "HamFilter");
+	register_native("getSpecialID", "__getSpecialID", "HamFilter");
+	register_native("getClientSPECIALSTATE", "__getClientSPECIALSTATE", "HamFilter");
+	register_native("setClientSPECIALSTATE", "__setClientSPECIALSTATE", "HamFilter");
+	register_native("setClientSPECIALCOOLDOWN", "__setClientSPECIALCOOLDOWN", "HamFilter");
+	register_native("getClientSPECIALCFG", "__getClientSPECIALCFG", "HamFilter");
+	register_native("giveClientSPECIAL", "__giveClientSPECIAL", "HamFilter");
+	register_native("hasClientSPECIAL", "__hasClientSPECIAL", "HamFilter");
+	register_native("setWeaponXPC", "__setWeaponXPC", "HamFilter");
+	register_native("setWeaponXPM", "__setWeaponXPM", "HamFilter");
+	register_native("setWeaponDMG", "__setWeaponDMG", "HamFilter");
+	register_native("setWeaponHOMING", "__setWeaponHOMING", "HamFilter");
+	register_native("attachWeaponHEAD", "__attachWeaponHEAD", "HamFilter");
+	register_native("setBallSTYLE", "__setBallStyle", "HamFilter");
+	set_module_filter("FilterModule");
+	set_native_filter("FilterNative");
+	Icon_Natives();
+	ArrowNatives();
+	return 0;
+}

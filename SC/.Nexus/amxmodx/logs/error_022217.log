@@ -1,0 +1,136 @@
+L 02/22/2017 - 16:36:09: Start of error session.
+L 02/22/2017 - 16:36:09: Info (map "esf_Gurufixed") (logfile "error_022217.log")
+L 02/22/2017 - 16:36:09: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:36:09: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 16:36:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:36:09: Function "AscendBlock" was not found
+L 02/22/2017 - 16:36:09: [AMXX] Run time error 19 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 02/22/2017 - 16:36:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:36:09: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:36:09: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 16:36:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:38:34: Start of error session.
+L 02/22/2017 - 16:38:34: Info (map "esf_Gurufixed") (logfile "error_022217.log")
+L 02/22/2017 - 16:38:34: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:38:34: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 16:38:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:38:34: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:38:34: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 16:38:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:42:52: Start of error session.
+L 02/22/2017 - 16:42:52: Info (map "esf_Gurufixed") (logfile "error_022217.log")
+L 02/22/2017 - 16:42:52: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:42:52: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 16:42:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:42:52: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:42:52: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 16:42:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:43:17: Start of error session.
+L 02/22/2017 - 16:43:17: Info (map "esf_Gurufixed") (logfile "error_022217.log")
+L 02/22/2017 - 16:43:17: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:43:17: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 16:43:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:43:17: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:43:17: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 16:43:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:43:39: Function is not present (function "ssj4_isClient") (plugin "CX/Vegeta-TS.amxx")
+L 02/22/2017 - 16:43:39: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "set_task") - debug not enabled!
+L 02/22/2017 - 16:43:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:43:48: Function is not present (function "ssj4_isClient") (plugin "CX/Vegeta-TS.amxx")
+L 02/22/2017 - 16:43:48: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "set_task") - debug not enabled!
+L 02/22/2017 - 16:43:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:43:54: Function is not present (function "ContinueAscend") (plugin "CX/Vegeta-TS.amxx")
+L 02/22/2017 - 16:43:54: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "set_task") - debug not enabled!
+L 02/22/2017 - 16:43:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:44:29: Function is not present (function "ContinueAscend") (plugin "CX/Vegeta-TS.amxx")
+L 02/22/2017 - 16:44:29: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "set_task") - debug not enabled!
+L 02/22/2017 - 16:44:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:47:58: Start of error session.
+L 02/22/2017 - 16:47:58: Info (map "esf_Gurufixed") (logfile "error_022217.log")
+L 02/22/2017 - 16:47:58: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:47:58: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 16:47:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:47:58: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:47:58: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 16:47:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:54:35: Start of error session.
+L 02/22/2017 - 16:54:35: Info (map "esf_Gurufixed") (logfile "error_022217.log")
+L 02/22/2017 - 16:54:35: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:54:35: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 16:54:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:54:35: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:54:35: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 16:54:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:55:13: Function is not present (function "ContinueAscend") (plugin "CX/Vegeta-TS.amxx")
+L 02/22/2017 - 16:55:13: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "set_task") - debug not enabled!
+L 02/22/2017 - 16:55:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:56:44: Start of error session.
+L 02/22/2017 - 16:56:44: Info (map "esf_ychampaarena") (logfile "error_022217.log")
+L 02/22/2017 - 16:56:44: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:56:44: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 16:56:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 16:56:44: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 16:56:44: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 16:56:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:06:43: Start of error session.
+L 02/22/2017 - 17:06:43: Info (map "esf_ychampaarena") (logfile "error_022217.log")
+L 02/22/2017 - 17:06:43: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:06:43: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 17:06:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:06:43: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:06:43: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 17:06:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:07:31: Function is not present (function "ContinueAscend") (plugin "CX/Vegeta-TS.amxx")
+L 02/22/2017 - 17:07:31: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "set_task") - debug not enabled!
+L 02/22/2017 - 17:07:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:07:36: << CORE >> Invalid Client >> 2
+L 02/22/2017 - 17:07:36: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/22/2017 - 17:07:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:07:36: << CORE >> Invalid Client >> 2
+L 02/22/2017 - 17:07:36: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/22/2017 - 17:07:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:07:36: << CORE >> Invalid Client >> 2
+L 02/22/2017 - 17:07:36: [AMXX] Run time error 10 (plugin "Black.amxx") (native "getClientMHP") - debug not enabled!
+L 02/22/2017 - 17:07:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:07:36: << CORE >> Invalid Client >> 2
+L 02/22/2017 - 17:07:36: [AMXX] Run time error 10 (plugin "Zamasu.amxx") (native "getClientMHP") - debug not enabled!
+L 02/22/2017 - 17:07:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:12:22: Start of error session.
+L 02/22/2017 - 17:12:22: Info (map "esf_ychampaarena") (logfile "error_022217.log")
+L 02/22/2017 - 17:12:22: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:12:22: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 17:12:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:12:22: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:12:22: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 17:12:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:13:06: Invalid message argument 1
+L 02/22/2017 - 17:13:06: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 02/22/2017 - 17:13:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:13:24: Invalid message argument 1
+L 02/22/2017 - 17:13:24: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 02/22/2017 - 17:13:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:13:52: Invalid message argument 1
+L 02/22/2017 - 17:13:52: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 02/22/2017 - 17:13:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:13:57: Invalid message argument 1
+L 02/22/2017 - 17:13:57: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 02/22/2017 - 17:13:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:15:52: Start of error session.
+L 02/22/2017 - 17:15:52: Info (map "esf_Gurufixed") (logfile "error_022217.log")
+L 02/22/2017 - 17:15:52: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:15:52: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 17:15:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:15:52: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:15:52: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 17:15:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:19:49: Start of error session.
+L 02/22/2017 - 17:19:49: Info (map "esf_ychampaarena") (logfile "error_022217.log")
+L 02/22/2017 - 17:19:49: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:19:49: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/22/2017 - 17:19:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:19:49: Could not find function "@WeaponExplosion"
+L 02/22/2017 - 17:19:49: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/22/2017 - 17:19:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/22/2017 - 17:20:01: Invalid message argument 1
+L 02/22/2017 - 17:20:01: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 02/22/2017 - 17:20:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

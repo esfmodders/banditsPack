@@ -1,0 +1,158 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Nappa";
+new const CX_Version[]	=	"2.0";
+new const CX_Author[]	=	"Black Lotus";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Nappa", true, false, "The Babysitter.", "sound/ecx.nappa/c_intro.wav" );
+
+	// Saiya-jin
+	addClassLevel( "Saiya-jin", "ecx.nappalotus", 10.0, 1.5, 2000000, 0, 1.0, 
+					280, 100, bool:{ false, false }, 3.5, { 380, 140 }, { 0, 0, 0, 0, 0, 2, 2 }, 2.0, Float:{ 110.0, 10.0 } );
+	addClassEffect( "models/evolution/Auras/shape_05.mdl", Float:{ 255.0, 255.0, 193.0, 42.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 206 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Saiya-jin
+	addClassLevel( "Saiya-jin Elite", "ecx.nappalotus.100", 20.0, 2.0, 3800000, 0, 1.4, 
+					300, 150, bool:{ true, true }, 5.5, { 550, 120 }, { 0, 1, 1, 0, 0, 2, 3 }, 3.0, Float:{ 120.0, 40.0 } );
+	addClassEffect( "models/evolution/Auras/shape_05.mdl", Float:{ 253.0, 255.0, 221.0, 20.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 230 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+		}
+		case 1: // Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_finalflash" );
+			addClassItem( Client, "weapon_genericbeam" );
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.nappalotus/ecx.nappalotus.mdl" );
+	precache_model( "models/evolution/Auras/shape_05.mdl" );
+	precache_model( "models/evolution/Auras/shape_02.mdl" );
+	precache_model( "models/player/ecx.nappalotus.100/ecx.nappalotus.100.mdl" );
+	precache_sound( "ecx.nappa/t_100.wav" );
+	precache_sound( "ecx.nappa/tp_powerup.wav" );
+
+}
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.nappa/tp_powerup.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 100, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.nappa/t_100.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 0.5 );
+				//setClientANIMATION(Client,102,0.2);
+
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 7.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 8.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",5 );
+				set_task( 8.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",5 );
+				set_task( 8.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",5 );
+				set_task( 8.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 6.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 7.2, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 7.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",20 );
+
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}

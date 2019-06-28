@@ -1,0 +1,24 @@
+L 01/02/2013 - 00:37:18: Start of error session.
+L 01/02/2013 - 00:37:18: Info (map "esf_cell_games_night") (logfile "error_010213.log")
+L 01/02/2013 - 00:37:18: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/02/2013 - 00:37:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/02/2013 - 00:57:06: Start of error session.
+L 01/02/2013 - 00:57:06: Info (map "esf_t_cityv2") (logfile "error_010213.log")
+L 01/02/2013 - 00:57:06: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/02/2013 - 00:57:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/02/2013 - 01:01:57: Start of error session.
+L 01/02/2013 - 01:01:57: Info (map "esf_cell_arena") (logfile "error_010213.log")
+L 01/02/2013 - 01:01:57: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/02/2013 - 01:01:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/02/2013 - 01:23:44: Start of error session.
+L 01/02/2013 - 01:23:44: Info (map "esf_cell_games_night") (logfile "error_010213.log")
+L 01/02/2013 - 01:23:44: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/02/2013 - 01:23:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/02/2013 - 16:03:49: Start of error session.
+L 01/02/2013 - 16:03:49: Info (map "esf_cell_games") (logfile "error_010213.log")
+L 01/02/2013 - 16:03:49: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/02/2013 - 16:03:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/02/2013 - 17:04:48: Start of error session.
+L 01/02/2013 - 17:04:48: Info (map "esf_cell_games_night") (logfile "error_010213.log")
+L 01/02/2013 - 17:04:48: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/02/2013 - 17:04:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

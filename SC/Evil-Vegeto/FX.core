@@ -1,0 +1,43 @@
+public fxAura( CORE[] )
+{
+	AddFx( CORE[0], "fxModelEntity", "models/evolution/Auras/shape_01-red.mdl", 0, 0, 20.0, 255, 0, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/red.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmokered.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public fxwave( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/aura.reda.spr", 180, 145, 120, 50, 500);
+	return 1;
+}
+
+public fxwave2( Core[] )
+{
+	AddFx( Core[0], "fxLightning", "sprites/E-L.spr", 2, 50, 150, 200, 10 ,10 ,250 ,10 ,100 ,0);
+	return 1;
+}
+
+public fxBlow (Client)
+{   
+   AddFx( Client,"fxBlow");
+   return 1;
+}  
+
+public FX_off(Client)
+{
+  RemFx( Client,"fxBlow ",0);
+  RemFx( Client,"fxPowerWave ",0);  
+  RemFx( Client,"fxwave",0);
+  RemFx( Client,"fxFinalBlow",0);
+  RemFx( Client,"fxModelEntity",0); 
+  return 1;
+}	

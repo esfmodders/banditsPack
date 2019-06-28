@@ -1,0 +1,96 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/finalflash_charge.wav",
+		"ecx.broly/wc_hyperwave.wav",
+		"ecx.broly/wc_hyperwave.wav",
+		"ecx.broly/wc_hyperwave.wav",
+		"ecx.broly/wc_hyperwave.wav",
+		"ecx.broly/wc_hyperwave.wav"
+	},
+	{
+		"*/finalflash.wav",
+		"ecx.broly/w_hyperwave.wav",
+		"ecx.broly/w_hyperwave.wav",
+		"ecx.broly/w_hyperwave.wav",
+		"ecx.broly/w_hyperwave.wav",
+		"ecx.broly/w_hyperwave.wav"
+	},
+	{
+		"*/shield.wav",
+		"ecx.broly/w_shield.wav",
+		"ecx.broly/w_shield.wav",
+		"ecx.broly/w_shield.wav",
+		"ecx.broly/w_shield.wav",
+		"ecx.broly/w_shield.wav"
+	},
+	{
+		"*/shield_charge.wav",
+		"ecx.broly/wc_shield.wav",
+		"ecx.broly/wc_shield.wav",
+		"ecx.broly/wc_shield.wav",
+		"ecx.broly/wc_shield.wav",
+		"ecx.broly/wc_shield.wav"
+	},
+	{
+		"*/bigbang_charge.wav",
+		"ecx.broly/wc_hyperblast.wav",
+		"ecx.broly/wc_hyperblast.wav",
+		"ecx.broly/wc_hyperblast.wav",
+		"ecx.broly/wc_hyperblast.wav",
+		"ecx.broly/wc_hyperblast.wav"
+	},
+	{
+		"*/bigbang.wav",
+		"ecx.broly/w_hyperblast.wav",
+		"ecx.broly/w_hyperblast.wav",
+		"ecx.broly/w_hyperblast.wav",
+		"ecx.broly/w_hyperblast.wav",
+		"ecx.broly/w_hyperblast.wav"
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.broly/p_pain1.wav",
+		"ecx.broly/p_pain1.wav",
+		"ecx.broly/p_pain1.wav",
+		"ecx.broly/p_pain1.wav",
+		"ecx.broly/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.broly/p_pain2.wav",
+		"ecx.broly/p_pain2.wav",
+		"ecx.broly/p_pain2.wav",
+		"ecx.broly/p_pain2.wav",
+		"ecx.broly/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.broly/p_pain3.wav",
+		"ecx.broly/p_pain3.wav",
+		"ecx.broly/p_pain3.wav",
+		"ecx.broly/p_pain3.wav",
+		"ecx.broly/p_pain3.wav"
+	},
+
+	{
+		"*/pain4.wav",
+		"ecx.broly/p_pain4.wav",
+		"ecx.broly/p_pain4.wav",
+		"ecx.broly/p_pain4.wav",
+		"ecx.broly/p_pain4.wav",
+		"ecx.broly/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.broly/p_death.wav",
+		"ecx.broly/p_death.wav",
+		"ecx.broly/p_death.wav",
+		"ecx.broly/p_death.wav",
+		"ecx.broly/p_death.wav"
+	}
+};

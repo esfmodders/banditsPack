@@ -1,0 +1,25 @@
+ModChargeInit ()
+{
+	alterCharge( 0, "kamehameha", "sprites/w_kamehameha_c.spr", 0.3 );
+	alterCharge( 1, "kamehameha", "sprites/w_kamehameha_c.spr", 0.3 );
+	alterCharge( 2, "kamehameha", "sprites/w_kamehameha_c.spr", 0.3 );
+	alterCharge( 3, "kamehameha", "sprites/w_kamehameha_c.spr", 0.3 );
+	alterCharge( 4, "kamehameha", "sprites/w_kamehameha_c.spr", 0.3 );
+	alterCharge( 5, "kamehameha", "sprites/w_kamehameha_c.spr", 0.3 );
+	
+
+	alterCharge( 0, "bigbang", "sprites/w_burningattack_s.spr", 0.3 );
+	alterCharge( 1, "bigbang", "sprites/w_burningattack_s.spr", 0.3 );
+	alterCharge( 2, "bigbang", "sprites/w_burningattack_s.spr", 0.3 );
+	alterCharge( 3, "bigbang", "sprites/w_burningattack_s.spr", 0.3 );
+	alterCharge( 4, "bigbang", "sprites/w_burningattack_s.spr", 0.3 );
+	alterCharge( 5, "bigbang", "sprites/w_burningattack_s.spr", 0.3 );
+
+	alterCharge( 0, "genericbeam", "sprites/w_gb_b_s.spr", 0.3 );
+	alterCharge( 1, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 2, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 3, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 4, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 5, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 6, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+}

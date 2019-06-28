@@ -1,0 +1,11 @@
+L 03/12/2017 - 14:48:29: Start of error session.
+L 03/12/2017 - 14:48:29: Info (map "esf_Gurufixed") (logfile "error_031217.log")
+L 03/12/2017 - 14:48:29: Could not find function "@WeaponExplosion"
+L 03/12/2017 - 14:48:29: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/12/2017 - 14:48:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/12/2017 - 14:48:29: Could not find function "@WeaponExplosion"
+L 03/12/2017 - 14:48:29: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/12/2017 - 14:48:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/12/2017 - 14:50:13: << CORE >> Invalid Client >> 2
+L 03/12/2017 - 14:50:13: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/12/2017 - 14:50:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

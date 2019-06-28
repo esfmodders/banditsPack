@@ -1,0 +1,59 @@
+#include <amxmodx>
+#include <engine>
+#include <fakemeta>
+
+#include <ipci/Ascend>
+#include <ipci/Core>
+
+static __var_Condition, __var_Status;
+
+// Condition => Entity
+// Status => Entity Owner (Client)
+
+public plugin_init()
+{
+	register_event("EETrail", "@Event_EETrail", "a");
+	
+	register_event("KillTrail", "@Event_KillTrail", "a");
+}
+
+public @Event_EETrail()
+{
+	if(~__var_Condition & (0b1 << read_data(0x02)))
+	{
+		__var_Condition |= (0x01 << read_data(0x02));
+	}
+}
+
+public @Event_KillTrail()
+{
+	if(__var_Condition & (0b1 << read_data(0x01)))
+	{
+		__var_Condition &= ~(0x01 << read_data(0x01));
+	}
+}
+
+public client_PostThink(__int_Index)
+{
+	// If we are going to work under ECX compatibility, we'd to rewrite this code. But, if you want, we can just change the button in the other one. that would do the job. let me Okay
+			if(entity_get_int(entity_get_edict(__var_Entity, EV_ENT_owner), EV_INT_button) & IN_ATTACK2 && 
+			~__var_Status & (0b1 << entity_get_edict(__var_Entity, EV_ENT_owner)))
+			{
+				setClientMELEEPUSHBACK(entity_get_edict(__var_Entity, EV_ENT_owner), 0x01);
+				
+				//client_print(entity_get_edict(__var_Entity, EV_ENT_owner), print_chat, "[detached-a]");
+				
+				__var_Status |= (0x01 << entity_get_edict(__var_Entity, EV_ENT_owner));
+			}
+		}
+	}
+	
+	if(!(entity_get_int(__int_Index, EV_INT_button) & IN_ATTACK2) && __var_Status & (0b1 << __int_Index))
+	{
+		setClientMELEEPUSHBACK(__int_Index, 0x00);
+		
+		//client_print(__int_Index, print_chat, "[detached-b]");
+		
+		__var_Status &= ~(0x01 << __int_Index);
+	}
+}

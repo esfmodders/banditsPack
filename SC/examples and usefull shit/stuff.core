@@ -1,0 +1,337 @@
+
+/*==================================================================================================
+LIBRARIES.
+
+I'm using the AMX Mod X 1.8.2 and the AMX Mod X Studio 1.4.3.
+
+NOTE: For some reason, the plugin fails when using a native of the library "<esf>" refrain to
+use it is made.
+==================================================================================================*/
+
+#include <amxmodx>
+#include <engine>
+#include <fun>
+#include <fakemeta>
+#include <hamsandwich>
+
+/*==================================================================================================
+BOOLEANS, RESOURCES AND OTHER VARIABLES.
+==================================================================================================*/
+
+static const Resources[][] =
+{
+        "weapons/teleport.wav",
+        "evolution/teleport.1.wav",
+        "evolution/teleport.2.wav",
+        "evolution/teleport.3.wav"
+}
+
+static Sprite;
+
+// __correctCharacter : To determine if the correct character.
+// __correctWeapon : To determine if the correct weapon.
+// __correctConditions : To determine whether the charge of the weapon is between 30% and 100%.
+
+static bool:__correctCharacter[33], bool:__correctWeapon[33], bool:__correctConditions[33];
+
+/*==================================================================================================
+BEGINNING OF THE PLUGIN.
+==================================================================================================*/
+
+public plugin_init()
+{
+        // Hamsandwich : (Ham_Item_AddToPlayer)
+        // We will take the exact time when a player receives the weapon, in this case, the weapon
+        // would be "weapon_flamethrower".
+        
+        RegisterHam(Ham_Item_AddToPlayer, "weapon_flamethrower", "@ChangeSpecialIcon");
+        
+        // Hamsandwich : (Ham_Item_ItemSlot)
+        // We will take the position in which the gun is located.
+        
+        RegisterHam(Ham_Item_ItemSlot, "weapon_flamethrower", "@ChangeSpecialSlot");
+        
+        // Fakemeta : (FM_AddToFullPack)
+        // If you wish to place an animation you must use this feature.
+        
+        register_forward(FM_AddToFullPack, "@ChangeSpecialAnimation", ._post = true);
+        
+        // AMX Mod X : (register_message)
+        // We will take the time it starts charging a weapon.
+        
+        register_message(get_user_msgid("Charge"), "@MessageCharge");
+        
+        // AMX Mod X : (register_event)
+        // We will take the time that the player is revived.
+        
+        register_event("ResetHUD", "@EventResetHUD", "b");
+        
+        // AMX Mod X : (register_event)
+        // We take the time when the player receives the weapons.
+        
+        register_event("WeapUpdate", "@EventWeaponUpdate", "b");
+        
+        // AMX Mod X : (register_event)
+        // We will take the time that the player change weapons.
+        
+        register_event("CurWeapon", "@EventCurrentWeapon", "be", "1=1");
+        
+        // AMX Mod X : (register_clcmd)
+        // We turned the gun "weapon_flamethrower" on the gun "special_instatrans".
+        // NOTE: You can change "special_instatrans" for what you want.
+        
+        register_clcmd("special_instatrans", "@ClientCommandSpecial");
+}
+
+public plugin_precache()
+{
+        for(new All = 0; All < sizeof Resources; All++)
+        {
+                precache_sound(Resources[All]);
+        }
+        
+        Sprite = precache_model("sprites/meleeflash1.spr");
+}
+
+public client_connect(Client)
+{
+        // To prevent errors.
+        
+        __correctCharacter[Client] = false;
+        __correctWeapon[Client] = false;
+        __correctConditions[Client] = false;
+}
+
+public client_disconnect(Client)
+{
+        // To prevent errors.
+        
+        __correctCharacter[Client] = false;
+        __correctWeapon[Client] = false;
+        __correctConditions[Client] = false;
+}
+
+public client_PreThink(Client)
+{
+        // Take the exact moment when the player stops charging the attack.
+        
+        new Control = get_user_button(Client);
+        new OldControl = get_user_oldbutton(Client);
+        
+        if((!(Control & IN_ATTACK)  && (OldControl & IN_ATTACK || OldControl & IN_ATTACK2)) && !(Control & IN_ATTACK2))
+        {
+                // If it's the right weapon and the load is between 30% and 100%...
+                
+                if(__correctWeapon[Client] && __correctConditions[Client])
+                {
+                        // You can delete all that is within this function and write whatever you want.
+                        
+                        emit_sound(Client, CHAN_ITEM, Resources[random_num(0, sizeof Resources - 1)], 1.0, ATTN_NORM, 0, PITCH_NORM);
+                        
+                        new __vector_oldLocation[3], __vector_newLocation[3];
+                        
+                        get_user_origin(Client, __vector_oldLocation);
+                        get_user_origin(Client, __vector_newLocation, .mode = 3);
+                        
+                        __vector_newLocation[0] += ((__vector_newLocation[0] - __vector_oldLocation[0] > 0) ? -50 : 50);
+                        __vector_newLocation[1] += ((__vector_newLocation[1] - __vector_oldLocation[1] > 0) ? -50 : 50);
+                        __vector_newLocation[2] += ((__vector_newLocation[2] - __vector_oldLocation[2] > 0) ? -50 : 50);
+                        
+                        set_user_origin(Client, __vector_newLocation);
+                        
+                        message_begin(MSG_ONE, get_user_msgid("ScreenFade"), _, .player = Client);
+                        {
+                                write_short(1<<10);
+                                write_short(1<<10);
+                                write_short(0x0000);
+                                write_byte(255);
+                                write_byte(255);
+                                write_byte(255);
+                                write_byte(255);
+                        }
+                        message_end();
+                        
+                        message_begin(MSG_PVS, SVC_TEMPENTITY, __vector_newLocation, .player = Client);
+                        {
+                                write_byte(TE_SPRITE);
+                                write_coord(__vector_newLocation[0]);
+                                write_coord(__vector_newLocation[1]);
+                                write_coord(__vector_newLocation[2]);
+                                write_short(Sprite);
+                                write_byte(6);
+                                write_byte(200);
+                        }
+                        message_end();
+                }
+        }
+}
+
+public @ChangeSpecialIcon(Weapon, Client)
+{
+        // If the user is alive and is using the correct character.
+        
+        if(is_user_alive(Client) && __correctCharacter[Client])
+        {
+                // Message : (WeaponList)
+                // It consists of 5 parameters.
+                
+                message_begin(MSG_ONE, get_user_msgid("WeaponList"), _, .player = Client);
+                {
+                        // write_string("special_instatrans");
+                        // The name of the icon file format (.txt) with which you will replace the weapon icon.
+                        write_string("special_instatrans");
+                        
+                        // write_byte(8);
+                        // The position where the weapon is.
+                        // NOTE: The original position of the gun "weapon_flamethrower" is 5.
+                        // The value you put here is equivalent to the position of the weapon - 1.
+                        // In the game, sensu beans are at number 9, that means that here would be 8.
+                        // If you change the "slot" of the gun, you must subtract 1.
+                        
+                        write_byte(8);
+                        
+                        // write_byte(2);
+                        // It represents the place where it is after a certain weapon.
+                        // First place (1) it belongs to the "weapon_sensu", second (2) belongs to the "weapon_flamethrower".
+                        
+                        write_byte(2);
+                        
+                        // write_byte(34);
+                        // The index of the weapon.
+                        // The index of the "weapon_flamethrower" is 34.
+                        
+                        write_byte(34);
+                        
+                        // The type of ammunition used by the weapon.
+                        // No weapon in the Earth's Special Forces used ammunition, so i placed a (0).
+                        
+                        write_byte(0);
+                }
+                message_end();
+        }
+}
+
+public @ChangeSpecialSlot(Item)
+{
+        // The "slot" of the gun "weapon_flamethrower" is 5.
+        // With this it is changed to the position number (9), together with the "weapon_sensu".
+        // If you change the number here, you must also change it in the message (WeaponList) by subtracting one.
+        // Example: 9 - 1 = 8;
+        
+        SetHamReturnInteger(9);
+        
+        return HAM_SUPERCEDE;
+}
+
+public @ChangeSpecialAnimation(Handle, Edict, Entity, Host, Flags, Player, Set)
+{
+        
+        // If the constant "player" and "entity" belong to a player, and that player is alive and use the right weapon.
+        
+        if(Player && Entity == Host && is_user_alive(Host) && __correctWeapon[Entity])
+        {
+                // You have some knowledge when playing animations player.
+                
+                new Animation = get_es(Handle, ES_Sequence);
+                
+                if((Animation >= 0 && Animation <= 11 || Animation >= 28 && Animation <= 35) && Animation != 218)
+                {
+                        // Default animation for this weapon.
+                        
+                        set_es(Handle, ES_Sequence, 218);
+                        
+                        // Miscellaneuos.
+                        
+                        set_es(Handle, ES_Frame, 235.5);
+                        set_es(Handle, ES_FrameRate, 0.0);
+                }
+        }
+}
+
+public @EventResetHUD(Client)
+{
+        // If the player is alive.
+        
+        if(is_user_alive(Client))
+        {
+                // If the player is using the correct character.
+                // (2) Represents the index of the character, in this case, is Goku.
+                
+                __correctCharacter[Client] = (entity_get_int(Client, EV_INT_playerclass) == 2 ? true : false);
+        }
+}
+
+public @EventWeaponUpdate(Client)
+{
+        // If correct character.
+        
+        if(__correctCharacter[Client])
+        {
+                // We give him weapon "weapon flamethrower".
+                
+                set_task(0.0, "@AddToPlayerSpecial", Client);
+        }
+}
+
+public @EventCurrentWeapon(Client)
+{
+        // If the player is alive and is correct character.
+        
+        if(is_user_alive(Client) && __correctCharacter[Client])
+        {
+                // If the index of the gun is correct.
+                // In this case, the index of the "weapon_flamethrower" is the number (34).
+                
+                __correctWeapon[Client] = (read_data(2) == 34 ? true : false);
+        }
+}
+
+public @MessageCharge(Message, Dest, Client)
+{
+        // If the percentage of the load is between 30% and 100% ...
+        // it is the correct weapon and has not yet released the attack.
+        
+        if((get_msg_arg_int(1) >= 30 && get_msg_arg_int(1) <= 100) && get_msg_arg_int(1) != 0 && __correctWeapon[Client])
+        {
+                // Will increase the speed with which loads the attack.
+                
+                set_msg_arg_int(1, ARG_BYTE, get_msg_arg_int(1) + 20);
+                
+                // If the percentage is greater than 100%.
+                
+                if(get_msg_arg_int(1) > 100)
+                {
+                        // We put 100%.
+                        
+                        set_msg_arg_int(1, ARG_BYTE, 100);
+                }
+        }
+        
+        // If the percentage is between 30% and 100%.
+        
+        __correctConditions[Client] = (get_msg_arg_int(1) >= 30 && get_msg_arg_int(1) <= 100 ? true : false);
+}
+
+public @ClientCommandSpecial(Client)
+{
+        // When the user to change/choose weapon "flamethrower_weapon", the we will become the special weapon.
+        
+        message_begin(MSG_ONE, get_user_msgid("CurWeapon"), _, .player = Client);
+        {
+                write_byte(1);
+                write_byte(34);
+                write_byte(-1);
+        }
+        message_end();
+        
+        engclient_cmd(Client, "weapon_flamethrower");
+        
+        return PLUGIN_HANDLED;
+}
+
+public @AddToPlayerSpecial(Client)
+{
+        // We give the weapon to the player.
+                
+        give_item(Client, "weapon_flamethrower");
+}

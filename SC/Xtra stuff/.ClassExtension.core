@@ -1,0 +1,26 @@
+#include "amxx/amxmodx"
+#include "ipci/Core"
+
+#define MOD_SOUND 	0
+#define MOD_CHARGE 	0
+#define MOD_WEAPON	0
+
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+PluginInit ()
+{
+	register_plugin( "Instanttrans", "1337", "BANDIT" );
+	register_clcmd( "give potara", "@GetPotara" );
+}
+
+
+@GetPotara( Client ) ForceCall( find_plugin_byfile( "ETC/DBX.Potara.amxx" ), "WishSpawnPotaras", "c", Client );
+
+
+
+
+
+PluginPreCache ()
+{
+}

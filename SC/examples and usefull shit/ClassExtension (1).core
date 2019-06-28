@@ -1,0 +1,188 @@
+
+
+new const CX_Plugin[]	= 	"CX.Goku Armor";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"Matias_Esf";
+
+
+#define MOD_SOUND 	0
+#define MOD_CHARGE 	0
+#define MOD_WEAPON	0
+#include <xtension/class/main>
+#include <fun>
+#define PLAYER(%1)       ( 1 <= %1 <= get_maxplayers() )
+#define generic 4
+new think
+new bool:Carga[33] 
+new const AMXX [] = "Goku-Armor"
+new spr_blue
+
+PluginInit ()
+{
+register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+register_event("ResetHUD","@ReSpawn","b")
+}
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Goku Armor", false, false, "Descripcion del personaje", "Goku Armor/c_intro.wav" );
+
+	// Saiyajin
+	addClassLevel( "Saiyajin", "ecx.goku-armor", 10.0, 1.5, 1000000, 1500000, 1.0, 
+					400, 100, bool:{ false, false }, 0.0, { 200, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 1.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )// Attacks
+{
+	switch ( Level )
+	{
+		case 0: // Saiyajin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast", false );
+			addClassItem( Client, "weapon_genericbeam", false );
+			addClassItem( Client, "weapon_kamehameha", false );
+		}
+	}
+}
+
+
+PluginPreCache ()// Precache
+{
+	precache_model( "models/player/ecx.goku-armor/ecx.goku-armor.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+
+	spr_blue = precache_model("sprites/w_gb_b_s.spr")   
+}
+
+
+
+
+public @ReSpawn(id)
+{
+
+if(getClientCLASS(id) != getCXbyName(AMXX) || is_user_bot(id) ) //NO ES NUESTRO PERSONAJE!
+{
+	@UNREGISTER(id)
+	return
+}
+
+
+think = register_forward( FM_PlayerPreThink, "@FxWeapons")
+return
+}
+
+
+
+public @FxWeapons(id)
+{
+if(getClientCLASS(id) != getCXbyName(AMXX))  return
+
+
+if(!Carga[id] && get_pdata_int(id, 200)) //ATK CHARGE, AL MOMENTO DE CARGAR
+{
+if(get_user_weapon(id) == 6) 
+{ 
+blow(id)
+fxRayitos(id)
+Carga[id] = true
+}
+
+if(get_user_weapon(id) == generic)
+{ 
+fxRayitos(id)
+Carga[id] = true
+}
+
+}
+
+if(Carga[id] && !get_pdata_int(id, 200)) //EL PERSONAJE NO ESTA CARGANDO! Y HEMOS ACTIVADO LA BOOL
+{
+Carga[id] = false
+ 
+if(get_user_weapon(id) == 6) 
+{ 
+remove_task(id)
+}
+
+if(get_user_weapon(id) == generic)
+{ 
+remove_task(id)	
+}
+}
+
+}
+
+
+
+
+
+
+
+//============EFECTOS DE EJEMPLO USADOS==========
+
+public blow( id )
+AddFx( id, "fxBlow" )
+
+
+public fxRayitos(id)
+{
+static Float:Origin[3];
+entity_get_vector(id, EV_VEC_origin, Origin);
+message_begin(MSG_BROADCAST, SVC_TEMPENTITY)
+write_byte(TE_BEAMENTPOINT);
+write_short(id | 0x1000);
+write_coord(floatround(Origin[0])+ random_num(-39, 39));
+write_coord(floatround(Origin[1])+ random_num(-39, 39));
+write_coord(floatround(Origin[2])+ random_num(-39, 39));
+write_short(spr_blue)
+write_byte(10); // Starting Frame
+write_byte(5); // Framerate
+write_byte(7); // Life
+write_byte(7); // Width
+write_byte(0); // Noise
+write_byte(255); // Red
+write_byte(255); // Green
+write_byte(255); // Blue
+write_byte(160); // Brightness
+write_byte(20); // Speed
+message_end();
+set_task(0.1,"fxRayitos",id)
+
+
+}
+
+
+
+
+public @UNREGISTER(id)
+{
+new iEnt = -1
+while( (iEnt = engfunc(EngFunc_FindEntityInSphere, iEnt,Float:{0.0,0.0,0.0}, 9999.0)) ) 
+{ 
+
+if(PLAYER(iEnt) && iEnt != id && getClientCLASS(iEnt) == getCXbyName( AMXX ))
+{
+return //HAY UN GOKU, NO VAMOS A HACER NADA :/
+}
+
+else if(PLAYER(iEnt) && iEnt != id && getClientCLASS(iEnt) != getCXbyName(AMXX))
+{
+unregister_forward(FM_PlayerPreThink, think)
+return  //NO HAY NINGUN GOKU EN EL SERVIDOR!!!, CHAU LOS REGISTROS ;)
+}
+
+else if(!PLAYER(iEnt) && iEnt != id)
+{
+unregister_forward(FM_PlayerPreThink, think)
+return //NO HAY OTRO JUGADOR EN EL SERVIDOR, ASI QUE...TAMBIEN, CHAU TODO ;D
+}
+}
+}
+
+
+
+

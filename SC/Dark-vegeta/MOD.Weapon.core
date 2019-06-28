@@ -1,0 +1,384 @@
+#define MOD_WEAPON_DBG 0
+
+// >> ARG_BYTE		int
+// >> ARG_CHAR		int
+// >> ARG_SHORT		int
+// >> ARG_LONG		int
+// >> ARG_ANGLE		float
+// >> ARG_COORD		float
+// >> ARG_STRING	string
+// >> ARG_ENTITY	int
+
+
+stock SPR_BLACK;
+stock SPR_SHINE;		// Shine
+
+stock SPR_YELLOW_S;		// Yellow Beam Head
+stock SPR_YELLOW_T;		// Yellow Beam Trail
+
+stock SPR_BLUE_S;		// Blue Beam Head
+stock SPR_BLUE_T;		// Blue Beam Head
+
+stock SPR_FINALSHINE_S;
+stock SPR_FINALSHINE_E;
+stock SPR_FINALSHINE_T;
+
+stock SPR_ABLAST_E;
+
+stock ICON_KAMEHAMEHA;
+stock ICON_BIGBANG_T;
+stock C_ICON_FINALSHINE;
+stock C_ICON_ATOMICBLAST;
+
+stock SPR_BIGBANG_T;
+
+stock SPR_GALLITGUN_S;
+stock SPR_GALLITGUN_T;
+
+stock SPR_FINALFLASH_S;
+stock SPR_FINALFLASH_T;
+
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	SPR_BLACK	= precache_model( "sprites/black.spr" );
+
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+
+	SPR_BLUE_S = precache_model( "sprites/w_gb_b_s.spr" );
+	SPR_BLUE_T = precache_model( "sprites/w_gb_b_t.spr" );
+	
+	SPR_FINALSHINE_S = precache_model( "sprites/w_gb_g_s.spr" );
+	SPR_FINALSHINE_T = precache_model( "sprites/w_gb_g_t.spr" );
+	SPR_FINALSHINE_E = precache_model( "sprites/w_finalshine_c.spr" );
+	
+	SPR_FINALFLASH_S = precache_model( "sprites/w_finalflash_s.spr" );
+	SPR_FINALFLASH_T = precache_model( "sprites/w_finalflash_t.spr" );
+
+	SPR_GALLITGUN_S = precache_model( "sprites/w_gallitgun_s.spr" );
+	SPR_GALLITGUN_T = precache_model( "sprites/w_gallitgun_t.spr" );
+	
+	SPR_BIGBANG_T = precache_model( "sprites/w_bigbang.spr" );
+
+	ICON_KAMEHAMEHA = getIconINDEX( "weapon_kamehameha");
+	C_ICON_FINALSHINE = createCustomICON("c_weapon_finalshine", { 3, 1 } );
+
+}
+
+public @IconUpdate ( Client, Level )
+{
+	if( Level == 4 )
+		replaceClientICON( Client , C_ICON_FINALSHINE, ICON_KAMEHAMEHA );
+
+
+}
+
+public @BaseWeaponCreation ( Client, BaseWeapon, const Name[] )
+{
+
+	if ( equal( Name, "weapon_scattershot" ))
+	{
+		setBeamChargeTime( BaseWeapon, 2 );
+		setBeamChargeKi( BaseWeapon, 20 );
+		setBeamSpeed( BaseWeapon, 200 );
+	}
+	else if ( equal( Name, "weapon_renzoku" ) && getClientLEVEL( Client ) > 2 )
+	{
+		setBeamChargeTime( BaseWeapon, 2 );
+		setBeamChargeKi( BaseWeapon, 20 );
+		setBeamSpeed( BaseWeapon, 2000 );
+	}
+	else if ( equal( Name, "weapon_finalflash" ))
+	{
+		setBeamChargeTime( BaseWeapon, 40 );
+		setBeamChargeKi( BaseWeapon, 15 );
+		setBeamSpeed( BaseWeapon, 850 );
+	}
+	else if ( equal( Name, "weapon_kamehameha" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setBeamSpeed( BaseWeapon, 2000 );
+	}
+}
+
+
+public @WeaponAdjust ( Client, Weapon, const Class[] )
+{
+	/**
+	 0 - Blue
+	 1 - Green
+	 2 - Orange
+	 3 - Purple
+	 4 - Yellow
+	 5 - Red
+	 6 - White
+	 7 - None
+	**/
+
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 0 )
+		setWeaponXPC( 0 );
+		
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 0 )
+		setWeaponXPC( 4 );
+		
+	else if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) > 4 )
+		setWeaponXPC( 4 );
+		
+	else if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) > 3 )
+		setWeaponXPC( 4 );
+		
+	else if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) > 2 )
+		setWeaponXPC( 4 );
+		
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) > 4 )
+		setWeaponXPC( 1 );
+
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPM( 1.2 );
+		setWeaponXPC( 1 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_FINALSHINE_T );
+		write_byte		( 9 );
+		write_byte		( 6 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPC( 1 );
+	}
+	
+}
+
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) > 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_YELLOW_T );
+	}
+	
+	else if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_FINALFLASH_T );
+	}
+	
+	else if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) == 2 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_FINALFLASH_T );
+	}
+	
+	else if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) == 3 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_FINALFLASH_T );
+	}
+	
+	else if ( equal( Class, "gallitgun" ) && getClientLEVEL( Client ) == 3 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_GALLITGUN_T );
+	}
+	
+	else if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_FINALFLASH_T );
+	}
+	
+	else if ( equal( Class, "gallitgun" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_GALLITGUN_T );
+	}
+	
+	else if ( equal( Class, "gallitgun" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_GALLITGUN_T );
+	}
+	
+	else if ( equal( Class, "gallitgun" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_GALLITGUN_T );
+	}
+	
+	if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALSHINE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_FINALSHINE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+
+		set_msg_arg_int( 9, ARG_BYTE, 6 );
+
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_FINALSHINE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALSHINE_E );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_FINALSHINE_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_FINALSHINE_T );
+
+		set_msg_arg_int( 9, ARG_BYTE, 15 );
+	}
+	
+	else if ( equal( Class, "gallitgun" ) && getClientLEVEL( Client ) == 2 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_GALLITGUN_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_GALLITGUN_T );
+	}
+	
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLUE_T );
+	}
+	
+	
+}
+
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	
+	if ( equal( Class, "finalflash" ) && getClientLEVEL( Client ) > 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_FINALFLASH_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_FINALFLASH_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALFLASH_T );
+	}
+	
+	if ( equal( Class, "bigbang" ) && getClientLEVEL( Client ) > 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BIGBANG_T );
+	}
+	
+	if ( equal( Class, "bigbang" ) && getClientLEVEL( Client ) > 1 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BIGBANG_T );
+	}
+	
+	if ( equal( Class, "bigbang" ) && getClientLEVEL( Client ) > 2 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BIGBANG_T );
+	}
+	
+	if ( equal( Class, "bigbang" ) && getClientLEVEL( Client ) > 3 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BIGBANG_T );
+	}
+	
+	if ( equal( Class, "bigbang" ) && getClientLEVEL( Client ) > 4 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BIGBANG_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BIGBANG_T );
+	}
+	
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_T );
+	}
+	if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_FINALSHINE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_FINALSHINE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_FINALSHINE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_FINALSHINE_T );
+		set_msg_arg_int( 4, ARG_SHORT, 6 );
+	}
+
+
+}
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	/**
+	 1 -   BYTE - Killer - do not edit
+	 2 -   BYTE - Client - do not edit
+	 3 - STRING - Weapon
+	**/
+
+	if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "blueattack" );
+	else if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) > 0 )
+		set_msg_arg_string( 3, "yellowattack" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "Final Shine" );
+	else if ( equal( Weapon, "gallitgun" ) && getClientLEVEL( Killer ) == 3 )
+		set_msg_arg_string( 3, "Improved Gallitgun" );
+	else if ( equal( Weapon, "gallitgun" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "Improved Gallitgun" );
+
+}

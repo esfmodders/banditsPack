@@ -1,0 +1,62 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/bigbang_charge.wav",
+		"ecx.a17/wc_bigbang.wav",
+		"ecx.a17/wc_bigbang.wav"
+
+	},
+	{
+		"*/bigbang.wav",
+		"ecx.a17/w_bigbang.wav",
+		"ecx.a17/w_bigbang.wav"
+
+	},	
+
+	{
+		"weapons/swoop.wav",
+		"ecx.a17/swoop.wav",
+		"ecx.a17/swoop.wav"
+
+	},
+	{
+		"weapons/chainswoop.wav",
+		"ecx.a17/swoop.wav",
+		"ecx.a17/swoop.wav"
+
+	},
+	{
+		"weapons/powerup.wav",
+		"ecx.a17/charge.wav",
+		"ecx.a17/charge.wav"
+
+	},
+	{
+		"weapons/aura.wav",
+		"evolution/null.wav",
+		"evolution/null.wav"
+	},
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.a17/p_pain1.wav",
+		"ecx.a17/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.a17/p_pain2.wav",
+		"ecx.a17/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.a17/p_pain3.wav",
+		"ecx.a17/p_pain3.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.a17/p_death.wav",
+		"ecx.a17/p_death.wav"
+	}
+};

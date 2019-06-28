@@ -1,0 +1,93 @@
+
+
+stock bool: getClientRunning( Client )
+{
+	if( pev( Client, pev_sequence ) ==  3 || pev( Client, pev_sequence ) ==  4 || pev( Client, pev_sequence ) ==  5 || pev( Client, pev_sequence ) ==  6 )
+	{
+		return true;
+	}
+	return false;
+}
+
+
+
+
+
+public TransformFX( TaskID )
+{
+	new Client = TaskID - 3200;
+
+	setClientANIMATION( Client, 25 );
+
+	for( new i; i < 25; i++ ) 
+	{
+		new org[ 3 ]; 
+		get_user_origin( Client, org );
+		message_begin( MSG_ALL, SVC_TEMPENTITY, org );
+		write_byte( TE_BEAMENTPOINT );
+		write_short( Client );
+		write_coord( org[0] + random_num( -500, 500 ) );
+		write_coord( org[1] + random_num( -500, 500 ) );
+		write_coord( org[2] + random_num( -500, 500 ) );
+		write_short( engfunc( EngFunc_ModelIndex, "sprites/stmbal1.spr" ) );
+		write_byte( 5 );
+		write_byte( 5 );
+		write_byte( 100 );
+		write_byte( 50 );
+		write_byte( 5 );
+		write_byte( 200 );
+		write_byte( 0 ); 
+		write_byte( 200 );
+		write_byte( 250 );
+		write_byte( 25 );
+		message_end(); 
+	}
+
+	AddFx( Client, "fxPowerup", 0, 0, 0 ); emit_sound( Client, CHAN_WEAPON, "Black/Null.wav", 0.3, ATTN_NORM, 0, PITCH_NORM );
+	AddFx( Client, "fxModelEntity", "models/evolution/Auras/shape_01.mdl", 0, 0, 50.0, 0, 0, 0, 0.3, 0.5, 0, 2 );
+	AddFx( Client, "fxModelEntity", "models/evolution/Auras/shape_03.mdl", 0, 0, 50.0, 0, 0, 0, 0.35, 0.5, 0, 2 );
+
+	set_task( 0.1, "PowerlevelIncrease", TaskID, _, _, "a", 155 );
+	set_task( 10.0, "TransformFX2", TaskID );
+	set_task( 10.5, "TransformFX3", TaskID );
+}
+
+public TransformFX2( TaskID )
+{
+	AddFx( TaskID - 3200, "fxScreenShake", 25.0, 5.0, 5.0 );
+	AddFx( TaskID - 3200, "fxBeamTorus", "sprites/lgtning.spr", 200, 0, 200, 255, 250, 30, 25, 0 );
+}
+
+public TransformFX3( TaskID )
+{
+	AddFx( TaskID - 3200, "fxScreenShake", 25.0, 8.0, 5.0 );
+	AddFx( TaskID - 3200, "fxLgtField", 0.1 , 2, 255, 200, 20 );
+	AddFx( TaskID - 3200, "fxBeamTorus", "sprites/lgtning.spr", 200, 0, 200, 255, 250, 50, 25, 0 );
+
+	set_task( 5.0, "TransformFX4", TaskID );
+}
+
+public TransformFX4( TaskID )
+{
+	set_entity_visibility( TaskID - 3200, false );
+	setClientMODEL( TaskID - 3200, "BlackSSJRose" );
+	AddFx( TaskID - 3200, "fxAvatar", "create", 103, 0.8 );
+	AddFx( TaskID - 3200, "fxScreenFade", 3.0, 10.0, 0, 200, 0, 200, 100 );
+	AddFx( TaskID - 3200, "fxScreenShake", 30.0, 5.0, 5.0 );
+
+	set_task( 4.0, "TransformFX5", TaskID );
+}
+
+public TransformFX5( TaskID )
+{
+	set_pev( TaskID - 3200, pev_fixangle, true );
+	client_cmd( TaskID - 3200, "resetview" );
+	client_cmd( TaskID - 3200, "cam_idealyaw 180" );
+	client_cmd( TaskID - 3200, "cam_zoffset 0" );
+	client_cmd( TaskID - 3200, "cam_idealdist 15" );
+}
+
+public PowerlevelIncrease( TaskID )
+{
+	setClientPL( TaskID - 3200, getClientPL( TaskID - 3200 ) + ( getClientPL( TaskID - 3200 ) / 155 ) );
+}

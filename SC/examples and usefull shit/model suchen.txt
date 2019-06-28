@@ -1,0 +1,13 @@
+  static __sz_model[ 64 ]
+
+    entity_get_string(ent, EV_SZ_model, __sz_model, 63)
+
+    if(equal(__sz_model, "models/ass.mdl"))
+    {
+        //code...
+    }
+
+
+
+static __int_Model[32];
+entity_get_string(__int_Entity, EV_SZ_model, __int_Model);

@@ -1,0 +1,8 @@
+L 10/18/2016 - 11:47:29: Start of error session.
+L 10/18/2016 - 11:47:29: Info (map "esf_Guru") (logfile "error_101816.log")
+L 10/18/2016 - 11:47:29: Bug caught! Please contact the AMX Mod X Dev Team.
+L 10/18/2016 - 11:47:29: [AMXX] Run time error 10 (plugin "Dragonball.amxx") (native "setClientICON") - debug not enabled!
+L 10/18/2016 - 11:47:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/18/2016 - 11:47:46: Bug caught! Please contact the AMX Mod X Dev Team.
+L 10/18/2016 - 11:47:46: [AMXX] Run time error 10 (plugin "Dragonball.amxx") (native "setClientICON") - debug not enabled!
+L 10/18/2016 - 11:47:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

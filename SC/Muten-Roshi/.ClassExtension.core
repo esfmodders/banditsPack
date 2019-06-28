@@ -1,0 +1,146 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Muten-Roshi";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+
+#include < amxx/amxmodx >
+#include < amxx/engine >
+#include <amxmisc>
+#include <fakemeta>
+#include <ipci/ascend>
+#include <ipci/Fxlib>
+#include <engine>
+#include <ipci/Core>
+#include <fun>
+#include < hamsandwich >
+
+
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Muten-Roshi", false, false, "Da Master", "sound/Muten-Roshi/roshi_introduction.wav" );
+
+	// Muten-Roshi
+	addClassLevel( "Muten-Roshi", "Muten-Roshi", 10.0, 1.5, 2800000, 1500000, 1.0, 
+					400, 200, bool:{ false, false }, 4.0, { 400, 150 }, { 0, 1, 0, 0, 1, 0, 0 }, 7.0, Float:{ 122.0, 40.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public bool:@ClassCandyEat ( Client )
+	return true;
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Muten-Roshi
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_renzoku" );
+			addClassSpecial( Client, "mafuba" );
+			addClassItem( Client, "weapon_sensu" );
+			
+			set_task(2.0, "RTicker",Client);
+			//client_print(Client, print_console, "init", Client);
+		}
+	}
+}
+
+public RTicker(Client)
+{
+	
+	if (is_user_alive( Client ) && ( pev( Client, pev_sequence ) <  111 ) && getClientCLASS( Client ) == getCXbyName( "Muten-Roshi" ) )
+	{
+		set_task(2.0, "RTicker",Client);
+		//client_print(Client, print_console, "init2", Client);
+	}
+	
+	
+	
+	if( pev( Client, pev_sequence ) ==  111 && getClientCLASS( Client ) == getCXbyName( "Muten-Roshi" ) )
+	{
+		setClientMODEL( Client, "Muten-Roshi2" );
+		AddFx( Client, "fxBlow" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 90, 250);
+		//client_print(Client, print_console, "M", Client);
+		set_task(5.0, "RTicker2",Client);
+		
+	}
+	else if( pev( Client, pev_sequence ) ==  25 && getClientCLASS( Client ) == getCXbyName( "Muten-Roshi" ))
+	{
+		set_task(10.0, "gb",Client);
+	}
+	else if( pev( Client, pev_sequence ) ==  27 && getClientCLASS( Client ) == getCXbyName( "Muten-Roshi" ))
+	{
+		set_task(10.0, "gb",Client);
+	}
+}
+
+public RTicker2(Client)
+{
+	if( pev( Client, pev_sequence ) <  111 && getClientCLASS( Client ) == getCXbyName( "Muten-Roshi" ) )
+	{
+		setClientMODEL( Client, "Muten-Roshi" );
+		set_task(2.0, "RTicker",Client);
+	}
+	
+}
+
+
+public gb(Client)
+{
+	if( pev( Client, pev_sequence ) ==  25 && getClientCLASS( Client ) == getCXbyName( "Muten-Roshi" ))
+	{
+		setClientMODEL( Client, "Muten-Roshi2" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 90, 250);
+		AddFx( Client, "fxBlow" );
+	}
+	else if( pev( Client, pev_sequence ) ==  27 && getClientCLASS( Client ) == getCXbyName( "Muten-Roshi" ))
+	{
+		setClientMODEL( Client, "Muten-Roshi2" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 90, 250);
+		AddFx( Client, "fxBlow" );
+	}
+}
+
+
+PluginPreCache ()
+{
+	precache_model( "models/player/Muten-Roshi/Muten-Roshi.mdl" );
+	precache_model( "models/player/Muten-Roshi2/Muten-Roshi2.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+}

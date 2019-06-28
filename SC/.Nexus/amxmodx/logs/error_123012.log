@@ -1,0 +1,244 @@
+L 12/30/2012 - 00:44:22: Start of error session.
+L 12/30/2012 - 00:44:22: Info (map "esf_cell_games_night") (logfile "error_123012.log")
+L 12/30/2012 - 00:44:22: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 00:44:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 01:21:08: Start of error session.
+L 12/30/2012 - 01:21:08: Info (map "esfm_pic_raditz") (logfile "error_123012.log")
+L 12/30/2012 - 01:21:08: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 01:21:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:12:18: Start of error session.
+L 12/30/2012 - 02:12:18: Info (map "esf_cell_games") (logfile "error_123012.log")
+L 12/30/2012 - 02:12:18: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:12:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:14:16: Start of error session.
+L 12/30/2012 - 02:14:16: Info (map "esf_cell_day") (logfile "error_123012.log")
+L 12/30/2012 - 02:14:16: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:14:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:18:13: Start of error session.
+L 12/30/2012 - 02:18:13: Info (map "esf_cell_games") (logfile "error_123012.log")
+L 12/30/2012 - 02:18:13: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:18:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:28:00: Start of error session.
+L 12/30/2012 - 02:28:00: Info (map "esf_gero") (logfile "error_123012.log")
+L 12/30/2012 - 02:28:00: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:28:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:29:16: Start of error session.
+L 12/30/2012 - 02:29:16: Info (map "ctf_grozniy") (logfile "error_123012.log")
+L 12/30/2012 - 02:29:16: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:29:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:30:28: Start of error session.
+L 12/30/2012 - 02:30:28: Info (map "dmz_dusttown") (logfile "error_123012.log")
+L 12/30/2012 - 02:30:28: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:30:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:41:08: Start of error session.
+L 12/30/2012 - 02:41:08: Info (map "esf_cell_games") (logfile "error_123012.log")
+L 12/30/2012 - 02:41:08: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:41:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:41:49: Start of error session.
+L 12/30/2012 - 02:41:49: Info (map "dmz_grasslands") (logfile "error_123012.log")
+L 12/30/2012 - 02:41:49: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:41:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:43:26: Start of error session.
+L 12/30/2012 - 02:43:26: Info (map "esf_cell_games") (logfile "error_123012.log")
+L 12/30/2012 - 02:43:26: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:44:20: Start of error session.
+L 12/30/2012 - 02:44:20: Info (map "esf_janemba") (logfile "error_123012.log")
+L 12/30/2012 - 02:44:20: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:44:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:51:48: Start of error session.
+L 12/30/2012 - 02:51:48: Info (map "dmz_meteor") (logfile "error_123012.log")
+L 12/30/2012 - 02:51:48: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:51:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:52:21: Start of error session.
+L 12/30/2012 - 02:52:21: Info (map "dmz_mysticwinter") (logfile "error_123012.log")
+L 12/30/2012 - 02:52:21: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:52:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:53:25: Start of error session.
+L 12/30/2012 - 02:53:25: Info (map "dmz_namekdeath") (logfile "error_123012.log")
+L 12/30/2012 - 02:53:25: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:53:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:56:18: Start of error session.
+L 12/30/2012 - 02:56:18: Info (map "ECX_canyon") (logfile "error_123012.log")
+L 12/30/2012 - 02:56:18: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:56:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:57:03: Start of error session.
+L 12/30/2012 - 02:57:03: Info (map "ecx_jssgw") (logfile "error_123012.log")
+L 12/30/2012 - 02:57:03: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:57:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:57:47: Start of error session.
+L 12/30/2012 - 02:57:47: Info (map "esf-islas") (logfile "error_123012.log")
+L 12/30/2012 - 02:57:47: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:57:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:58:31: Start of error session.
+L 12/30/2012 - 02:58:31: Info (map "esfm_pic_raditz") (logfile "error_123012.log")
+L 12/30/2012 - 02:58:31: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:58:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 02:59:11: Start of error session.
+L 12/30/2012 - 02:59:11: Info (map "esf_afm2") (logfile "error_123012.log")
+L 12/30/2012 - 02:59:11: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 02:59:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:00:01: Start of error session.
+L 12/30/2012 - 03:00:01: Info (map "esf_arrival") (logfile "error_123012.log")
+L 12/30/2012 - 03:00:01: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:00:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:00:44: Start of error session.
+L 12/30/2012 - 03:00:44: Info (map "esf_battlearena") (logfile "error_123012.log")
+L 12/30/2012 - 03:00:44: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:00:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:02:46: Start of error session.
+L 12/30/2012 - 03:02:46: Info (map "esf_canyon") (logfile "error_123012.log")
+L 12/30/2012 - 03:02:46: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:02:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:03:29: Start of error session.
+L 12/30/2012 - 03:03:29: Info (map "esf_cave") (logfile "error_123012.log")
+L 12/30/2012 - 03:03:29: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:03:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:04:20: Start of error session.
+L 12/30/2012 - 03:04:20: Info (map "esf_cell_arena") (logfile "error_123012.log")
+L 12/30/2012 - 03:04:20: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:04:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:05:02: Start of error session.
+L 12/30/2012 - 03:05:02: Info (map "esf_cell_day") (logfile "error_123012.log")
+L 12/30/2012 - 03:05:02: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:05:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:05:36: Start of error session.
+L 12/30/2012 - 03:05:36: Info (map "esf_cell_night") (logfile "error_123012.log")
+L 12/30/2012 - 03:05:36: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:05:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:06:16: Start of error session.
+L 12/30/2012 - 03:06:16: Info (map "esf_cerro2") (logfile "error_123012.log")
+L 12/30/2012 - 03:06:16: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:06:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:10:21: Start of error session.
+L 12/30/2012 - 03:10:21: Info (map "esf_city") (logfile "error_123012.log")
+L 12/30/2012 - 03:10:21: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:10:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:11:00: Start of error session.
+L 12/30/2012 - 03:11:00: Info (map "esf_earth_wastes") (logfile "error_123012.log")
+L 12/30/2012 - 03:11:00: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:11:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:11:32: Start of error session.
+L 12/30/2012 - 03:11:32: Info (map "esf_encounter") (logfile "error_123012.log")
+L 12/30/2012 - 03:11:32: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:11:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:12:10: Start of error session.
+L 12/30/2012 - 03:12:10: Info (map "esf_frost") (logfile "error_123012.log")
+L 12/30/2012 - 03:12:10: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:12:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:12:52: Start of error session.
+L 12/30/2012 - 03:12:52: Info (map "esf_geoarena") (logfile "error_123012.log")
+L 12/30/2012 - 03:12:52: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:12:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:13:25: Start of error session.
+L 12/30/2012 - 03:13:25: Info (map "esf_gero_night") (logfile "error_123012.log")
+L 12/30/2012 - 03:13:25: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:13:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:13:55: Start of error session.
+L 12/30/2012 - 03:13:55: Info (map "esf_gghouse") (logfile "error_123012.log")
+L 12/30/2012 - 03:13:55: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:13:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:14:59: Start of error session.
+L 12/30/2012 - 03:14:59: Info (map "esf_Ginyu") (logfile "error_123012.log")
+L 12/30/2012 - 03:14:59: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:14:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:15:58: Start of error session.
+L 12/30/2012 - 03:15:58: Info (map "esf_greenlands") (logfile "error_123012.log")
+L 12/30/2012 - 03:15:58: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:15:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:18:30: Start of error session.
+L 12/30/2012 - 03:18:30: Info (map "esf_kami") (logfile "error_123012.log")
+L 12/30/2012 - 03:18:30: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:18:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:22:24: Start of error session.
+L 12/30/2012 - 03:22:24: Info (map "esf_mtside") (logfile "error_123012.log")
+L 12/30/2012 - 03:22:24: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:22:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:23:19: Start of error session.
+L 12/30/2012 - 03:23:19: Info (map "esf_namek") (logfile "error_123012.log")
+L 12/30/2012 - 03:23:19: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:23:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:25:50: Start of error session.
+L 12/30/2012 - 03:25:50: Info (map "esf_nameks_revival") (logfile "error_123012.log")
+L 12/30/2012 - 03:25:50: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:25:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:26:23: Start of error session.
+L 12/30/2012 - 03:26:23: Info (map "esf_namek_endtest") (logfile "error_123012.log")
+L 12/30/2012 - 03:26:23: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:26:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:27:19: Start of error session.
+L 12/30/2012 - 03:27:19: Info (map "esf_namek_isles") (logfile "error_123012.log")
+L 12/30/2012 - 03:27:19: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:27:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:28:07: Start of error session.
+L 12/30/2012 - 03:28:07: Info (map "esf_riverside") (logfile "error_123012.log")
+L 12/30/2012 - 03:28:07: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:28:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:28:49: Start of error session.
+L 12/30/2012 - 03:28:49: Info (map "esf_rosat") (logfile "error_123012.log")
+L 12/30/2012 - 03:28:49: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:28:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:29:35: Start of error session.
+L 12/30/2012 - 03:29:35: Info (map "esf_saiyan") (logfile "error_123012.log")
+L 12/30/2012 - 03:29:35: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:29:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:30:21: Start of error session.
+L 12/30/2012 - 03:30:21: Info (map "esf_ToM") (logfile "error_123012.log")
+L 12/30/2012 - 03:30:21: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:30:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:31:12: Start of error session.
+L 12/30/2012 - 03:31:12: Info (map "esf_volcano") (logfile "error_123012.log")
+L 12/30/2012 - 03:31:12: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:31:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:32:07: Start of error session.
+L 12/30/2012 - 03:32:07: Info (map "esf_zsword") (logfile "error_123012.log")
+L 12/30/2012 - 03:32:07: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:32:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:33:08: Start of error session.
+L 12/30/2012 - 03:33:08: Info (map "Kame_House") (logfile "error_123012.log")
+L 12/30/2012 - 03:33:08: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:33:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:34:05: Start of error session.
+L 12/30/2012 - 03:34:05: Info (map "mat_cell_games") (logfile "error_123012.log")
+L 12/30/2012 - 03:34:05: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:34:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:34:42: Start of error session.
+L 12/30/2012 - 03:34:42: Info (map "mat_cielo") (logfile "error_123012.log")
+L 12/30/2012 - 03:34:42: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:34:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:35:17: Start of error session.
+L 12/30/2012 - 03:35:17: Info (map "mat_janemba_cellgames") (logfile "error_123012.log")
+L 12/30/2012 - 03:35:17: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:35:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:35:49: Start of error session.
+L 12/30/2012 - 03:35:49: Info (map "mat__cell_games") (logfile "error_123012.log")
+L 12/30/2012 - 03:35:49: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:35:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:36:32: Start of error session.
+L 12/30/2012 - 03:36:32: Info (map "noche_s2k_cellgames") (logfile "error_123012.log")
+L 12/30/2012 - 03:36:32: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:36:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:37:06: Start of error session.
+L 12/30/2012 - 03:37:06: Info (map "s2k_greattournament") (logfile "error_123012.log")
+L 12/30/2012 - 03:37:06: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:37:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:37:37: Start of error session.
+L 12/30/2012 - 03:37:37: Info (map "s2k_snakeway_v2") (logfile "error_123012.log")
+L 12/30/2012 - 03:37:37: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:37:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 03:46:56: Start of error session.
+L 12/30/2012 - 03:46:56: Info (map "esm_budoukai") (logfile "error_123012.log")
+L 12/30/2012 - 03:46:56: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 03:46:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 17:27:44: Start of error session.
+L 12/30/2012 - 17:27:44: Info (map "dmz_meteor") (logfile "error_123012.log")
+L 12/30/2012 - 17:27:44: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 17:27:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 17:37:26: Start of error session.
+L 12/30/2012 - 17:37:26: Info (map "esf_cell_games_night") (logfile "error_123012.log")
+L 12/30/2012 - 17:37:26: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 17:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/30/2012 - 23:47:51: Start of error session.
+L 12/30/2012 - 23:47:51: Info (map "esf_cell_games") (logfile "error_123012.log")
+L 12/30/2012 - 23:47:51: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/30/2012 - 23:47:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

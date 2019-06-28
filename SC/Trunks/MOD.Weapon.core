@@ -1,0 +1,400 @@
+stock SPR_SHINE;	//Shine
+
+stock SPR_BLACK;	//None
+
+stock SPR_RED_S;	//Red Beam Head
+stock SPR_RED_T;	//Red Beam Trail
+
+stock SPR_YELLOW_S;	//Yellow Beam Head
+stock SPR_YELLOW_T;	//Yellow Beam Trail
+
+stock SPR_BLUE_S;	//Blue Beam Head
+stock SPR_BLUE_T;	//Blue Beam Trail
+
+stock SPR_BA_S;		//Burning Attack Beam Head
+stock SPR_BA_E;		//Burning Attack End
+
+stock SPR_RBA_S;	//Red Burning Attack Beam Head
+stock SPR_RBA_E;	//Red Burning Attack End
+
+stock SPR_FB_S;		//Finish Buster
+stock SPR_RFB_S;	//Red Finish Buster
+
+stock ICON_BURNINGATTACK;
+stock C_ICON_RBURNINGATTACK;
+stock ICON_FINISHINGBUSTER;
+stock C_ICON_RFINISHINGBUSTER;
+
+stock MOD_Weapon_PreCache ()
+
+{
+
+
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+
+	SPR_BLACK = precache_model( "sprites/black.spr" );
+	
+	SPR_BLUE_S = precache_model( "sprites/w_gb_b_s.spr" );
+	SPR_BLUE_T = precache_model( "sprites/w_gb_b_t.spr" );
+
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+
+	SPR_RED_S = precache_model( "sprites/w_gb_r_s.spr" );
+	SPR_RED_T = precache_model( "sprites/w_gb_r_t.spr" );
+
+	SPR_BA_S = precache_model( "sprites/w_burningattack_s.spr" );
+	SPR_BA_E = precache_model( "sprites/w_finalflash_c.spr" );
+
+	SPR_RBA_S = precache_model( "sprites/w_jubeikame_s.spr" );
+	SPR_RBA_E = precache_model( "sprites/w_jubeikame_s.spr" );
+
+	ICON_BURNINGATTACK = getIconINDEX( "weapon_burningattack");
+	C_ICON_RBURNINGATTACK = createCustomICON("c_weapon_jukame", { 3, 1 } );
+	ICON_FINISHINGBUSTER = getIconINDEX( "weapon_finishingbuster");
+	C_ICON_RFINISHINGBUSTER = createCustomICON("c_weapon_sacrush", { 5, 1 } );
+}
+
+public @IconUpdate ( Client, Level )
+{
+
+}
+public @WeaponAdjust ( Client, Weapon, const Class[], PowerLevel, Charge )
+
+{
+
+
+	if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 0 )
+		setWeaponXPC( 0 );
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 1 )
+		setWeaponXPC( 4 );
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 2 )
+		setWeaponXPC( 4 );
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 3 )
+		setWeaponXPC( 4 );
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 4 )
+		setWeaponXPC( 5 );
+	else if( equal( Class, "burningattack" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		setWeaponDMG( 15.0, 170.0, 0.03 );
+		setWeaponXPM( 5.0 );
+	}
+	else if( equal( Class, "burningattack" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponDMG( 15.0, 170.0, 0.04 );
+		setWeaponXPM( 7.0 );
+		setWeaponXPC( 5 );
+	}
+	else if ( equal( Class, "finishingbuster" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		setWeaponXPM( 10.0 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_FB_S );
+		write_byte		( 9999 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+		
+		setWeaponHOMING( Weapon, 900.0, 1 /* @ Aim Vec */, 1 | 2 /* Players + Weapons*/ );
+
+	}
+	else if ( equal( Class, "finishingbuster" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPM( 10.0 );
+		setWeaponXPC( 5 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_RFB_S );
+		write_byte		( 9999 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+		
+		setWeaponHOMING( Weapon, 900.0, 1 /* @ Aim Vec */, 1 | 2 /* Players + Weapons*/ );
+
+	}
+	else if( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 0 )
+	{
+		setWeaponXPM( 2.0 );
+		setWeaponXPC( 0 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_BLUE_T );
+		write_byte		( 10 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 1 )
+	{
+		setWeaponXPM( 2.0 );
+		setWeaponXPC( 4 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 10 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 2 )
+	{
+		setWeaponXPM( 2.0 );
+		setWeaponXPC( 4 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 10 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 3 )
+	{
+		setWeaponXPM( 2.0 );
+		setWeaponXPC( 4 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 10 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPM( 2.0 );
+		setWeaponXPC( 5 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_RED_T );
+		write_byte		( 10 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+}
+
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+
+{
+
+
+	if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 2 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 3 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_RED_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_RED_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_RED_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_RED_T );
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 4, ARG_SHORT, 4 );
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 4, ARG_SHORT, 4 );
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 2 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 4, ARG_SHORT, 4 );
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 3 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 4, ARG_SHORT, 5 );
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_RED_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_RED_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_RED_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_RED_T );
+		set_msg_arg_int( 4, ARG_SHORT, 5 );
+	}
+	else if ( equal( Class, "finishingbuster" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		attachWeaponHEAD( Weapon, "sprites/w_bigbang.spr", kRenderTransAdd, 250.0, 1.0, 10.0 );
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 4, ARG_SHORT, 8 );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLACK );
+	}
+	else if ( equal( Class, "finishingbuster" ) && getClientLEVEL( Client ) == 4 )
+	{
+		attachWeaponHEAD( Weapon, "sprites/w_jubeikame_s.spr", kRenderTransAdd, 250.0, 1.0, 10.0 );
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 4, ARG_SHORT, 8 );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLACK );
+	}
+}
+
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+
+{
+
+if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 0 )
+	{	
+		set_msg_arg_int( 4, ARG_SHORT,SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT,SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT,SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT,SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT,SPR_BLUE_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 1 )
+	{	
+		set_msg_arg_int( 4, ARG_SHORT,SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT,SPR_YELLOW_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 2 )
+	{	
+		set_msg_arg_int( 4, ARG_SHORT,SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT,SPR_YELLOW_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 3 )
+	{	
+		set_msg_arg_int( 4, ARG_SHORT,SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT,SPR_YELLOW_T );
+	}
+	else if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 4 )
+	{	
+		set_msg_arg_int( 4, ARG_SHORT,SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT,SPR_RED_S );
+		set_msg_arg_int( 6, ARG_SHORT,SPR_RED_S );
+		set_msg_arg_int( 7, ARG_SHORT,SPR_RED_S );
+		set_msg_arg_int( 8, ARG_SHORT,SPR_RED_T );
+	}
+	else if( equal( Class, "burningattack" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BA_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BA_E );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BA_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 9, ARG_BYTE, 8 );
+	}
+	else if( equal( Class, "burningattack" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_RBA_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_RBA_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_RBA_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 9, ARG_BYTE, 8 );
+	}
+}
+
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+
+{
+	if( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "Blue Attack" );
+	else if( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 1 )
+		set_msg_arg_string( 3, "Yellow Attack" );
+	else if( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 2 )
+		set_msg_arg_string( 3, "Yellow Attack" );
+	else if( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 3 )
+		set_msg_arg_string( 3, "Yellow Attack" );
+	else if( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "Red Attack" );
+	else if( equal( Weapon, "burningattack" ) && getClientLEVEL( Killer ) <= 3 )
+		set_msg_arg_string( 3, "Burning Attack" );
+	else if( equal( Weapon, "burningattack" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "Burning Attack X10" );
+	else if( equal( Weapon, "finishingbuster" ) && getClientLEVEL( Killer ) <= 3 )
+		set_msg_arg_string( 3, "Finishing Buster" );
+	else if( equal( Weapon, "finishingbuster" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "Finishing Buster x10" );
+}

@@ -1,0 +1,20 @@
+L 12/25/2012 - 02:25:42: Start of error session.
+L 12/25/2012 - 02:25:42: Info (map "esf_cell_games_night") (logfile "error_122512.log")
+L 12/25/2012 - 02:25:42: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/25/2012 - 02:25:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/25/2012 - 16:18:04: Start of error session.
+L 12/25/2012 - 16:18:04: Info (map "esf_cell_games_night") (logfile "error_122512.log")
+L 12/25/2012 - 16:18:04: [AMXX] Plugin file open error (plugin "CX/Garlick")
+L 12/25/2012 - 16:19:59: Start of error session.
+L 12/25/2012 - 16:19:59: Info (map "esf_cell_games_night") (logfile "error_122512.log")
+L 12/25/2012 - 16:19:59: [AMXX] Plugin file open error (plugin "CX/Garlick")
+L 12/25/2012 - 16:25:22: Start of error session.
+L 12/25/2012 - 16:25:22: Info (map "esf_cell_games_night") (logfile "error_122512.log")
+L 12/25/2012 - 16:25:22: [AMXX] Plugin file open error (plugin "CX/Garlick")
+L 12/25/2012 - 16:25:44: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/25/2012 - 16:25:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/25/2012 - 16:47:34: Start of error session.
+L 12/25/2012 - 16:47:34: Info (map "mat_space") (logfile "error_122512.log")
+L 12/25/2012 - 16:47:34: [AMXX] Plugin file open error (plugin "CX/Garlick")
+L 12/25/2012 - 16:47:44: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/25/2012 - 16:47:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

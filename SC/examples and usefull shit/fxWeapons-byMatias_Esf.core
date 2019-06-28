@@ -1,0 +1,248 @@
+/* Hola gente, antes que nada les recomiendo usar el programa Notepadd++ y en la sección
+de lenguaje seleccionar C > C++
+Con ctrl + rueda del mouse configuran el zoom
+
+
+
+EN ESTE CASO NUESTRO PERSONAJE SE LLAMA "GOKU-ARMOR"
+
+ */
+
+
+#include <amxmodx>
+#include <fun>
+#include <engine>
+#include <fakemeta>
+#include <ipci/Core>
+#include <ipci/Ascend>
+#include <ipci/fxlib>
+
+//PARA VERIFICAR SI ES UN JUGADOR
+#define PLAYER(%1)       ( 1 <= %1 <= get_maxplayers() )
+
+
+//QUERES LLAMAR A LOS PODERES POR SU NOMBRE Y NO POR SU NUMERO? PONE ASI:
+// "generic" es opcional, si quieren ponerle xD es igual, el 4 es el que indica el poder
+#define generic 4
+
+
+new think	//Para registrar el forward, este verifica si cargamos el poder o no
+new bool:Carga[33] // Una simple bool, para saber si estamos cargando o no
+new const AMXX [] = "Goku-Armor" //EL NOMBRE DE NUESTRO PERSONAJE!
+
+new spr_blue //Como el stock del MOD.WEAPON *USADO PARA EL EJEMPLO*
+
+
+
+public plugin_init()
+{
+register_plugin("fxWeapons", "3.0", "Matias_Esf");    
+register_event("ResetHUD","@ReSpawn","b") // ejecuta acciones cada vez que nuestro personaje revive
+}
+
+
+public plugin_precache()
+{
+spr_blue = precache_model("sprites/w_gb_b_s.spr")   //EFECTO DE EJEMPLO      
+}
+
+
+
+public @ReSpawn(id) //ACCIONES CADA VER QUE NUESTRO PERSONAJE REVIVE
+{
+
+if(getClientCLASS(id) != getCXbyName(AMXX) || is_user_bot(id) ) //NO ES NUESTRO PERSONAJE!
+{
+	@UNREGISTER(id) //DESACTIVA LOS FXWEAPONS SI LOS HEMOS ACTIVADO ANTES
+	return //NO ES GOKU! LO DE ABAJO NO SE EJECUTA
+}
+
+
+/* EN CASO DE SER GOKU, REGISTRAMOS SU FXWEAPONS...PARA QUE REGISTRARLO SI NUNCA APARECIÓ UN JUGADOR
+CON ESTE AMXX? LA FUNCION FORWARD ES LLAMADA CADA 0.01 SEGUNDOS, LO CUAL TENERLA AL PEDO
+PROVOCARA ALGO DE INESTABILIDAD Y CONSUMIRA RECURSOS CHEQUEANDO SI EL JUGADOR ES GOKU O NO
+ */
+
+think = register_forward( FM_PlayerPreThink, "@FxWeapons")
+return
+//QUE PASA SI REVIVE Y YA ESTABA REGISTRADO EL FXWEAPONS? NADA!
+
+}
+
+
+
+public @FxWeapons(id) //ACA PONDREMOS LOS EFECTOS
+{
+if(getClientCLASS(id) != getCXbyName(AMXX))  return //SI NO ES NUESTRO PJ, RETURNAMOS
+
+//SI EL PERSONAJE CARGA...
+if(!Carga[id] && get_pdata_int(id, 200)) //ATK CHARGE, AL MOMENTO DE CARGAR
+{
+
+if(get_user_weapon(id) == 6) //6 kamehameha
+{ 
+blow(id)  	//EFECTO
+fxRayitos(id) //EFECTO
+Carga[id] = true //AL PONERLO EN TRUE, EVITA QUE SE REPITAN LOS EFECTOS
+}
+
+if(get_user_weapon(id) == generic) //GENERIC BEAM
+{ 
+fxRayitos(id) //EFECTO
+Carga[id] = true //AL PONERLO EN TRUE, EVITA QUE SE REPITAN LOS EFECTOS
+}
+
+
+} //LLAVE FIN DE LOS EFECTOS
+
+//SI EL PERSONAJE NO CARGA....
+if(Carga[id] && !get_pdata_int(id, 200)) //EL PERSONAJE NO ESTA CARGANDO! Y HEMOS ACTIVADO LA BOOL
+{
+
+Carga[id] = false	//EVITA QUE SE REPITAN LOS EFECTOS
+ 
+if(get_user_weapon(id) == 6) //6 kamehameha
+{ 
+remove_task(id)		//DESACTIVAMOS EL TASK QUE EJECUTAMOS ARRIBA CON LOS RAYITOS
+}
+
+if(get_user_weapon(id) == 4) //4 GENERIC BEAM
+{ 
+remove_task(id)		//DESACTIVAMOS EL TASK QUE EJECUTAMOS ARRIBA CON LOS RAYITOS
+}
+
+
+} //LLAV
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+//QUITAR EL REGISTRO DE FX WEAPONS!! ELIMINAMOS LA FUNCION QUE CHEQUEA CADA 0.01 SEGUNDOS
+//ES PARA OPTIMIZAR UN POCO
+//IGNORAR NO TOCAR NADA
+
+public @UNREGISTER(id)
+{
+//BUSCAMOS EN TODO EL MAPA SI HAY UN JUGADOR CON EL MISMO AMXX
+//SI LO HAY, NO QUITAMOS EL REGISTRO..CASO CONTRARIO, LO BORRAMOS
+new iEnt = -1
+while( (iEnt = engfunc(EngFunc_FindEntityInSphere, iEnt,Float:{0.0,0.0,0.0}, 9999.0)) ) 
+{ 
+
+if(PLAYER(iEnt) && iEnt != id && getClientCLASS(iEnt) == getCXbyName( AMXX ))
+{
+return //HAY UN GOKU, NO VAMOS A HACER NADA :/
+}
+
+else if(PLAYER(iEnt) && iEnt != id && getClientCLASS(iEnt) != getCXbyName(AMXX))
+{
+unregister_forward(FM_PlayerPreThink, think)
+return  //NO HAY NINGUN GOKU EN EL SERVIDOR!!!, CHAU LOS REGISTROS ;)
+}
+
+else if(!PLAYER(iEnt) && iEnt != id)
+{
+unregister_forward(FM_PlayerPreThink, think)
+return //NO HAY OTRO JUGADOR EN EL SERVIDOR, ASI QUE...TAMBIEN, CHAU TODO ;D
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//============EFECTOS DE EJEMPLO USADOS==========
+
+public blow( id )
+AddFx( id, "fxBlow" )
+
+
+public fxRayitos(id)
+{
+static Float:Origin[3];
+entity_get_vector(id, EV_VEC_origin, Origin);
+message_begin(MSG_BROADCAST, SVC_TEMPENTITY)
+write_byte(TE_BEAMENTPOINT);
+write_short(id | 0x1000);
+write_coord(floatround(Origin[0])+ random_num(-39, 39));
+write_coord(floatround(Origin[1])+ random_num(-39, 39));
+write_coord(floatround(Origin[2])+ random_num(-39, 39));
+write_short(spr_blue)
+write_byte(10); // Starting Frame
+write_byte(5); // Framerate
+write_byte(7); // Life
+write_byte(7); // Width
+write_byte(0); // Noise
+write_byte(255); // Red
+write_byte(255); // Green
+write_byte(255); // Blue
+write_byte(160); // Brightness
+write_byte(20); // Speed
+message_end();
+set_task(0.1,"fxRayitos",id)
+
+
+}
+
+
+//NUMERO DE LOS PODERES!!! POR EJEMPLO, ARRIBA PUSE 6, QUE ES EL KAMEHAMEHA
+
+/* 
+ESFW_NONE			0
+ESFW_MELEE			1
+ESFW_SWORD			2
+ESFW_KIBLAST		3
+ESFW_GENERICBEAM	4	
+ESFW_GALLITGUN		5	
+ESFW_KAMEHAMEHA		6
+ESFW_DESTRUCTODISC	7
+ESFW_SOLARFLARE		8
+ESFW_EYELASER		9
+ESFW_FRIEZADISC		10
+ESFW_SPECIALBEAMCANNON	11	
+ESFW_SPIRITBOMB		12	
+ESFW_BIGBANG		13
+ESFW_FINGERLASER	14
+ESFW_FINALFLASH		15
+ESFW_MASENKO		16
+ESFW_DEATHBALL		17
+ESFW_BURNINGATTACK	18
+ESFW_SCATTERBEAM	19
+ESFW_CANDY			20
+ESFW_SCATTERSHOT	21
+ESFW_POWERBEAM		22
+ESFW_MOUTHBLAST		23
+ESFW_FINISHINGBUSTER	24
+ESFW_SENSU			25
+ESFW_DRAGONBALL		26
+ESFW_BODYPART		27
+ESFW_SHIELDATTACK	28
+ESFW_REGENERATION	29
+ESFW_RENZOKU		30
+ESFW_KAMETORPEDO	31
+ESFW_TELEKINESIS	32
+ESFW_FLAMETHROWER	33 */
+
+
+
+

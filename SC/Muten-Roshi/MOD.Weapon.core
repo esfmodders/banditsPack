@@ -1,0 +1,466 @@
+#define MOD_WEAPON_DBG 0
+stock SPR_BLACK;
+stock SPR_SHINE;		// Shine
+stock SPR_YELLOW_S;		// Yellow Beam Head
+stock SPR_YELLOW_T;		// Yellow Beam Trail
+stock SPR_BLUE_S;		// Blue Beam Head
+stock SPR_BLUE_T;		// Blue Beam Head
+stock SPR_JUBKAME_S;		// Kamehameha Beam Head
+stock SPR_JUBKAME_E;		// Kamehameha Beam End
+stock SPR_JUBKAME_T;		// Kamehameha Beam Trail
+stock SPR_SUKAME_S;
+stock SPR_SUKAME_E;
+stock SPR_SUKAME_T;
+stock SPR_RED_S;
+stock SPR_MSB;
+stock ICON_KAMEHAMEHA;
+stock C_ICON_JUBEIKAME;
+stock C_ICON_SUKAME;
+stock MOD_Weapon_PreCache ()
+
+
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	SPR_BLACK	= precache_model( "sprites/black.spr" );
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+	SPR_BLUE_S = precache_model( "sprites/w_gb_b_s.spr" );
+	SPR_BLUE_T = precache_model( "sprites/w_gb_b_t.spr" );
+	SPR_SUKAME_S = precache_model( "sprites/w_sukame_s.spr" );
+	SPR_SUKAME_T = precache_model( "sprites/w_sukame_t.spr" );
+	SPR_SUKAME_E = precache_model( "sprites/w_sukame_e.spr" );
+	SPR_RED_S = precache_model( "sprites/w_gb_r_s.spr" );
+	SPR_JUBKAME_S = precache_model( "sprites/w_jubeikame_s.spr" );
+	SPR_JUBKAME_E = precache_model( "sprites/w_jubeikame_e.spr" );
+	SPR_JUBKAME_T = precache_model( "sprites/w_jubeikame_t.spr" );
+	ICON_KAMEHAMEHA = getIconINDEX( "weapon_kamehameha");
+	C_ICON_JUBEIKAME = createCustomICON("c_weapon_jukame", { 3, 1 } );
+	C_ICON_SUKAME = createCustomICON("c_weapon_sukame", { 3, 1 } );
+}
+
+
+public @BaseWeaponCreation ( Client, BaseWeapon, const Name[] )
+{
+	if ( equal( Name, "weapon_kamehameha" ) && getClientLEVEL( Client ) > 3 )
+	{
+		setBeamChargeTime( BaseWeapon, 25 );
+		setBeamChargeKi( BaseWeapon, 35 );
+	}
+	if ( equal( Name, "weapon_kamehameha" ) && getClientLEVEL( Client ) > 4 )
+	{
+		setBeamChargeTime( BaseWeapon, 25 );
+		setBeamChargeKi( BaseWeapon, 35 );
+	}
+	if ( equal( Name, "weapon_powerbeam" ) && getClientLEVEL( Client ) > 3 )
+	{
+		setBeamChargeTime( BaseWeapon, 55 );
+		setBeamChargeKi( BaseWeapon, 17 );
+		setBeamSpeed( BaseWeapon, 900 );
+	}
+	
+}
+public @WeaponAdjust ( Client, Weapon, const Class[] )
+{
+
+	/**
+	 0 - Blue
+	 1 - Green
+	 2 - Orange
+	 3 - Purple
+	 4 - Yellow
+	 5 - Red
+	 6 - White
+	 7 - None
+	**/
+	
+	
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 0 )
+	{	
+		setWeaponXPC( 0 );
+		setWeaponXPM( 1.5 );
+	}
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 1 )
+	{	
+		setWeaponXPC( 4 );
+		setWeaponXPM( 2.5 );
+	}
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 2 )
+	{	
+		setWeaponXPC( 4 );
+		setWeaponXPM( 3.5 );
+	}
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 3 )
+	{	
+		setWeaponXPC( 4 );
+		setWeaponXPM( 4.5 );
+	}
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 4 )
+	{	
+		setWeaponXPC( 4 );
+		setWeaponXPM( 5.5 );
+	}
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 5 )
+	{	
+		setWeaponXPC( 4 );
+		setWeaponXPM( 6.5 );
+	}
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 7 )
+	{	
+		setWeaponXPC( 4 );
+		setWeaponXPM( 6.5 );
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 0 )
+	{
+		setWeaponXPC( 0 );
+		setWeaponXPM( 23.0 );
+		setWeaponDMG( 30.0, 330.0, 0.08 );
+	}
+	else if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) < 3 )
+	{
+		setWeaponXPC( 0 );
+		setWeaponXPM( 4.0 );
+		setWeaponDMG( 3.0, 180.0, 0.08 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_SUKAME_T );
+		write_byte		( 15 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 5.0 );
+		setWeaponDMG( 6.0, 250.0, 0.08 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_JUBKAME_T );
+		write_byte		( 18 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 5 )
+	{
+		setWeaponXPC( 0 );
+		setWeaponXPM( 6.0 );
+		setWeaponDMG( 7.0, 200.0, 0.08 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_SUKAME_T );
+		write_byte		( 20 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 6 )
+	{
+		setWeaponXPC( 0 );
+		setWeaponXPM( 7.0 );
+		setWeaponDMG( 7.0, 180.0, 0.08 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_SUKAME_T );
+		write_byte		( 15 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 7 )
+	{
+		setWeaponXPC( 0 );
+		setWeaponXPM( 8.0 );
+		setWeaponDMG( 7.0, 180.0, 0.08 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_SUKAME_T );
+		write_byte		( 30 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) < 4 )
+	{
+		setWeaponXPM( 2.2 );
+		setWeaponXPC( 4 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 9 );
+		write_byte		( 6 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPM( 3.2 );
+		setWeaponXPC( 5 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_JUBKAME_T );
+		write_byte		( 9 );
+		write_byte		( 6 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 5 )
+	{
+		setWeaponXPM( 4.2 );
+		setWeaponXPC( 5 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 5 );
+		write_byte		( 3 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 7 )
+	{
+		setWeaponXPM( 3.2 );
+		setWeaponXPC( 4 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 7 );
+		write_byte		( 2 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+
+
+}
+public @Weaponball ( Client, Weapon, const Class[] )
+{	
+	
+	if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+		set_msg_arg_int( 9, ARG_BYTE, 7 );
+	}
+	if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 5 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+		set_msg_arg_int( 9, ARG_BYTE, 8 );
+	}
+}
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) >= 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_YELLOW_T );
+	}
+	else if ( equal( Class, "greenattack" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLUE_T );
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_SUKAME_E );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SUKAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SUKAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 32 );
+	}
+	else if ( equal( Class, "powerbeam" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SUKAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SUKAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 22 );
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 7 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SUKAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SUKAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 42 );
+	}
+
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_RED_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_RED_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBKAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_JUBKAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 12 );
+	}
+	if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) < 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+		set_msg_arg_int( 9, ARG_BYTE, 6 );
+	}
+	if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+		set_msg_arg_int( 9, ARG_BYTE, 6 );
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 5 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_SUKAME_E );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SUKAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SUKAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 38 );
+	}
+	if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 7 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+		set_msg_arg_int( 9, ARG_BYTE, 8 );
+	}
+
+	if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+		set_msg_arg_int( 9, ARG_BYTE, 7 );
+	}
+}
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	else if ( equal( Class, "greenattack" ))
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_T );
+	}
+	if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_JUBKAME_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBKAME_T );
+		set_msg_arg_int( 4, ARG_SHORT, 6 );
+	}
+	if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) == 5 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_JUBKAME_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBKAME_T );
+		set_msg_arg_int( 4, ARG_SHORT, 6 );
+	}
+	if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) < 3 )
+	{
+		
+		set_msg_arg_int( 4, ARG_SHORT, 3 );
+	}
+	if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_JUBKAME_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_JUBKAME_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBKAME_T );
+		set_msg_arg_int( 4, ARG_SHORT, 4 );
+	}
+	if ( equal( Class, "Kame Torpedo" ) && getClientLEVEL( Client ) > 4 )
+	{
+		
+		set_msg_arg_int( 4, ARG_SHORT, 5 );
+	}
+
+}
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "blueattack" );
+	else if ( equal( Weapon, "greenattack" ) )
+		set_msg_arg_string( 3, "yellowattack" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "x10 Kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "The Original Kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 2 )
+		set_msg_arg_string( 3, "Super Kamehameha" );
+	else if ( equal( Weapon, "powerbeam" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "Dual Kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 5 )
+		set_msg_arg_string( 3, "GOD Kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 7 )
+		set_msg_arg_string( 3, "ULTRA GOD Kamehameha" );
+
+}

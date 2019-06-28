@@ -1,0 +1,22 @@
+entity_set_int(__int_Entity, EV_INT_body, #SubModelNumber);
+entity_set_int(__int_Entity, EV_INT_skin, #SkinModelNumber);
+
+bodypart
+body
+part
+
+public @Gohanthink(Client)
+{
+    if( getClientLEVEL( Client ) == 0 )
+    {
+        entity_set_int(Client, EV_INT_body, 0 );
+    }
+    else if( getClientLEVEL( Client ) == 1 )
+    {
+        entity_set_int(Client, EV_INT_body, 1 );
+    }
+    else if( getClientLEVEL( Client ) == 2 )
+    {
+        entity_set_int(Client, EV_INT_body, 2 );
+    }
+}

@@ -1,0 +1,8 @@
+L 12/24/2012 - 01:12:43: Start of error session.
+L 12/24/2012 - 01:12:43: Info (map "esf_cell_arena") (logfile "error_122412.log")
+L 12/24/2012 - 01:12:43: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/24/2012 - 01:12:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/24/2012 - 01:42:44: Start of error session.
+L 12/24/2012 - 01:42:44: Info (map "esf_cell_arena") (logfile "error_122412.log")
+L 12/24/2012 - 01:42:44: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/24/2012 - 01:42:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

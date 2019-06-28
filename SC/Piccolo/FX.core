@@ -1,0 +1,83 @@
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxSpriteEntity", 0 );
+	RemFx( Client, "fxSpriteEntity", 0 );
+	RemFx( Client, "fxPowerup", 0 );
+}
+public fxBlow( Core [] )
+{
+	AddFx( Core [0], "fxBlow" );
+}
+public fxNail( Core [] )
+{
+	AddFx( Core [0], "fxModelEntity", "models/evolution/nail.mdl", 0, 10, 100.0, 0, 0, 0, 1.0, 1.0, 0, 1 );
+	return 1;
+}
+public fxkami( Core [] )
+{
+	AddFx( Core [0], "fxModelEntity", "models/evo/kami.mdl", 0, 10, 100.0, 0, 0, 0, 1.0, 1.0, 0, 1 );
+	return 1;
+}
+public fxAvatar117( Core [] )
+{
+	RemFx( Core [0], "fxAvatar", 0);
+	AddFx( Core [0], "fxAvatar", "create", 117, 1.0 );
+}
+public fxAvatar118( Core [] )
+{
+	RemFx( Core [0], "fxAvatar", 0);
+	AddFx( Core [0], "fxAvatar", "create", 118, 1.0 );
+}
+public fxLight( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 255, 255, 255, 2.1, 0.5);
+	return 1;
+}
+public fxFusion( Core [] )
+{
+	AddFx( Core [0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 40.0, 255, 255, 255, 1.0, 0.7, 0, 0 );
+}
+public fxAura( Core [] )
+{
+	AddFx( Core [0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 40.0, 0, 255, 255, 1.0, 0.3, 0, 0 );
+}
+
+public fxPowerWave( Core [] )
+{	
+	AddFx( Core [0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+}
+public fxPowerup( Core [] )
+{
+	AddFx( Core [0], "fxPowerup", 255, 255, 255 );
+}
+public fxPowerup2( Core [] )
+{
+	AddFx( Core [0], "fxPowerup", 255, 255, 255 );
+}
+public fxDisable( Core [] )
+{
+	RemFx( Core [0], "fxPowerup", 0 );
+	RemFx( Core [0], "fxModelEntity", 0 );
+	RemFx( Core [0], "fxModelEntity", 0 );
+	RemFx( Core [0], "fxSpriteEntity", 0 );
+	RemFx( Core [0], "fxSpriteEntity", 0 );
+}
+public fxSprite( Core [] )
+{
+	AddFx( Core [0], "fxSpriteEntity", "sprites/ecx.swoopfx.spr", 0, 0, 255.0, 2.0, 1.0, 0.4 );
+}
+public fxSprite2( Core [] )
+{
+	AddFx( Core [0], "fxSpriteEntity", "sprites/ecx.aura.white.spr", 0, 0, 255.0, 2.0, 1.0, 0.4 );
+}
+public fxScreenShake( Core [] )
+{
+	AddFx( Core [0], "fxScreenShake", 50.0, 0.5, 2.0 );
+}
+public fxSpriteRays( Core [] )
+{
+	AddFx( Core [0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 150, 255, 255, 255, 25, 700, 0, 25 );
+}

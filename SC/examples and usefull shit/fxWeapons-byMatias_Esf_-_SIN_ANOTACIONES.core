@@ -1,0 +1,205 @@
+
+#include <amxmodx>
+#include <fun>
+#include <engine>
+#include <fakemeta>
+#include <ipci/Core>
+#include <ipci/Ascend>
+#include <ipci/fxlib>
+
+#define PLAYER(%1)       ( 1 <= %1 <= get_maxplayers() )
+
+#define generic 4
+
+
+new think
+new bool:Carga[33] 
+new const AMXX [] = "Goku-Armor"
+new spr_blue
+
+
+
+public plugin_init()
+{
+register_plugin("fxWeapons", "3.0", "Matias_Esf");    
+register_event("ResetHUD","@ReSpawn","b")
+}
+
+
+public plugin_precache()
+{
+spr_blue = precache_model("sprites/w_gb_b_s.spr")   
+}
+
+
+
+public @ReSpawn(id)
+{
+
+if(getClientCLASS(id) != getCXbyName(AMXX) || is_user_bot(id) ) //NO ES NUESTRO PERSONAJE!
+{
+	@UNREGISTER(id)
+	return
+}
+
+
+think = register_forward( FM_PlayerPreThink, "@FxWeapons")
+return
+}
+
+
+
+public @FxWeapons(id)
+{
+if(getClientCLASS(id) != getCXbyName(AMXX))  return
+
+
+if(!Carga[id] && get_pdata_int(id, 200)) //ATK CHARGE, AL MOMENTO DE CARGAR
+{
+if(get_user_weapon(id) == 6) 
+{ 
+blow(id)
+fxRayitos(id)
+Carga[id] = true
+}
+
+if(get_user_weapon(id) == generic)
+{ 
+fxRayitos(id)
+Carga[id] = true
+}
+
+}
+
+if(Carga[id] && !get_pdata_int(id, 200)) //EL PERSONAJE NO ESTA CARGANDO! Y HEMOS ACTIVADO LA BOOL
+{
+Carga[id] = false
+ 
+if(get_user_weapon(id) == 6) 
+{ 
+remove_task(id)
+}
+
+if(get_user_weapon(id) == generic)
+{ 
+remove_task(id)	
+}
+}
+
+}
+
+
+
+
+public @UNREGISTER(id)
+{
+new iEnt = -1
+while( (iEnt = engfunc(EngFunc_FindEntityInSphere, iEnt,Float:{0.0,0.0,0.0}, 9999.0)) ) 
+{ 
+
+if(PLAYER(iEnt) && iEnt != id && getClientCLASS(iEnt) == getCXbyName( AMXX ))
+{
+return //HAY UN GOKU, NO VAMOS A HACER NADA :/
+}
+
+else if(PLAYER(iEnt) && iEnt != id && getClientCLASS(iEnt) != getCXbyName(AMXX))
+{
+unregister_forward(FM_PlayerPreThink, think)
+return  //NO HAY NINGUN GOKU EN EL SERVIDOR!!!, CHAU LOS REGISTROS ;)
+}
+
+else if(!PLAYER(iEnt) && iEnt != id)
+{
+unregister_forward(FM_PlayerPreThink, think)
+return //NO HAY OTRO JUGADOR EN EL SERVIDOR, ASI QUE...TAMBIEN, CHAU TODO ;D
+}
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//============EFECTOS DE EJEMPLO USADOS==========
+
+public blow( id )
+AddFx( id, "fxBlow" )
+
+
+public fxRayitos(id)
+{
+static Float:Origin[3];
+entity_get_vector(id, EV_VEC_origin, Origin);
+message_begin(MSG_BROADCAST, SVC_TEMPENTITY)
+write_byte(TE_BEAMENTPOINT);
+write_short(id | 0x1000);
+write_coord(floatround(Origin[0])+ random_num(-39, 39));
+write_coord(floatround(Origin[1])+ random_num(-39, 39));
+write_coord(floatround(Origin[2])+ random_num(-39, 39));
+write_short(spr_blue)
+write_byte(10); // Starting Frame
+write_byte(5); // Framerate
+write_byte(7); // Life
+write_byte(7); // Width
+write_byte(0); // Noise
+write_byte(255); // Red
+write_byte(255); // Green
+write_byte(255); // Blue
+write_byte(160); // Brightness
+write_byte(20); // Speed
+message_end();
+set_task(0.1,"fxRayitos",id)
+
+
+}
+
+
+//NUMERO DE LOS PODERES!!! POR EJEMPLO, ARRIBA PUSE 6, QUE ES EL KAMEHAMEHA
+
+/* 
+ESFW_NONE			0
+ESFW_MELEE			1
+ESFW_SWORD			2
+ESFW_KIBLAST		3
+ESFW_GENERICBEAM	4	
+ESFW_GALLITGUN		5	
+ESFW_KAMEHAMEHA		6
+ESFW_DESTRUCTODISC	7
+ESFW_SOLARFLARE		8
+ESFW_EYELASER		9
+ESFW_FRIEZADISC		10
+ESFW_SPECIALBEAMCANNON	11	
+ESFW_SPIRITBOMB		12	
+ESFW_BIGBANG		13
+ESFW_FINGERLASER	14
+ESFW_FINALFLASH		15
+ESFW_MASENKO		16
+ESFW_DEATHBALL		17
+ESFW_BURNINGATTACK	18
+ESFW_SCATTERBEAM	19
+ESFW_CANDY			20
+ESFW_SCATTERSHOT	21
+ESFW_POWERBEAM		22
+ESFW_MOUTHBLAST		23
+ESFW_FINISHINGBUSTER	24
+ESFW_SENSU			25
+ESFW_DRAGONBALL		26
+ESFW_BODYPART		27
+ESFW_SHIELDATTACK	28
+ESFW_REGENERATION	29
+ESFW_RENZOKU		30
+ESFW_KAMETORPEDO	31
+ESFW_TELEKINESIS	32
+ESFW_FLAMETHROWER	33 */
+
+
+
+

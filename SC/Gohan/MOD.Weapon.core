@@ -1,0 +1,164 @@
+stock SPR_SHINE; // Shine
+stock SPR_BLACK;
+
+stock SPR_YELLOW_S;		// Yellow Beam Head
+stock SPR_YELLOW_T;		// Yellow Beam Trail
+
+stock SPR_KAME_S;
+stock SPR_KAME_E;
+stock SPR_KAME_T;
+
+stock SPR_JUBEI_S;
+stock SPR_JUBEI_E;
+stock SPR_JUBEI_T;
+
+stock ICON_KAMEHAMEHA;
+stock ICON_JUBEI;
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	SPR_BLACK = precache_model( "sprites/black.spr" );
+
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+	
+	SPR_KAME_S = precache_model( "sprites/w_sukame_s.spr" );
+	SPR_KAME_T = precache_model( "sprites/w_sukame_t.spr" );
+	SPR_KAME_E = precache_model( "sprites/w_sukame_e.spr" );
+	
+	
+	SPR_JUBEI_S = precache_model( "sprites/w_sukame_s.spr" );
+	SPR_JUBEI_T = precache_model( "sprites/w_sukame_t.spr" );
+	SPR_JUBEI_E = precache_model( "sprites/w_sukame_e.spr" );
+	
+	
+	ICON_KAMEHAMEHA = getIconINDEX( "weapon_kamehameha");
+	ICON_JUBEI = createCustomICON( "c_weapon_sukame", { 3, 1 } );
+}
+
+
+
+public @BaseWeaponCreation ( Client, BaseWeapon, const Name[] )
+{
+	if ( equal( Name, "weapon_kamehameha" ) && getClientLEVEL( Client ) == 2 )
+	{
+		setBeamChargeTime( BaseWeapon, 60 );
+		setBeamChargeKi( BaseWeapon, 10 );
+		setBeamSpeed( BaseWeapon, 2000 );
+	}
+}
+
+public @WeaponAdjust ( Client, Weapon, const Class[] )
+{
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 0 )
+	setWeaponXPC( 1 );
+	
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 1 )
+	setWeaponXPC( 4 );
+	
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 2 )
+	setWeaponXPC( 4 );
+	
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL(Client) == 0 )
+	setWeaponXPC( 4 );
+	
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL(Client) == 1 )
+	setWeaponXPC( 4 );
+	
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL(Client) == 2 )
+	setWeaponXPC( 4 );
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL(Client) == 2 )
+	{
+		setWeaponDMG( 30.0, 200.0, 0.04 );
+		setWeaponXPM( 20.0 );
+		setWeaponXPC( 0 );
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL(Client) == 1 )
+	{
+		setWeaponXPM( 13.0 );
+		setWeaponXPC( 0 );
+		setWeaponDMG( 15.0, 160.0, 0.04 );
+	}
+	
+	else if ( equal( Class, "powerbeam" ) && getClientLEVEL(Client) == 2 )
+	{
+		setWeaponXPM( 10.0 );
+		setWeaponXPC( 0 );
+	}
+}
+
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) >= 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_YELLOW_T );
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL(Client) < 2)
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 10 );
+	}
+		else if ( equal( Class, "kamehameha" ) && getClientLEVEL(Client) == 2)
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_JUBEI_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBEI_E );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBEI_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_JUBEI_T );
+		set_msg_arg_int( 9, ARG_BYTE, 15 );
+	}
+
+		else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) >= 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+		set_msg_arg_int( 9, ARG_BYTE, 6 );
+	}
+}
+
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{	
+		if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) >= 0)
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	
+		else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) >= 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 4, ARG_SHORT, 6 );
+	}
+}
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) >= 0 )
+	set_msg_arg_string( 3, "Generic Beam" );
+	
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) < 2)
+	set_msg_arg_string( 3, "Super Kamehameha" );
+	
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 2)
+	set_msg_arg_string( 3, "Father and Son Kamehameha" );
+}

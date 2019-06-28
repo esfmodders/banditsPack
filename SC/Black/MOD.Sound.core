@@ -1,0 +1,80 @@
+new MOD_SOUND_CORE[][][] =
+{
+	{
+		"*/pain1.wav",
+		"Black/Pain1.wav",
+		"Black/Pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"Black/Pain2.wav",
+		"Black/Pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"Black/Pain2.wav",
+		"Black/Pain3.wav"
+	},
+	{
+		"*/pain4.wav",
+		"Black/Pain4.wav",
+		"Black/Pain4.wav"
+	},
+	{
+		"*/death.wav",
+		"Black/Death.wav",
+		"Black/Death.wav"
+	},
+	{
+		"*/renzoku.wav",
+		"Black/Renzoku.wav",
+		"Black/Renzoku.wav"
+	},
+	{
+		"*/kamehame.wav",
+		"Black/Kamehame.wav",
+		"Black/Kamehame.wav"
+	},
+	{
+		"*/ha.wav",
+		"Black/Ha.wav",
+		"Black/Ha.wav"
+	},
+	{
+		"*/bigbang_charge.wav",
+		"Black/BigbangCharge.wav",
+		"Black/BigbangCharge.wav"
+	},
+	{
+		"weapons/burning_charge.wav",
+		"Black/ba.wav",
+		"Black/ba.wav"
+		
+	},
+	{
+		"*/burning.wav",
+		"Black/baf.wav",
+		"Black/baf.wav"
+		
+	},
+	{
+		"*/bigbang.wav",
+		"Black/Bigbang.wav",
+		"Black/Bigbang.wav"
+	},
+	{
+		"*/finalflash_charge.wav",
+		"Black/FinalFlashCharge.wav",
+		"Black/FinalFlashCharge.wav"
+	},
+	{
+		"*/finalflash.wav",
+		"Black/FinalFlash.wav",
+		"Black/FinalFlash.wav"
+	}
+}
+
+
+
+
+

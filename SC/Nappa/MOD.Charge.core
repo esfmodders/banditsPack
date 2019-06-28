@@ -1,0 +1,7 @@
+ModChargeInit ()
+{
+	alterCharge( 0, "genericbeam", "sprites/w_gb_b_s.spr", 0.3 );
+	alterCharge( 0, "finalflash", "sprites/ecx.aura.broly.spr", 0.3 );
+	alterCharge( 1, "genericbeam", "sprites/w_gb_b_s.spr", 0.3 );
+	alterCharge( 1, "finalflash", "sprites/ecx.aura.broly.spr", 0.3 );
+}

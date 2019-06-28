@@ -1,0 +1,47 @@
+new MOD_SOUND_CORE[][][] =
+{
+	
+	// << WEAPON >>
+
+	{
+		"*/candyeat.wav",
+		"pan/w_candyeat.wav",
+		"pan/w_candyeat.wav"
+	},
+	{
+		"*/gallitgun.wav",
+		"pan/w_mouthbeam.wav",
+		"pan/w_mouthbeam.wav"
+	},
+
+
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"pan/p_pain1.wav",
+		"pan/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"pan//p_pain2.wav",
+		"pan//p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"pan//p_pain3.wav",
+		"pan//p_pain3.wav"
+	},
+	{
+		"*/pain4.wav",
+		"pan//p_pain4.wav",
+		"pan//p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"pan//p_death.wav",
+		"pan//p_death.wav"
+	}
+	
+};

@@ -1,0 +1,83 @@
+stock SPR_SHINE;	//Shine
+
+stock SPR_YELLOW_S;	//Yellow Beam Head
+stock SPR_YELLOW_T;	//Yellow Beam Trail
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+
+}
+public @BaseWeaponCreation( Client, BaseWeapon, const Name [] )
+{
+	if( equal( Name, "weapon_masenko" ) && getClientLEVEL( Client ) <= 3 )
+	{
+	setBeamChargeTime( BaseWeapon, 30 );
+	setBeamChargeKi( BaseWeapon, 20 );
+	setBeamSpeed( BaseWeapon, 1800 );
+	}
+}
+public @WeaponAdjust ( Client, Weapon, const Class[], PowerLevel, Charge )
+{
+	if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) <= 3 )
+		setWeaponXPC( 4 );
+	else if( equal( Class, "masenko" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		setWeaponDMG( 15.0, 170.0, 0.03 );
+		setWeaponXPM( 5.0 );
+	}
+	else if( equal( Class, "kiblast" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		setWeaponXPM( 2.0 );
+		setWeaponXPC( 4 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 10 );
+		write_byte		( 20 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+	}
+}
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{
+	if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	else if ( equal( Class, "kiblast" ) && getClientLEVEL( Client ) <= 3 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 4, ARG_SHORT, 4 );
+	}
+}
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	if( equal( Class, "greenattack" ) && getClientLEVEL( Client ) <= 3 )
+	{	
+		set_msg_arg_int( 4, ARG_SHORT,SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT,SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT,SPR_YELLOW_T );
+	}
+}
+	// >> Adjust Death Messages
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+}
+

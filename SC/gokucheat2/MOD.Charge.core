@@ -1,0 +1,4 @@
+ModChargeInit ()
+{
+	//alterCharge( 0, "genericbeam", "sprites/w_gb_b_s.spr", 0.3 );
+}

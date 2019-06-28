@@ -1,0 +1,8 @@
+ModChargeInit ()
+{
+	alterCharge( 0, "kamehameha", "sprites/Evil-kamecharg1.spr", 0.3 );
+	alterCharge( 1, "kamehameha", "sprites/Evil-kamecharg1.spr", 0.3 );	
+	alterCharge( 1, "powerbeam", "sprites/Dkc.spr", 0.3 );
+}
+
+

@@ -1,0 +1,362 @@
+#define MOD_WEAPON_DBG 0
+
+// >> ARG_BYTE		int
+// >> ARG_CHAR		int
+// >> ARG_SHORT		int
+// >> ARG_LONG		int
+// >> ARG_ANGLE		float
+// >> ARG_COORD		float
+// >> ARG_STRING	string
+// >> ARG_ENTITY	int
+
+
+stock SPR_BLACK;
+stock SPR_SHINE;		// Shine
+
+stock SPR_YELLOW_S;		// Yellow Beam Head
+stock SPR_YELLOW_T;		// Yellow Beam Trail
+
+stock SPR_BLUE_S;		// Blue Beam Head
+stock SPR_BLUE_T;		// Blue Beam Head
+
+stock SPR_SPIRITBOMB;
+
+stock SPR_KAME_S;
+stock SPR_KAME_E;
+stock SPR_KAME_T;
+
+stock SPR_JUBEIKAME_S;
+stock SPR_JUBEIKAME_E;
+stock SPR_JUBEIKAME_T;
+
+stock ICON_KAMEHAMEHA;
+stock C_ICON_JUBEIKAME;
+stock C_ICON_KAME;
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	SPR_BLACK	= precache_model( "sprites/black.spr" );
+
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+
+	SPR_BLUE_S = precache_model( "sprites/w_gb_b_s.spr" );
+	SPR_BLUE_T = precache_model( "sprites/w_gb_b_t.spr" );
+	
+	SPR_KAME_S = precache_model( "sprites/kame-s.spr" );
+	SPR_KAME_T = precache_model( "sprites/kame-t.spr" );
+	SPR_KAME_E = precache_model( "sprites/kame-e.spr" );
+
+	SPR_JUBEIKAME_S = precache_model( "sprites/w_jubeikame_s.spr" );
+	SPR_JUBEIKAME_E = precache_model( "sprites/w_jubeikame_e.spr" );
+	SPR_JUBEIKAME_T = precache_model( "sprites/w_jubeikame_t.spr" );	 
+
+	SPR_SPIRITBOMB = precache_model( "sprites/Evil-SpiritBomb.spr" );
+
+	ICON_KAMEHAMEHA = getIconINDEX( "weapon_kamehameha");
+	C_ICON_JUBEIKAME = createCustomICON("c_weapon_jukame", { 4, 2 } );
+	C_ICON_KAME = createCustomICON("c_weapon_jukame", { 4, 2 } );	
+
+}
+
+public @IconUpdate ( Client, Level )
+{
+	if( Level == 0 )
+		replaceClientICON( Client , C_ICON_KAME, ICON_KAMEHAMEHA );
+	
+	if( Level == 1 )
+		replaceClientICON( Client , C_ICON_KAME, ICON_KAMEHAMEHA );	
+
+	if( Level == 2 )
+		replaceClientICON( Client , C_ICON_KAME, ICON_KAMEHAMEHA );
+
+	if( Level == 3 )
+		replaceClientICON( Client , C_ICON_KAME, ICON_KAMEHAMEHA );
+
+	if( Level == 4 )
+		replaceClientICON( Client , C_ICON_JUBEIKAME, ICON_KAMEHAMEHA );
+
+	if( Level == 5 )
+		replaceClientICON( Client , C_ICON_JUBEIKAME, ICON_KAMEHAMEHA );		
+
+
+}
+
+public @BaseWeaponCreation ( Client, BaseWeapon, const Name[] )
+{
+
+}
+
+
+public @WeaponAdjust ( Client, Weapon, const Class[] )
+{
+	/**
+	 0 - Blue
+	 1 - Green
+	 2 - Orange
+	 3 - Purple
+	 4 - Yellow
+	 5 - Red
+	 6 - White
+	 7 - None
+	**/
+
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) == 0 )
+		setWeaponXPC( 5 );
+
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 1 )
+		setWeaponXPC( 5 );
+		
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 2 )
+	    setWeaponXPC( 5 );
+		
+
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 3 )
+		setWeaponXPC( 5 );	
+
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 4 )
+		setWeaponXPC( 5 );	
+
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 5 )
+		setWeaponXPC( 5 );			
+		
+	if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 0 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 8.0 );
+		// Super Kamehameha
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 1 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 8.0 );
+		// Super Kamehameha
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 2 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 8.0 );
+		// Super Kamehameha
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 3 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 6.0 );
+		// Super Kamehameha
+		setWeaponDMG( 11.0, 140.0, 0.08 );
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 7.0 );
+		// Jubei Kamehameha
+		setWeaponDMG( 11.0, 140.0, 0.08 );
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 5 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 7.0 );
+		// Red-Evil Kamehameha
+		setWeaponDMG( 11.0, 140.0, 0.08 );
+	}
+	
+	if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 0 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 8.0 );
+		// Evil-Spiritbomb
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+	
+	else if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 1 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 9.0 );
+		// Evil-Spiritbomb
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+	
+	else if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 4 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 10.0 );
+		// Evil-Spiritbomb
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+	
+	else if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 5 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 12.0 );
+		// Evil-Spiritbomb
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+}
+
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) > 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLUE_T );
+
+	}
+
+	else if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLUE_T );
+
+	}
+
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 12 );
+
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 12 );
+
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 2 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 12 );
+
+	}
+	
+	else if( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 3 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 12 );
+
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_JUBEIKAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBEIKAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBEIKAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_JUBEIKAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 16 );
+	}
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 5 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_JUBEIKAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_JUBEIKAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_JUBEIKAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_JUBEIKAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 16 );
+	}
+	
+	else if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 9, ARG_BYTE, 9 );
+	}
+	
+	else if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 9, ARG_BYTE, 10 );
+	}	
+	
+	else if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 4 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 9, ARG_BYTE, 11 );
+	}	
+	
+	else if ( equal( Class, "spiritbomb" ) && getClientLEVEL( Client ) == 5 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_SPIRITBOMB );
+		set_msg_arg_int( 9, ARG_BYTE, 14 );
+	}	
+}
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	/**
+	 1 -   BYTE - Killer - do not edit
+	 2 -   BYTE - Client - do not edit
+	 3 - STRING - Weapon
+	**/
+
+	if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "blueattack" );
+	else if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) > 0 )
+		set_msg_arg_string( 3, "yellowattack" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "red-kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 1 )
+		set_msg_arg_string( 3, "red-kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 2 )
+		set_msg_arg_string( 3, "red-kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 3 )
+		set_msg_arg_string( 3, "red-kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "superred-kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 5 )
+		set_msg_arg_string( 3, "Redevil-kamehameha" );
+	else if ( equal( Weapon, "spiritbomb" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "Evil-Spiritbomb" );
+	else if ( equal( Weapon, "spiritbomb" ) && getClientLEVEL( Killer ) == 1 )
+		set_msg_arg_string( 3, "Evil-Spiritbomb" );
+	else if ( equal( Weapon, "spiritbomb" ) && getClientLEVEL( Killer ) == 4 )
+		set_msg_arg_string( 3, "Evil-Spiritbomb" );	
+	else if ( equal( Weapon, "spiritbomb" ) && getClientLEVEL( Killer ) == 5 )
+		set_msg_arg_string( 3, "Evil-Spiritbomb" );		
+		
+
+}

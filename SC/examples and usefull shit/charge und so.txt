@@ -1,0 +1,77 @@
+new __int_Charge;
+
+public client_connect(__int_Index)
+{
+    if(__int_Charge & (1 << __int_Index))
+    {
+        __int_Charge &= ~(1 << __int_Index);
+    }
+}
+
+public client_disconnect(__int_Index)
+{
+    if(__int_Charge & (1 << __int_Index))
+    {
+        __int_Charge &= ~(1 << __int_Index);
+    }
+}
+public client_PreThink(__int_Index)
+{
+    if(!is_user_alive(__int_Index) || is_user_bot(__int_Index))
+    {
+        return;
+    }
+    
+    if(getClientATKCHARGE(__int_Index) && ~__int_Charge & (1 << __int_Index))
+    {
+        switch(get_user_weapon(__int_Index))
+        {
+            case 6: // kamehameha
+            {
+                if(!is_valid_ent(entity_get_edict(__int_Index, EV_ENT_euser4)))
+                {
+                    new __int_Entity;
+                    __int_Entity = create_entity("info_target");
+                    
+                    entity_set_model(__int_Entity, "models/evolution/...");
+                    
+                    entity_set_int(__int_Entity, EV_INT_rendermode, kRenderTransAdd);
+                    entity_set_float(__int_Entity, EV_FL_renderamt, 50.000_000);
+                    
+                    entity_set_float(__int_Entity, EV_FL_animtime, 0.000_000);
+                    entity_set_float(__int_Entity, EV_FL_framerate, 1.000_000);
+                    
+                    entity_set_int(__int_Entity, EV_INT_movetype, MOVETYPE_FOLLOW);
+                    entity_set_edict(__int_Entity, EV_ENT_aiment, __int_Index);
+                    
+                    entity_set_edict(__int_Index, EV_ENT_euser4, __int_Entity);
+                    
+                    message_begin(MSG_ALL, get_user_msgid("ManipModel"));
+                    {
+                        write_byte(10);
+                        write_short(__int_Entity);
+                    }
+                    message_end();
+                }
+            }
+        }
+        
+        __int_Charge |= (1 << __int_Index);
+    }
+    else if(getClientATKCHARGE(__int_Index) && __int_Charge & (1 << __int_Index))
+    {
+        if(is_valid_ent(entity_get_edict(__int_Index, EV_ENT_euser4)))
+        {
+            message_begin(MSG_ALL, get_user_msgid("ManipModel"));
+            {
+                write_byte(0);
+                write_short(entity_get_edict(__int_Index, EV_ENT_euser4));
+            }
+            message_end();
+            
+            remove_entity(entity_get_edict(__int_Index, EV_ENT_euser4));
+        }
+        
+        __int_Charge |= (1 << __int_Index);
+    }
+}

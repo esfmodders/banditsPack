@@ -1,0 +1,179 @@
+#include <xtension/special> 
+#include <ipci/fxlib> 
+#include <ipci/ascend> 
+
+stock SpecialXtension:sxMajin; 
+stock ChargeStateLock[33] = {0, ...}; 
+
+public plugin_init () 
+{ 
+    register_plugin( "Majin", "1.0", "core | Raven" ); 
+} 
+
+
+public @SpecialCreation () 
+{ 
+    beginSpecialCreation( "Majin", "", "callbackMajin", "special_majin" );     
+    addSpecialCharge( IN_ATTACK, 22.0, 3.0, false ); 
+    sxMajin = endSpecialCreation(); 
+} 
+
+public callbackMajin ( Client, CSpecialState:Status, Control, Float:Charge ) 
+{ 
+    switch ( Status ) 
+    { 
+        case ssCharge: // called every 0.1 secs 
+        { 
+             
+            // allways including isDead, inTransform 
+            if ( ( getClientPOWERUP( Client ) && !getClientXFROZEN( Client ) ) 
+              || getClientTURBO( Client ) 
+              || getClientMELEE( Client ) 
+              || getClientWALLGND( Client ) 
+              || getClientSWOOPING( Client ) 
+              || getClientMELEEPUSHBACK( Client ) 
+              || getClientATKSHOOT( Client ) 
+              || getClientTHROWAWAY( Client ) 
+              || getClientBLOCK( Client ) 
+              || getClientTHROW( Client ) 
+               ) 
+            { 
+                //client_print( Client, print_chat, "< Sample > ssCharge > Denied %.2f", Charge );                 
+                return 0; // > ssChargeAborted if Charge > 0.0 
+            } 
+             
+                         
+            if ( Charge == 0.0 && Control == IN_ATTACK ) 
+            { 
+                ChargeStateLock[ Client ] = 1; 
+                emitClientSOUND( Client, CHAN_ITEM, "*/majin.wav"); 
+                AddFx( Client, "fxAvatar", "create", 100, 0.46875 ); 
+                //setClientANIMATION(Client,100,0.2); 
+                fxMajin( Client ); 
+                 
+            } 
+             
+            else if ( Charge == 1.0 && Control == IN_ATTACK && ChargeStateLock[ Client ] < 5 ) 
+            { 
+                ChargeStateLock[ Client ] = 5; 
+                //client_print( Client, print_chat, "//go Majin" ); 
+                goMajin( Client );                 
+            }             
+             
+            return 1; 
+        } 
+         
+        case ssChargeReleased: 
+        { 
+            if ( Charge < 1.0 ) 
+            { 
+                abortMajin( Client ); 
+            } 
+        } 
+         
+        // Called when Charge > 0.0 by Death, Disconnect, IconSwitch to another Weapon, Out of Ki 
+        case ssChargeAborted: 
+        { 
+            abortMajin( Client ); 
+            return 0; 
+        } 
+         
+                 
+        // Called when Specialstate = true by Death, Disconnect, IconSwitch to another Weapon 
+        case ssForceAbort: 
+        { 
+            abortMajin( Client ); 
+        } 
+    } 
+     
+    return 1; 
+} 
+
+
+abortMajin( Client ) 
+{ 
+
+    stopClientSOUND( Client, CHAN_ITEM ); 
+    setClientSPECIALCOOLDOWN( Client, sxMajin, 2.0 ); 
+    setClientSPECIALSTATE( Client, sxMajin, false ); 
+    ChargeStateLock[ Client ] = 0; 
+     
+    RemFx( Client, "fxAvatar", 0 ); 
+    //setClientANIMATION(Client,-1); 
+    fxMajinOff( Client ); 
+} 
+
+goMajin( Client ) 
+{ 
+    setClientSPECIALSTATE( Client, sxMajin, true ); 
+    forceClientCLASS( Client, getClientCLASS( Client ), 3, true, false ); 
+    setClientPL( Client, floatround ( float( getClientPL( Client ) ) * 1.5 ) ); 
+     
+    static Float:HP; 
+    HP = getClientHP( Client )*0.5 -50.0; 
+     
+    if( floatround(HP) <= 0 ) 
+    { 
+        silentClientKILL( Client ); 
+        message_begin    ( MSG_ALL, get_user_msgid("DeathMsg") ); 
+        write_byte    ( Client ); 
+        write_byte    ( Client ); 
+        write_string    ( "Majin Transformation" ); 
+        message_end    (); 
+    } 
+    else 
+        setClientHP( Client, floatround(HP)); 
+     
+    client_cmd( Client, "weapon_melee" ); 
+    AddFx( Client, "fxBlow" ); 
+
+} 
+
+
+fxMajin( Client ) 
+{ 
+    new CORE[ 1 ]; 
+    CORE[ 0 ] = Client; 
+     
+    AddFx( Client, "fxPowerup", 0,0,0); 
+    stopClientSOUND( Client, CHAN_WEAPON );     
+     
+    for ( new Float:i=0.0; i<=20.0; i++ ) 
+            set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 ); 
+     
+     
+    set_task( 5.0, "fxPwUp", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );         
+    set_task( 21.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 ); 
+     
+
+} 
+
+
+public fxLight( Core[] ) 
+{ 
+    AddFx( Core[0], "fxWorldLight", 40, 70, 10, 10, 2.1, 0.5); 
+    return 1; 
+} 
+
+public fxPwUp( Core[] ) 
+{ 
+    AddFx( Core[0], "fxPowerup", 150,60,50); 
+    return 1; 
+} 
+
+public fxFinalBlow( Core[] ) 
+{ 
+    AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 255, 100, 10, 30, 250); 
+    AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 255, 100, 10, 255, 25, 350, 0, 25 ); 
+    AddFx( Core[0], "fxBlow" ); 
+    AddFx( Core[0], "fxBlow" ); 
+    AddFx( Core[0], "fxBlow" ); 
+
+    return 1; 
+} 
+
+fxMajinOff(Client) 
+{     
+    remove_task( uniqueTaskID( Client, 100 ) ); 
+    RemFx( Client, "fxPowerup", 0); 
+}  

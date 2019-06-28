@@ -1,0 +1,8 @@
+L 10/03/2016 - 13:11:00: Start of error session.
+L 10/03/2016 - 13:11:00: Info (map "esf_Guru") (logfile "error_100316.log")
+L 10/03/2016 - 13:11:00: Plugin called message_begin with an invalid message id (0).
+L 10/03/2016 - 13:11:00: [AMXX] Run time error 10 (plugin "esf_AdminGiver.amxx") (native "message_begin") - debug not enabled!
+L 10/03/2016 - 13:11:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 10/03/2016 - 13:11:09: Plugin called message_begin with an invalid message id (0).
+L 10/03/2016 - 13:11:09: [AMXX] Run time error 10 (plugin "esf_AdminGiver.amxx") (native "message_begin") - debug not enabled!
+L 10/03/2016 - 13:11:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

@@ -1,0 +1,60 @@
+
+
+public fxBlow( Core[] )
+{
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public fxAura2( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_04.mdl", 0, 0, 50.0, 128, 128, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+
+
+public fxLight( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	return 1;
+}
+
+public fxAura( Core[] )
+{
+	AddFx( Core[0], "fxPowerup", 150,140,80);
+	return 1;
+}
+
+
+public fxLgt( Core[] )
+{
+	AddFx( Core[0], "fxLgtField", 0.2, 3, 255, 100);
+	return 1;
+}
+
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+
+	//AddFx( Core[0], "fxSprite", "sprites/xflare1.spr", 15, 255, 0, 0, 0 );
+	return 1;
+}
+
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxLgtField", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxCSpriteRays", 0);
+
+	return 1;
+}

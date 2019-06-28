@@ -1,0 +1,273 @@
+
+// <<Normal Auras>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public fxAura( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_01.mdl", 0, 0, 40.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	AddFx( Core[0], "fxEntityLight", 20, 255, 100, 100, 10, 1 );
+	AddFx( Core[0], "fxWorldLight", 20, 255, 100, 100, 10, 1 );
+	return 1;
+}
+
+public fxcam( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 400" )
+	return 1;
+}
+
+public fxAura1( Core[] )
+{
+	AddFx( Core[0], "fxPowerup", 250,10,10);
+	return 1;
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public fxAura2( Core[])
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_06.mdl", 0, 0, 40.0, 0, 0, 0, 1.0, 2.0, 0, 4 );
+	return 1;
+}
+
+public fxAura3( Core[])
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_06.mdl", 0, 0, 40.0, 0, 0, 0, 1.0, 2.5, 0, 4 );
+	return 1;
+}
+
+// <<1 Time Effects>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public fxScreenfade( Core[])
+{
+	AddFx( Core[0], "fxScreenfade", 60.0, 4.0, 6.0 );
+	return 1;
+}
+
+public fxLightning( Core[])
+{
+	AddFx( Core[0], "fxLightning","sprites/lgtning.spr", 2, 50, 150, 10, 10, 255, 250, 10, 100, 0 );
+	return 1;
+}
+
+public fxSpriteRays( Core[])
+{
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 10, 21, 255, 255, 25, 350, 0, 25 );
+	return 1;
+}
+
+public fxBeamTorus( Core[] )
+{
+	AddFx( Core[0], "fxBeamTorus", "sprites/lgtning.spr", 2, 10, 255, 255, 250, 8, 96, 0 );
+	return 1;
+}
+
+public fxBlow( Core[])
+{
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public fxExplosionsmoke( Core[])
+{
+	AddFx( Core[0], "fxExplosion", 500 , 4, 0 );
+	return 1;
+}
+
+public fxLgtField( Core[])
+{
+	AddFx( Core[0], "fxLgtField", 0.4 , 1, 255, 20, 20 );
+	return 1;
+}
+
+public fxScreenshake( Core[])
+{
+	AddFx( Core[0], "fxScreenfade", 50.0, 3.0, 5.0 );
+	return 1;
+}
+
+public fxPowerWave( Core[])
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 255, 100, 100, 30, 250 );
+	return 1;
+}
+
+public fxAurawave( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/waves.spr", 4, 50, 0, 0, 0 );
+	return 1;
+}
+
+public fxAurawave2( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/ywaves.spr", 6, 60, 0, 0, 0 );
+	return 1;
+}
+
+
+
+
+// <<Ssj1 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public ModelChange1( CORE[] )
+{
+       new Client = CORE[0];
+       RemFx( Client, "fxAvatar", 0);
+       setClientMODEL( Client, "ecx.gohan" );
+       AddFx( Client, "fxAvatar", "create", 025, 1.06041 );
+       return 1;
+}
+
+public ModelChange2( CORE[] )
+{
+       new Client = CORE[0];
+       RemFx( Client, "fxAvatar", 0);
+       setClientMODEL( Client, "ecx.gohan.ssj" );
+       AddFx( Client, "fxAvatar", "create", 025, 1.06041 );
+       return 1;
+}
+
+public SSJCHECK( CORE[] )
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	FX_off(Client);
+	remove_task( uniqueTaskID( Client, 100 ) );
+	setClientMODEL( Client, "ecx.gohan" );
+}
+
+public CHECK( CORE[] )
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	FX_off(Client);
+	remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+
+// <<Ssj 1 Trans>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//deep idle
+public fxtaunt1( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 001, 0.46041 );
+	return 1;
+}
+
+//idle
+public fxtaunt2( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 000, 1.0 );
+	return 1;
+}
+
+//stun
+public fxtaunt3( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 125, 1.0 );
+	return 1;
+}
+
+//stance
+public fxtaunt4( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 124, 1.0 );
+	return 1;
+}
+
+//charge powerbeam
+public fxtaunt5( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 112, 1.0 );
+	return 1;
+}
+
+//charge powerup
+public fxtaunt6( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 025, 0.46041 );
+	return 1;
+}
+public fxtaunt8( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 102, 0.46041 );
+	return 1;
+}
+public fxtaunt9( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 101, 0.46041 );
+	return 1;
+}
+
+//control beam
+public fxtaunt10( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 098, 0.46041 );
+	return 1;
+}
+
+//ref power up
+public fxtaunt20( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 025, 1.0 );
+	return 1;
+}
+
+//right swataway
+public fxtaunt21( CORE[])
+{
+	new Client = CORE[0];
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxAvatar", "create", 044, 1.46041 );
+	return 1;
+}
+
+
+
+
+// <<Turning effects off>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxLgtField", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	RemFx( Client, "fxSmokeField", 0 );
+	return 1;
+}

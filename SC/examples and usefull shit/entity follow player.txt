@@ -1,0 +1,43 @@
+
+    public function playerMove(PlayerMoveEvent $event){
+        if($this->getConfig()->get("rotate") == "true"){
+            $player = $event->getPlayer();
+            if(!in_array($player->getInventory()->getItemInHand()->getId(), array(Item::BONE))) return;
+            $entities = $player->getLevel()->getNearbyEntities(new AxisAlignedBB($player->getX() - 5, $player->getY() - 5, $player->getZ() - 5, $player->getX() + 5, $player->getY() + 5, $player->getZ() + 5));
+            if(count($entities) > 0){
+                foreach($entities as $entity){
+                    if($entity instanceof SlapperHuman){
+                        $entity->setDataFlag(Entity::DATA_NO_AI, 0, false);
+                        $dist = $entity->distance($player);
+                        $dir = $player->subtract($entity);
+                        $dir = $dist <= 0?$dir:$dir->divide($dist);
+                       
+                        // $entity->yaw = rad2deg(atan2(-$dir->getX(), $dir->getZ()));
+                        // $entity->pitch = rad2deg(atan(-$dir->getY()));
+                       
+                        $yaw = rad2deg(atan2(-$dir->getX(), $dir->getZ()));
+                        $pitch = rad2deg(atan(-$dir->getY()));
+                       
+                        if($dist <= 5) $entity->move($dir->x, $dir->y, $dir->z);
+                        $entity->setRotation($entity->yaw, $entity->pitch);
+                       
+                        $pk = new MoveEntityPacket();
+                        $pk->eid = $entity->getId();
+                        $pk->x = $entity->x;
+                        $pk->y = $entity->y - ($entity->height / 2);
+                        $pk->z = $entity->z;
+                        $pk->yaw = $yaw;
+                        $pk->headYaw = $yaw;
+                        $pk->pitch = $pitch;
+                        $player->dataPacket($pk);
+                       
+                        $pk = new SetEntityMotionPacket();
+                        $pk->x = $entity->x;
+                        $pk->y = $entity->y - ($entity->height / 2);
+                        $pk->z = $entity->z;
+                        $player->dataPacket($pk);
+                    }
+                }
+            }
+        }
+    }

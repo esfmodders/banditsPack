@@ -1,0 +1,403 @@
+L 03/24/2017 - 19:23:40: Start of error session.
+L 03/24/2017 - 19:23:40: Info (map "esf_Gurufixed") (logfile "error_032417.log")
+L 03/24/2017 - 19:23:40: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 19:23:40: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 19:23:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:23:40: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 19:23:40: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 19:23:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:30: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:33: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:40: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:44: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:48: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:49: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:49: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:49: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:49: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:50: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:50: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:50: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:50: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:51: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:51: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:51: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:51: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:52: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:52: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:52: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:52: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:53: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:53: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:53: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:53: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:54: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:54: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:54: << CORE >> Invalid Client >> 12
+L 03/24/2017 - 19:24:54: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/24/2017 - 19:24:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:54: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:54: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:55: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:55: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:55: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:55: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:55: << CORE >> Invalid Client >> 12
+L 03/24/2017 - 19:24:55: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/24/2017 - 19:24:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:56: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:56: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:56: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:56: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:57: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:24:57: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:24:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:25:05: << CORE >> Invalid Client >> 12
+L 03/24/2017 - 19:25:05: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/24/2017 - 19:25:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:25:05: << CORE >> Invalid Client >> 12
+L 03/24/2017 - 19:25:05: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/24/2017 - 19:25:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:25:05: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:25:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:05: Start of error session.
+L 03/24/2017 - 19:56:05: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 19:56:05: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 19:56:05: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:05: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 19:56:05: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:16: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:17: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:18: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:19: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:23: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:33: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:34: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:38: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:41: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:42: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:44: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:45: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 19:56:56: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 19:56:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:27: Start of error session.
+L 03/24/2017 - 20:04:27: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:04:27: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:04:27: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:27: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:04:27: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:37: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:37: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:38: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:42: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:52: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:54: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:04:57: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:04:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:00: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:02: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:08: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:09: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:09: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:09: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:09: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:09: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:09: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:10: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:10: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:10: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:10: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:11: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:11: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:11: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:11: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:12: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:12: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:12: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:12: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:13: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:13: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:13: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:13: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:14: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:14: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:14: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:14: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:15: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:15: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:15: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:15: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:16: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:16: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:05:16: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:05:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:06:13: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:06:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:09:04: Start of error session.
+L 03/24/2017 - 20:09:04: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:09:04: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:09:04: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:09:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:09:04: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:09:04: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:09:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:10:48: Start of error session.
+L 03/24/2017 - 20:10:48: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:10:48: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:10:48: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:10:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:10:48: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:10:48: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:10:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:14:45: Start of error session.
+L 03/24/2017 - 20:14:45: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:14:45: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:14:45: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:14:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:14:45: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:14:45: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:14:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:21:30: Start of error session.
+L 03/24/2017 - 20:21:30: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:21:30: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:21:30: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:21:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:21:30: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:21:30: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:21:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:32: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:40: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:40: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:40: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:41: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:41: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:41: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:41: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:42: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:42: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:42: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:42: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:43: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:43: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:43: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:43: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:44: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:44: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:44: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:44: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:45: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:47: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:47: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:47: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:48: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:48: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:48: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:48: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:49: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:49: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:49: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:50: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:51: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:51: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:52: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:53: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:54: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:55: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:56: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:57: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:58: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:58: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:59: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:59: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:22:59: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:00: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:01: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:02: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:02: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:10: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:11: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:12: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:13: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:23:14: [AMXX] Run time error 4 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:23:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:36:11: Start of error session.
+L 03/24/2017 - 20:36:11: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:36:11: Could not find function "@ClassPowerLevel"
+L 03/24/2017 - 20:36:11: [AMXX] Run time error 19 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:36:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:36:11: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:36:11: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:36:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:36:11: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:36:11: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:36:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:39:59: Start of error session.
+L 03/24/2017 - 20:39:59: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:39:59: Could not find function "@ClassPowerLevel"
+L 03/24/2017 - 20:39:59: [AMXX] Run time error 19 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:39:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:39:59: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:39:59: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:39:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:39:59: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:39:59: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:39:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:42:57: Start of error session.
+L 03/24/2017 - 20:42:57: Info (map "esf_ychampaarena") (logfile "error_032417.log")
+L 03/24/2017 - 20:42:57: Could not find function "@ClassPowerLevel"
+L 03/24/2017 - 20:42:57: [AMXX] Run time error 19 (plugin "Bergamo.amxx") - debug not enabled!
+L 03/24/2017 - 20:42:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:42:57: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:42:57: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/24/2017 - 20:42:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/24/2017 - 20:42:57: Could not find function "@WeaponExplosion"
+L 03/24/2017 - 20:42:57: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/24/2017 - 20:42:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

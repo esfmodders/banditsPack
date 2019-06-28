@@ -1,0 +1,221 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.A17";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"Black Lotus";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"a17", false, false, "", "sound/ecx.a17/c_intro.wav" );
+
+	// Android
+	addClassLevel( "Android", "ecx.a17", 10.0, 1.5, 3500000, 1500000, 1.0, 
+					350, 110, bool:{ false, true }, 5.0, { 500, 75 }, { 1, 0, 1, 0, 0, 2, 1 }, 2.0, Float:{ 105.0, 5.0 } );
+	addClassEffect( "models/evolution/black.mdl", Float:{ 0.0, 0.0, 0.0, 50.0 }, 0, kRenderTransAdd,
+					{ 0, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Android
+	addClassLevel( "Android", "ecx.a17.super", 24.0, 1.5, 6000000, 0, 4.0, 
+					450, 180, bool:{ true, true }, 7.0, { 600, 100 }, { 1, 1, 1, 0, 0, 3, 3 }, 5.0, Float:{ 125.0, 20.0 } );
+	addClassEffect( "models/evolution/black.mdl", Float:{ 0.0, 0.0, 0.0, 50.0 }, 0, kRenderTransAdd,
+					{ 0, 0, 0 }, { 1, 1, 1, 6 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Android
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_finishingbuster" );
+			addClassSpecial( Client, "Shield", Float:{ 50.0, 40.0, 30.0 } );
+		}
+		case 1: // Android
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_scattershot" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_bigbang" );
+			addClassSpecial( Client, "Shield", Float:{ 20.0, 30.0, 50.0 } );
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.a17/ecx.a17.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/player/ecx.a17.super/ecx.a17.super.mdl" );
+	precache_model( "models/player/none/none.mdl" );
+	
+	precache_model( "sprites/yellowswirl.spr" );
+	precache_model( "sprites/ywaves.spr" );
+	precache_model( "sprites/ecx.lightning.spr" );
+	
+	precache_model( "models/evolution/Middletransa17.mdl" );
+	
+	precache_model( "models/evolution/transa17.mdl" );
+	precache_model( "models/evolution/trans2a17.mdl" );
+	precache_model( "models/evolution/trans3a17.mdl" );
+	precache_model( "models/evolution/trans4a17.mdl" );
+	
+	precache_model( "models/evolution/2transa17.mdl" );
+	precache_model( "models/evolution/2trans2a17.mdl" );
+	precache_model( "models/evolution/2trans3a17.mdl" );
+	precache_model( "models/evolution/2trans4a17.mdl" );
+	
+	precache_sound( "ecx.a17/t_a17fusion.wav" );
+}
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.a17/powerup.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 100, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.a17/t_a17fusion.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 0.0, "RemoveModel", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 0.0, "aA17", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "bA17", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 8.0, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.5, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.0, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.5, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.5, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 11.0, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 11.5, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.0, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.5, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 13.0, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.5, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 14.0, "waves", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 8.0, "RemoveModels", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.0, "aA172", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.0, "bA172", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 9.0, "RemoveModels", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.0, "aA173", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.0, "bA173", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 10.0, "RemoveModels", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "aA174", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "bA174", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 11.0, "RemoveModels", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 11.0, "A17Middle", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 11.0, "sphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 11.0, "shine", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 14.2, "yellowglow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.2, "yellowglow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 16.2, "yellowglow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.2, "yellowglow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 17.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.2, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "RemoveModels", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "RemoveModels2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "SA17", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 18.0, "SA17hit", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.0, "Bolts", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.4, "SA17", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 20.0, "SA17hit", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.0, "Bolts", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.4, "SA17", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 23.0, "SA17hit", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.0, "Bolts", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.2, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.2, "SA17", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	set_task( 0.0, "FIX", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+}

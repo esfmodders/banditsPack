@@ -1,0 +1,164 @@
+#include <amxmodx>
+#include <engine>
+#include <fakemeta>
+
+// Just for misc.
+//#define __SHOW_PRINT
+
+static __var_Condition, __var_Status;
+
+static __var_Rate[0x20], Float:__var_Ki[0x20];
+
+public plugin_init()
+{
+	register_clcmd("+powerup", "@ClientCommand_Powerup");
+}
+
+public client_connect(__int_Index)
+{
+	__var_Condition &= ~(0x01 << __int_Index);
+	__var_Status &= ~(0x01 << __int_Index);
+	
+	__var_Rate[__int_Index] = 0x00;
+	__var_Ki[__int_Index] = float(0x00);
+}
+
+public client_disconnect(__int_Index)
+{
+	__var_Condition &= ~(0x01 << __int_Index);
+	__var_Status &= ~(0x01 << __int_Index);
+	
+	__var_Rate[__int_Index] = 0x00;
+	__var_Ki[__int_Index] = float(0x00);
+}
+
+public @ClientCommand_Powerup(__int_Index)
+{
+	return ((__var_Status & (0b1 << __int_Index)) ? 0x01 : 0x00);
+}
+
+public client_PreThink(__int_Index)
+{
+	if(is_user_alive(__int_Index) && is_user_connected(__int_Index))
+	{
+		__var_Ki[__int_Index] = entity_get_float(__int_Index, EV_FL_fuser4);
+		
+		if((get_pdata_int(__int_Index, 0b11000111) && get_pdata_int(__int_Index, 0b11000100)) && ~__var_Condition & (0b1 << __int_Index))
+		{
+			__var_Condition = ((__var_Ki[__int_Index] >= float(0b1111100101)) ? (__var_Condition | (0x01 << __int_Index)) : (__var_Condition & ~(0x01 << __int_Index)));
+		}
+		
+		else if(!get_pdata_int(__int_Index, 0b11000111) || !get_pdata_int(__int_Index, 0b11000100))
+		{
+			if(__var_Condition & (0b1 << __int_Index))
+			{
+				__var_Condition &= ~(0x01 << __int_Index);
+			}
+		}
+	}
+	
+	else
+	{
+		if(__var_Condition & (0b1 << __int_Index))
+		{
+			__var_Condition &= ~(0x01 << __int_Index);
+			__var_Status &= ~(0x01 << __int_Index);
+		}
+	}
+}
+
+public client_PostThink(__int_Index)
+{
+	if(__var_Condition & (0b1 << __int_Index))
+	{
+		__var_Rate[__int_Index] += ((__var_Rate[__int_Index] < 0b10011100010000) ? 0x14 : 0x00);
+		
+		if(__var_Rate[__int_Index] == 0b1001110001000 || __var_Rate[__int_Index] == 0b10011011111100)
+		{
+			if(__var_Rate[__int_Index] == 0b10011011111100)
+			{
+				client_print(__int_Index, print_chat, "[ESF] Maximum power.");
+			}
+			
+			if(__var_Rate[__int_Index] == 0b1001110001000)
+			{
+				static Float:__var_Start[0x03], Float:__var_End[0x03], Float:__var_Return[0x03];
+				
+				entity_get_vector(__int_Index, EV_VEC_origin, __var_Start);
+				
+				__var_End[0x00] = __var_Start[0x00];
+				__var_End[0x01] = __var_Start[0x01];
+				
+				trace_line(__int_Index, __var_Start, __var_End, __var_Return);
+				
+				message_begin(0x00, 0x17);
+				{
+					write_byte(0x74);
+					
+					write_coord(floatround(__var_Return[0x00]));
+					write_coord(floatround(__var_Return[0x01]));
+					write_coord(floatround(__var_Return[0x02]));
+					
+					write_byte(0x76);
+				}
+				message_end();
+			}
+			
+			message_begin(0x02, 0x71);
+			{
+				write_byte(__int_Index);
+				write_coord(-(0x01));
+			}
+			message_end();
+		}
+		
+		if(__var_Rate[__int_Index] == 0b10011100010000)
+		{
+			__var_Status |= (0x01 << __int_Index);
+		}
+		
+		message_begin(0x08, 0x54, _, .player = __int_Index);
+		{
+			write_short(__var_Rate[__int_Index]);
+			write_short(0x3E8);
+			write_short(__var_Rate[__int_Index]);
+		}
+		message_end();
+#if defined __SHOW_PRINT
+		client_print(__int_Index, print_chat, "[ESF] Power: %d", __var_Rate[__int_Index]);
+#endif
+	}
+	
+	else
+	{
+		if((~__var_Status & (0b1 << __int_Index)) && __var_Rate[__int_Index] > 0b0)
+		{
+			__var_Rate[__int_Index] = 0x00;
+		}
+	}
+	
+	if((entity_get_float(__int_Index, EV_FL_fuser4) < 0b100101100))
+	{
+		if(__var_Status & (0b1 << __int_Index))
+		{
+			client_print(__int_Index, print_chat, "[ESF] Your power has returned to normal.");
+			
+			message_begin(0x02, 0x71);
+			{
+				write_byte(__int_Index);
+				write_coord(-(0x01));
+			}
+			message_end();
+			
+			__var_Status &= ~(0x01 << __int_Index);
+		}
+	}
+	
+	else
+	{
+		if(__var_Status & (0b1 << __int_Index))
+		{
+			entity_set_float(__int_Index, EV_FL_fuser4, ((__var_Ki[__int_Index] < float(0b1111100101)) ? (__var_Ki[__int_Index] + 0x02) : (__var_Ki[__int_Index] + 0x00)));
+		}
+	}
+}

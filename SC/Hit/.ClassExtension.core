@@ -1,0 +1,598 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Hit";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Hit", true, false, "", "sound/hit/c_intro.wav" );
+
+	// Hit
+	addClassLevel( "Hit", "ecx.hit", 5.0, 5.0, 90000000, 9000000, 1.5, 
+					600, 255, bool:{ true, false }, 15.0, { 1700, 80 }, { 1, 1, 1, 1, 0, 3, 4 }, 8.0, Float:{ 160.0, 60.0 } );
+	addClassEffect( "models/evolution/Auras/aura_mora.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Hit
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_masenko" );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		
+	}
+}
+PluginPreCache ()
+{
+	
+	precache_model( "models/player/ecx.hit/ecx.hit.mdl" );
+	
+	
+	precache_model( "sprites/xssmke1.spr" );
+	precache_model( "sprites/lightninghit.spr" );
+	precache_model( "sprites/rcharge.spr" );
+	precache_model( "sprites/waves.spr" );
+	precache_model( "sprites/ywaves.spr" );
+	precache_model( "models/evolution/Auras/shape_C.mdl" );
+	precache_model( "models/evolution/Auras/aura_mora.mdl" );
+	precache_model( "models/evolution/Auras/shape_05.mdl" );
+	precache_model( "models/evolution/redmaura2.mdl" );
+	precache_model( "models/evolution/pan.mdl" );
+	precache_sound( "ecx.goku-ts/t_ssj4end.wav" );
+	precache_sound( "ecx.goku-ts/t_ssjend.wav" );
+	precache_sound( "ecx.goku-ts/t_ssjLONG.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj2.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj3LONG.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj4LONG.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj3end.wav" );
+	precache_sound( "ecx.goku-ts/tp_ssj3end.wav" );
+	precache_sound( "ecx.goku-ts/t_scream.wav" );
+}
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 3:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChange000", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "ModelChange001", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.4, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.6, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.8, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "ModelChange005", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "ModelChange006", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 4:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj4end.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "ModelChange006", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "ModelChange005", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.5, "ModelChange001", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "ModelChange211", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.4, "ModelChange213", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.5, "ModelChange212", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 5:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChangeblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				//setClientANIMATION(Client,102,0.5);
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "ModelChangeblau2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlowSpecial", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.2, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.6, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+		}
+	}
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssjLONG.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 0.0, "SSJLIGHT", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChange409", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "ModelChange410", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 6.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 14.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 21.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 25.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 27.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 31.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 33.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 37.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 39.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 45.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 47.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 49.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 51.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "fxAura201", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 14.5, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.5, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.5, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.5, "ModelChange401", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.9, "ModelChange408", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "ModelChange404", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.2, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.2, "fxAura102", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 35.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.1, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.3, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.6, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.8, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 41.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.5, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.7, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.0, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.2, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 54.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.2, "fxAura100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.3, "ModelChange403", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 55.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 55.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 7.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 13.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 3:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj3LONG.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 0.0, "ModelChange300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.5, "ModelChange250", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.6, "ModelChange200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.2, "ModelChange210", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.3, "ModelChange201", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.3, "fxAura100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.1, "ModelChange202", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.0, "fxAura7", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.6, "fxAura101", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.0, "ModelChange010", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.2, "ModelChange000", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 35.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 36.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 37.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 38.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 39.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 39.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 40.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 40.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 41.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 41.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 45.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 47.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 49.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 51.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 55.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 57.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 59.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 61.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 50.0, "ModelChange001", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 51.0, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 52.0, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.0, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.0, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 55.0, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 56.0, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 57.0, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 58.0, "ModelChange005", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 59.0, "ModelChange006", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=0.0; i<=20.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 61.5, "fxScream2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 61.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 4:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj4LONG.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 0.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.2, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 0.0, "ModelChange1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.6, "ModelChange2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.1, "ModelChange3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxssj4aura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.0, "ModelChange4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 16.0, "ModelChange5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 19.0, "fxssj41", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxssj44", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxAura102", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "ModelChange6", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 19.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.9, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.8, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 21.7, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 22.6, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.5, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 22.4, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.3, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 24.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 25.1, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 26.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 27.9, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 28.8, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.8, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.7, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 31.6, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 32.5, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 33.4, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.1, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.1, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 30.1, "fxssj41", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 30.1, "fxssj42", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.9, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.9, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 30.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 41.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",8 );
+				set_task( 41.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",8 );
+				set_task( 41.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",8 );
+				set_task( 42.0, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 42.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 42.0, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.0, "oozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.2, "oozaru2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.4, "oozaru3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.6, "oozaru4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.8, "oozaru5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.0, "oozaru6", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.2, "oozaruphase", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.5, "goozaruyell", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.5, "endpowerup", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 40.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 45.0, "goozaru7", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 52.5, "goozaruyell", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.6, "goozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 50.0, "fxAuraPan", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 50.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 64.0, "fxAura39", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 65.0, "goozaru2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 65.5, "goozaru3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 66.0, "goozaru4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 66.5, "goozaru5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.0, "goozaru6", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 60.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 67.0, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 69.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 71.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				
+				set_task( 67.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.6, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxsphere2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+
+				set_task( 67.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 69.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 71.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 75.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 75.5, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.5, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.2, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 70.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 67.0, "fxBlowSpecial", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 66.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 68.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 69.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 70.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 71.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 74.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 75.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.0, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 67.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 68.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 69.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 70.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 71.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 72.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.6, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 73.0, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxsphere3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.8, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 73.0, "goku1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 74.0, "goku2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 75.0, "goku3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.0, "goku4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 76.0, "fxCamBack2", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 75.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 79.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.9, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 80.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 80.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.5, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+	
+				set_task( 15.0, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 5:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChangeblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				//setClientANIMATION(Client,102,0.5);
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "ModelChangeblau2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlowSpecial", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.2, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.6, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+		}
+	}
+}
+public @ClassFinishTransformation ( Client, Level )
+{
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+	remove_task( uniqueTaskID( Client, 100 ) );
+}
+public @ClassCancelTransformation ( Client, Level )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	if( Level == 2 )
+		set_task( 0.0, "SSJ2CHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else if( Level == 0 )
+		set_task( 0.0, "NORMALCHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else if( Level == 3 )
+		set_task( 0.0, "SSJ3CHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else if( Level == 4 )
+		set_task( 0.0, "SSJ4check", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else
+		set_task( 0.0, "CHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+}

@@ -1,0 +1,111 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/kamehame.wav",
+		"Evil-Goku/kamehame.wav",
+		"Evil-Goku/kamehame.wav",
+		"Evil-Goku/kamehame.wav",
+		"Evil-Goku/kamehame.wav",
+		"Evil-Goku/jubeikamehameha.wav",
+		"Evil-Goku/jubeikamehameha.wav"		
+	},
+	{
+		"*/ha.wav",
+		"Evil-Goku/ha.wav",
+		"Evil-Goku/ha.wav",
+		"Evil-Goku/ha.wav",
+		"Evil-Goku/ha.wav",
+		"Evil-Goku/jubeiha.wav",
+		"Evil-Goku/jubeiha.wav"		
+	},
+	{
+		"*/f_init.wav",
+		"Evil-Goku/f_init.wav",
+		"Evil-Goku/f_init.wav",
+		"Evil-Goku/f_init.wav",
+		"Evil-Goku/f_init.wav",
+		"Evil-Goku/f_init.wav",
+		"Evil-Goku/f_init.wav"		
+	},
+	{
+		"*/spiritbomb_charge.wav",
+		"Evil-Goku/spiritcharge_1.wav",
+		"Evil-Goku/spiritcharge_1.wav",
+		"Evil-Goku/spiritcharge_1.wav",
+		"Evil-Goku/spiritcharge_1.wav",
+		"Evil-Goku/spiritcharge_1.wav",
+		"Evil-Goku/spiritcharge_1.wav"		
+	},
+
+	{
+		"*/spiritbomb.wav",
+		"Evil-Goku/w_spiritbomb.wav",
+		"Evil-Goku/w_spiritbomb.wav",
+		"Evil-Goku/w_spiritbomb.wav",
+		"Evil-Goku/w_spiritbomb.wav",
+		"Evil-Goku/spiritbomb_shoot.wav",
+		"Evil-Goku/spiritbomb_shoot.wav"		
+
+	},
+
+	{
+		"*/f_dance.wav",
+		"Evil-Goku/f_dance.wav",
+		"Evil-Goku/f_dance.wav",
+		"Evil-Goku/f_dance.wav",
+		"Evil-Goku/f_dance.wav",
+		"Evil-Goku/f_dancessj4.wav",
+		"Evil-Goku/f_dancessj4.wav"		
+
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"Evil-Goku/p_pain1.wav",
+		"Evil-Goku/p_pain1.wav",
+		"Evil-Goku/p_pain1.wav",
+		"Evil-Goku/p_pain1.wav",
+		"Evil-Goku/p_pain1.wav",
+		"Evil-Goku/p_pain1.wav"		
+	},
+	{
+		"*/pain2.wav",
+		"Evil-Goku/p_pain2.wav",
+		"Evil-Goku/p_pain2.wav",
+		"Evil-Goku/p_pain2.wav",
+		"Evil-Goku/p_pain2.wav",
+		"Evil-Goku/p_pain2.wav",
+		"Evil-Goku/p_pain2.wav"		
+	},
+	{
+		"*/pain3.wav",
+		"Evil-Goku/p_pain3.wav",
+		"Evil-Goku/p_pain3.wav",
+		"Evil-Goku/p_pain3.wav",
+		"Evil-Goku/p_pain3.wav",
+		"Evil-Goku/p_pain3.wav",
+		"Evil-Goku/p_pain3.wav"		
+	},
+
+	{
+		"*/pain4.wav",
+		"Evil-Goku/p_pain4.wav",
+		"Evil-Goku/p_pain4.wav",
+		"Evil-Goku/p_pain4.wav",
+		"Evil-Goku/p_pain4.wav",
+		"Evil-Goku/p_pain4.wav",
+		"Evil-Goku/p_pain4.wav"		
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"Evil-Goku/p_death.wav",
+		"Evil-Goku/p_death.wav",
+		"Evil-Goku/p_death.wav",
+		"Evil-Goku/p_death.wav",
+		"Evil-Goku/p_death.wav",
+		"Evil-Goku/p_death.wav"		
+	}
+};

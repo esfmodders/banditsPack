@@ -1,0 +1,11 @@
+ModChargeInit ()
+{
+
+	// << Level >> 	 << WEAPON >> 	<< ChargeSPRReplacement >> << Size >>
+	alterCharge( 0, "masenko", "sprites/w_gb_p_s.spr", 0.1 );
+	
+	
+	alterCharge( 0, "genericbeam", "sprites/w_gb_p_s.spr", 0.3 );
+	
+
+}

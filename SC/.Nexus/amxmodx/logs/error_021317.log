@@ -1,0 +1,496 @@
+L 02/13/2017 - 16:06:37: Start of error session.
+L 02/13/2017 - 16:06:37: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 16:06:37: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:06:37: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:06:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:06:37: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:06:37: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:06:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:07:27: Function is not present (function "fxAura") (plugin "CX/chichi.amxx")
+L 02/13/2017 - 16:07:27: [AMXX] Run time error 10 (plugin "chichi.amxx") (native "set_task") - debug not enabled!
+L 02/13/2017 - 16:07:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:11:49: Start of error session.
+L 02/13/2017 - 16:11:49: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 16:11:49: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:11:49: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:11:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:11:49: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:11:49: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:11:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:11:57: Function is not present (function "fxAura") (plugin "CX/chichi.amxx")
+L 02/13/2017 - 16:11:57: [AMXX] Run time error 10 (plugin "chichi.amxx") (native "set_task") - debug not enabled!
+L 02/13/2017 - 16:11:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:14:41: Start of error session.
+L 02/13/2017 - 16:14:41: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 16:14:41: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:14:41: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:14:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:14:41: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:14:41: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:14:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:19:06: Start of error session.
+L 02/13/2017 - 16:19:06: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 16:19:06: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:19:06: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:19:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:19:06: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:19:06: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:19:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:28:51: Start of error session.
+L 02/13/2017 - 16:28:51: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 16:28:51: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:28:51: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:28:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:28:51: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:28:51: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:28:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:33:48: Start of error session.
+L 02/13/2017 - 16:33:48: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 16:33:48: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:33:48: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:33:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:33:48: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:33:48: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:33:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:35:52: Start of error session.
+L 02/13/2017 - 16:35:52: Info (map "esf_ychampaarena") (logfile "error_021317.log")
+L 02/13/2017 - 16:35:52: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:35:52: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:35:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:35:52: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:35:52: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:35:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:45:05: Start of error session.
+L 02/13/2017 - 16:45:05: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 16:45:05: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:45:05: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 16:45:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:45:05: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 16:45:05: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 16:45:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:45:48: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 16:45:48: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 16:45:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:45:51: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 16:45:51: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 16:45:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:47:56: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:47:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:47:59: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:47:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:01: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:01: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:03: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:04: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:04: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:04: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:05: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:05: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:06: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:06: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:12: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:12: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:48:12: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:48:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:51:30: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:51:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 16:52:05: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 16:52:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:02:08: Start of error session.
+L 02/13/2017 - 17:02:08: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 17:02:08: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:02:08: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 17:02:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:02:08: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:02:08: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 17:02:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:22: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:22: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:22: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:22: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:22: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:22: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:23: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:23: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:23: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:26: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:05:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:05:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:26: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:26: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:28: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:05:28: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:05:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:29: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:32: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:33: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:05:33: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:05:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:33: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:05:33: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:05:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:33: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:33: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:33: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:37: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:05:39: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:05:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:06: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:06: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:06: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:06: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:06: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:06: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:06: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:07: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:11: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:11: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:12: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:12: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:12: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:12: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:12: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:12: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:13: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:13: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:13: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:13: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:14: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:14: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:14: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:14: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:15: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:15: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:15: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:15: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:16: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:16: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:08:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:30: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:30: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:31: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:31: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:08:31: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:08:31: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:08:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:10:58: Start of error session.
+L 02/13/2017 - 17:10:58: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 17:10:58: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:10:58: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 17:10:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:10:58: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:10:58: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 17:10:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:11:19: Start of error session.
+L 02/13/2017 - 17:11:19: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 17:11:19: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:11:19: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 17:11:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:11:19: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:11:19: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 17:11:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:21:55: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:21:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:00: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:16: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:20: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:45: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:46: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:47: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:47: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:48: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:48: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:49: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:52: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:53: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:53: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:55: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:55: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:55: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:55: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:56: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:56: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:56: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:56: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:57: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:57: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:57: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:57: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:58: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:58: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:58: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:58: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:59: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:59: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:59: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:22:59: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:22:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:00: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:00: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:00: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:00: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:01: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:01: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:01: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:01: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:23:02: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:23:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:35:10: Start of error session.
+L 02/13/2017 - 17:35:10: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 17:35:10: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:35:10: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 17:35:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:35:10: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 17:35:10: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 17:35:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:20: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:22: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:23: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:23: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:23: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:24: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:24: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:24: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:24: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:24: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:25: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:25: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:25: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:25: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:26: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:26: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:26: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:26: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:26: << CORE >> Invalid Client >> 12
+L 02/13/2017 - 17:37:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 02/13/2017 - 17:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:26: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:33: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:50: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:54: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:37:58: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:37:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:38:05: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:38:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 17:38:09: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 02/13/2017 - 17:38:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 19:38:25: Start of error session.
+L 02/13/2017 - 19:38:25: Info (map "esf_Gurufixed") (logfile "error_021317.log")
+L 02/13/2017 - 19:38:25: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 19:38:25: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 02/13/2017 - 19:38:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 02/13/2017 - 19:38:25: Could not find function "@WeaponExplosion"
+L 02/13/2017 - 19:38:25: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 02/13/2017 - 19:38:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

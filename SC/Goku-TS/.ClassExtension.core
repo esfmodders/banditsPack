@@ -1,0 +1,1864 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Goku-TS";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT/C4";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+
+
+#include < amxx/amxmodx >
+#include < amxx/engine >
+#include <fakemeta>
+#include <ipci/ascend>
+#include <ipci/Fxlib>
+#include <engine>
+#include <ipci/Core>
+#include <fun>
+#include < hamsandwich >
+#include <amxmodx>
+#include <esf_util>
+#include <amxmisc>
+#include <amxx/fakemeta_util>
+#include <ipci/ascend>
+#include <ipci/Fxlib>
+
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+// instatrans vars
+new bool:delay[32];
+new bool:ssjtransg[32];
+new bool:gokuui[32];
+new bool:muiunlocked[32];
+new bool:gokutot[32];
+new bool:teleportsaver[32];
+new bool:Mafubawish[32];
+new bool:ssj4dabest[32];
+new bool:gokuuimaking[32];
+new bool:UISPAM[32];
+new bool:UICD[32];
+
+new bool:gokumuifx[32]
+
+new bool:ssj5[32]
+
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+	
+	// register forward for fast ascend to blue
+	register_forward( FM_ClientCommand,"FastAscend");
+	register_event("DeathMsg", "Event_DeathMsg", "a" );
+	
+	register_clcmd("say ssj4lock", "ssj4lock");
+	
+	register_clcmd("say ssj5trans", "ssj5trans");
+	
+	//register_clcmd("say 1", "Test");
+	
+	//register_think("fxDescend", "@Think_fxDescend");
+	
+	//register_clcmd("say t1", "muitrans");
+	
+	register_touch("UIblaster", "*", "UIblaster_Touch"); //This way, is will only run if the entity is "Mafuba"
+	
+	//register_clcmd("say t2", "test2");
+	
+
+}
+
+ 
+public client_disconnect(id)
+{
+    gokuuimaking[id] = false
+}
+	
+
+public UIblaster_Touch(ent, id)
+{
+	if(!pev_valid(ent))
+		return
+		
+	if(id == pev(ent, pev_owner)) //Prevent owner from touch it (Put yourself in your own trap is so silly)
+		return
+
+	else
+		remove_entity(ent);
+}
+
+
+public UIblaster(id)
+{
+	//client_print(id, print_chat, "3");
+		
+	new Float: org[3]
+	pev( id, pev_origin, org ) // 获取烟花起始位置[] Get the Start Origin
+	new ent = engfunc( EngFunc_CreateNamedEntity,engfunc( EngFunc_AllocString,"env_sprite" ) )
+	engfunc( EngFunc_SetModel, ent, "sprites/ecx.kamecharge.ssj2.spr" )// 设置SPR文件[] Set Sprite file
+	engfunc( EngFunc_SetSize, ent, {-1.0,-1.0,-1.0}, {1.0,1.0,1.0} )// 设置实体大小[] Set entity size
+	
+	set_pev( ent, pev_solid, SOLID_TRIGGER )// 设置固体类型[] Set solid type
+	set_pev( ent, pev_movetype, MOVETYPE_FLY )// 设置移动方式[] Set move type
+	set_pev( ent, pev_rendermode, 5 )// 设置渲染方案[] Set render mode
+	set_pev( ent, pev_renderamt, 200.0 )// 设置透明度[] Alpha
+	set_pev( ent, pev_scale, 0.3 )// 缩放大小[] Scale value
+	set_pev( ent, pev_owner, id )// 设置实体的拥有者[] Set owner for the entity
+	set_pev( ent, pev_classname, "UIblaster" )// 设置实体类名[] Set classname
+	set_pev( ent, pev_origin, org )// 设置实体位置[] Set entity origin
+	
+	set_pev( ent, pev_animtime, 1.0);
+	set_pev( ent, pev_framerate, 10.0);
+	
+	new Float: ang[3], Float:vec[3]
+	/* 烟花向上的角度偏移量[] The offset of upward fireworks */
+	ang[0] = random_float( -90.0, -90.0 )
+	ang[1] = random_float( -180.0, 180.0 )
+	
+	/* 设置烟花速率[] Set Velocity */
+	angle_vector( ang, 1, vec )
+	xs_vec_mul_scalar(vec, random_float( 2500.0, 2510.0), vec )
+	set_pev( ent, pev_velocity, vec )
+	
+	/* 托尾特效[] Trail FX */
+	message_begin( MSG_BROADCAST,SVC_TEMPENTITY )
+	write_byte( TE_BEAMFOLLOW )
+	write_short( ent )
+	write_short( engfunc( EngFunc_ModelIndex,"sprites/w_sukame_t.spr" ) )
+	write_byte( 3000 )// 持续时间[] life in 0.1's
+	write_byte( 320 )// 宽度[] line width in 0.1's
+	write_byte( 255 )// Red
+	write_byte( 255 )// Green
+	write_byte( 255 )// Blue
+	write_byte( 255 )// Brightness
+	message_end( )
+
+}
+   
+
+public Event_DeathMsg()
+{
+	new victim = read_data( 2 ); // second parameter (the victim !)
+
+
+	if(getClientCLASS( victim ) == getCXbyName( "Goku:Training Suit" ))
+	{
+		//client_print(victim, print_chat, "tot set");
+		set_task(15.0, "resettot",victim);
+		gokutot[victim] = true	
+	}
+}
+
+
+public ssj4lock(id)
+{
+	if(ssj4dabest[id])
+	{
+		client_print(id, print_chat, "SSJ4 Lock disabled");
+		ssj4dabest[id] = false;
+	}
+	else
+	{
+		client_print(id, print_chat, "SSJ4 Lock enabled");
+		ssj4dabest[id] = true;
+	}
+}
+
+public ssj5trans(id)
+{
+	if(ssj5[id])
+	{
+		client_print(id, print_chat, "SSJ5 disabled");
+		ssj5[id] = false;
+	}
+	else
+	{
+		client_print(id, print_chat, "SSJ5 enabled");
+		ssj5[id] = true;
+		
+		muiunlocked[id] = true
+	}
+}
+
+public resettot(id)
+{
+	//client_print(id, print_chat, "tot weg");
+	gokutot[id] = false;
+	
+	gokuuimaking[id] = false
+}
+
+public ssj4oozaruglow(id)
+{
+	emit_sound( id, CHAN_ITEM, "oozaru/oozaruscream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	setClientMODEL( id, "transgoozarufinal" );
+	setClientANIMATION(id, 1, 0.0);
+	set_user_rendering(id, kRenderFxGlowShell, 255, 155, 0, kRenderTransColor, 45)
+	
+	set_task(2.0, "ssj4oozaruglow2",id);
+	
+	set_pev( id, pev_fixangle, true );
+	client_cmd( id, "resetview" );
+	client_cmd( id, "cam_idealyaw 180" );
+	client_cmd( id, "cam_idealdist 200" );
+}
+
+public ssj4oozaruglow2(id)
+{
+	set_user_rendering(id,kRenderFxGlowShell,0,0,0,kRenderNormal,45)
+	
+	// instblue setClientDATAc( Client, cliLevel, __int_Level );
+	setClientMODEL( id, "ecx.goku-ts.ssj4" );
+	
+	setClientANIMATION(id, -1 ,1.0);
+	client_cmd( id, "resetview" );
+	client_cmd( id, "turbo" );
+}
+
+public muifxx(id)
+{
+	if(gokumuifx[id])
+	{
+		set_task(0.1, "muifxx", id);
+	}
+	
+	new origin[3]
+	get_user_origin(id, origin)
+
+	message_begin(MSG_BROADCAST, SVC_TEMPENTITY, origin)
+	write_byte( 14 )
+	write_coord( origin[0] += random_num(1,5))
+	write_coord( origin[1] += random_num(1,5))
+	write_coord( origin[2] += random_num(1,5))
+	write_byte( 2000 )
+	write_byte( 155 )
+	write_byte( 5 ) //dicke
+	message_end()
+}
+
+
+
+
+public FastAscend( id )
+{
+	new cmd[8];
+	read_argv(0,cmd,7);
+	new currentPowerlevel = 0;
+
+	if( !equali( cmd, "ascend" ) )
+		return PLUGIN_CONTINUE;
+	
+	currentPowerlevel = get_pdata_int(id, 460);
+	
+	if(ssjtransg[id] && getClientLEVEL( id ) == 1 && currentPowerlevel >= 3000000 && currentPowerlevel <= 3499999 && getClientCLASS( id ) == getCXbyName( "Goku:Training Suit" ))
+	{
+		if (delay[id])
+		{
+			// instblue setClientDATAc( Client, cliLevel, __int_Level );
+			@ClassInitiateTransformation ( id, 2, true )
+			setClientPL( id, currentPowerlevel*2 );
+			setClientMODEL( id, "ecx.goku-ts.ssj2" );
+			setClientDATAc( id, cliLevel, 2 );  
+			delay[id] = false;
+		}
+		else
+		{
+			delay[id] = true;
+		}
+		
+		return PLUGIN_HANDLED;
+	
+	}
+	if(ssjtransg[id] && getClientLEVEL( id ) == 1 && currentPowerlevel >= 3500000 && currentPowerlevel <= 4399999 && getClientCLASS( id ) == getCXbyName( "Goku:Training Suit" ))
+	{
+		if (delay[id])
+		{
+			// instblue setClientDATAc( Client, cliLevel, __int_Level );
+			@ClassInitiateTransformation ( id, 3, true )
+			setClientPL( id, currentPowerlevel*4 );
+			setClientMODEL( id, "ecx.goku-ts.ssj3" );
+			setClientDATAc( id, cliLevel, 3 );  
+			delay[id] = false;
+		}
+		else
+		{
+			delay[id] = true;
+		}
+		
+		return PLUGIN_HANDLED;
+	
+	}
+	if(ssjtransg[id] && getClientLEVEL( id ) == 1 && currentPowerlevel >= 4400000 && currentPowerlevel <= 6099999 && getClientCLASS( id ) == getCXbyName( "Goku:Training Suit" ))
+	{
+		if (delay[id])
+		{
+			//ssj4oozaruglow(id);	
+			
+			@ClassInitiateTransformation ( id, 4, true )
+			setClientPL( id, currentPowerlevel*8 );
+			//setClientMODEL( id, "ecx.goku-ts.ssj4" );
+			setClientDATAc( id, cliLevel, 4 );  
+			delay[id] = false;
+			
+		}
+		else
+		{
+			delay[id] = true;
+		}
+		
+		return PLUGIN_HANDLED;
+	
+	}
+	if(ssjtransg[id] && getClientLEVEL( id ) == 1 && currentPowerlevel >= 6100000 && getClientCLASS( id ) == getCXbyName( "Goku:Training Suit" ))
+	{
+		if (delay[id])
+		{	
+			if(ssj4dabest[id])
+			{
+				//ssj4oozaruglow(id);
+			
+				// instblue setClientDATAc( Client, cliLevel, __int_Level );
+				@ClassInitiateTransformation ( id, 4, true )
+				setClientPL( id, currentPowerlevel*8 );
+				//setClientMODEL( id, "ecx.goku-ts.ssj4" );
+				setClientDATAc( id, cliLevel, 4 );  
+				delay[id] = false;
+			
+			}
+			else
+			{
+			
+				// instblue setClientDATAc( Client, cliLevel, __int_Level );
+				@ClassInitiateTransformation ( id, 5, true )
+				emit_sound( id, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( id, "fxBlow" );
+				AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 20, 50, 255, 100, 40, 150, 200, 650, 0, 22 );
+				AddFx( id, "fxScreenShake", 50.0, 3.0, 4.0 );
+				AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+				AddFx( id, "fxBlow" );
+				AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+				AddFx( id, "fxBlow" );
+				AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+				AddFx( id, "fxPowerup", 0, 0, 0 );
+				AddFx( id, "fxSprite", "sprites/lightninghit.spr", 100, 255, 0, 0, 0 );
+				AddFx( id, "fxLgtField", 0.2, 3, 255, 100);
+				AddFx( id, "fxSprite", "sprites/ywaves.spr", 6, 60, 0, 0, 0 );
+				AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 90, 250);
+				AddFx( id, "fxModelEntity", "models/evolution/ssj4trans1.mdl", 0, 0, 20.0, 0, 0, 0, 2.0, 3.0, 0, 0 );
+				AddFx( id, "fxModelEntity", "models/evolution/Auras/godblue.mdl", 0, 0, 50.0, 0, 0, 0, 2.0, 1.3, 0, 3 );
+				setClientPL( id, currentPowerlevel*12 );
+				setClientMODEL( id, "ecx.goku-ts.ssb" );
+				setClientDATAc( id, cliLevel, 5 );  
+				delay[id] = false;
+			}
+		}
+		
+		else
+		{
+			delay[id] = true;
+		}
+		
+		return PLUGIN_HANDLED;
+	}
+	if (getClientLEVEL( id ) == 5 && getClientCLASS( id ) == getCXbyName( "Goku:Training Suit" ) && !gokuui[id])
+	{
+		client_print(id, print_chat, "!");
+		gokuui[id] = true;
+		set_task(15.0, "resetui",id);
+    }
+
+	
+	return PLUGIN_CONTINUE;
+}
+
+public resetui(id)
+{
+	//client_print(id, print_chat, "ui weg");
+	gokuui[id] = false;
+}
+
+public RemKi (id)
+{
+	setClientKI(id, -1.0);
+	
+	drop_to_floor(id);
+}
+
+
+public resetfxui(id)
+{
+	RemFx( id, "fxVerticalSpriteField", 0);
+	RemFx( id, "fxVerticalSpriteField", 0);
+	RemFx( id, "fxVerticalSpriteField", 0);
+}
+
+public warning(id)
+{
+	client_print(id, print_chat, "DONT MOVE!");
+	
+	drop_to_floor(id);
+	
+	if (getClientFLY (id))
+	{
+		client_cmd( id, "togglefly" );
+	}
+}
+
+public checkuipre(id)
+{
+	//client_print(id, print_chat, "check");
+	
+	if ( getClientLEVEL( id ) == 6 )
+	{
+		client_cmd( id, "descend" );
+		client_print(id, print_chat, "you failed transforming");
+		
+		setClientANIMATION(id, -1);
+		
+		//client_print(id, print_chat, "check1");
+		
+		set_pdata_int(id, 218, false);
+		
+		//set_pdata_int(id, 301, 0)
+	}
+	
+	if ( getClientLEVEL( id ) == 0 )
+	{
+		client_print(id, print_chat, "you failed transforming");
+		
+		//client_print(id, print_chat, "check2");
+		
+		setClientANIMATION(id, -1);		
+		
+		set_pdata_int(id, 218, false);
+		
+		//set_pdata_int(id, 301, 0)
+	}
+	
+}
+
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Goku:Training Suit", true, false, "It´s Goku omg!", "sound/ecx.goku-ts/c_intro.wav" );
+
+	// Saiya-jin
+	addClassLevel( "Saiya-jin", "ecx.goku-ts", 5.5, 3.0, 900000, 1800000, 2.0, 
+					240, 110, bool:{ false, false }, 1.0, { 340, 200 }, { 0, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin
+	addClassLevel( "Super Saiya-jin", "ecx.goku-ts.ssj", 55.0, 2.0, 1900000, 2200000, 2.0, 
+					275, 150, bool:{ false, false }, 4.0, { 400, 150 }, { 1, 0, 0, 0, 0, 1, 1 }, 3.0, Float:{ 110.0, 10.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 128.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 128 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+	
+	// Super Saiya-jin II
+	addClassLevel( "Super Saiya-jin II", "ecx.goku-ts.ssj2", 13.0, 1.5, 5000000, 6000000, 2.0, 
+					300, 180, bool:{ false, false }, 10.0, { 450, 100 }, { 1, 0, 1, 0, 0, 2, 2 }, 5.0, Float:{ 120.0, 20.0 } );
+	addClassEffect( "models/evolution/Auras/shape_06.mdl", Float:{ 255.0, 255.0, 128.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 128 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin III
+	addClassLevel( "Super Saiya-jin III", "ecx.goku-ts.ssj3", 62.0, 1.5, 13600000, 14100000, 2.0, 
+					360, 210, bool:{ false, false }, 11.0, { 600, 75 }, { 1, 1, 1, 1, 0, 3, 2 }, 6.0, Float:{ 140.0, 30.0 } );
+	addClassEffect( "models/evolution/Auras/shape_06.mdl", Float:{ 255.0, 255.0, 128.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 128 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin IV
+	addClassLevel( "Super Saiya-jin IV", "ecx.goku-ts.ssj4", 80.0, 6.0, 32000000, 35000000, 1.5, 
+					480, 250, bool:{ false, false }, 12.0, { 650, 75 }, { 1, 1, 1, 1, 1, 3, 4 }, 8.0, Float:{ 170.0, 50.0 } );
+	addClassEffect( "models/evolution/Auras/shape_C.mdl", Float:{ 160.0, 150.0, 20.0, 50.0 }, 4, kRenderTransAdd,
+					{ 160, 150, 70 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// Super Saiya-jin Blue
+	addClassLevel( "Super Saiya-jin Blue", "ecx.goku-ts.ssb", 6.0, 6.0, 70000000, 73200000, 1.5, 
+					630, 255, bool:{ true, false }, 15.0, { 700, 80 }, { 1, 1, 1, 1, 1, 3, 4 }, 9.0, Float:{ 210.0, 65.0 } );
+	addClassEffect( "models/evolution/Auras/aurablau.mdl", Float:{ 0.0, 255.0, 255.0, 30.0 }, 5, kRenderTransAdd,
+					{ 0, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// Saiya-jin uipre
+	addClassLevel( "Saiya-jin", "ecx.goku-ts", 5.5, 3.0, 900000, 1800000, 1.0, 
+					1, 110, bool:{ false, false }, 1.0, { 0, 0 }, { 0, 0, 0, 0, 0, 0, 0 }, 1.0, Float:{ 100.0, 70.0 } );
+	addClassEffect( "", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+	
+	// Ultra Instinct
+	addClassLevel( "Ultra Instinct", "ecx.goku-ts.ui", 26.0, 26.0, 1, 1, 20.0,
+					630, 255, bool:{ true, false }, 30.0, { 1300, 10 }, { 1, 1, 1, 1, 1, 5, 5 }, 10.0, Float:{ 120.0, 70.0 } );
+	addClassEffect( "models/evolution/Auras/migatte.mdl", Float:{ 0.0, 255.0, 255.0, 0.0 }, 5, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+}
+
+
+
+public UltraI1(Client)
+{
+	if(UICD[Client])
+	{
+		//client_print(Client, print_chat, "You have to rest untill u are able to can use UI again");
+		client_cmd( Client, "descend" );
+		set_task(7.0, "UltraI100",Client);
+	}
+	else
+	{
+		set_pdata_int(Client, 218, true);
+		
+		//set_pdata_int(Client, 301, 1, -89 )
+	
+		set_task(0.5, "UltraI2",Client);
+		client_cmd( Client, "ascend" );
+		//client_print(Client, print_chat, "BLOCK1");
+		
+		setClientANIMATION(Client, 86,1.0);
+		
+		
+		if (getClientFLY (Client))
+		{
+			client_cmd( Client, "togglefly" );
+		}
+	}
+}
+
+public UltraI100(Client)
+{
+	client_print(Client, print_chat, "You have to rest untill u are able to can use UI again");
+}
+
+public UltraI2(Client)
+{
+	//drop_to_floor(Client);
+	
+	if (getClientFLY (Client))
+	{
+		client_cmd( Client, "togglefly" );
+	}
+	
+	
+	new cmd[8];
+	read_argv(0,cmd,7);
+
+	set_task(3.0, "UltraI3",Client);
+	new currentPowerlevel = get_pdata_int(Client, 460);
+	
+	
+			
+	//client_print(Client, print_chat, "BLOCK");
+
+	{
+		new CORE[ 1 ];
+		CORE[ 0 ] = Client;
+		@ClassInitiateTransformation ( Client, 6, true );
+		setClientPL( Client, currentPowerlevel*1 );
+		setClientMODEL( Client, "ecx.goku-ts.ui" );
+		setClientDATAc( Client, cliLevel, 6 );
+		setClientLEVELDATAc( Client, cxlModelIndex, 6 );
+		updateClientLEVELDATA( Client);
+		gokuui[Client] = false;	
+		gokutot[Client] = false;		
+		
+		AddFx( Client, "fxPowerup", 0, 0, 0 );
+	}	
+	
+
+}
+
+
+
+public UltraI3(Client)
+{
+	setClientANIMATION(Client, -1);
+	client_cmd( Client, "ascend" );
+	//client_print(Client, print_chat, "BLOCK1");
+}
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_spiritbomb" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_sensu" );
+			addClassSpecial( Client, "kaioken" );
+			
+			setClientMODEL( Client, "ecx.goku-ts" );
+			
+			
+			gokuuimaking[Client] = false
+			
+			if(Mafubawish[Client])
+				{
+					addClassSpecial( Client, "mafuba" );
+				}
+				
+
+			
+			if(gokuui[Client] && gokutot[Client] && getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ))
+				{
+					set_task(5.0, "UltraI1",Client);
+					set_task(0.0, "warning",Client);
+					set_task(2.0, "warning",Client);
+					//set_task(4.0, "warning",Client);
+					//set_task(6.0, "warning",Client);
+					//set_task(8.0, "warning",Client);
+					//set_task(10.0, "warning",Client);
+					
+					
+					set_task(25.0, "checkuipre",Client);
+					
+					if (getClientFLY (Client))
+					{
+						client_cmd( Client, "togglefly" );
+					}
+				}
+			
+		}
+		case 1: // Super Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		case 2: // Super Saiya-jin II
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_sensu" );
+			addClassSpecial( Client, "superkaioken" );
+			
+		}
+		case 3: // Super Saiya-jin III
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassSpecial( Client, "dragonfist" );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		case 4: // Super Saiya-jin IV
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassSpecial( Client, "dragonfist" );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		case 5: // Super Saiya-jin Blue
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_sensu" );
+			addClassSpecial( Client, "kaioken" );
+		}
+		case 6: // Prestage
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		case 7: // Ultra Instinct
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_sensu" );
+			
+			set_task(1.0, "UITech",Client);
+			set_task(random_float(50.0, 120.0), "mui",Client);
+			
+			client_cmd( Client, "togglefly" );
+			
+			
+			
+			if(muiunlocked[Client])
+				{
+					//client_print(Client, print_chat, "MUI!!!!");
+					
+					//setClientMODEL( Client, "ecx.goku-ts.mui" );
+					setClientLEVELDATAc( Client, cxlAttack, 500 ); //Attack value multiplier
+					updateClientLEVELDATA( Client);
+					set_task(0.1, "muitranspre",Client);
+					
+					if(ssj5[Client])
+					{
+						setClientMODEL( Client, "ssj5goku" );
+					}
+					else
+					{
+						setClientMODEL( Client, "ecx.goku-ts.mui" );
+					}
+						
+				}
+		}
+	}
+}
+
+
+
+public UITech (Client)
+{   
+	if (getClientLEVEL( Client ) >= 7 && getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ))
+	{
+		gokuuimaking[Client] = true
+	
+		if(gokuuimaking[Client])
+		{
+			set_task(0.1, "UITech",Client)
+		}
+		
+		if( getClientTURBO( Client ) )
+		{   
+			
+				
+				
+				static Float:origin[3];
+				pev(Client,pev_origin,origin);
+				new ent = -1;
+		
+				static Float:__float_clientOrigin[3], Float:__float_targetOrigin[3];
+				entity_get_vector(Client, EV_VEC_origin, __float_clientOrigin);
+				entity_get_vector(Client, EV_VEC_origin, __float_targetOrigin);
+						
+				static __int_ValidPoint;
+			
+				while((ent = find_ent_in_sphere(ent,origin,350.0)) != 0) 
+				{
+					static className[32];
+					entity_get_string(ent, EV_SZ_classname, className,32);
+					new owner = entity_get_edict(ent, EV_ENT_owner);
+					
+					//client_print(Client, print_chat, "- Entity '%s': %d from ownerID: %d @Client: %d DETECTED!",className,ent,owner,Client);
+					
+					//"SwoopShineFx"
+					//bodyque
+					if(!equali(className, "SwoopShineFx") && owner < 200 && owner > 0 && owner != Client)
+					{
+						if(!equali(className, "bodyque") && owner < 200 && owner > 0 && owner != Client)
+						{
+							while(!__int_ValidPoint)
+							{
+							
+								 
+							
+								AddFx( Client, "fxSprite", "sprites/tviento.spr", 15, 200, 0, 0, 0 );			
+							
+								entity_get_vector(Client, EV_VEC_origin, __float_clientOrigin);
+				
+								__float_clientOrigin[0] += float(random_num(-150, 150));
+								__float_clientOrigin[1] += float(random_num(-150, 150));
+								__float_clientOrigin[2] += float(random_num(-100, 100));
+								
+								set_task(0.1, "flysaver",Client);
+			
+								__int_ValidPoint = (engfunc(EngFunc_PointContents, __float_clientOrigin) != CONTENTS_EMPTY) ? 0 : 1;
+							}
+	
+							entity_set_origin(Client, __float_clientOrigin);
+							
+							__int_ValidPoint = 0;
+						
+						}
+						
+							
+							
+						
+	
+						
+					}
+                }
+            
+        }
+        
+    }
+}
+
+public flysaver(Client)
+{
+	if (!getClientFLY (Client))
+	{
+		client_cmd( Client, "togglefly" );
+	}
+}
+
+public tele200(id)
+{
+	AddFx( id, "fxSprite", "sprites/tviento.spr", 15, 200, 0, 0, 0 );			
+
+	new Float:a[3];
+	entity_get_vector(id, EV_VEC_oldorigin, a);
+
+	entity_set_origin(id, a);
+	
+	//client_print(id, print_chat, "RE");
+	
+	UISPAM[id] = false
+}
+
+public teleportui (id)
+{
+	AddFx( id, "fxSprite", "sprites/tviento.spr", 15, 200, 0, 0, 0 );				
+	
+	//client_cmd(id, "say TELEPORT");
+	
+	new vOldLocation[3], vNewLocation[3];	
+	
+	get_user_origin( id, vOldLocation );
+	get_user_origin( id, vNewLocation, 0 ); 	
+	
+	new finished = 50;
+	
+	while(finished > 0)
+	{
+			vNewLocation[0] += random_num( -100, 100 );		
+			vNewLocation[1] += random_num( -100, 100 );
+			vNewLocation[2] += random_num( -100, 100 ); 
+	
+			static duck;
+			duck = (pev(id, pev_flags) & FL_DUCKING);
+			
+			engfunc(EngFunc_TraceHull, vOldLocation, vNewLocation, IGNORE_MONSTERS, duck ? HULL_HEAD : HULL_HUMAN, id, 0);
+			
+			//if(get_tr2(0, TR_InOpen) && !get_tr2(0, TR_AllSolid) && !get_tr2(0, TR_InWater) && !get_tr2(0, TR_StartSolid))
+			if(get_tr2(0, TR_pHit) == -1)
+			{
+				set_user_origin( id, vNewLocation );
+				finished = 0;
+				//set_task(1.0, "teleportrescue",id)
+			}
+			else
+			{
+				finished--;
+				//set_task(1.0, "teleportrescue",id)
+			}
+		}
+}
+
+
+public teleportrescue (id)
+{
+	teleportsaver[id] = true
+	teleportui(id)
+}
+	
+public muitranspre (id)
+{
+	gokumuifx[id] = true
+	muifxx(id)
+	
+	if(muiunlocked[id])
+	{
+		set_task(1.0, "muitrans",id);
+	}
+	else
+	{
+		set_task(10.0, "muitrans",id);
+	}
+}
+
+public muitrans (id)
+{
+	//set_user_rendering(id, kRenderFxGlowShell, 255, 255, 255, kRenderGlow, 5)
+
+	AddFx( id, "fxModelEntity", "models/evolution/Auras/universum.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 1.0, 0, 1 );
+	client_cmd( id, "cam_idealdist 100" );
+	AddFx( id, "fxCSpriteRays", "sprites/xssmke1.spr", 0.1, 20, 255, 0, 10, 10, 10, 250, 20, 700, 0, 3 );
+	AddFx( id, "fxPowerWave", "sprites/waves-evil.spr", 180, 145, 120, 50, 500);		
+	AddFx( id, "fxSpriteRays", "sprites/lgtning.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 )
+	AddFx( id, "fxSprite", "sprites/xflare1.spr", 15, 255, 0, 0, 0 );
+	//AddFx( id, "fxBeamTorus", "sprites/lgtning.spr", 200, 0, 200, 255, 250, 50, 25, 0 );
+	AddFx( id, "fxBeamTorus", "sprites/vegetassj4trans.spr", 100, 255, 200, 255, 250, 20, 50, 0 );
+	AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 20, 50, 255, 100, 40, 250, 200, 650, 0, 22 );
+	set_task(0.5, "muitrans2",id)
+	UICD[id] = true;
+	set_task(300.0, "UICDResetter",id)
+}
+public UICDResetter (id)
+{
+	UICD[id] = false;
+}
+public muitrans2 (id)
+{
+	AddFx( id, "fxPowerWave", "sprites/waves-evil.spr", 180, 145, 120, 50, 500);		
+	AddFx( id, "fxSprite", "sprites/xflare1.spr", 15, 255, 0, 0, 0 );
+	//AddFx( id, "fxBeamTorus", "sprites/lgtning.spr", 200, 0, 200, 255, 250, 50, 25, 0 );
+	AddFx( id, "fxBeamTorus", "sprites/vegetassj4trans.spr", 100, 255, 200, 255, 250, 20, 50, 0 );
+	AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 10, 50, 255, 100, 40, 250, 200, 650, 0, 22 );
+	set_task(0.5, "muitrans3",id)
+}
+public muitrans3 (id)
+{
+	AddFx( id, "fxPowerWave", "sprites/waves-evil.spr", 180, 145, 120, 50, 500);		
+	AddFx( id, "fxSprite", "sprites/xflare1.spr", 15, 255, 0, 0, 0 );
+	//AddFx( id, "fxBeamTorus", "sprites/lgtning.spr", 200, 0, 200, 255, 250, 50, 25, 0 );
+	AddFx( id, "fxBeamTorus", "sprites/vegetassj4trans.spr", 100, 255, 200, 255, 250, 20, 50, 0 );
+	AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 10, 50, 255, 100, 40, 250, 200, 650, 0, 22 );
+	set_task(1.0, "remmuitrans",id)
+	
+	if(getClientCLASS( id ) == getCXbyName( "Goku:Training Suit" ) &&( getClientLEVEL( id) >= 6 ) )
+	{
+		set_task(random_float(40.0, 300.0), "muitransreset",id)
+	}
+	
+	//set_task(10.0, "muitrans4",id)
+}
+
+public muitrans4 (id)
+{
+	set_user_rendering(id,kRenderFxGlowShell,0,0,0,kRenderNormal, 5)
+}
+
+public muitrans11 (id)
+{
+	//set_user_rendering(id, kRenderFxGlowShell, 255, 255, 255, kRenderGlow, 5)
+
+	UICD[id] = true;
+	
+	//set_task(5.0, "muitrans4",id)
+	
+	set_task(300.0, "UICDResetter",id)
+}
+	
+
+public remmuitrans (id)
+{
+	gokumuifx[id] = false
+	client_cmd( id, "resetview" );
+	RemFx( id, "fxCSpriteRays", 0 );
+	RemFx( id, "fxSpriteRays", 0 );
+	RemFx( id, "fxModelEntity", 0 );
+}
+public muitransreset (id)
+{
+	if(getClientCLASS( id ) == getCXbyName( "Goku:Training Suit" ) &&( getClientLEVEL( id ) >= 6 ) )
+	{
+		if (getClientFLY (id))
+		{
+			client_cmd( id, "togglefly" );
+		}
+	
+		AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 22, 30, 70, 255, 100, 40, 150, 200, 650, 4, 22 );
+		emit_sound( id, CHAN_ITEM, "ecx.goku-ts/w_dwkamehame.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+		client_cmd( id, "cam_idealdist 100" );
+		client_cmd( id, "descend" );
+		set_task(6.0, "remmuitrans",id)
+		setClientANIMATION(id,79,1.0);
+		set_task(1.0, "muitransreset2",id);
+	}
+}
+public muitransreset2 (id)
+{
+	if (getClientFLY (id))
+	{
+		client_cmd( id, "togglefly" );
+	}
+				
+	setClientANIMATION(id,83,1.0);
+	set_task(1.0, "muitransreset3",id);
+}
+public muitransreset3 (id)
+{
+
+	if (getClientFLY (id))
+	{
+		client_cmd( id, "togglefly" );
+	}
+				
+	
+	setClientANIMATION(id,84,1.0);
+	set_task(1.0, "muitransreset4",id);
+}
+public muitransreset4 (id)
+{
+
+	if (getClientFLY (id))
+	{
+		client_cmd( id, "togglefly" );
+	}
+				
+	AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 22, 30, 70, 255, 100, 40, 150, 200, 650, 4, 22 );
+	drop_to_floor(id);
+	set_task(1.0, "muitransreset5",id);
+}
+public muitransreset5 (id)
+{
+	if (getClientFLY (id))
+	{
+		client_cmd( id, "togglefly" );
+	}
+				
+				
+	set_task(1.0, "muitransreset6",id);
+}
+public muitransreset6 (id)
+{
+	if (getClientFLY (id))
+	{
+		client_cmd( id, "togglefly" );
+	}
+				
+	AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 22, 30, 70, 255, 100, 40, 150, 200, 650, 4, 22 );			
+	setClientANIMATION(id,84,1.0);
+	set_task(1.0, "muitransreset7",id);
+}
+public muitransreset7 (id)
+{
+	if (getClientFLY (id))
+		{
+			client_cmd( id, "togglefly" );
+		}
+
+	set_task(1.0, "muitransreset8",id);
+	setClientANIMATION(id,75,1.0);
+}
+public muitransreset8 (id)
+{
+	setClientANIMATION(id,-1);
+	set_task(0.0, "RemKi",id);
+	
+	set_task(3.0, "RemKi",id);
+	
+	set_task(6.0, "RemKi",id);
+	
+	set_task(9.0, "RemKi",id);
+	
+	set_task(12.0, "RemKi",id);
+	
+	set_task(15.0, "RemKi",id);
+	
+	set_task(18.0, "RemKi",id);
+	
+	set_task(21.0, "RemKi",id);
+	
+	set_task(24.0, "RemKi",id);
+	
+	set_task(27.0, "RemKi",id);
+	
+	set_task(30.0, "RemKi",id);
+	
+	set_task(33.0, "RemKi",id);
+	
+	set_task(36.0, "RemKi",id);
+	
+	set_task(40.0, "RemKi",id);
+}
+
+public mui(Client)
+{
+	if (getClientLEVEL( Client ) >= 7 && getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ))
+	{
+		if(muiunlocked[Client])
+		{
+		}
+		else
+		{
+			//client_print(Client, print_chat, "vari an");
+			muiunlocked[Client] = true;
+			setClientLEVELDATAc( Client, cxlAttack, 500 ); //Attack value multiplier
+			updateClientLEVELDATA( Client);
+			
+			muitranspre (Client);
+			
+			if(ssj5[Client])
+			{
+				setClientMODEL( Client, "ssj5goku" );
+			}
+			else
+			{
+				setClientMODEL( Client, "ecx.goku-ts.mui" );
+			}
+		}	
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.goku-ts/ecx.goku-ts.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj/ecx.goku-ts.ssj.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj2/ecx.goku-ts.ssj2.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj3/ecx.goku-ts.ssj3.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssb/ecx.goku-ts.ssb.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ui/ecx.goku-ts.ui.mdl" );
+	precache_model( "models/player/ecx.goku-ts.mui/ecx.goku-ts.mui.mdl" );
+	
+	precache_model( "models/player/ssj5goku/ssj5goku.mdl" );
+	
+	precache_model( "models/player/ecx.goku-ts.ssj2-1/ecx.goku-ts.ssj2-1.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj2-2/ecx.goku-ts.ssj2-2.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj2-3/ecx.goku-ts.ssj2-3.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj2-4/ecx.goku-ts.ssj2-4.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj2-5/ecx.goku-ts.ssj2-5.mdl" );
+	precache_model( "models/player/ecx.goku-ts.trans/ecx.goku-ts.trans.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssjtrans/ecx.goku-ts.ssjtrans.mdl" );
+
+	precache_model( "models/player/ecx.goku-ts.ssj4/ecx.goku-ts.ssj4.mdl" );
+	
+
+	precache_model( "models/player/transgoozarufinal/transgoozarufinal.mdl" );
+	
+	precache_model( "models/player/transoozarufinal/transoozarufinal.mdl" );
+	
+	precache_model( "models/evolution/Moon.mdl" );
+	precache_model( "models/evolution/us_aura2.mdl" );
+	precache_model( "sprites/xssmke1.spr" );
+	precache_model( "sprites/lightninghit.spr" );
+	precache_model( "sprites/rcharge.spr" );
+	
+	precache_model( "sprites/vegetassj4trans.spr" );
+	precache_model( "sprites/xsmokered.spr");
+	precache_model( "sprites/xflare1.spr" );
+	
+	precache_model( "sprites/tviento.spr" );
+	precache_model( "sprites/onda.spr" );
+	precache_model( "sprites/waves.spr" );
+	precache_model( "sprites/waves-evil.spr" );
+	precache_model( "sprites/w_sukame_t.spr" );
+	precache_model( "models/evolution/aura.mdl" );
+	precache_model( "sprites/ywaves.spr" );
+	precache_model( "models/evolution/Auras/universum.mdl") ;
+	precache_model( "models/evolution/ssj4trans1.mdl" );
+	precache_model( "models/evolution/ssj4trans2.mdl" );
+	precache_model( "models/evolution/Auras/shape_C.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/evolution/Auras/shape_05.mdl" );
+	precache_model( "models/evolution/Auras/shape_06.mdl" );
+	precache_model( "models/evolution/Auras/aurablau.mdl" );
+	precache_model( "models/evolution/Auras/migatte.mdl" );
+	precache_model( "models/evolution/redmaura2.mdl" );
+	precache_model( "models/evolution/pan.mdl" );
+	precache_model( "models/evolution/auras/godblue.mdl" );
+	precache_sound( "ecx.goku-ts/t_ssj4end.wav" );
+	precache_sound( "ecx.goku-ts/t_ssjend.wav" );
+	precache_sound( "ecx.goku-ts/t_ssjLONG.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj2.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj3LONG.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj4LONG.wav" );
+	precache_sound( "ecx.goku-ts/t_ssj3end.wav" );
+	precache_sound( "ecx.goku-ts/tp_ssj3end.wav" );
+	precache_sound( "ecx.goku-ts/t_scream.wav" );
+	precache_sound( "ecx.goku-ts/GOKuuisound.wav" );
+	precache_sound( "ecx.goku-ts/w_dwkamehame.wav" );
+	
+	precache_sound( "oozaru/oozaruscream.wav" );
+	
+	precache_model( "models/player/ecx.goku-ts.ssj4trans1/ecx.goku-ts.ssj4trans1.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj4trans2/ecx.goku-ts.ssj4trans2.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssj4trans3/ecx.goku-ts.ssj4trans3.mdl" );
+	
+
+	
+	precache_model( "sprites/ecx.kamecharge.ssj2.spr" );
+	
+	precache_model( "models/effects/novaaura.mdl" );
+	
+	precache_model( "models/effects/fb_lb.mdl" );
+	
+	precache_model( "models/effects/Blueball.mdl" );
+}
+
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				ssjtransg[Client] = true;
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{	
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 3:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChange000", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "ModelChange001", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.4, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.6, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.8, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "ModelChange005", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "ModelChange006", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 4:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				ssj4oozaruglow(Client);
+				//emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj4end.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				//set_task( 0.0, "ModelChange006", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 0.5, "ModelChange005", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 1.0, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 1.5, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 2.0, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 2.5, "ModelChange001", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 3.0, "ModelChange211", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 3.4, "ModelChange213", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 3.5, "ModelChange212", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 5:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChangeblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				//setClientANIMATION(Client,102,0.5);
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "ModelChangeblau2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlowSpecial", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.2, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.6, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 6:
+			{	
+				
+			}
+		}
+	}
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{	
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				ssjtransg[Client] = true;
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssjLONG.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 0.0, "SSJLIGHT", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChange409", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "ModelChange410", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 6.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 14.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 21.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 25.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 27.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 31.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 33.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 37.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 39.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 45.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 47.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 49.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 51.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.2, "fxAura201", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 14.5, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.5, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.5, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.5, "ModelChange401", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.9, "ModelChange408", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "ModelChange404", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.2, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.2, "fxAura102", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 35.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.1, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.3, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.6, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.8, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 41.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.5, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.7, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.0, "ModelChange402", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.2, "ModelChange405", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 54.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.2, "fxAura100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.3, "ModelChange403", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 55.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 55.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 7.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 13.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 3:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj3LONG.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 0.0, "ModelChange300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.5, "ModelChange250", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.6, "ModelChange200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.2, "ModelChange210", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.3, "ModelChange201", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.3, "fxAura100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.1, "ModelChange202", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 41.0, "fxAura7", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.6, "fxAura101", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.0, "ModelChange010", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.2, "ModelChange000", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 34.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 35.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 36.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 37.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 38.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 39.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 39.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 40.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 40.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",3 );
+				set_task( 41.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 41.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 45.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 47.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 49.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 51.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 55.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 57.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 59.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 61.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 50.0, "ModelChange001", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 51.0, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 52.0, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.0, "ModelChange002", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 54.0, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 55.0, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 56.0, "ModelChange003", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 57.0, "ModelChange004", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 58.0, "ModelChange005", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 59.0, "ModelChange006", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=0.0; i<=20.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 61.5, "fxScream2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 61.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 4:
+			{	
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_ssj4LONG.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 0.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.2, "fxAura12", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 0.0, "ModelChange1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.6, "ModelChange2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.1, "ModelChange3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxssj4aura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.0, "ModelChange4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 16.0, "ModelChange5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 19.0, "fxssj41", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxssj44", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxAura102", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "ModelChange6", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 19.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 19.9, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.8, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 21.7, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 22.6, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.5, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 22.4, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.3, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 24.2, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 25.1, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 26.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 27.9, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 28.8, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.8, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.7, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 31.6, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 32.5, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 33.4, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.1, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.1, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 30.1, "fxssj41", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 30.1, "fxssj42", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.9, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.9, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 30.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 30.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 41.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",8 );
+				set_task( 41.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",8 );
+				set_task( 41.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",8 );
+				set_task( 42.0, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 42.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 42.0, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 38.5, "oozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.2, "oozaru2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.4, "oozaru3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.6, "oozaru4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 42.8, "oozaru5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.0, "oozaru6", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.2, "oozaruphase", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 46.5, "goozaruyell", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 43.5, "endpowerup", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 40.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 46.0, "goozaru7", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 52.5, "goozaruyell", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 53.6, "goozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 50.0, "fxAuraPan", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 50.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 64.0, "fxAura39", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 65.0, "goozaru2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 65.5, "goozaru3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 66.0, "goozaru4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 66.5, "goozaru5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.0, "goozaru6", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 60.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 67.0, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 69.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 71.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxENDBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				
+				set_task( 67.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.6, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxsphere2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+
+				set_task( 67.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 69.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 75.5, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.5, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.2, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 70.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				
+				set_task( 66.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 67.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 73.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 74.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 75.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.0, "fxAura300", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 67.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 68.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 69.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 70.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 71.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxAura301", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 72.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.6, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 73.0, "fxAura20", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 73.0, "fxsphere3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 72.8, "fxAura200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 73.0, "goku1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 74.0, "goku2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 75.0, "goku3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.0, "goku4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.5, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				//set_task( 76.0, "fxCamBack2", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 75.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 76.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 77.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 78.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 79.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.9, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 80.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 80.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 79.5, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 44.0, "OZF", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.0, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxssj4end", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 5:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.goku-ts/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "ModelChangeblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				//setClientANIMATION(Client,102,0.5);
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "ModelChangeblau2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlowSpecial", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.2, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.6, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 7:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				set_task( 1.5, "soundui", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxuicam1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				setClientHiddenPOWERUP( Client, true );
+				set_task( 3.0, "fxPwaveui", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "gokuui1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 7.0, "gokuui2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.0, "gokuui3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.0, "gokuui4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.0, "gokuui5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 11.0, "gokuui6", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxbui1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxbui2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxbui3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 0.0, "fxUI1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task(15.0, "TransformFXui1",Client);
+				set_task( 4.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 5.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 6.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 7.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 8.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 9.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 10.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 11.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 12.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 13.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 14.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 15.0, "fxPwaveuim", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 17.0, "remfxUI1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "remfxUI1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "remfxUI1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task(3.0, "UIblaster",Client);
+				
+				set_task(5.0, "UIblaster",Client);
+				
+				set_task(7.0, "UIblaster",Client);
+				
+				set_task(9.0, "UIblaster",Client);
+				
+				set_task(11.0, "UIblaster",Client);
+				
+				set_pdata_int(Client, 218, false);
+				
+				//set_pdata_int(Client, 301, 0)
+
+				
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				
+				set_task( 3.0, "fxUImega", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 3.0, "fxUImega2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 3.0, "fxUImega3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				
+			}
+		}
+	}
+}
+
+public TransformFXui1( Client )
+{
+	set_pev( Client, pev_fixangle, true );
+	client_cmd( Client, "resetview" );
+	client_cmd( Client, "cam_idealyaw 180" );
+	client_cmd( Client, "cam_idealpitch -20" );
+	client_cmd( Client, "cam_zoffset 0" );
+	client_cmd( Client, "cam_idealdist 25" );
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+	remove_task( uniqueTaskID( Client, 100 ) );
+	ssjtransg[Client] = false;
+	delay[Client] = false;
+	
+	if( Level <= 5)
+	client_cmd( Client, "turbo" );
+
+	if( Level == 5)
+		AddFx( Client, "fxPowerup", 0, 255, 255 );
+		
+	if( Level == 7)
+	{
+		client_cmd( Client, "resetview" );
+		
+	}	
+	
+
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+
+	set_pdata_int(Client, 218, false);
+	
+	//set_pdata_int(Client, 301, 0)
+
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	RemFx( Client, "fxAvatar", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+	remove_task( uniqueTaskID( Client, 100 ) );
+	
+	if(getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ) && ( getClientLEVEL( Client ) == 0 ) )
+	{
+		setClientMODEL( Client, "ecx.goku-ts" );
+	}
+	else if(getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ) && ( getClientLEVEL( Client ) == 1 ) )
+	{
+		setClientMODEL( Client, "ecx.goku-ts.ssj" );
+	}
+	else if(getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ) && ( getClientLEVEL( Client ) == 2 ) )
+	{
+		setClientMODEL( Client, "ecx.goku-ts.ssj2" );
+	}
+	else if(getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ) && ( getClientLEVEL( Client ) == 3 ) )
+	{
+		setClientMODEL( Client, "ecx.goku-ts.ssj3" );
+	}
+	else if(getClientCLASS( Client ) == getCXbyName( "Goku:Training Suit" ) && ( getClientLEVEL( Client ) == 4 ) )
+	{
+		setClientMODEL( Client, "ecx.goku-ts.ssj4" );
+	}
+	delay[Client] = false;
+	ssjtransg[Client] = false;	
+	
+	if( Level == 7)
+		client_cmd( Client, "resetview" );
+	
+}

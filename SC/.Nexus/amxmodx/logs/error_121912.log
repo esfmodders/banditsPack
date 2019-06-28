@@ -1,0 +1,12 @@
+L 12/19/2012 - 03:54:29: Start of error session.
+L 12/19/2012 - 03:54:29: Info (map "mat_space") (logfile "error_121912.log")
+L 12/19/2012 - 03:54:29: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/19/2012 - 03:54:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/19/2012 - 04:00:51: Start of error session.
+L 12/19/2012 - 04:00:51: Info (map "esf_zsword") (logfile "error_121912.log")
+L 12/19/2012 - 04:00:51: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/19/2012 - 04:00:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/19/2012 - 04:04:39: Start of error session.
+L 12/19/2012 - 04:04:39: Info (map "um_wfs_Time_Chamber") (logfile "error_121912.log")
+L 12/19/2012 - 04:04:39: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/19/2012 - 04:04:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

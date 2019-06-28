@@ -1,0 +1,139 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+**
+**
+**	ESF天神殿[www.esfkami.net]
+**
+** ESF天神殿是一个专业的CS七龙珠资源开发与分享的网站，
+** 你完全不需要注册或者登录就可以下载和查看专业的CS七
+** 龙珠开发知识与补丁插件。
+*/
+
+new const CX_Plugin[]	= 	"CX.AutoTrans";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"ESFKAMI";
+
+#define MOD_SOUND 	0
+#define MOD_CHARGE 	0
+#define MOD_WEAPON	0
+
+// << Implement CX Interface >>
+
+#include <xtension/class/main>
+
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+	register_message( get_user_msgid( "Health" ), "@ClassDamage" );
+	register_message( get_user_msgid( "PowerLevel" ), "@ClassPowerLevel" );
+}
+
+public @ClassCreation ()// 人物属性
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"AutoTrans", false, false, "www.esfkami.net", "AutoTrans/c_intro.wav" );
+
+	// Normal
+	addClassLevel( "Normal", "AutoTrans", 10.0, 1.5, 16999999, 1, 1.0, 
+					400, 100, bool:{ true, true }, 0.0, { 200, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 1.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// SSJ1
+	addClassLevel( "SSJ1", "AutoTrans1", 10.0, 1.5, 17000000, 1, 1.0, 
+					400, 100, bool:{ true, true }, 0.0, { 200, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 1.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// SSJ2
+	addClassLevel( "SSJ2", "AutoTrans2", 10.0, 1.5, 20000000, 1, 1.0, 
+					400, 100, bool:{ true, true }, 0.0, { 200, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 1.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )// 人物技能
+{
+	addClassItem( Client, "weapon_melee", true );
+	addClassItem( Client, "weapon_kiblast", false );
+}
+
+@ClassDamage( MsgID, dest, Client )
+{
+	if( getClientCLASS( Client ) != getCXbyName( "AutoTrans" ) ) return;
+
+	if( get_msg_arg_int( 1 ) > 50 ) return;
+
+	if( getClientLEVEL( Client ) == 0 ) @ClassInitiateTransformation ( Client, random_num( 1, 2 ), false );
+}
+
+
+public @ClassInitiateTransformation ( Client, Level, bool: Perfect )// 开始变身
+{
+	client_cmd( Client, "spk sound/krillin/scream.wav" );
+
+	AddFx( Client, "fxBlow" );
+	AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+
+	switch( Level )
+	{
+		case 1:
+		{
+			
+			setClientMODEL( Client, "AutoTrans1" );
+			setClientDATAc( Client, cliLevel, Level );
+		}
+		case 2:
+		{
+			
+			setClientMODEL( Client, "AutoTrans2" );
+			setClientDATAc( Client, cliLevel, Level );
+		}
+	}
+
+	/*--------------------
+
+	>> 闪电效果|Lightning FX
+	 setClientLEVELDATAv( Client, cxlLightning, { 2, 2, 2, 8 }, 4 );
+
+	>> 蓄气颜色|Powerup Colour
+	 setClientLEVELDATAv( Client, cxlPowerUp, { 255, 255, 0 }, 3 );
+
+	>> 暴气颜色|Aura Colour
+	 setClientLEVELDATAc( Client, cxlAuraSkin, 4 );
+
+	--------------------*/
+}
+
+public @ClassFinishTransformation ( Client, Level )// 变身完成
+{
+}
+
+public @ClassCancelTransformation ( Client, Level )// 变身取消
+{
+}
+
+PluginPreCache ()// 资源缓存
+{
+	precache_model( "models/player/AutoTrans/AutoTrans.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/player/AutoTrans1/AutoTrans1.mdl" );
+	precache_model( "models/player/AutoTrans2/AutoTrans2.mdl" );
+}

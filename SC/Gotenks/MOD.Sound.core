@@ -1,0 +1,86 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/kamehame.wav",
+		"",
+		"ecx.gotenks/s_4.wav",
+		"ecx.gotenks/s_4.wav",
+		"ecx.gotenks/s_4.wav"
+	},
+	{
+		"*/superghost.wav",
+		"",
+		"ecx.gotenks/wc_superghost.wav",
+		"ecx.gotenks/wc_superghost.wav",
+		"ecx.gotenks/wc_superghost.wav"
+	},
+	{
+		"*/wc_sgka.wav",
+		"",
+		"ecx.gotenks/wc_superghost.wav",
+		"ecx.gotenks/wc_superghost.wav",
+		"ecx.gotenks/wc_superghost.wav"
+	},
+	{
+		"*/ha.wav",
+		"",
+		"ecx.gotenks/p_pain4.wav",
+		"ecx.gotenks/p_pain4.wav",
+		"ecx.gotenks/p_pain4.wav"
+	},
+	{
+		"*/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav"
+
+	},
+	{
+		"*/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav"
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.gotenks/p_pain1.wav",
+		"ecx.gotenks/p_pain1.wav",
+		"ecx.gotenks/p_pain1.wav",
+		"ecx.gotenks/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.gotenks/p_pain2.wav",
+		"ecx.gotenks/p_pain2.wav",
+		"ecx.gotenks/p_pain2.wav",
+		"ecx.gotenks/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.gotenks/p_pain3.wav",
+		"ecx.gotenks/p_pain3.wav",
+		"ecx.gotenks/p_pain3.wav",
+		"ecx.gotenks/p_pain3.wav"
+	},
+
+	{
+		"*/pain4.wav",
+		"ecx.gotenks/p_pain4.wav",
+		"ecx.gotenks/p_pain4.wav",
+		"ecx.gotenks/p_pain4.wav",
+		"ecx.gotenks/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.gotenks/p_death.wav",
+		"ecx.gotenks/p_death.wav",
+		"ecx.gotenks/p_death.wav",
+		"ecx.gotenks/p_death.wav"
+	}
+};

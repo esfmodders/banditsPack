@@ -1,0 +1,239 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Piccolo";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"Goliat/BANDIT";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Piccolo", true, false, "Piccolo, Fused with Nail and Kami", "sound/ecx.piccolo/c_intro.wav" );
+
+	// Namekian
+	addClassLevel( "Namekian", "ecx.piccolo", 10.0, 1.5, 1500000, 1500000, 1.0, 
+					300, 110, bool:{ false, false }, 0.0, { 200, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_05.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Namekian
+	addClassLevel( "Super Namekian", "ecx.piccolo.2", 28.0, 1.5, 2000000, 1500000, 4.0, 
+					350, 140, bool:{ false, true }, 2.0, { 250, 100 }, { 1, 0, 0, 0, 0, 1, 1 }, 3.0, Float:{ 150.0, 20.0 } );
+	addClassEffect( "models/evolution/Auras/shape_05.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Complete Namekian
+	addClassLevel( "Complete Namekian", "ecx.piccolo.2", 33.0, 1.5, 5000000, 1500000, 4.0, 
+					400, 160, bool:{ false, true }, 3.0, { 300, 100 }, { 1, 0, 0, 1, 0, 2, 2 }, 4.0, Float:{ 200.0, 30.0 } );
+	addClassEffect( "models/evolution/Auras/shape_05.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Namekian
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_eyelaser" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_masenko" );
+			addClassItem( Client, "weapon_specialbeamcannon" );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		case 1: // Super Namekian
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_eyelaser" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_masenko" );
+			addClassItem( Client, "weapon_specialbeamcannon" );
+		}
+		case 2: // Complete Namekian
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_eyelaser" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_masenko" );
+			addClassItem( Client, "weapon_scattershot" );
+			addClassItem( Client, "weapon_specialbeamcannon" );
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.piccolo/ecx.piccolo.mdl" );
+	precache_model( "models/player/ecx.piccolo.2/ecx.piccolo.2.mdl" );
+	precache_model( "models/evolution/Auras/shape_05.mdl" );
+	precache_model( "models/evolution/nail.mdl" );
+	precache_model( "models/evo/kami.mdl" );
+	
+	precache_sound( "ecx.piccolo/kami.wav" );
+	precache_sound( "ecx.piccolo/nail.wav" );
+	precache_sound( "ecx.piccolo/done.wav" );
+
+
+}
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			
+				{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.piccolo/nail.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				for ( new Float:i=0.0; i<=28.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a", 1 );
+				AddFx( Client, "fxAvatar", "create", 2, 1.0 );
+				set_task( 0.0, "fxNail", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 6.0, "fxAvatar117", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 6.9, "fxAvatar118", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 7.0, "fxFusion", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 10.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 11.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 12.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 13.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 14.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 15.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 16.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 17.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 18.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 19.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 20.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 21.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 22.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 23.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 23.3, "fxBlow", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 23.3, "fxPowerup", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 23.3, "fxSprite", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 25.8, "fxDisable", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				}
+			case 2:
+			
+				{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.piccolo/kami.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				for ( new Float:i=0.0; i<=31.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a", 1 );
+				AddFx( Client, "fxAvatar", "create", 27, 1.0 );
+				set_task( 0.2, "fxkami", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 3.2, "fxFusion", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 16.0, "fxSprite", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 16.0, "fxSprite2", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 23.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 23.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 24.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 24.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 25.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 25.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 26.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 26.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 27.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 27.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 28.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 28.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 29.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 29.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 30.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 30.5, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 31.0, "fxSpriteRays", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 31.0, "fxDisable", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 31.0, "fxScreenShake", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 31.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				}
+			case 3:
+			
+				{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				
+				for ( new Float:i=0.0; i<=30.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a", 1 );
+				AddFx( Client, "fxAvatar", "create", 27, 0.8 );
+				set_task( 3.0, "fxScreenShake", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 3.0, "fxPowerWave", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 7.2, "fxAura", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 19.8, "fxPowerup2", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 19.8, "fxBlow", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 25.1, "fxSprite", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 27.0, "fxBlow", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 28.0, "fxBlow", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 29.0, "fxBlow", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				set_task( 30.0, "fxBlow", uniqueTaskID( Client, 100 ), CORE, 1, "a", 1 );
+				}
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxBlow" );
+	FX_off( Client );
+	remove_task( uniqueTaskID (Client, 100 ) );
+	
+	if( Level == 2)
+	{
+		emit_sound( Client, CHAN_ITEM, "ecx.piccolo/done.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	}
+	
+	
+	
+	
+	client_cmd( Client, "turbo" );
+}
+public @ClassCancelTransformation ( Client, Level )
+{
+	RemFx( Client, "fxAvatar", 0);
+
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}

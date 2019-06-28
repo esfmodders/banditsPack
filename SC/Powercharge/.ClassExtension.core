@@ -1,0 +1,97 @@
+#include <amxmodx>
+#include <esf>
+#include <fun> 
+
+
+#include <fakemeta> 
+
+
+#define PLUGIN "Powercharge"
+#define VERSION "1337"
+#define AUTHOR "BANDIT"
+
+const TASK_ID = 1324
+
+new g_powerup[33]
+
+public plugin_init()
+{
+    register_plugin(PLUGIN, VERSION, AUTHOR)
+    
+    // Hook client commands
+    register_clcmd("+powerup", "clcmd_powerup_start")
+    register_clcmd("-powerup", "clcmd_powerup_end")
+    
+    register_clcmd("turbo", "clcmd_turbo")
+}
+
+public clcmd_powerup_start(id)
+{
+    g_powerup[id] = 1
+}
+
+public clcmd_powerup_end(id)
+{
+    g_powerup[id] = 0
+    remove_task(id+TASK_ID) // Removemos el task si es que existe
+}
+
+
+public clcmd_turbo(id)
+{
+    if(g_powerup[id] == 1) // *1: Para prevenir que se creen múltiples task
+    {
+        g_powerup[id] = 2 // *1
+
+        // Un task repetitivo que llamara a la función publica "task_powerup()" cada 0.1 segundo
+        set_task(0.2,"blades",id);
+    }
+}
+    
+
+public blades(id)
+{
+	new Float: org[3]
+	pev( id, pev_origin, org ) // 获取烟花起始位置[] Get the Start Origin
+	new ent = engfunc( EngFunc_CreateNamedEntity,engfunc( EngFunc_AllocString,"info_target" ) )
+	engfunc( EngFunc_SetModel, ent, "sprites/w_jubeikame_s.spr" )// 设置SPR文件[] Set Sprite file
+	engfunc( EngFunc_SetSize, ent, {-1.0,-1.0,-1.0}, {1.0,1.0,1.0} )// 设置实体大小[] Set entity size
+               
+	set_pev( ent, pev_solid, SOLID_TRIGGER )// 设置固体类型[] Set solid type
+	set_pev( ent, pev_movetype, MOVETYPE_TOSS )// 设置移动方式[] Set move type
+	set_pev( ent, pev_rendermode, 5 )// 设置渲染方案[] Set render mode
+	set_pev( ent, pev_renderamt, 200.0 )// 设置透明度[] Alpha
+	set_pev( ent, pev_scale, 0.5 )// 缩放大小[] Scale value
+	set_pev( ent, pev_owner, id )// 设置实体的拥有者[] Set owner for the entity
+	set_pev( ent, pev_classname, "Fireworks" )// 设置实体类名[] Set classname
+	set_pev( ent, pev_origin, org )// 设置实体位置[] Set entity origin
+
+	new Float: ang[3], Float:vec[3]
+    /* 烟花向上的角度偏移量[] The offset of upward fireworks */
+	ang[0] = random_float( -90.0, -60.0 )
+	ang[1] = random_float( -180.0, 180.0 )
+
+	/* 设置烟花速率[] Set Velocity */
+	angle_vector( ang, 1, vec )
+	xs_vec_mul_scalar(vec, random_float( 1000.0, 3000.0), vec )
+	set_pev( ent, pev_velocity, vec )
+
+        /* 托尾特效[] Trail FX */
+	message_begin( MSG_BROADCAST,SVC_TEMPENTITY )
+	write_byte( TE_BEAMFOLLOW )
+	write_short( ent )
+	write_short( engfunc( EngFunc_ModelIndex,"sprites/w_jubeikame_t.spr" ) )
+	write_byte( 30 )// 持续时间[] life in 0.1's
+	write_byte( 30 )// 宽度[] line width in 0.1's
+	write_byte( 255 )// Red
+	write_byte( 255 )// Green
+	write_byte( 255 )// Blue
+	write_byte( 255 )// Brightness
+	message_end( )
+} 
+
+Plugin PreCache ()
+{
+	precache_model( "sprites/w_jubeikame_s.spr" );
+	precache_model( "sprites/w_jubeikame_t.spr" );
+}

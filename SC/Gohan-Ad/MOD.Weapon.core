@@ -1,0 +1,196 @@
+#define MOD_WEAPON_DBG 0
+
+// >> ARG_BYTE		int
+// >> ARG_CHAR		int
+// >> ARG_SHORT		int
+// >> ARG_LONG		int
+// >> ARG_ANGLE		float
+// >> ARG_COORD		float
+// >> ARG_STRING	string
+// >> ARG_ENTITY	int
+
+
+
+stock SPR_SHINE;		// Shine
+
+stock SPR_YELLOW_S;		// Yellow Beam Head
+stock SPR_YELLOW_T;		// Yellow Beam Trail
+
+stock SPR_BLUE_S;		// Blue Beam Head
+stock SPR_BLUE_T;		// Blue Beam Head
+
+stock SPR_KAME_S;		// Kamehameha Beam Head
+stock SPR_KAME_E;		// Kamehameha Beam End
+stock SPR_KAME_T;		// Kamehameha Beam Trail
+
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+
+	SPR_BLUE_S = precache_model( "sprites/w_gb_b_s.spr" );
+	SPR_BLUE_T = precache_model( "sprites/w_gb_b_t.spr" );
+
+	SPR_KAME_S = precache_model( "sprites/w_kamehameha_s.spr" );
+	SPR_KAME_E = precache_model( "sprites/w_kamehameha_e.spr" );
+	SPR_KAME_T = precache_model( "sprites/w_kamehameha_t.spr" );
+
+
+}
+
+
+public @BaseWeaponCreation ( Client, BaseWeapon, const Name[] )
+{
+
+
+	if ( equal( Name, "weapon_finalflash" ) )
+	{
+		setBeamChargeTime( BaseWeapon, 40 );
+		setBeamChargeKi( BaseWeapon, 20 );
+		//setBeamSpeed( BaseWeapon, 3000 );
+	}
+}
+
+
+public @WeaponAdjust ( Client, Weapon, const Class[] )
+{
+	/**
+	 0 - Blue
+	 1 - Green
+	 2 - Orange
+	 3 - Purple
+	 4 - Yellow
+	 5 - Red
+	 6 - White
+	 7 - None
+	**/
+
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) >= 1 )
+		setWeaponXPC( 4 );
+
+	else if ( equal( Class, "greenattack" ) )
+		setWeaponXPC( 0 );
+
+	else if ( equal( Class, "finalflash" ) )
+	{
+		setWeaponXPC( 0 );
+		// Super Kamehameha
+		setWeaponDMG( 20.0, 240.0, 0.04 );
+	}
+
+
+
+}
+
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	/**
+	 1 -  LONG - Client ???				- do not edit
+	 2 -  LONG - Weapon					- do not edit
+	 3 -  BYTE - Client ???				- do not edit
+	 4 - SHORT - Head Start A
+	 5 - SHORT - Head Start B
+	 6 - SHORT - Head End A
+	 7 - SHORT - Head End B
+	 8 - SHORT - Trail
+	 9 -  BYTE - Size
+	10 -  BYTE - Segement Length ???
+	11 - COORD - X						- do not edit
+	12 - COORD - Y						- do not edit
+	13 - COORD - Z						- do not edit
+	**/
+
+	if ( equal( Class, "greenattack" ) && getClientLEVEL(Client) >= 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_YELLOW_T );
+
+		//set_msg_arg_int( 9, ARG_BYTE, 12 );
+	}
+
+	else if ( equal( Class, "greenattack" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLUE_T );
+
+		//set_msg_arg_int( 9, ARG_BYTE, 12 );
+	}
+
+	else if ( equal( Class, "kamehameha" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+
+		//set_msg_arg_int( 9, ARG_BYTE, 15 );
+	}
+
+	else if ( equal( Class, "powerbeam" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_YELLOW_T );
+
+		//set_msg_arg_int( 9, ARG_BYTE, 15 );
+	}
+
+}
+
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{
+	/**
+	 1 -  LONG - Entity  - do not edit
+	 2 - SHORT - Head A
+	 3 - SHORT - Head B
+	 4 - SHORT - Size
+	 5 - SHORT - Trail A
+	 6 - SHORT - Trail B
+	 7 - COORD - X		- do not edit
+	 8 - COORD - Y		- do not edit
+	 9 - COORD - Z		- do not edit
+	**/
+
+	if ( equal( Class, "greenattack" ) && getClientLEVEL( Client ) > 0 )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+
+	else if ( equal( Class, "greenattack" ))
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_T );
+	}
+}
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	/**
+	 1 -   BYTE - Killer - do not edit
+	 2 -   BYTE - Client - do not edit
+	 3 - STRING - Weapon
+	**/
+
+	if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "blueattack" );
+	else if ( equal( Weapon, "greenattack" ) )
+		set_msg_arg_string( 3, "yellowattack" );
+
+}

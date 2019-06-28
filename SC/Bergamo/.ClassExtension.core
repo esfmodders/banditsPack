@@ -1,0 +1,340 @@
+/*
+** << Evolution Class Extension >>
+**
+**  Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+ 
+ 
+new const CX_Plugin[]   =   "CX.Bergamo";
+new const CX_Version[]  =   "1337";
+new const CX_Author[]   =   "BANDIT/C4";
+ 
+#define MOD_SOUND   1
+#define MOD_CHARGE  1
+#define MOD_WEAPON  1
+ 
+// << Implement CX Interface >>
+#include <xtension/class/main>
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+	register_message( get_user_msgid( "Health" ), "@ClassDamage" );
+	register_message( get_user_msgid( "PowerLevel" ), "@ClassPowerLevel" );
+	register_event( "DeathMsg", "@SomeoneDied",  "a" );
+	register_message( get_user_msgid( "DeathMsg" ), "@SomeoneDied" );
+}
+   
+ 
+
+ 
+public @ClassCreation ()
+{
+    createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+                "Bergamo", true, false, "The Breaker", "Bergamo/c_intro.wav" );
+ 
+    // Bergamo
+    addClassLevel( "The Breaker", "Bergamo", 20.0, 20.0, 4000000, 1000000000, 2.0,
+                    800, 200, bool:{ true, false }, 30.0, { 300, 200 }, { 1, 1, 1, 1, 0, 3, 4 }, 8.0, Float:{ 170.0, 60.0 } );
+    addClassEffect( "models/evolution/Auras/kaioken.mdl", Float:{ 0.0, 255.0, 20.0, 50.0 }, 5, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// Bergamo2
+    addClassLevel( "The Breaker2", "Bergamo", 20.0, 20.0, 4000000, 1000000000, 2.0,
+                    500, 200, bool:{ true, true }, 30.0, { 300, 200 }, { 1, 1, 1, 1, 0, 3, 4 }, 8.0, Float:{ 170.0, 60.0 } );
+    addClassEffect( "models/evolution/Auras/kaioken.mdl", Float:{ 0.0, 255.0, 20.0, 50.0 }, 5, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// Bergamo3
+    addClassLevel( "The Breaker3", "Bergamo", 20.0, 20.0, 4000000, 1000000000, 2.0,
+                    300, 200, bool:{ true, true }, 30.0, { 300, 200 }, { 1, 1, 1, 1, 0, 3, 4 }, 8.0, Float:{ 170.0, 60.0 } );
+    addClassEffect( "models/evolution/Auras/kaioken.mdl", Float:{ 0.0, 255.0, 20.0, 50.0 }, 5, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// Bergamo4
+    addClassLevel( "The Breaker4", "Bergamo", 20.0, 20.0, 4000000, 1000000000, 2.0,
+                    200, 200, bool:{ true, true }, 30.0, { 300, 200 }, { 1, 1, 1, 1, 0, 3, 4 }, 8.0, Float:{ 170.0, 60.0 } );
+    addClassEffect( "models/evolution/Auras/kaioken.mdl", Float:{ 0.0, 255.0, 20.0, 50.0 }, 5, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// Bergamo5
+    addClassLevel( "The Breaker5", "Bergamo", 20.0, 20.0, 4000000, 1000000000, 2.0,
+                    100, 200, bool:{ true, true }, 30.0, { 300, 200 }, { 1, 1, 1, 1, 0, 3, 4 }, 8.0, Float:{ 170.0, 60.0 } );
+    addClassEffect( "models/evolution/Auras/kaioken.mdl", Float:{ 0.0, 255.0, 20.0, 50.0 }, 5, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+   
+}
+ 
+
+ 
+// << Class Extension PreCache >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ 
+PluginPreCache ()
+{
+   
+    Class_Sound_PreCache ();
+   
+    precache_model( "models/player/Bergamo/Bergamo.mdl" );
+
+    precache_model( "models/evolution/Auras/kaioken.mdl" );
+    precache_model( "models/evolution/Auras/shape_06.mdl" );
+ 
+ 
+    precache_model( "models/evolution/Auras/shape_01.mdl" );
+}
+ 
+
+ 
+@ClassDamage( MsgID, dest, Client )
+{
+	if(getClientCLASS( Client ) != getCXbyName( "Bergamo" )) return;
+	if(get_msg_arg_int( 1 ) >= 190)
+	{  
+		AddFx( Client, "fxPowerup", 255, 0, 0 );
+		AddFx( Client, "fxFinalBlow2" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+		set_pev( Client, pev_scale, 1.000_000 );
+		@ClassInitiateTransformation ( Client, 1, false );
+		client_cmd( Client, "cam_idealdist 80" );
+		client_cmd( Client, "cam_zoffset 40" );
+	}
+	if(get_msg_arg_int( 1 ) <= 160)
+    {  
+		AddFx( Client, "fxPowerup", 255, 0, 0 );
+		AddFx( Client, "fxFinalBlow2" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+		@ClassInitiateTransformation ( Client, 2, false );
+		client_cmd( Client, "cam_idealdist 200" );
+		client_cmd( Client, "cam_zoffset 150" );
+    }
+	else if(get_msg_arg_int( 1 ) <= 110)
+    {  
+		AddFx( Client, "fxPowerup", 255, 0, 0 );
+		AddFx( Client, "fxFinalBlow2" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+		@ClassInitiateTransformation ( Client, 3, false );
+		client_cmd( Client, "cam_idealdist 400" );
+		client_cmd( Client, "cam_zoffset 200" );
+    }
+	else if(get_msg_arg_int( 1 ) <= 50)
+    {  
+		AddFx( Client, "fxPowerup", 255, 0, 0 );
+		AddFx( Client, "fxFinalBlow2" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+		@ClassInitiateTransformation ( Client, 4, false );
+		set_pdata_int( Client, 459,20 );
+		client_cmd( Client, "cam_idealdist 500" );
+		client_cmd( Client, "cam_zoffset 200" );
+    }
+	
+}
+
+new PreHealth[ 33 ];
+public @ClassWeaponUpdate ( Client, Level )// 人物技能
+{
+    switch ( Level )
+    {
+        case 0: // Bergamo
+        {
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_finalflash" );
+			addClassItem( Client, "weapon_sensu" );
+			set_pev( Client, pev_scale, 1.000_000 );
+			set_pdata_int( Client, 459,800 );
+        }
+		case 1: // Bergamo2
+        {
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_finalflash" );
+			addClassItem( Client, "weapon_sensu" );
+			set_pdata_int( Client, 459,500 );
+        }
+		case 2: // Bergamo3
+        {
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_finalflash" );
+			addClassItem( Client, "weapon_sensu" );
+			set_pdata_int( Client, 459,300 );
+			client_cmd( Client, "cam_idealdist 300" );
+        }
+		case 3: // Bergamo4
+        {
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_finalflash" );
+			addClassItem( Client, "weapon_sensu" );
+			set_pdata_int( Client, 459,200 );
+			client_cmd( Client, "cam_idealdist 400" );
+        }
+		case 4: // Bergamo5
+        {
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_finalflash" );
+			addClassItem( Client, "weapon_sensu" );
+			set_pdata_int( Client, 459,100 );
+			client_cmd( Client, "cam_idealdist 500" );
+
+        }
+    }
+
+    PreHealth[ Client ] = getClientHP( Client );
+}
+
+public client_PostThink( Client )
+{
+    if( getClientCLASS( Client ) != getCXbyName( "Bergamo" ) ) return;
+
+    if( PreHealth[ Client ] - getClientHP( Client ) >= 10 )
+    {
+		PreHealth[ Client ] = getClientHP( Client );
+		set_pev( Client, pev_scale, pev( Client, pev_scale ) + 1.100_000 );
+		AddFx( Client, "fxPowerup", 255, 0, 0 );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+    }
+
+}
+ 
+ 
+ 
+public @ClassInitiateTransformation ( Client, Level, bool: Perfect )// 开始变身
+{
+    
+ 
+    AddFx( Client, "fxPowerup", 255, 0, 0 );
+	
+	
+    switch( Level )
+    {
+        case 1:
+        {
+			setClientMODEL( Client, "Bergamo" );
+			setClientDATAc( Client, cliLevel, Level );   
+        }
+        case 2:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 3:
+        {    
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 4:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );	
+        }
+		case 5:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );				
+        }
+        case 6:
+        {    
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 7:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );	
+		}
+		case 8:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 9:
+        {    
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 10:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+		case 11:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 12:
+        {    
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+        case 13:
+        {
+            setClientMODEL( Client, "Bergamo" );
+            setClientDATAc( Client, cliLevel, Level );
+        }
+    }
+ 
+    /*--------------------
+ 
+    >> 闪电效果|Lightning FX
+     setClientLEVELDATAv( Client, cxlLightning, { 2, 2, 2, 8 }, 4 );
+ 
+    >> 蓄气颜色|Powerup Colour
+     setClientLEVELDATAv( Client, cxlPowerUp, { 255, 255, 0 }, 3 );
+ 
+    >> 暴气颜色|Aura Colour
+     setClientLEVELDATAc( Client, cxlAuraSkin, 4 );
+ 
+    --------------------*/
+}
+public @ClassFinishTransformation ( Client, Level )
+{
+    //setClientANIMATION(Client,-1);
+    
+ 
+    remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+
+ 
+public @ClassCancelTransformation ( Client, Level )
+{
+    //setClientANIMATION(Client,-1);
+    RemFx( Client, "fxAvatar", 0);
+ 
+    FX_off(Client);
+ 
+    remove_task( uniqueTaskID( Client, 100 ) );
+}
+public @SomeoneDied( MsgID, Dest, Client )
+{
+
+}
+
+
+public @ClassChange(Client, PreClass, PostClass )
+{
+	set_pev( Client, pev_scale, 1);
+	client_cmd( Client, "resetview" );	
+}
+

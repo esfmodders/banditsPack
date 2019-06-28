@@ -1,0 +1,50 @@
+#include <amxx/amxmodx>
+#include <fakemeta>
+#include <ipci/ascend>
+#include <ipci/Fxlib>
+#include <engine>
+#include <fun>
+
+
+#define MOD_SOUND 	0
+#define MOD_CHARGE 	0
+#define MOD_WEAPON	0
+
+
+#define PLUGIN "Teletest"
+#define VERSION "1.0"
+#define AUTHOR "BANDIT"
+
+PluginInit ()
+{
+    register_plugin(PLUGIN, VERSION, AUTHOR)
+    
+    register_clcmd("tele","teleport")
+}
+
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+#include <xs>
+
+public teleport (id)
+{
+	new vOldLocation[3], vNewLocation[3]
+
+	get_user_origin( id, vOldLocation );
+	get_user_origin( id, vNewLocation, 0 ); 
+
+	vOldLocation[2] += 25;
+	vNewLocation[0] += random_num( -400, 400 );		
+	vNewLocation[1] += random_num( -400, 400 );
+	vNewLocation[2] += random_num( 0, 100 ); 
+
+	set_user_origin( id, vNewLocation );
+
+}
+
+PluginPreCache ()
+{
+
+	
+}

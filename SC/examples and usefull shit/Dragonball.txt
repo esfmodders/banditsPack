@@ -1,0 +1,2401 @@
+new AuthentificationRevisionKey[64];
+new AuthentificationRevisionVal[64];
+new g_Dragonball[128];
+new bool:g_Stone;
+new Float:DragonballMinBox[3] =
+{
+    -1054867456, ...
+}
+new Float:DragonballMaxBox[3] =
+{
+    1092616192, ...
+}
+new DBMODELPATH[37] =
+{
+    109, 111, 100, 101, 108, 115, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 68, 114, 97, 103, 111, 110, 98, 97, 108, 108, 47, 100, 98, 37, 105, 46, 109, 100, 108, 0
+}
+new DBCLASS[15] =
+{
+    69, 67, 88, 95, 68, 114, 97, 103, 111, 110, 98, 97, 108, 108, 0
+}
+new DRAGONCLASS[11] =
+{
+    69, 67, 88, 95, 68, 114, 97, 103, 111, 110, 0
+}
+new Float:DBSpawnPoints[128][3];
+new g_SpawnCount;
+new bool:g_DragonballsSpawned;
+new g_HasDragonball[33];
+new bool:g_DragonSpawned;
+new bool:g_Glowing;
+new Float:g_UnStoneTime;
+new bool:g_InFadeOut;
+new g_WishList;
+new bool:g_InStone;
+new Float:g_SpawnTime;
+new Float:g_DragonHealth;
+new bool:g_DragonSpawning;
+new Float:g_LightClouds;
+new g_LightSky;
+new FxWBskyEnt;
+new FxMcloudEnt;
+new CVAR_FakeDragonballs;
+new CVAR_SpawnTime;
+new CVAR_DragonHealth;
+new CVAR_StoneTime;
+new IconDragonball;
+new g_MaxPlayers;
+new SNDGRANTWISH[21] =
+{
+    100, 114, 97, 103, 111, 110, 47, 103, 114, 97, 110, 116, 119, 105, 115, 104, 46, 119, 97, 118, 0
+}
+new SNDMAKEWISH[21] =
+{
+    100, 114, 97, 103, 111, 110, 47, 109, 97, 107, 101, 119, 105, 115, 104, 49, 46, 119, 97, 118, 0
+}
+new EYEMODEL[23] =
+{
+    115, 112, 114, 105, 116, 101, 115, 47, 115, 104, 101, 110, 115, 95, 101, 121, 101, 115, 46, 115, 112, 114, 0
+}
+new Dragon;
+new g_WishMenuPage[33];
+new g_Plugins[64][67];
+new g_WishCount;
+new bool:g_in@InitWishList;
+new fwd@CloseWishList;
+new fwd@InitWishList;
+new fwd@CanWish;
+new Float:g_DragonballGlowColor[3] =
+{
+    1132396544, 1132396544, 0
+}
+new bool:InSwoopDragonballs;
+new SwoopCounter = 10;
+new GlowTimer;
+new DragonballTrail;
+new DBGetDelay[33] =
+{
+    20, ...
+}
+new fwd@CanGetDragonball;
+new fwd@PlayerGotDragonball;
+new fwd@CanThrowDragonball;
+new Float:PreFrame10[33];
+new bool:g_in@AddSpawnPoint;
+new fwd@SpawnDragonballs;
+new fwd@AddDBSpawnPoints;
+new DragonTouchCore[22][];
+new g_WishKi[33][2];
+new Float:g_FadeOutCounter;
+new Float:g_FadeOutColor[3] =
+{
+    1132396544, ...
+}
+new fwd@CanCallDragon;
+new FXTime;
+new Lightning;
+new szWBskyModel[32] =
+{
+    109, 111, 100, 101, 108, 115, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 98, 108, 97, 99, 107, 95, 99, 117, 98, 101, 46, 109, 100, 108, 0
+}
+new szWMCloudsModel[33] =
+{
+    109, 111, 100, 101, 108, 115, 47, 101, 118, 111, 108, 117, 116, 105, 111, 110, 47, 99, 108, 111, 117, 100, 115, 112, 104, 101, 114, 101, 46, 109, 100, 108, 0
+}
+new FxLightningSpr;
+new BSPLightDark[13][] =
+{
+    "m",
+    "l",
+    "k",
+    "j",
+    "i",
+    "h",
+    "g",
+    "f",
+    "e",
+    "d",
+    "c",
+    "b",
+    "a"
+};
+new Float:ServerPreFrame10;
+
+Float:operator*(Float:,_:)(Float:oper1, oper2)
+{
+    return oper1 * float(oper2);
+}
+
+Float:operator/(_:,Float:)(oper1, Float:oper2)
+{
+    return float(oper1) / oper2;
+}
+
+Float:operator+(Float:,_:)(Float:oper1, oper2)
+{
+    return oper1 + float(oper2);
+}
+
+bool:operator>(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 < floatcmp(oper1, oper2);
+}
+
+bool:operator<(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 > floatcmp(oper1, oper2);
+}
+
+bool:operator<(Float:,_:)(Float:oper1, oper2)
+{
+    return 0 > floatcmp(oper1, float(oper2));
+}
+
+bool:operator<=(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 >= floatcmp(oper1, oper2);
+}
+
+
+access(id, level)
+{
+    if (level == 16777216)
+    {
+        return is_user_admin(id);
+    }
+    if (level)
+    {
+        return level & get_user_flags(id, 0);
+    }
+    return 1;
+}
+
+Float:fm_entity_range(ent1, ent2)
+{
+    new Float:origin1[3];
+    new Float:origin2[3];
+    pev(ent1, pev_origin, origin1);
+    pev(ent2, pev_origin, origin2);
+    return get_distance_f(origin1, origin2);
+}
+
+UTIL_IsInArray(Val, String:arr[], Count)
+{
+    new i = 0;
+    while (i < Count)
+    {
+        if (arr[i] == Val)
+        {
+            return i;
+        }
+        i++;
+    }
+    return -1;
+}
+
+MSGID(String:String[])
+{
+    return get_user_msgid(String);
+}
+
+public plugin_pause()
+{
+    unpause(0, "", "");
+    return 1;
+}
+
+initReVision(String:Auth[])
+{
+    formatex(AuthentificationRevisionKey, 63, ".%s.ReVision", Auth);
+    formatex(AuthentificationRevisionVal, 63, "%i %s - %s %s", 1954, "greenberet", "28.5.2007", "20:45:41");
+    register_cvar(AuthentificationRevisionKey, AuthentificationRevisionVal, 4, 0.00);
+    return 0;
+}
+
+Init_Global()
+{
+    new i = 0;
+    while (i < 7)
+    {
+        g_Dragonball[i] = 0;
+        i++;
+    }
+    new i = 0;
+    while (i < 128)
+    {
+        DBSpawnPoints[i][0][0][0] = 0;
+        DBSpawnPoints[i][0][0][1] = 0;
+        DBSpawnPoints[i][0][0][2] = 0;
+        i++;
+    }
+    new i = 0;
+    while (i < 33)
+    {
+        g_HasDragonball[i] = -1;
+        i++;
+    }
+    g_Stone = 0;
+    g_SpawnCount = 0;
+    g_DragonballsSpawned = 0;
+    g_DragonSpawned = 0;
+    g_Glowing = 0;
+    g_InFadeOut = 0;
+    new var1 = get_gametime();
+    g_UnStoneTime = var1;
+    g_SpawnTime = var1;
+    g_DragonHealth = 10000.00/*1176256512*/;
+    g_DragonSpawning = 0;
+    g_LightClouds = 0;
+    g_LightSky = 0;
+    g_MaxPlayers = get_maxplayers();
+    return 0;
+}
+
+Natives_WishSystem()
+{
+    register_native("addWish", "__addWish", 0);
+    register_native("GetWishList", "__GetWishList", 0);
+    register_native("ShowWishList", "__ShowWishList", 0);
+    register_native("CanWish", "__CanWish", 0);
+    return 0;
+}
+
+Init_WishSystem()
+{
+    register_menucmd(register_menuid("<< Choose your wish >>", 0), 1023, "WishMenuKeyPressed");
+    fwd@CloseWishList = CreateMultiForward("@CloseWishList", 0, 0);
+    fwd@InitWishList = CreateMultiForward("@InitWishList", 0, 0, 0);
+    fwd@CanWish = CreateMultiForward("@CanWish", 1, 0);
+    return 0;
+}
+
+Disconnect_WishSystem(Client)
+{
+    if (Client == g_WishList)
+    {
+        ShowWishList(Client, -1);
+    }
+    return 0;
+}
+
+public ShowWishList(Client, Position)
+{
+    
+    if (Position < 0 || g_InFadeOut || !g_DragonSpawned)
+    {
+        static ret;
+        ExecuteForward(fwd@CloseWishList, ret, Client);
+        return 0;
+    }
+    if (0 >= g_WishCount)
+    {
+        abort(10, "Could not display the wishlist. No wishes are defined");
+        return 0;
+    }
+    g_WishList = Client;
+    new MenuBody[512];
+    new iCurrKey = 0;
+    new iStart = Position * 8;
+    if (iStart >= g_WishCount)
+    {
+        g_WishMenuPage[Client] = 0;
+        Position = 0;
+        iStart = 0;
+    }
+    static iLen;
+    new var2;
+    if (g_WishCount)
+    {
+        var2 = 1;
+    }
+    else
+    {
+        var2 = 0;
+    }
+    iLen = format(MenuBody, 511, "<< Choose your wish >> %i/%i\n\n", Position + 1, var2 + g_WishCount / 8);
+    static iEnd;
+    iEnd = iStart + 8;
+    static iKeys;
+    iKeys = 640;
+    if (iEnd > g_WishCount)
+    {
+        iEnd = g_WishCount;
+    }
+    new i = iStart;
+    while (i < iEnd)
+    {
+        iCurrKey++;
+        iKeys = 1 << iCurrKey | iKeys;
+        iLen = format(MenuBody[iLen], 511 - iLen, "%d. << %s >>\n", iCurrKey, g_Plugins[i][0][0]) + iLen;
+        i++;
+    }
+    if (g_WishCount != iEnd)
+    {
+        new var3;
+        if (Position)
+        {
+            var3 = 22788;
+        }
+        else
+        {
+            var3 = 22808;
+        }
+        format(MenuBody[iLen], 511 - iLen, "\n9.   >>\n0. %s", var3);
+        iKeys = iKeys | 256;
+    }
+    else
+    {
+        new var4;
+        if (Position)
+        {
+            var4 = 22860;
+        }
+        else
+        {
+            var4 = 22880;
+        }
+        format(MenuBody[iLen], 511 - iLen, "\n0. %s", var4);
+    }
+    show_menu(Client, iKeys, MenuBody, -1, "");
+    return 1;
+}
+
+public WishMenuKeyPressed(Client, Key)
+{
+    
+    switch (Key)
+    {
+        case 8:
+        {
+            new var2 = g_WishMenuPage[Client];
+            var2++;
+            ShowWishList(Client, var2[0][0]);
+        }
+        case 9:
+        {
+            new var1 = g_WishMenuPage[Client];
+            var1--;
+            ShowWishList(Client, var1[0][0]);
+        }
+        default:
+        {
+            static Wish;
+            Wish = Key + g_WishMenuPage[Client][0][0] * 8;
+            ForceCall(g_Plugins[Wish][0][0][66], g_Plugins[Wish][0][0][33], "cc", Client, getClientWISHCOUNT(Client));
+            emit_sound(Dragon, CHAN_VOICE, SNDGRANTWISH, 1.00, 0.80, 0, 100);
+            static authid[32];
+            static name[32];
+            get_user_name(Client, name, 31);
+            get_user_authid(Client, authid, 31);
+            log_amx("\"%s<%d><%s><>\" wished for \"%s\"", name, get_user_userid(Client), authid, g_Plugins[Wish][0][0]);
+            static ret;
+            ExecuteForward(fwd@CloseWishList, ret, Client);
+            message_begin(MSG_BROADCAST, get_user_msgid("ScoreInfo"), 23348, 0);
+            write_byte(Client);
+            write_short(get_user_frags(Client));
+            write_short(get_pdata_int(Client, 604, 5));
+            write_short(get_pdata_int(Client, 457, 5));
+            write_short(10);
+            write_short(getClientTEAM(Client));
+            message_end();
+        }
+    }
+    return 1;
+}
+
+public __addWish(Plugin)
+{
+    static szWish[32];
+    static szHandler[32];
+    get_string(1, "", 31);
+    get_string(2, "", 31);
+    return addWish(szWish, szHandler, Plugin);
+}
+
+addWish(String:Wish[], String:Handler[], PluginID)
+{
+    if (g_WishCount >= 63)
+    {
+        abort(10, "Too much wishes are stored. Could not add wish \"%s\" with handle \"%s\" from plugin %i", Wish, Handler, PluginID);
+        return 0;
+    }
+    if (!g_in@InitWishList)
+    {
+        abort(10, "\"addWish\" called outside of function \"@InitWishList\".Could not add wish \"%s\" with handle \"%s\" from plugin %i", Wish, Handler, PluginID);
+        return 0;
+    }
+    g_Plugins[g_WishCount][0][0][66] = PluginID;
+    copy(g_Plugins[g_WishCount][0][0], 31, Wish);
+    copy(g_Plugins[g_WishCount][0][0][33], 31, Handler);
+    g_WishCount += 1;
+    return 1;
+}
+
+public __GetWishList()
+{
+    return GetWishList(get_param(1));
+}
+
+GetWishList(Client)
+{
+    g_WishCount = 0;
+    new id = 0;
+    while (id < 64)
+    {
+        arrayset(g_Plugins[id][0][0], 0, 31);
+        arrayset(g_Plugins[id][0][0][33], 0, 31);
+        g_Plugins[id][0][0][66] = -1;
+        id++;
+    }
+    g_in@InitWishList = 1;
+    static ret;
+    ExecuteForward(fwd@InitWishList, ret, Client, getClientWISHCOUNT(Client));
+    g_in@InitWishList = 0;
+    new szSortWishList[33];
+    get_user_info(Client, "ECX_SortWishList", szSortWishList, 32);
+    if (equal(szSortWishList, "1", 0))
+    {
+        SortWishList();
+    }
+    return 1;
+}
+
+public __ShowWishList()
+{
+    return ShowWishList(get_param(1), get_param(2));
+}
+
+public PreThink_WishList(Client)
+{
+    if (!CanWish(Client))
+    {
+        return 0;
+    }
+    GetWishList(Client);
+    g_WishMenuPage[Client] = 0;
+    ShowWishList(Client, 0);
+    return 0;
+}
+
+public __CanWish()
+{
+    return CanWish(get_param(1));
+}
+
+CanWish(Client)
+{
+    if (!pev_valid(Client))
+    {
+        return 0;
+    }
+    if (!is_user_connected(Client))
+    {
+        return 0;
+    }
+    if (!is_user_alive(Client))
+    {
+        return 0;
+    }
+    if (!pev(Client, pev_button) & 32)
+    {
+        return 0;
+    }
+    if (!g_DragonSpawned)
+    {
+        return 0;
+    }
+    if (g_DragonSpawning)
+    {
+        return 0;
+    }
+    if (g_Stone)
+    {
+        return 0;
+    }
+    if (g_InFadeOut)
+    {
+        return 0;
+    }
+    if (!g_DragonballsSpawned)
+    {
+        return 0;
+    }
+    if (g_WishList)
+    {
+        return 0;
+    }
+    if (getClientFROZEN(Client))
+    {
+        return 0;
+    }
+    static Float:DragonOrigin[3];
+    CalcDragonOrigin(DragonOrigin);
+    static Float:ClientOrigin[3];
+    pev(Client, pev_origin, ClientOrigin);
+    if (vector_distance(DragonOrigin, ClientOrigin) > 50.00/*1112014848*/)
+    {
+        return 0;
+    }
+    static ret;
+    ExecuteForward(fwd@CanWish, ret, Client);
+    if (0 < ret)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+CloseWishList_WishList()
+{
+    g_WishList = 0;
+    return 0;
+}
+
+public @ClassChange(Client, PreClass, PostClass)
+{
+    if (PreClass == -1)
+    {
+        return 0;
+    }
+    setClientWISHCOUNT(Client, 0);
+    return 0;
+}
+
+SortWishList()
+{
+    Wishlist_Qsort(0, g_WishCount + -1);
+    return 0;
+}
+
+Wishlist_Qsort(lo, hi)
+{
+    new i = lo;
+    new j = hi;
+    new temp[32];
+    copy(temp, 31, g_Plugins[hi + lo / 2][0][0]);
+    while (i <= j)
+    {
+        while (0 > strcmp(g_Plugins[i][0][0], temp, 0))
+        {
+            i++;
+        }
+        while (0 < strcmp(g_Plugins[j][0][0], temp, 0))
+        {
+            j--;
+        }
+        if (i <= j)
+        {
+            Wishlist_ExChange(i, j);
+            i++;
+            j--;
+        }
+    }
+    if (lo < j)
+    {
+        Wishlist_Qsort(lo, j);
+    }
+    if (i < hi)
+    {
+        Wishlist_Qsort(i, hi);
+    }
+    return 0;
+}
+
+Wishlist_ExChange(a, b)
+{
+    static temp[32];
+    copy("", 31, g_Plugins[a][0][0]);
+    copy(g_Plugins[a][0][0], 31, g_Plugins[b][0][0]);
+    copy(g_Plugins[b][0][0], 31, "");
+    copy("", 31, g_Plugins[a][0][0][33]);
+    copy(g_Plugins[a][0][0][33], 31, g_Plugins[b][0][0][33]);
+    copy(g_Plugins[b][0][0][33], 31, "");
+    new var1 = g_Plugins[a][0][0][66];
+    var1 = g_Plugins[b][0][0][66] ^ var1;
+    new var2 = g_Plugins[b][0][0][66];
+    var2 = g_Plugins[a][0][0][66] ^ var2;
+    new var3 = g_Plugins[a][0][0][66];
+    var3 = g_Plugins[b][0][0][66] ^ var3;
+    return 0;
+}
+
+Init_Dragonball()
+{
+    register_clcmd(".Dragon", "cmdDragon", -1, "", -1);
+    InSwoopDragonballs = 0;
+    SwoopCounter = 10;
+    GlowTimer = 0;
+    register_forward(FM_PlayerPreThink, "PlayerPreThinkDragonball", 0);
+    fwd@CanGetDragonball = CreateMultiForward("@CanGetDragonball", 1, 0, 0);
+    fwd@PlayerGotDragonball = CreateMultiForward("@PlayerGotDragonball", 0, 0, 0);
+    fwd@CanThrowDragonball = CreateMultiForward("@CanThrowDragonball", 1, 0);
+    return 0;
+}
+
+Natives_Dragonball()
+{
+    register_native("CreateDragonball", "__CreateDragonball", 0);
+    register_native("RemoveDragonball", "__RemoveDragonball", 0);
+    register_native("AddDBSpawnPoint", "__AddDBSpawnPoint", 0);
+    register_native("CanGetDragonball", "__CanGetDragonball", 0);
+    register_native("IsDragonball", "__IsDragonball", 0);
+    register_native("GetDragonball", "__GetDragonball", 0);
+    register_native("FindDragonball", "__FindDragonball", 0);
+    register_native("ThrowDragonball", "__ThrowDragonball", 0);
+    register_native("CanThrowDragonball", "__CanThrowDragonball", 0);
+    register_native("ThrowDragonballFast", "__ThrowDragonballFast", 0);
+    return 0;
+}
+
+public cmdDragon(Client)
+{
+    if (!isDeveloper(Client) || g_DragonSpawning || InSwoopDragonballs)
+    {
+        return 1;
+    }
+    if (!g_DragonballsSpawned)
+    {
+        new i = 0;
+        while (i < 7)
+        {
+            CreateDragonball(i);
+            i++;
+        }
+        g_DragonballsSpawned = 1;
+    }
+    new i = 1;
+    while (i <= g_MaxPlayers)
+    {
+        ThrowDragonballFast(i, 1000);
+        i++;
+    }
+    static Float:ClientOrigin[7][3];
+    new i = 0;
+    while (i < 7)
+    {
+        pev(Client, pev_origin, ClientOrigin[i][0][0]);
+        new var2 = ClientOrigin[i][0][0];
+        var2[0] = var2[0] + random_num(-15, 15);
+        ClientOrigin[i][0][0][1] += random_num(-15, 15);
+        set_pev(g_Dragonball[i][0][0], pev_origin, ClientOrigin[i][0][0]);
+        set_pev(g_Dragonball[i][0][0], pev_movetype, 6);
+        i++;
+    }
+    SetStone(false);
+    return 1;
+}
+
+RemoveDragonball(DBID)
+{
+    if (0 > DBID)
+    {
+        return 0;
+    }
+    new id;
+    new var3 = g_Dragonball;
+    id = var3[DBID][0][0];
+    new var1;
+    new var2;
+    if (pev_valid(id))
+    {
+        new var4 = g_MaxPlayers;
+        if (id > var4)
+        {
+            var2 = 1;
+
+/ * ERROR! Unable to cast object of type 'Lysis.DSentinel' to type 'Lysis.DReturn'. * /
+ function "RemoveDragonball"
+RemoveDragonball(DBID)
+
+CreateDragonball(DBID)
+{
+    
+    if (DBID < 0 || DBID >= 128)
+    {
+        return -1;
+    }
+    if (pev_valid(g_Dragonball[DBID][0][0]))
+    {
+        RemoveDragonball(DBID);
+    }
+    g_Dragonball[DBID] = engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "info_target"));
+    if (!pev_valid(g_Dragonball[DBID][0][0]))
+    {
+        return -1;
+    }
+    if (g_Stone || DBID > 6)
+    {
+        var3 = 1;
+    }
+    else
+    {
+        var3 = 0;
+    }
+    set_pev(g_Dragonball[DBID][0][0], pev_skin, var3);
+    set_pev(g_Dragonball[DBID][0][0], pev_movetype, 6);
+    set_pev(g_Dragonball[DBID][0][0], pev_iuser4, DBID);
+    static model[64];
+    if (DBID <= 6)
+    {
+        format(model, 63, DBMODELPATH, DBID + 1);
+    }
+    else
+    {
+        format(model, 63, DBMODELPATH, 7);
+    }
+    engfunc(EngFunc_SetModel, g_Dragonball[DBID], model);
+    set_pev(g_Dragonball[DBID][0][0], pev_classname, DBCLASS);
+    msgDBEnt(DBID, g_Dragonball[DBID][0][0]);
+    return g_Dragonball[DBID][0][0];
+}
+
+public __CreateDragonball(Plugin)
+{
+    return CreateDragonball(get_param(1));
+}
+
+public __RemoveDragonball(Plugin)
+{
+    return RemoveDragonball(get_param(1));
+}
+
+msgDBEnt(DBID, entid)
+{
+    
+    message_begin(MSG_BROADCAST, MSGID("DBEnt"), 23348, 0);
+    write_byte(DBID);
+    new var1;
+    if (g_Stone)
+    {
+        var1 = 0;
+    }
+    else
+    {
+        var1 = entid;
+    }
+    write_short(var1);
+    message_end();
+    return 0;
+}
+
+Precache_Dragonball()
+{
+    new model[64];
+    new i = 1;
+    while (i < 8)
+    {
+        format(model, 63, DBMODELPATH, i);
+        precache_model(model);
+        i++;
+    }
+    precache_sound("weapons/db_glowing.wav");
+    precache_sound("weapons/db_flying.wav");
+    DragonballTrail = precache_model("sprites/auratrail.spr");
+    return 0;
+}
+
+public __CanGetDragonball(Plugin)
+{
+    return CanGetDragonball(get_param(1), get_param(2));
+}
+
+CanGetDragonball(DBID, id)
+{
+    if (!pev_valid(id))
+    {
+        return 0;
+    }
+    if (!is_user_connected(id))
+    {
+        return 0;
+    }
+    if (!is_user_alive(id))
+    {
+        return 0;
+    }
+    if (getClientPROTECT(id))
+    {
+        return 0;
+    }
+    if (getClientGOD(id))
+    {
+        return 0;
+    }
+    if (getClientMELEE(id))
+    {
+        return 0;
+    }
+    if (getClientTHROWAWAY(id))
+    {
+        return 0;
+    }
+    if (getClientTHROW(id))
+    {
+        return 0;
+    }
+    if (getClientMELEEPUSHBACK(id))
+    {
+        return 0;
+    }
+    if (getClientPREPUNCH(id))
+    {
+        return 0;
+    }
+    if (is_user_bot(id))
+    {
+        return 0;
+    }
+    if (g_InFadeOut)
+    {
+        return 0;
+    }
+    if (g_WishList)
+    {
+        return 0;
+    }
+    if (g_Glowing)
+    {
+        return 0;
+    }
+    if (g_DragonSpawned)
+    {
+        return 0;
+    }
+    if (g_DragonSpawning)
+    {
+        return 0;
+    }
+    if (InSwoopDragonballs)
+    {
+        return 0;
+    }
+    if (g_HasDragonball[id][0][0] != -1)
+    {
+        return 0;
+    }
+    if (getClientFROZEN(id))
+    {
+        return 0;
+    }
+    if (DBGetDelay[id][0][0])
+    {
+        return 0;
+    }
+    if (getClientDATAc(id, ""))
+    {
+        return 0;
+    }
+    static ret;
+    ExecuteForward(fwd@CanGetDragonball, ret, DBID, id);
+    if (0 < ret)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+public __IsDragonball(Plugin)
+{
+    return IsDragonball(get_param(1), get_param(2));
+}
+
+IsDragonball(EntID, FakeAsError)
+{
+    
+    if (!pev_valid(EntID))
+    {
+        return -1;
+    }
+    static Classname[64];
+    pev(EntID, pev_classname, Classname, 63);
+    if (!equal("", "ECX_Dragonball", 0))
+    {
+        return -1;
+    }
+    if (FakeAsError && DBID > 6)
+    {
+        return -1;
+    }
+    return DBID;
+}
+
+public __GetDragonball(Plugin)
+{
+    return GetDragonball(get_param(1), get_param(2));
+}
+
+GetDragonball(DBID, Client)
+{
+    if (CanGetDragonball(DBID, Client))
+    {
+        RemoveDragonball(DBID);
+        g_HasDragonball[Client] = DBID;
+        msgDBEnt(DBID, Client);
+        giveClientICON(Client, IconDragonball, "");
+        setClientICON(Client, IconDragonball);
+        static ret;
+        ExecuteForward(fwd@PlayerGotDragonball, ret, DBID, Client);
+    }
+    return 0;
+}
+
+public __FindDragonball()
+{
+    return FindDragonball(get_param(1), get_param(2));
+}
+
+FindDragonball(DBID, bool:notHolding)
+{
+    if (DBID == IsDragonball(g_Dragonball[DBID][0][0], 0))
+    {
+        return g_Dragonball[DBID][0][0];
+    }
+    if (!notHolding)
+    {
+        new i = 1;
+        while (i <= g_MaxPlayers)
+        {
+            if (DBID == g_HasDragonball[i][0][0])
+            {
+                return i;
+            }
+            i++;
+        }
+    }
+    return 0;
+}
+
+public cmdThrowDragonball(id)
+{
+    if (!CanThrowDragonball(id))
+    {
+        return 1;
+    }
+    ThrowDragonballFast(id, 1000);
+    return 1;
+}
+
+public __ThrowDragonball(Plugin)
+{
+    cmdThrowDragonball(get_param(1));
+    return 0;
+}
+
+CanThrowDragonball(id)
+{
+    if (!pev_valid(id))
+    {
+        return 0;
+    }
+    if (!is_user_connected(id))
+    {
+        return 0;
+    }
+    if (g_HasDragonball[id][0][0] == -1)
+    {
+        return 0;
+    }
+    if (getClientFROZEN(id))
+    {
+        return 0;
+    }
+    static ret;
+    ExecuteForward(fwd@CanThrowDragonball, ret, id);
+    if (0 < ret)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+public __CanThrowDragonball()
+{
+    return CanThrowDragonball(get_param(1));
+}
+
+public __ThrowDragonballFast(Plugin)
+{
+    return ThrowDragonballFast(get_param(1), get_param(2));
+}
+
+ThrowDragonballFast(Client, Vel)
+{
+    if (!pev_valid(Client))
+    {
+        return 0;
+    }
+    static EntID;
+    EntID = CreateDragonball(g_HasDragonball[Client][0][0]);
+    if (!pev_valid(EntID))
+    {
+        return 0;
+    }
+    static Float:ClientOrigin[3];
+    pev(Client, pev_origin, ClientOrigin);
+    set_pev(EntID, pev_origin, ClientOrigin);
+    static Float:Velocity[3];
+    velocity_by_aim(Client, Vel, Velocity);
+    set_pev(EntID, pev_velocity, Velocity);
+    g_HasDragonball[Client] = -1;
+    DBGetDelay[Client] = 20;
+    removeClientICON(Client, IconDragonball);
+    setClientICON(Client, "");
+    setClientICON(Client, "");
+    return 1;
+}
+
+PreThink_Dragonball(Client)
+{
+    new var2 = DBGetDelay[Client][0][0];
+    new var1;
+    if (0 < var2)
+    {
+        new var3 = DBGetDelay;
+        var3[Client]--;
+        var1 = var3;
+    }
+    else
+    {
+        var1 = var2;
+    }
+    return 0;
+}
+
+ServerFrame_Dragonball()
+{
+    
+    if (InSwoopDragonballs && g_DragonballsSpawned)
+    {
+        SwoopCounter += -1;
+        if (!SwoopCounter)
+        {
+            emit_sound(g_Dragonball[0][0], CHAN_VOICE, "weapons/db_flying.wav", 1.00, 0.80, 0, 100);
+            new Float:Velocity[3];
+            Velocity[0] = 27696;
+            new i = 0;
+            while (i < 7)
+            {
+                set_pev(g_Dragonball[i][0][0], pev_movetype, 5);
+                set_pev(g_Dragonball[i][0][0], pev_velocity, Velocity);
+                i++;
+            }
+        }
+        if (SwoopCounter == -5)
+        {
+            new Float:vecOrigin[3];
+            pev(g_Dragonball[0][0], pev_origin, vecOrigin);
+            new i = 0;
+            while (i < 7)
+            {
+                set_pev(g_Dragonball[i][0][0], pev_origin, vecOrigin);
+                message_begin(MSG_BROADCAST, SVC_TEMPENTITY, 23348, 0);
+                write_byte(22);
+                write_short(g_Dragonball[i][0][0]);
+                write_short(DragonballTrail);
+                write_byte(9999);
+                write_byte(2);
+                write_byte(255);
+                write_byte(255);
+                write_byte(255);
+                write_byte(50);
+                message_end();
+                i++;
+            }
+            new Float:Velocity_0[3];
+            Velocity_0[0] = 27708;
+            new Float:Velocity_1[3];
+            Velocity_1[0] = 27720;
+            new Float:Velocity_2[3];
+            Velocity_2[0] = 27732;
+            new Float:Velocity_3[3];
+            Velocity_3[0] = 27744;
+            new Float:Velocity_4[3];
+            Velocity_4[0] = 27756;
+            new Float:Velocity_5[3];
+            Velocity_5[0] = 27768;
+            new Float:Velocity_6[3];
+            Velocity_6[0] = 27780;
+            set_pev(g_Dragonball[0][0], pev_velocity, Velocity_0);
+            set_pev(g_Dragonball[1][0], pev_velocity, Velocity_1);
+            set_pev(g_Dragonball[2][0], pev_velocity, Velocity_2);
+            set_pev(g_Dragonball[3][0], pev_velocity, Velocity_3);
+            set_pev(g_Dragonball[4][0], pev_velocity, Velocity_4);
+            set_pev(g_Dragonball[5][0], pev_velocity, Velocity_5);
+            set_pev(g_Dragonball[6][0], pev_velocity, Velocity_6);
+        }
+        if (SwoopCounter <= -20)
+        {
+            new i = 1;
+            while (global_get(glb_maxClients) >= i)
+            {
+                g_HasDragonball[i] = -1;
+                i++;
+            }
+            new i = 0;
+            while (i < g_SpawnCount)
+            {
+                RemoveDragonball(i);
+                i++;
+            }
+            g_DragonballsSpawned = 0;
+            g_SpawnTime = get_pcvar_float(CVAR_SpawnTime) + get_gametime();
+            InSwoopDragonballs = 0;
+            KillDragonFX();
+        }
+    }
+    if (!g_Stone && g_DragonballsSpawned)
+    {
+        new i = 0;
+        while (i < 41)
+        {
+            if (DBEnt1 <= g_MaxPlayers || DBEnt2 <= g_MaxPlayers || fm_entity_range(DBEnt1, DBEnt2) > 50.00/*1112014848*/)
+            {
+                return SetDBGlow(false);
+            }
+            i++;
+        }
+        SetDBGlow(true);
+    }
+    return 0;
+}
+
+SetDBGlow(bool:Enable)
+{
+    
+    static DBEnt;
+    if (Enable != g_Glowing)
+    {
+        new i = 0;
+        while (i < 7)
+        {
+            static Float:Color[3] =
+            {
+                1132396544, ...
+            }
+            DBEnt = FindDragonball(i, true);
+            if (DBEnt <= g_MaxPlayers)
+            {
+                return 0;
+            }
+            if (!Enable)
+            {
+                set_pev(DBEnt, pev_renderfx, 0);
+                set_pev(DBEnt, pev_rendercolor, Color);
+                set_pev(DBEnt, pev_rendermode, 0);
+                set_pev(DBEnt, pev_renderamt, 255.00/*1132396544*/);
+                g_Glowing = 0;
+                emit_sound(g_Dragonball[0][0], CHAN_VOICE, "weapons/db_glowing.wav", 0.00, 0.80, 0, 100);
+                i++;
+            }
+            else
+            {
+                if (g_Stone)
+                {
+                    return 0;
+                }
+                set_pev(DBEnt, pev_renderfx, 2);
+                set_pev(DBEnt, pev_rendercolor, g_DragonballGlowColor);
+                set_pev(DBEnt, pev_rendermode, 5);
+                set_pev(DBEnt, pev_renderamt, 160.00/*1126170624*/);
+                g_Glowing = 1;
+                i++;
+            }
+            i++;
+        }
+    }
+    if (Enable)
+    {
+        if (!GlowTimer)
+        {
+            emit_sound(g_Dragonball[0][0], CHAN_VOICE, "weapons/db_glowing.wav", 1.00, 0.80, 0, 100);
+        }
+        GlowTimer = GlowTimer + 1;
+        if (GlowTimer > 450)
+        {
+            GlowTimer = 0;
+        }
+    }
+    return 0;
+}
+
+SwoopDragonballs()
+{
+    InSwoopDragonballs = 1;
+    SwoopCounter = 10;
+    return 0;
+}
+
+public @ClientDeath(Client)
+{
+    ThrowDragonballFast(Client, 1000);
+    return 0;
+}
+
+public @LevelChange(Client)
+{
+    ThrowDragonballFast(Client, 1000);
+    return 0;
+}
+
+Disconnect_Dragonball(Client)
+{
+    ThrowDragonballFast(Client, 1000);
+    return 0;
+}
+
+public @AscendInitiated()
+{
+    static order[2] =
+    {
+        7, 1
+    }
+    IconDragonball = createCustomICON("c_weapon_dragonball", order);
+    addIconHOOK("Icon_Hook");
+    return 0;
+}
+
+public Icon_Hook(Client, Icon, PreIcon)
+{
+    if (IconDragonball == PreIcon)
+    {
+        ThrowDragonballFast(Client, 1000);
+    }
+    return 0;
+}
+
+public PlayerPreThinkDragonball(Client)
+{
+    
+    if (!pev_valid(Client))
+    {
+        return 0;
+    }
+    static Float:CurrentFrame;
+    CurrentFrame = get_gametime();
+    if (CurrentFrame - PreFrame10[Client][0][0] < 1.00 / 10.00)
+    {
+        return 0;
+    }
+    if (IconDragonball != getClientICON(Client))
+    {
+        return 0;
+    }
+    if (pev(Client, pev_button) & 1 || getClientDATAc(Client, ""))
+    {
+        ThrowDragonballFast(Client, 1000);
+    }
+    else
+    {
+        if (pev(Client, pev_button) & 2048)
+        {
+            ThrowDragonballFast(Client, 200);
+        }
+    }
+    PreFrame10[Client] = CurrentFrame;
+    return 0;
+}
+
+Init_SpawnDragonball()
+{
+    g_in@AddSpawnPoint = 0;
+    register_clcmd(".Spawn", "cmdSpawn", 64, "Respawn the dragonballs", -1);
+    CVAR_FakeDragonballs = register_cvar(".Dragonball.FakeDragonballs", "2", 0, 0.00);
+    CVAR_SpawnTime = register_cvar(".Dragonball.SpawnTime", "10.0", 0, 0.00);
+    fwd@SpawnDragonballs = CreateMultiForward("@SpawnDragonballs", 1);
+    fwd@AddDBSpawnPoints = CreateMultiForward("@AddDBSpawnPoints", 0);
+    return 0;
+}
+
+Natives_SpawnDragonball()
+{
+    register_native("AddDBSpawnPoint", "__AddDBSpawnPoint", 0);
+    register_native("SpawnDragonballs", "__SpawnDragonballs", 0);
+    return 0;
+}
+
+public cmdSpawn(Client)
+{
+    if (!access(Client, 64))
+    {
+        return 1;
+    }
+    SpawnDragonballs();
+    return 1;
+}
+
+public __SpawnDragonballs()
+{
+    return SpawnDragonballs();
+}
+
+SpawnDragonballs()
+{
+    
+    if (g_DragonballsSpawned)
+    {
+        return 0;
+    }
+    if (g_DragonSpawned)
+    {
+        return 0;
+    }
+    if (!GetDBSpawnPoints())
+    {
+        return 0;
+    }
+    static ret;
+    ExecuteForward(fwd@SpawnDragonballs, ret);
+    if (0 < ret)
+    {
+        return 0;
+    }
+    new i = 1;
+    while (global_get(glb_maxClients) >= i)
+    {
+        g_HasDragonball[i] = -1;
+        i++;
+    }
+    static FakeCount;
+    FakeCount = get_pcvar_num(CVAR_FakeDragonballs);
+    if (FakeCount > 120)
+    {
+        FakeCount = 120;
+    }
+    static rCore[128];
+    new count = FakeCount + 7;
+    new i = 0;
+    while (i < count)
+    {
+        rCore[i] = -1;
+        i++;
+    }
+    new SpawnCount = 0;
+    new i = 0;
+    while (i < count && i < g_SpawnCount)
+    {
+        SpawnCount++;
+        new rInt = 0;
+        do {
+            rInt = random_num(0, g_SpawnCount + -1);
+        } while (UTIL_IsInArray(rInt, rCore, i) != -1);
+        rCore[i] = rInt;
+        i++;
+    }
+    g_Stone = 1;
+    if (SpawnCount < 7)
+    {
+        return 0;
+    }
+    if (SpawnCount > 128)
+    {
+        SpawnCount = 128;
+    }
+    new i = 0;
+    while (i < SpawnCount)
+    {
+        CreateDragonball(i);
+        set_pev(g_Dragonball[i][0][0], pev_origin, DBSpawnPoints[rCore[i][0][0]][0][0]);
+        i++;
+    }
+    g_DragonballsSpawned = 1;
+    g_UnStoneTime = get_pcvar_float(CVAR_StoneTime) + get_gametime();
+    g_InStone = 1;
+    g_SpawnCount = SpawnCount;
+    return 1;
+}
+
+GetDBSpawnPoints()
+{
+    
+    new i = 0;
+    while (i < 128)
+    {
+        DBSpawnPoints[i][0][0][0] = 0;
+        DBSpawnPoints[i][0][0][1] = 0;
+        DBSpawnPoints[i][0][0][2] = 0;
+        i++;
+    }
+    g_SpawnCount = 0;
+    g_in@AddSpawnPoint = 1;
+    static ret;
+    ExecuteForward(fwd@AddDBSpawnPoints, ret);
+    g_in@AddSpawnPoint = 0;
+    new DragonballSpawn = 0;
+    new var1 = engfunc(EngFunc_FindEntityByString, 0, "classname", "item_dragonball");
+    DragonballSpawn = var1;
+    while (var1)
+    {
+        if (g_SpawnCount > 127)
+        {
+            if (g_SpawnCount < 7)
+            {
+                return 0;
+            }
+            return 1;
+        }
+        else
+        {
+            pev(DragonballSpawn, pev_origin, DBSpawnPoints[g_SpawnCount][0][0]);
+            g_SpawnCount += 1;
+        }
+        if (g_SpawnCount < 7)
+        {
+            return 0;
+        }
+        return 1;
+    }
+    if (g_SpawnCount < 7)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+public __AddDBSpawnPoint(Plugin)
+{
+    static Float:Point[3];
+    get_array_f(1, Point, 3);
+    return AddDBSpawnPoint(Point);
+}
+
+AddDBSpawnPoint(Float:Point[3])
+{
+    
+    if (g_SpawnCount > 126 || !g_in@AddSpawnPoint)
+    {
+        return -1;
+    }
+    DBSpawnPoints[g_SpawnCount][0][0][0] = Point[0];
+    DBSpawnPoints[g_SpawnCount][0][0][1] = Point[1];
+    DBSpawnPoints[g_SpawnCount][0][0][2] = Point[2];
+    g_SpawnCount += 1;
+    return 1;
+}
+
+public @AddDBSpawnPoints()
+{
+    static Float:DBPoints[128][3];
+    static count;
+    count = GetMapSpawnPoints(DBPoints);
+    new i = 0;
+    while (i < count)
+    {
+        AddDBSpawnPoint(DBPoints[i][0][0]);
+        i++;
+    }
+    return 0;
+}
+
+PutInServer_SpawnDragonball(id)
+{
+    
+    g_HasDragonball[id] = -1;
+    if (!g_Stone)
+    {
+        new i = 0;
+        while (i < 7)
+        {
+            msgDBEnt(i, FindDragonball(i, false));
+            i++;
+        }
+    }
+    else
+    {
+        new i = 0;
+        while (i < 7)
+        {
+            msgDBEnt(i, 0);
+            i++;
+        }
+    }
+    return 0;
+}
+
+ServerFrame_SpawnDragonball()
+{
+    
+    if (!g_DragonballsSpawned && g_SpawnTime <= get_gametime())
+    {
+        SpawnDragonballs();
+    }
+    return 0;
+}
+
+GetMapSpawnPoints(Float:DBPoints[128][3])
+{
+    
+    if (equali("", "esf_cell_games", 0) || equali("", "esf_cell_games_night", 0))
+    {
+        new var3 = DBPoints;
+        var3[0][var3] = 2665.00/*1160155136*/;
+        new var4 = DBPoints;
+        var4[0][var4][1] = 2866.00/*1160978432*/;
+        new var5 = DBPoints;
+        var5[0][var5][2] = 669.00/*1143422976*/;
+        DBPoints[1] = 636.00/*1142882304*/;
+
+Init_Touch()
+{
+    register_forward(FM_Touch, "MainTouch", 0);
+    return 0;
+}
+
+public MainTouch(pToucher, pTouched)
+{
+    
+    if (!pev_valid(pToucher) || !pev_valid(pTouched))
+    {
+        return 0;
+    }
+    if (equali("", "player", 0) && equali("", "ECX_Dragonball", 0))
+    {
+        return PlayerTouchDragonball(pToucher, pTouched);
+    }
+    if (equali("", "ECX_Dragonball", 0) && equali("", "player", 0))
+    {
+        return DragonballTouchPlayer(pToucher, pTouched);
+    }
+    return 0;
+}
+
+DragonballTouchPlayer(pDragonball, pPlayer)
+{
+    if (pev_valid(pDragonball))
+    {
+        if (pev_valid(pPlayer))
+        {
+            new DBID = IsDragonball(pDragonball, 0);
+            if (DBID != -1)
+            {
+                GetDragonball(DBID, pPlayer);
+            }
+        }
+    }
+    return 0;
+}
+
+PlayerTouchDragonball(pPlayer, pDragonball)
+{
+    if (pev_valid(pDragonball))
+    {
+        if (pev_valid(pPlayer))
+        {
+            new DBID = IsDragonball(pDragonball, 0);
+            if (DBID != -1)
+            {
+                GetDragonball(DBID, pPlayer);
+            }
+        }
+    }
+    return 0;
+}
+
+Natives_Stone()
+{
+    register_native("SetStone", "__SetStone", 0);
+    register_native("GetStone", "__GetStone", 0);
+    return 0;
+}
+
+Init_Stone()
+{
+    CVAR_StoneTime = register_cvar(".Dragonball.StoneTime", "30.0", 0, 0.00);
+    g_InStone = 0;
+    return 0;
+}
+
+public __SetStone(Plugin)
+{
+    new var1;
+    if (get_param(1))
+    {
+        var1 = 1;
+    }
+    else
+    {
+        var1 = 0;
+    }
+
+/ * ERROR! Unable to cast object of type 'Lysis.DSentinel' to type 'Lysis.DReturn'. * /
+ function "__SetStone"
+public __SetStone(Plugin)
+
+SetStone(bool:Stone)
+{
+    
+    static Ent;
+    if (g_Stone == Stone)
+    {
+        return 0;
+    }
+    g_Stone = Stone;
+    if (Stone)
+    {
+        new i = 0;
+        while (i < 7)
+        {
+            Ent = FindDragonball(i, false);
+            msgDBEnt(i, 0);
+            if (global_get(glb_maxClients) < Ent)
+            {
+                set_pev(Ent, pev_skin, 1);
+                i++;
+            }
+            i++;
+        }
+    }
+    else
+    {
+        new i = 0;
+        while (i < 7)
+        {
+            Ent = FindDragonball(i, false);
+            msgDBEnt(i, Ent);
+            if (global_get(glb_maxClients) < Ent)
+            {
+                set_pev(Ent, pev_skin, 0);
+                i++;
+            }
+            i++;
+        }
+    }
+    return 0;
+}
+
+public __GetStone(Plugin)
+{
+    return g_Stone;
+}
+
+ServerFrame_Stone()
+{
+    
+    if (g_DragonHealth <= 0.00)
+    {
+        SetStone(true);
+        return 0;
+    }
+    if (g_Stone && g_DragonballsSpawned && g_InStone)
+    {
+        if (g_UnStoneTime <= get_gametime())
+        {
+            SetStone(false);
+        }
+    }
+    return 0;
+}
+
+Init_Wish()
+{
+    return 0;
+}
+
+public @InitWishList(id, level)
+{
+    
+    if (level > 0 && getGameMODE())
+    {
+        addWish("Team Strength", "Wish_TeamStrength", Plugin);
+    }
+    addWish("Statsupgrade", "Wish_Statsupgrade", Plugin);
+    addWish("Wishlevel", "Wish_WishLevel", Plugin);
+    addWish("Unlimited KI", "Wish_KI", Plugin);
+    return 0;
+}
+
+public Wish_Strength(id, level)
+{
+    static PL;
+    PL = level * 500000 + 1000000;
+    static Float:mult;
+    mult = float(getClientPL(id)) / float(getClientADPL(id));
+    setClientPL(id, PL + getClientPL(id));
+    setClientADPL(id, floatround(PL / mult, floatround_round) + getClientADPL(id));
+    return 0;
+}
+
+public Wish_TeamStrength(id, level)
+{
+    
+    new PL = 0;
+    PL = level * 250000;
+    new Team = 0;
+    Team = getClientTEAM(id);
+    new i = 1;
+    while (i <= g_MaxPlayers)
+    {
+        if (!pev_valid(i) || !is_user_connected(i))
+        {
+        }
+        else
+        {
+            if (Team != getClientTEAM(i))
+            {
+            }
+            else
+            {
+                static Float:mult;
+                mult = float(getClientPL(id)) / float(getClientADPL(id));
+                setClientPL(id, PL + getClientPL(id));
+                setClientADPL(id, floatround(PL / mult, floatround_round) + getClientADPL(id));
+            }
+        }
+        i++;
+    }
+    return 0;
+}
+
+public Wish_Statsupgrade(id, level)
+{
+    new death = 0;
+    new Float:frags = 0;
+    death = getClientDEATHS(id);
+    pev(id, pev_frags, frags);
+    set_pev(id, pev_frags, frags + death);
+    setClientDEATHS(id, death / 2);
+    return 0;
+}
+
+public Wish_WishLevel(id, level)
+{
+    setClientWISHCOUNT(id, level + 1);
+    return 0;
+}
+
+public Wish_Random(Client, level)
+{
+    new Wish = 0;
+    Wish = random_num(0, g_WishCount);
+    ForceCall(g_Plugins[Wish][0][0][66], g_Plugins[Wish][0][0][33], "cc", Client, getClientWISHCOUNT(Client));
+    client_print(Client, print_chat, "Random wish selected \"%s\"", g_Plugins[Wish][0][0]);
+    return 0;
+}
+
+public Wish_KI(Client, level)
+{
+    g_WishKi[Client][0][0][0] = 1;
+    g_WishKi[Client][0][0][1] = get_gametime() + 15.00 + 5.00/*1084227584*/ * level;
+    return 0;
+}
+
+PreThink_Wish(Client)
+{
+    
+    static Float:CurrTime;
+    CurrTime = get_gametime();
+    if (g_WishKi[Client][0][0][1] < CurrTime)
+    {
+        g_WishKi[Client][0][0][0] = 0;
+    }
+    if (g_WishKi[Client][0][0][0])
+    {
+        setClientKI(Client, 1000.00/*1148846080*/);
+    }
+    return 0;
+}
+
+Natives_Dragon()
+{
+    register_native("CreateDragon", "__CreateDragon", 0);
+    register_native("CanCallDragon", "__CanCallDragon", 0);
+    return 0;
+}
+
+Init_Dragon()
+{
+    CVAR_DragonHealth = register_cvar(".Dragonball.DragonHealth", "10000", 0, 0.00);
+    Dragon = 0;
+    g_FadeOutCounter = 255.00/*1132396544*/;
+    fwd@CanCallDragon = CreateMultiForward("@CanCallDragon", 1, 0);
+    return 0;
+}
+
+Precache_Dragon()
+{
+    precache_model("models/evolution/Dragonball/Dragon.mdl");
+    precache_model(EYEMODEL);
+    precache_sound(SNDMAKEWISH);
+    precache_sound(SNDGRANTWISH);
+    return 0;
+}
+
+public __CreateDragon()
+{
+    return CreateDragon();
+}
+
+CreateDragon()
+{
+    Dragon = engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "env_model"));
+    if (!Dragon)
+    {
+        return 0;
+    }
+    set_pev(Dragon, pev_classname, DRAGONCLASS);
+    engfunc(EngFunc_SetModel, Dragon, "models/evolution/Dragonball/Dragon.mdl");
+    set_pev(Dragon, pev_solid, 1);
+    set_pev(Dragon, pev_movetype, 5);
+    static Float:DragonOrigin[3];
+    CalcDragonOrigin(DragonOrigin);
+    set_pev(Dragon, pev_origin, DragonOrigin);
+    g_DragonHealth = get_pcvar_float(CVAR_DragonHealth);
+    g_DragonSpawned = 1;
+    g_DragonSpawning = 0;
+    g_InFadeOut = 0;
+    emit_sound(Dragon, CHAN_VOICE, SNDMAKEWISH, 1.00, 0.80, 0, 100);
+    return 1;
+}
+
+RemoveDragon()
+{
+    g_InFadeOut = 0;
+    engfunc(EngFunc_RemoveEntity, Dragon);
+    SetStone(true);
+    SetDBGlow(false);
+    SwoopDragonballs();
+    g_DragonSpawned = 0;
+    Dragon = 0;
+    return 0;
+}
+
+public __CanCallDragon()
+{
+    return CanCallDragon(get_param(1));
+}
+
+CanCallDragon(Client)
+{
+    if (!pev_valid(Client))
+    {
+        return 0;
+    }
+    if (!is_user_connected(Client))
+    {
+        return 0;
+    }
+    if (!is_user_alive(Client))
+    {
+        return 0;
+    }
+    if (!pev(Client, pev_button) & 32)
+    {
+        return 0;
+    }
+    if (g_DragonSpawning)
+    {
+        return 0;
+    }
+    if (g_DragonSpawned)
+    {
+        return 0;
+    }
+    if (g_Stone)
+    {
+        return 0;
+    }
+    if (!g_Glowing)
+    {
+        return 0;
+    }
+    if (!g_DragonballsSpawned)
+    {
+        return 0;
+    }
+    if (getClientFROZEN(Client))
+    {
+        return 0;
+    }
+    static Float:DragonOrigin[3];
+    CalcDragonOrigin(DragonOrigin);
+    static Float:ClientOrigin[3];
+    pev(Client, pev_origin, ClientOrigin);
+    if (vector_distance(DragonOrigin, ClientOrigin) > 100.00/*1120403456*/)
+    {
+        return 0;
+    }
+    static ret;
+    ExecuteForward(fwd@CanCallDragon, ret, Client);
+    if (0 < ret)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+PreThink_Dragon(Client)
+{
+    if (!CanCallDragon(Client))
+    {
+        return 0;
+    }
+    InitDragonFX();
+    return 0;
+}
+
+CalcDragonOrigin(Float:Origin[3])
+{
+    Origin[2] = 0;
+    Origin[1] = 0;
+    Origin[0] = 0;
+    static Float:Dragonball[3];
+    new i = 0;
+    while (i < 7)
+    {
+        pev(FindDragonball(i, false), pev_origin, Dragonball);
+        new j = 0;
+        while (j < 3)
+        {
+            Origin[j] += Dragonball[j][0][0];
+            j++;
+        }
+        i++;
+    }
+    new var1 = Origin;
+    var1[0] = var1[0] / 7.00;
+    Origin[1] /= 7.00;
+    Origin[2] /= 7.00;
+    return 1;
+}
+
+UnsummonDragon()
+{
+    g_InFadeOut = 1;
+    g_FadeOutCounter = 255.00/*1132396544*/;
+    return 0;
+}
+
+ServerFrame_Dragon()
+{
+    
+    if (g_InFadeOut)
+    {
+        if (pev_valid(Dragon))
+        {
+            set_pev(Dragon, pev_renderfx, 0);
+            set_pev(Dragon, pev_rendercolor, g_FadeOutColor);
+            set_pev(Dragon, pev_rendermode, 4);
+            set_pev(Dragon, pev_renderamt, g_FadeOutCounter);
+            if (g_FadeOutCounter <= 0.00)
+            {
+                RemoveDragon();
+                g_FadeOutCounter = 255.00/*1132396544*/;
+            }
+            g_FadeOutCounter = g_FadeOutCounter - 7.50;
+        }
+        else
+        {
+            g_InFadeOut = 0;
+        }
+    }
+    else
+    {
+        if (g_DragonSpawned && pev_valid(Dragon))
+        {
+            static Float:Vector[3];
+            pev(Dragon, pev_origin, Vector);
+            message_begin(MSG_BROADCAST, SVC_TEMPENTITY, 23348, 0);
+            write_byte(27);
+            write_coord(floatround(Vector[0][0], floatround_round));
+            write_coord(floatround(Vector[1][0], floatround_round));
+            write_coord(floatround(Vector[2][0], floatround_round));
+            write_byte(20);
+            write_byte(200);
+            write_byte(200);
+            write_byte(0);
+            write_byte(6);
+            write_byte(10);
+            message_end();
+        }
+    }
+    return 0;
+}
+
+CloseWishList_Dragon()
+{
+    UnsummonDragon();
+    return 0;
+}
+
+PutInServer_DragonFX(Client)
+{
+    
+    if (pev_valid(Client) && pev_valid(Dragon) && Dragon)
+    {
+        setBSPLightDark(g_LightSky);
+    }
+    return 0;
+}
+
+setBSPLightDark(Num)
+{
+    engfunc(EngFunc_LightStyle, 0, BSPLightDark[floatround(Num / 255.00 / 13.00, floatround_round)][0][0]);
+    return 0;
+}
+
+FxWBsky(size, renderamt, Float:speed, Float:xcord, Float:ycord, Float:zcord)
+{
+    FxWBskyEnt = engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "env_model"));
+    set_pev(FxWBskyEnt, pev_classname, "FxWMcloudsEnt");
+    engfunc(EngFunc_SetModel, FxWBskyEnt, szWBskyModel);
+    set_pev(FxWBskyEnt, pev_scale, float(size / 10));
+    set_pev(FxWBskyEnt, pev_renderfx, 0);
+    set_pev(FxWBskyEnt, pev_rendermode, 4);
+    set_pev(FxWBskyEnt, pev_renderamt, float(renderamt));
+    set_pev(FxWBskyEnt, pev_framerate, speed / 10.00);
+    dllfunc(DLLFunc_Spawn, FxWBskyEnt);
+    new Float:EntOrigin[3];
+    EntOrigin[0] = EntOrigin[0] + xcord;
+    EntOrigin[1] += ycord;
+    EntOrigin[2] += zcord;
+    set_pev(FxWBskyEnt, pev_origin, EntOrigin);
+    setBSPLightDark(renderamt);
+    return 0;
+}
+
+FxWMclouds(size, renderamt, Float:speed, Float:xcord, Float:ycord, Float:zcord)
+{
+    FxMcloudEnt = engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "env_model"));
+    set_pev(FxMcloudEnt, pev_classname, "FxWMcloudsEnt");
+    engfunc(EngFunc_SetModel, FxMcloudEnt, szWMCloudsModel);
+    set_pev(FxMcloudEnt, pev_scale, float(size / 10));
+    set_pev(FxMcloudEnt, pev_renderfx, 0);
+    set_pev(FxMcloudEnt, pev_rendermode, 5);
+    set_pev(FxMcloudEnt, pev_renderamt, float(renderamt));
+    set_pev(FxMcloudEnt, pev_framerate, speed / 10.00);
+    dllfunc(DLLFunc_Spawn, FxMcloudEnt);
+    new Float:EntOrigin[3];
+    EntOrigin[0] = EntOrigin[0] + xcord;
+    EntOrigin[1] += ycord;
+    EntOrigin[2] += zcord;
+    set_pev(FxMcloudEnt, pev_origin, EntOrigin);
+    return 0;
+}
+
+
+/ * ERROR! Unrecognized opcode: neg * /
+ function "FxWLightning"
+public FxWLightning(String:FxTask[])
+
+Natives_DragonFX()
+{
+    register_native("InitDragonFX", "__InitDragonFX", 0);
+    register_native("KillDragonFX", "__KillDragonFX", 0);
+    return 0;
+}
+
+Init_DragonFX()
+{
+    FXTime = 200;
+    return 0;
+}
+
+Precache_DragonFX()
+{
+    Lightning = precache_model("sprites/finalflashtrail.spr");
+    precache_model(szWBskyModel);
+    precache_model(szWMCloudsModel);
+    FxLightningSpr = precache_model("sprites/lgtning.spr");
+    return 0;
+}
+
+public __InitDragonFX()
+{
+    return InitDragonFX();
+}
+
+public __KillDragonFX()
+{
+    return KillDragonFX();
+}
+
+InitDragonFX()
+{
+    g_DragonSpawning = 1;
+    FxWBsky(100, 0, 0.00, 0.00, 0.00, 0.00);
+    FxWMclouds(220, 0, 10.00, 0.00, 0.00, 0.00);
+    static FxTask[8];
+    FxTask[1] = 5;
+    FxTask[2] = 2500;
+    FxTask[3] = 4000;
+    FxTask[4] = 8000;
+    FxTask[5] = 30;
+    FxTask[6] = 100;
+    FxTask[7] = 0;
+    set_task(1.00, "FxWLightning", 14346234, "", 10, "b", 0);
+    FXTime = 200;
+    g_LightClouds = 0;
+    g_LightSky = 0;
+    return 1;
+}
+
+KillDragonFX()
+{
+    engfunc(EngFunc_LightStyle, 0, "m");
+    if (FxMcloudEnt)
+    {
+        engfunc(EngFunc_RemoveEntity, FxMcloudEnt);
+        FxMcloudEnt = 0;
+    }
+    if (FxWBskyEnt)
+    {
+        engfunc(EngFunc_RemoveEntity, FxWBskyEnt);
+        FxWBskyEnt = 0;
+    }
+    remove_task(14346234, 0);
+    g_DragonSpawning = 0;
+    FXTime = 200;
+    return 1;
+}
+
+ServerFrame_DragonFX()
+{
+    if (!g_DragonSpawning)
+    {
+        return 0;
+    }
+    if (!FXTime)
+    {
+        DragonLights();
+    }
+    if (FXTime == 10)
+    {
+        DragonLightning();
+    }
+    if (!FXTime)
+    {
+        CreateDragon();
+    }
+    FXTime += -1;
+    return 0;
+}
+
+DragonLightning()
+{
+    if (pev_valid(FxWBskyEnt))
+    {
+        set_pev(FxWBskyEnt, pev_renderamt, 200.00/*1128792064*/);
+    }
+    if (pev_valid(FxMcloudEnt))
+    {
+        set_pev(FxMcloudEnt, pev_renderamt, 100.00/*1120403456*/);
+    }
+    static cord[3];
+    static Float:origin[3];
+    CalcDragonOrigin(origin);
+    new i = 0;
+    while (i < 3)
+    {
+        cord[i] = floatround(origin[i][0][0], floatround_round);
+        i++;
+    }
+    message_begin(MSG_BROADCAST, SVC_TEMPENTITY, 23348, 0);
+    write_byte(0);
+    write_coord(cord[0][0] - 10);
+    write_coord(cord[1][0] + 10);
+    write_coord(cord[2][0]);
+    write_coord(cord[0][0] - 3000);
+    write_coord(cord[1][0] + 3000);
+    write_coord(cord[2][0] + 20000);
+    write_short(Lightning);
+    write_byte(1);
+    write_byte(5);
+    write_byte(10);
+    write_byte(100);
+    write_byte(150);
+    write_byte(255);
+    write_byte(255);
+    write_byte(255);
+    write_byte(200);
+    write_byte(200);
+    message_end();
+    message_begin(MSG_BROADCAST, SVC_TEMPENTITY, 23348, 0);
+    write_byte(0);
+    write_coord(cord[0][0] - 10);
+    write_coord(cord[1][0] + 10);
+    write_coord(cord[2][0]);
+    write_coord(cord[0][0] + 3000);
+    write_coord(cord[1][0] - 3000);
+    write_coord(cord[2][0] + 20000);
+    write_short(Lightning);
+    write_byte(1);
+    write_byte(5);
+    write_byte(10);
+    write_byte(100);
+    write_byte(150);
+    write_byte(255);
+    write_byte(255);
+    write_byte(255);
+    write_byte(200);
+    write_byte(200);
+    message_end();
+    message_begin(MSG_BROADCAST, SVC_TEMPENTITY, 23348, 0);
+    write_byte(0);
+    write_coord(cord[0][0] - 10);
+    write_coord(cord[1][0] + 10);
+    write_coord(cord[2][0]);
+    write_coord(cord[0][0] - 3000);
+    write_coord(cord[1][0] - 3000);
+    write_coord(cord[2][0] + 20000);
+    write_short(Lightning);
+    write_byte(1);
+    write_byte(5);
+    write_byte(10);
+    write_byte(100);
+    write_byte(150);
+    write_byte(255);
+    write_byte(255);
+    write_byte(255);
+    write_byte(200);
+    write_byte(200);
+    message_end();
+    message_begin(MSG_BROADCAST, SVC_TEMPENTITY, 23348, 0);
+    write_byte(0);
+    write_coord(cord[0][0] - 10);
+    write_coord(cord[1][0] + 10);
+    write_coord(cord[2][0]);
+    write_coord(cord[0][0] + 3000);
+    write_coord(cord[1][0] + 3000);
+    write_coord(cord[2][0] + 20000);
+    write_short(Lightning);
+    write_byte(1);
+    write_byte(5);
+    write_byte(10);
+    write_byte(100);
+    write_byte(150);
+    write_byte(255);
+    write_byte(255);
+    write_byte(255);
+    write_byte(200);
+    write_byte(200);
+    message_end();
+    return 1;
+}
+
+DragonLights()
+{
+    remove_task(14346234, 0);
+    if (pev_valid(FxWBskyEnt))
+    {
+        set_pev(FxWBskyEnt, pev_renderamt, float(g_LightSky));
+    }
+    setBSPLightDark(g_LightSky);
+    if (pev_valid(FxMcloudEnt))
+    {
+        set_pev(FxMcloudEnt, pev_renderamt, g_LightClouds);
+    }
+    static FxTask[8];
+    FxTask[1] = 5;
+    FxTask[2] = 2500;
+    FxTask[3] = 4000;
+    FxTask[4] = 8000;
+    FxTask[5] = 30;
+    FxTask[6] = 100;
+    FxTask[7] = g_LightSky;
+    set_task(1.00, "FxWLightning", 14346234, "", 10, "b", 0);
+    if (g_LightSky < 220)
+    {
+        g_LightSky = g_LightSky + 11;
+    }
+    if (g_LightClouds < 0.00)
+    {
+        g_LightClouds = g_LightClouds + 4.55;
+    }
+    return 1;
+}
+
+public plugin_natives()
+{
+    register_library("EvolutionDragonball");
+    Natives_WishSystem();
+    Natives_Dragonball();
+    Natives_SpawnDragonball();
+    Natives_Stone();
+    Natives_Dragon();
+    Natives_DragonFX();
+    return 0;
+}
+
+public plugin_init()
+{
+    register_plugin("CORE.Dragonball", "3.0", "core | Greenberet");
+    register_forward(FM_PlayerPreThink, "ClientPreThink", 0);
+    initReVision("CORE.Dragonball");
+    Init_Global();
+    Init_WishSystem();
+    Init_Dragonball();
+    Init_SpawnDragonball();
+    Init_Touch();
+    Init_Stone();
+    Init_Wish();
+    Init_Dragon();
+    Init_DragonFX();
+    return 0;
+}
+
+public plugin_precache()
+{
+    Precache_Dragonball();
+    Precache_Dragon();
+    Precache_DragonFX();
+    return 0;
+}
+
+public client_putinserver(id)
+{
+    if (getGameMODE() == 2)
+    {
+        return 0;
+    }
+    PutInServer_SpawnDragonball(id);
+    PutInServer_DragonFX(id);
+    return 0;
+}
+
+public client_disconnect(id)
+{
+    Disconnect_Dragonball(id);
+    Disconnect_WishSystem(id);
+    return 0;
+}
+
+public server_frame()
+{
+    if (getGameMODE() == 2)
+    {
+        return 0;
+    }
+    static Float:CurrentFrame;
+    CurrentFrame = get_gametime();
+    if (CurrentFrame - ServerPreFrame10 < 1.00 / 10.00)
+    {
+        return 0;
+    }
+    ServerFrame_Dragonball();
+    ServerFrame_Stone();
+    ServerFrame_Dragon();
+    ServerFrame_SpawnDragonball();
+    ServerFrame_DragonFX();
+    ServerPreFrame10 = CurrentFrame;
+    return 0;
+}
+
+public ClientPreThink(id)
+{
+    if (getGameMODE() == 2)
+    {
+        return 0;
+    }
+    PreThink_Dragon(id);
+    PreThink_WishList(id);
+    PreThink_Dragonball(id);
+    PreThink_Wish(id);
+    return 0;
+}
+
+public @CloseWishList(Client)
+{
+    CloseWishList_WishList();
+    CloseWishList_Dragon();
+    return 0;
+}
+

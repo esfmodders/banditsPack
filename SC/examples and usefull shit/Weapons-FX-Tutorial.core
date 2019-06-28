@@ -1,0 +1,96 @@
+#include <amxmodx>
+#include <xtension/special>
+#include <fun>
+#include <fakemeta>
+
+#include <ipci/Core>
+#include <ipci/Ascend>
+
+#include <ipci/Core>
+#include <ipci/Ascend>
+#include <ipci/fxlib>
+
+new bool:IsCorrectWeapon[33],bool:WasCharging[33]; // 2 bool para saber si es el arma correcta y si esta cargando, la segunda sirve para que no se repitan los efectos
+new bool:__ClassCharacter[32];
+
+
+public plugin_init()
+{
+   register_plugin("Weapons-FX-For-Starters", "1.0", "XSlayer");    
+   register_event("CurWeapon", "@CurrentWeapon", "be", "1=1");  // Current weapon, evento que identifica el arma...
+   register_forward(FM_CmdStart, "@CommandStart", ._post = 0);  // Forward para activar los efectos...
+}
+public plugin_precache()
+{
+        
+}
+public @ClientReSpawn(Client, bool:Valid) // Forward para obtener el personaje correcto ( Para que los efectos no sean los mismos en todos )
+{
+	if(is_user_alive(Client) && Valid && !is_user_bot( Client ))	
+	{
+		static __intVec_cxName[33];
+		getClassDATAv(getClientCLASS(Client), cxName, __intVec_cxName);
+		
+		
+		__ClassCharacter[Client] = (equal(__intVec_cxName, "Tu-Personaje") ? true : false); // Donde dice "Tu Personaje" Colocas el Nombre del AMXX osea el nombre del personaje dentro del esf en Seleccionador dePersonajes
+	}
+}
+public @CurrentWeapon(Client)	
+{
+   static Weapon; Weapon = get_user_weapon(Client); 
+    
+   IsCorrectWeapon[Client] = ((Weapon == 16) ? true : false); // Asignas el Masenko como Arma Correcta, puedes hacer mas variables para diferentes Weapons
+}
+public @WeaponsFX( Client ) // Public donde cargan los efectos
+{
+    if(getClientATKCHARGE(Client) && !WasCharging[Client] && IsCorrectWeapon[Client] && __ClassCharacter[Client]) // Si estacargando y labool no esta activada( Si esta activada quiere decir que esta cargando,esto sirve para que nose repitan ), y es el arma correcta)
+    { 
+        new CORE[ 1 ];
+        CORE[ 0 ] = Client;  
+ 
+        WasCharging[Client] = true;  // Activas el bool, y aparecen los efectos..
+
+        set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a", 1 ); // Efectos... 
+    }
+    else if(!getClientATKCHARGE(Client) && WasCharging[Client] && IsCorrectWeapon[Client] && __ClassCharacter[Client]) // Desactivando effectos,no esta en carga...
+    {
+        WasCharging[Client] = false; // se desactiva el bool para poder cargar los efectos, y que aparezcan denuevo cuando lo carges...
+ 
+        remove_task( Client );
+        remove_task( uniqueTaskID( Client, 100 ) );
+
+
+    }
+}
+public fxBlow( CORE[] )// Efectos mas abajo puedes hacer todo...Esto es un plugin.
+{       
+       AddFx( CORE[0], "fxBlow" );
+}
+
+
+ // Lista de Weapons Numeros°
+
+/**
+generic beam = 4
+gallit gun = 5
+kamehameha = 6
+destruction disc = 7
+frieza disc = 10
+
+special beam canon = 11
+spiritbomb = 12
+bigbang = 13
+finalflash = 15
+masenko = 16
+deathball = 17
+burning attack = 18
+scatter beam = 19
+scattershot = 21
+powerbeam = 22
+mouthblast = 23
+finishing buster = 24
+sensu = 25
+renzoku = 30
+kame torpedo = 31
+telekinesis = 32
+**/

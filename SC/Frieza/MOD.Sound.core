@@ -1,0 +1,58 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"frieza/p_pain1.wav",
+		"frieza/p_pain1.wav",
+		"frieza/p_pain1.wav",
+		"frieza/p_pain1.wav",
+		"frieza/p_pain1.wav",
+		"frieza/p_pain1.wav",
+		"frieza/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"frieza/p_pain2.wav",
+		"frieza/p_pain2.wav",
+		"frieza/p_pain2.wav",
+		"frieza/p_pain2.wav",
+		"frieza/p_pain2.wav",
+		"frieza/p_pain2.wav",
+		"frieza/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"frieza/p_pain3.wav",
+		"frieza/p_pain3.wav",
+		"frieza/p_pain3.wav",
+		"frieza/p_pain3.wav",
+		"frieza/p_pain3.wav",
+		"frieza/p_pain3.wav",
+		"frieza/p_pain3.wav"
+	},
+
+	{
+		"*/pain4.wav",
+		"frieza/p_pain4.wav",
+		"frieza/p_pain4.wav",
+		"frieza/p_pain4.wav",
+		"frieza/p_pain4.wav",
+		"frieza/p_pain4.wav",
+		"frieza/p_pain4.wav",
+		"frieza/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"frieza/p_death.wav",
+		"frieza/p_death.wav",
+		"frieza/p_death.wav",
+		"frieza/p_death.wav",
+		"frieza/p_death.wav",
+		"frieza/p_death.wav",
+		"frieza/p_death.wav"
+	}
+};

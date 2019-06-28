@@ -1,0 +1,81 @@
+L 09/06/2016 - 16:21:51: Start of error session.
+L 09/06/2016 - 16:21:51: Info (map "esf_Guru") (logfile "error_090616.log")
+L 09/06/2016 - 16:21:51: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:21:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:22:01: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:22:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:22:32: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:22:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:22:33: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:22:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:22:33: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:22:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:22:46: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:22:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:22:46: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:22:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:23:08: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:23:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:23:19: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:23:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:23:23: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:23:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:23:34: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:23:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:23:59: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:23:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:24:25: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:24:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:24:29: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:24:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:24:43: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:24:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:24:45: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:24:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:24:47: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:24:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:24:55: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:24:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 16:24:57: [AMXX] Run time error 4 (plugin "Vegeta-Ts.amxx") - debug not enabled!
+L 09/06/2016 - 16:24:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:17:56: [FAKEMETA] Invalid entity
+L 09/06/2016 - 17:17:56: [AMXX] Run time error 10 (plugin "SX.Soulpunisher.amxx") (native "engfunc") - debug not enabled!
+L 09/06/2016 - 17:17:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:30:47: Function is not present (function "fxCam2") (plugin "CX/brolly.amxx")
+L 09/06/2016 - 17:30:47: [AMXX] Run time error 10 (plugin "brolly.amxx") (native "set_task") - debug not enabled!
+L 09/06/2016 - 17:30:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:31:20: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:31:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:34:07: Function is not present (function "fxCam2") (plugin "CX/brolly.amxx")
+L 09/06/2016 - 17:34:07: [AMXX] Run time error 10 (plugin "brolly.amxx") (native "set_task") - debug not enabled!
+L 09/06/2016 - 17:34:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:34:41: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:34:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:34:44: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:34:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:34:44: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:34:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:34:51: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:34:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:34:56: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:34:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:35:03: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:35:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:35:04: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:35:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:35:10: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:35:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:35:13: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:35:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:35:18: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:35:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:35:24: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:35:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:35:28: [AMXX] Run time error 4 (plugin "brolly.amxx") - debug not enabled!
+L 09/06/2016 - 17:35:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:36:44: [AMXX] Run time error 4 (plugin "Gotenks.amxx") - debug not enabled!
+L 09/06/2016 - 17:36:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:37:18: [AMXX] Run time error 4 (plugin "Gotenks.amxx") - debug not enabled!
+L 09/06/2016 - 17:37:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 09/06/2016 - 17:37:45: [AMXX] Run time error 4 (plugin "Gotenks.amxx") - debug not enabled!
+L 09/06/2016 - 17:37:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

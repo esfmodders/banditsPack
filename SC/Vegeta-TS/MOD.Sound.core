@@ -1,0 +1,149 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/gallitgun.wav",
+		"ecx.vegeta-ts/wc_gallitgun.wav",
+		"ecx.vegeta-ts/wc_gallitgun.wav",
+		"ecx.vegeta-ts/wc_gallitgun.wav",
+		"ecx.vegeta-ts/wc_gallitgun.wav",
+		"ecx.vegeta-ts/wc_gallitgun.wav",
+		"ecx.vegeta-ts/wc_gallitgun.wav"
+
+	},
+	{
+		"*/gallitgunfire.wav",
+		"ecx.vegeta-ts/w_gallitgun.wav",
+		"ecx.vegeta-ts/w_gallitgun.wav",
+		"ecx.vegeta-ts/w_gallitgun.wav",
+		"ecx.vegeta-ts/w_gallitgun.wav",
+		"ecx.vegeta-ts/w_gallitgun.wav",
+		"ecx.vegeta-ts/w_gallitgun.wav"
+	},
+
+	{
+		"*/kamehame.wav",
+		"ecx.vegeta-ts/wc_finalshine.wav",
+		"ecx.vegeta-ts/wc_finalshine.wav",
+		"ecx.vegeta-ts/wc_finalshine.wav",
+		"ecx.vegeta-ts/wc_finalshine.wav",
+		"ecx.vegeta-ts/s_4.wav",
+		"ecx.vegeta-ts/wc_finalshine.wav"
+	},
+	{
+		"*/ha.wav",
+		"ecx.vegeta-ts/w_finalshine.wav",
+		"ecx.vegeta-ts/w_finalshine.wav",
+		"ecx.vegeta-ts/w_finalshine.wav",
+		"ecx.vegeta-ts/w_finalshine.wav",
+		"ecx.vegeta-ts/w_finalshine.wav",
+		"ecx.vegeta-ts/w_finalshine.wav"
+
+	},
+	{
+		"*/f_dance.wav",
+		"ecx.vegeta-ts/f_dance.wav",
+		"ecx.vegeta-ts/f_dance.wav",
+		"ecx.vegeta-ts/f_dance.wav",
+		"ecx.vegeta-ts/f_dance.wav",
+		"ecx.vegeta-ts/f_dancessj4.wav",
+		"ecx.vegeta-ts/f_dance.wav"
+	},
+	{
+		"*/finalflash.wav",
+		"ecx.vegeta-ts/w_finalflash.wav",
+		"ecx.vegeta-ts/w_finalflash.wav",
+		"ecx.vegeta-ts/w_finalflash.wav",
+		"ecx.vegeta-ts/w_finalflash.wav",
+		"ecx.vegeta-ts/w_finalflash.wav",
+		"ecx.vegeta-ts/w_finalflash.wav"
+	},
+	{
+		"*/finalflash_charge.wav",
+		"ecx.vegeta-ts/wc_finalflash.wav",
+		"ecx.vegeta-ts/wc_finalflash.wav",
+		"ecx.vegeta-ts/wc_finalflash.wav",
+		"ecx.vegeta-ts/wc_finalflash.wav",
+		"ecx.vegeta-ts/wc_finalflash2.wav",
+		"ecx.vegeta-ts/wc_finalflash2.wav"
+	},
+
+	{
+		"*/bigbang_charge.wav",
+		"ecx.vegeta-ts/wc_bigbang.wav",
+		"ecx.vegeta-ts/wc_bigbang.wav",
+		"ecx.vegeta-ts/wc_bigbang.wav",
+		"ecx.vegeta-ts/wc_bigbang.wav",
+		"ecx.vegeta-ts/wc_bigbang.wav",
+		"ecx.vegeta-ts/wc_bigbang.wav"
+
+	},
+	{
+		"*/bigbang.wav",
+		"ecx.vegeta-ts/w_bigbang.wav",
+		"ecx.vegeta-ts/w_bigbang.wav",
+		"ecx.vegeta-ts/w_bigbang.wav",
+		"ecx.vegeta-ts/w_bigbang.wav",
+		"ecx.vegeta-ts/w_bigbang.wav",
+		"ecx.vegeta-ts/w_bigbang.wav"
+
+	},
+	{
+		"*/renzoku.wav",
+		"ecx.vegeta-ts/w_renzoku.wav",
+		"ecx.vegeta-ts/w_renzoku.wav",
+		"ecx.vegeta-ts/w_renzoku.wav",
+		"ecx.vegeta-ts/w_renzoku.wav",
+		"ecx.vegeta-ts/w_renzoku.wav",
+		"ecx.vegeta-ts/w_renzoku.wav"
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.vegeta-ts/p_pain1.wav",
+		"ecx.vegeta-ts/p_pain1.wav",
+		"ecx.vegeta-ts/p_pain1.wav",
+		"ecx.vegeta-ts/p_pain1.wav",
+		"ecx.vegeta-ts/p_pain1.wav",
+		"ecx.vegeta-ts/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.vegeta-ts/p_pain2.wav",
+		"ecx.vegeta-ts/p_pain2.wav",
+		"ecx.vegeta-ts/p_pain2.wav",
+		"ecx.vegeta-ts/p_pain2.wav",
+		"ecx.vegeta-ts/p_pain2.wav",
+		"ecx.vegeta-ts/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.vegeta-ts/p_pain3.wav",
+		"ecx.vegeta-ts/p_pain3.wav",
+		"ecx.vegeta-ts/p_pain3.wav",
+		"ecx.vegeta-ts/p_pain3.wav",
+		"ecx.vegeta-ts/p_pain3.wav",
+		"ecx.vegeta-ts/p_pain3.wav"
+	},
+
+	{
+		"*/pain4.wav",
+		"ecx.vegeta-ts/p_pain4.wav",
+		"ecx.vegeta-ts/p_pain4.wav",
+		"ecx.vegeta-ts/p_pain4.wav",
+		"ecx.vegeta-ts/p_pain4.wav",
+		"ecx.vegeta-ts/p_pain4.wav",
+		"ecx.vegeta-ts/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.vegeta-ts/p_death.wav",
+		"ecx.vegeta-ts/p_death.wav",
+		"ecx.vegeta-ts/p_death.wav",
+		"ecx.vegeta-ts/p_death.wav",
+		"ecx.vegeta-ts/p_death.wav",
+		"ecx.vegeta-ts/p_death.wav"
+	}
+};

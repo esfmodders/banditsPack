@@ -1,0 +1,107 @@
+#include "amxx/amxmodx"
+#include "ipci/Core"
+
+#include <ipci/dragonball>
+
+
+#define MOD_SOUND 	0
+#define MOD_CHARGE 	0
+#define MOD_WEAPON	0
+
+
+new const CX_Plugin[]	= 	"Mafubawish";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT";
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+	register_clcmd("give mafuba", "@Callback");
+	
+	register_clcmd("@WishStrenght", "@Callback");
+	register_clcmd("@Wish_Strength", "@Callback");
+	
+}
+
+@GetPotara( Client ) ForceCall( find_plugin_byfile( "ETC/DBX.Potara.amxx" ), "WishSpawnPotaras", "c", Client );
+
+
+new bool:Mafubawish[32];
+
+
+public @InitWishList( Client, Wishlevel )
+{
+		addWish( "Teach me Mafuba", "@Callback" )
+		addWish( "I need a lot Potaras", "@Callback2" )
+}
+
+public @Callback( Client )
+{
+	set_task(7.0, "Mafubacheck",Client);
+	
+	set_task(0.0, "Bulmaspawn",Client);
+	
+	set_task(5.0, "WG",Client);
+	
+}
+
+
+
+
+public WG( Client )
+{
+	Mafubawish[Client] = true;
+	
+	client_print( Client, print_chat, "Now you can do Mafuba" )
+	
+	if(Mafubawish[Client] && ( getClientLEVEL( Client ) == 0 ))
+		{
+			addClassSpecial( Client, "mafuba" );			
+		}
+		
+	set_task(0.0, "Bulmadespawn",Client);
+}
+
+
+
+public @Callback2( Client )
+{
+		client_print( Client, print_chat, "there are now 2 Pairs" )
+		set_task(1.0, "@GetPotara",Client);
+		set_task(2.0, "@GetPotara",Client);	
+}
+
+
+public Mafubacheck( Client )
+{
+	if(Mafubawish[Client] && ( getClientLEVEL( Client ) == 0 ))
+			{
+				addClassSpecial( Client, "mafuba" );
+			}
+			
+	set_task(4.0, "Mafubacheck",Client);
+}
+
+
+
+public Bulmaspawn( Client )
+{
+	AddFx( Client, "fxModelEntity", "models/Bulma.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 1.0, -9.0, 4 );
+}
+
+public Bulmadespawn( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+}
+
+
+	
+
+
+PluginPreCache ()
+{
+	precache_model( "models/Bulma.mdl" );
+}

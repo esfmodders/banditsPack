@@ -1,0 +1,101 @@
+L 01/03/2013 - 00:40:48: Start of error session.
+L 01/03/2013 - 00:40:48: Info (map "esf_riverside") (logfile "error_010313.log")
+L 01/03/2013 - 00:40:48: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 00:40:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 00:41:49: Start of error session.
+L 01/03/2013 - 00:41:49: Info (map "esf_cell_games") (logfile "error_010313.log")
+L 01/03/2013 - 00:41:49: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 00:41:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 01:02:31: Start of error session.
+L 01/03/2013 - 01:02:31: Info (map "esf_cell_arena") (logfile "error_010313.log")
+L 01/03/2013 - 01:02:31: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 01:02:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 01:11:29: Start of error session.
+L 01/03/2013 - 01:11:29: Info (map "esf_ToM") (logfile "error_010313.log")
+L 01/03/2013 - 01:11:29: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 01:11:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 01:12:08: Start of error session.
+L 01/03/2013 - 01:12:08: Info (map "esf_saiyan") (logfile "error_010313.log")
+L 01/03/2013 - 01:12:08: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 01:12:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:01:46: Start of error session.
+L 01/03/2013 - 02:01:46: Info (map "esf_gero_night") (logfile "error_010313.log")
+L 01/03/2013 - 02:01:46: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:01:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:04:35: Start of error session.
+L 01/03/2013 - 02:04:35: Info (map "esf_gero_night") (logfile "error_010313.log")
+L 01/03/2013 - 02:04:35: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:04:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:06:41: Start of error session.
+L 01/03/2013 - 02:06:41: Info (map "esf_gero_night") (logfile "error_010313.log")
+L 01/03/2013 - 02:06:41: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:06:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:08:15: Start of error session.
+L 01/03/2013 - 02:08:15: Info (map "esf_gero_night") (logfile "error_010313.log")
+L 01/03/2013 - 02:08:15: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:08:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:19:40: Start of error session.
+L 01/03/2013 - 02:19:40: Info (map "esf_cell_games_night") (logfile "error_010313.log")
+L 01/03/2013 - 02:19:40: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:19:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:30:16: Start of error session.
+L 01/03/2013 - 02:30:16: Info (map "esf_cell_games_night") (logfile "error_010313.log")
+L 01/03/2013 - 02:30:16: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:30:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:31:07: Start of error session.
+L 01/03/2013 - 02:31:07: Info (map "dmz_meteor") (logfile "error_010313.log")
+L 01/03/2013 - 02:31:07: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:31:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 02:31:42: Start of error session.
+L 01/03/2013 - 02:31:42: Info (map "dmz_meteor") (logfile "error_010313.log")
+L 01/03/2013 - 02:31:42: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 02:31:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 16:35:53: Start of error session.
+L 01/03/2013 - 16:35:53: Info (map "esf_cell_games_night") (logfile "error_010313.log")
+L 01/03/2013 - 16:35:53: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 16:35:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 16:49:30: Start of error session.
+L 01/03/2013 - 16:49:30: Info (map "esf_cell_games_night") (logfile "error_010313.log")
+L 01/03/2013 - 16:49:30: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 16:49:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 20:58:59: Start of error session.
+L 01/03/2013 - 20:58:59: Info (map "esf_cell_games") (logfile "error_010313.log")
+L 01/03/2013 - 20:58:59: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 20:58:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 20:59:48: < Core >> Model does not exist > "models/player/mat.garlick/mat.garlick.mdl"
+L 01/03/2013 - 20:59:48: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 01/03/2013 - 20:59:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 20:59:48: < Core >> Model does not exist > "models/player/mat.garlick/mat.garlick.mdl"
+L 01/03/2013 - 20:59:48: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 01/03/2013 - 20:59:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 20:59:48: < Core >> Model does not exist > "models/player/mat.garlick/mat.garlick.mdl"
+L 01/03/2013 - 20:59:48: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 01/03/2013 - 20:59:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:00:21: < Core >> Model does not exist > "models/player/mat.gohan-c/mat.gohan-c.mdl"
+L 01/03/2013 - 21:00:21: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 01/03/2013 - 21:00:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:00:21: < Core >> Model does not exist > "models/player/mat.gohan-c/mat.gohan-c.mdl"
+L 01/03/2013 - 21:00:21: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 01/03/2013 - 21:00:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:00:51: < Core >> Model does not exist > "models/player/mat.gohan-b1/mat.gohan-b1.mdl"
+L 01/03/2013 - 21:00:51: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 01/03/2013 - 21:00:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:00:51: < Core >> Model does not exist > "models/player/mat.gohan-b1/mat.gohan-b1.mdl"
+L 01/03/2013 - 21:00:51: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 01/03/2013 - 21:00:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:04:08: Start of error session.
+L 01/03/2013 - 21:04:08: Info (map "esf_cell_games_night") (logfile "error_010313.log")
+L 01/03/2013 - 21:04:08: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 21:04:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:06:58: Start of error session.
+L 01/03/2013 - 21:06:58: Info (map "esf_cell_games_night") (logfile "error_010313.log")
+L 01/03/2013 - 21:06:58: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 21:06:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:14:20: Start of error session.
+L 01/03/2013 - 21:14:20: Info (map "esf_cell_games") (logfile "error_010313.log")
+L 01/03/2013 - 21:14:20: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 21:14:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 01/03/2013 - 21:16:37: Start of error session.
+L 01/03/2013 - 21:16:37: Info (map "esf_cell_games_night") (logfile "error_010313.log")
+L 01/03/2013 - 21:16:37: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 01/03/2013 - 21:16:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

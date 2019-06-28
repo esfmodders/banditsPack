@@ -1,0 +1,11 @@
+ModChargeInit ()
+{
+
+	// << Level >> 	 << WEAPON >> 	<< ChargeSPRReplacement >> << Size >>
+	alterCharge( 0, "scatterbeam", "sprites/w_doublesunday_s.spr", 0.3 );
+	
+	
+	alterCharge( 0, "genericbeam", "sprites/w_gb_r_s.spr", 0.3 );
+	
+
+}

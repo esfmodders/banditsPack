@@ -1,0 +1,731 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"ecx.Frieza";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT/C4";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+// instatrans vars
+new bool:delay[32];
+new bool:ssjtransf[32];
+
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+	
+	// register forward for fast ascend to blue
+	register_forward( FM_ClientCommand,"FastAscend");
+}
+
+public FastAscend( id )
+{
+	new cmd[8];
+	read_argv(0,cmd,7);
+	new currentPowerlevel = 0;
+
+	if( !equali( cmd, "ascend" ) )
+		return PLUGIN_CONTINUE;
+	
+	currentPowerlevel = get_pdata_int(id, 460);
+	
+	if(ssjtransf[id] && getClientLEVEL( id ) == 1 && currentPowerlevel >= 5100000 && getClientCLASS( id ) == getCXbyName( "Frieza" ))
+	{
+		if (delay[id])
+		{
+			// instblue setClientDATAc( Client, cliLevel, __int_Level );
+			@ClassInitiateTransformation ( id, 4, true )
+			emit_sound( id, CHAN_ITEM, "ecx.frieza/s_5.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+			AddFx( id, "fxBlow" );
+			AddFx( id, "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 20, 50, 255, 100, 40, 150, 200, 650, 0, 22 );
+			AddFx( id, "fxScreenShake", 50.0, 3.0, 4.0 );
+			AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );AddFx( id, "fxBlow" );
+			AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );AddFx( id, "fxBlow" );
+			AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+			AddFx( id, "fxPowerup", 0, 0, 0 );
+			RemFx( id, "fxSpriteEntity", 0);
+			AddFx( id, "fxSprite", "sprites/lightninghit.spr", 100, 255, 0, 0, 0 );
+			RemFx( id, "fxSpriteEntity", 0);
+			RemFx( id, "fxModelEntity", 0);
+			RemFx( id, "fxModelEntity", 0);
+			RemFx( id, "fxModelEntity", 0);
+			AddFx( id, "fxLgtField", 0.2, 3, 255, 100);
+			RemFx( id, "fxModelEntity", 0);
+			AddFx( id, "fxSprite", "sprites/ywaves.spr", 6, 60, 0, 0, 0 );
+			RemFx( id, "fxModelEntity", 0);
+			AddFx( id, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 90, 250);
+			RemFx( id, "fxModelEntity", 0);
+			AddFx( id, "fxModelEntity", "models/evolution/ssj4trans1.mdl", 0, 0, 20.0, 0, 0, 0, 2.0, 3.0, 0, 0 );
+			AddFx( id, "fxModelEntity", "models/evolution/Auras/godblue.mdl", 0, 0, 50.0, 0, 0, 0, 2.0, 1.3, 0, 3 );
+			setClientPL( id, currentPowerlevel*5 );
+			setClientMODEL( id, "ecx.frieza.5" );
+			setClientDATAc( id, cliLevel, 5);  
+			delay[id] = false;
+			
+		}
+		else
+		{
+			delay[id] = true;
+		}
+		
+		return PLUGIN_HANDLED;
+	}
+	
+	return PLUGIN_CONTINUE;
+}
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Frieza", true, false, "It´s Frieza omg!", "sound/ecx.frieza/c_intro.wav" );
+
+	// Saiya-jin
+	addClassLevel( "Frieza", "ecx.Frieza", 5.5, 3.0, 1200000, 1800000, 2.0, 
+					240, 110, bool:{ false, false }, 1.0, { 340, 200 }, { 0, 0, 0, 0, 0, 0, 0 }, 1.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin
+	addClassLevel( "Frieza Stage2", "ecx.Frieza.2", 8.0, 8.0, 1900000, 2400000, 2.0, 
+					275, 150, bool:{ false, false }, 4.0, { 400, 150 }, { 1, 0, 0, 0, 0, 1, 1 }, 2.0, Float:{ 110.0, 10.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin II
+	addClassLevel( "Frieza Stage3", "ecx.Frieza.3", 8.0, 8.0, 5000000, 6000000, 2.0, 
+					300, 180, bool:{ false, false }, 10.0, { 450, 100 }, { 1, 0, 1, 0, 0, 2, 2 }, 3.0, Float:{ 120.0, 20.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin III
+	addClassLevel( "Frieza Final", "ecx.Frieza.4", 8.0, 8.0, 13600000, 14100000, 2.0, 
+					360, 210, bool:{ false, false }, 11.0, { 600, 75 }, { 1, 1, 1, 1, 0, 3, 2 }, 4.0, Float:{ 140.0, 30.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin IV
+	addClassLevel( "Frieza 100%", "ecx.frieza.5", 8.0, 8.0, 13600000, 14100000, 1.5, 
+					480, 250, bool:{ true, false }, 12.0, { 650, 75 }, { 1, 1, 1, 1, 0, 3, 4 }, 6.0, Float:{ 160.0, 50.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// Super Saiya-jin III
+	addClassLevel( "Frieza F", "ecx.Frieza.4", 8.0, 8.0, 13600000, 14100000, 2.0, 
+					360, 210, bool:{ false, false }, 11.0, { 600, 75 }, { 1, 1, 1, 1, 0, 3, 2 }, 3.0, Float:{ 140.0, 30.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin Blue
+	addClassLevel( "GoldenFrieza", "goldenfrieza", 8.0, 8.0, 57000000, 61000001, 2.0, 
+					620, 255, bool:{ true, false }, 17.0, { 700, 80 }, { 1, 1, 1, 1, 1, 4, 4 }, 8.0, Float:{ 250.0, 75.0 } );
+	addClassEffect( "models/evolution/Auras/shape_C.mdl", Float:{ 160.0, 150.0, 20.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 128 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_telekinesis" );
+			addClassItem( Client, "weapon_fingerlaser" );
+			addClassItem( Client, "weapon_deathball" );
+			addClassItem( Client, "weapon_friezadisc" );
+			addClassItem( Client, "weapon_sensu" );
+			
+			setClientMODEL( Client, "ecx.Frieza" );
+		}
+		case 1: // Super Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_telekinesis" );
+			addClassItem( Client, "weapon_fingerlaser" );
+			addClassItem( Client, "weapon_deathball" );
+			addClassItem( Client, "weapon_friezadisc" );
+		}
+		case 2: // Super Saiya-jin II
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_telekinesis" );
+			addClassItem( Client, "weapon_fingerlaser" );
+			addClassItem( Client, "weapon_deathball" );
+			addClassItem( Client, "weapon_friezadisc" );
+			
+		}
+		case 3: // Super Saiya-jin III
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_telekinesis" );
+			addClassItem( Client, "weapon_fingerlaser" );
+			addClassItem( Client, "weapon_deathball" );
+			addClassItem( Client, "weapon_friezadisc" );
+		}
+		case 4: // Super Saiya-jin IV
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_telekinesis" );
+			addClassItem( Client, "weapon_fingerlaser" );
+			addClassItem( Client, "weapon_deathball" );
+			addClassItem( Client, "weapon_friezadisc" );
+		}
+		case 5: // Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_telekinesis" );
+			addClassItem( Client, "weapon_fingerlaser" );
+			addClassItem( Client, "weapon_deathball" );
+			addClassItem( Client, "weapon_friezadisc" );
+		}
+		case 6: // Super Saiya-jin Blue
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_telekinesis" );
+			addClassItem( Client, "weapon_fingerlaser" );
+			addClassItem( Client, "weapon_deathball" );
+			addClassItem( Client, "weapon_friezadisc" );
+		}
+	}
+}
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.Frieza/ecx.frieza.mdl" );
+	precache_model( "models/player/ecx.Frieza.2/ecx.frieza.2.mdl" );
+	precache_model( "models/player/ecx.Frieza.3/ecx.frieza.3.mdl" );
+	precache_model( "models/player/ecx.Frieza.4/ecx.frieza.4.mdl" );
+	precache_model( "models/player/ecx.Frieza.5/ecx.frieza.5.mdl" );
+	precache_model( "models/player/goldenFrieza/goldenfrieza.mdl" );
+	
+	
+	
+	precache_model( "models/evolution/Auras/shape_C.mdl" );
+
+	
+	
+	precache_model( "sprites/xssmke1.spr" );
+	precache_model( "sprites/lightninghit.spr" );
+	precache_model( "sprites/rcharge.spr" );
+	precache_model( "sprites/onda.spr" );
+	precache_model( "sprites/oozarufire.spr" );
+	precache_model( "sprites/waves.spr" );
+	precache_model( "models/evolution/aura.mdl" );
+	precache_model( "sprites/ywaves.spr" );
+	precache_model( "models/evolution/Auras/shape_C.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/evolution/redmaura2.mdl" );
+	precache_model( "models/evolution/pan.mdl" );
+	precache_sound( "ecx.frieza/s_1.wav" );
+	precache_sound( "ecx.frieza/s_5.wav" );
+	precache_sound( "ecx.frieza/t_perfect.wav" );
+}
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				ssjtransf[Client] = true;
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 3:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 4:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 5:
+			{
+			}
+			case 6:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/s_1.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.1, "OZF", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				//setClientANIMATION(Client,102,0.5);
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlowSpecial", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.2, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.6, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+		}
+	}
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				ssjtransf[Client] = true;
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 3:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 4:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 5:
+			{
+			}
+			case 6:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				emit_sound( Client, CHAN_ITEM, "ecx.frieza/t_perfect.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				set_task( 0.1, "OZF", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLightning", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+				set_task( 1.0, "fxSpriteRays", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBeamTorus", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			
+				set_task( 1.0, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxPowerWave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );				
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 1.5, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura18", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.8, "fxAura19", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				//setClientANIMATION(Client,102,0.5);
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				set_task( 0.0, "fxblau", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.1, "fxAura15", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 1.0 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 5.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.3, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlowSpecial", uniqueTaskID( Client,100 ), CORE, 1, "a",2 );
+				set_task( 0.2, "fxsphere", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxssj45", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 1.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxScream3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxCamBack", uniqueTaskID( Client,100 ), CORE, 1, "a",10 );
+				set_task( 2.0, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.7, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.9, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.5, "fxLgt2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.6, "fxPwave", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+		}
+	}
+}
+public @ClassFinishTransformation ( Client, Level )
+{
+	RemFx( Client, "fxAvatar", 0);
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+	remove_task( uniqueTaskID( Client, 100 ) );
+	ssjtransf[Client] = false;
+	delay[Client] = false;
+	client_cmd( Client, "turbo" );
+
+	if( Level == 4)
+		AddFx( Client, "fxPowerup", 0, 255, 255 );
+}
+public @ClassCancelTransformation ( Client, Level )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	if( Level == 2 )
+		set_task( 0.0, "SSJ2CHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else if( Level == 0 )
+		set_task( 0.0, "NORMALCHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else if( Level == 3 )
+		set_task( 0.0, "SSJ3CHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else if( Level == 4 )
+		set_task( 0.0, "SSJ4check", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	else
+		set_task( 0.0, "CHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+	ssjtransf[Client] = false;
+	delay[Client] = false;
+
+
+}
+
+public @ClassChange ( Client, Level )
+{
+	
+	ssjtransf[Client] = false;
+	delay[Client] = false;
+}

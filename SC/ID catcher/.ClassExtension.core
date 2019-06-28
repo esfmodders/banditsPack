@@ -1,0 +1,12 @@
+#include <amxmodx>
+#include <engine>
+#include <fakemeta>
+
+public client_PostThink(__int_Index)
+{
+	if(is_user_alive(__int_Index) && is_user_connected(__int_Index))
+	{
+		client_print(__int_Index, print_chat, "[ ESF ] >> %d <<", get_pdata_int(__int_Index, 0x1D0)); 
+	}
+}
+

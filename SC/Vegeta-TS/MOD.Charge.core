@@ -1,0 +1,21 @@
+ModChargeInit ()
+{
+
+	// << Level >> 	 << WEAPON >> 	<< ChargeSPRReplacement >> << Size >>
+
+	
+	alterCharge( 0, "genericbeam", "sprites/w_gb_b_s.spr", 0.3 );
+	alterCharge( 1, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 2, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 3, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 4, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 5, "genericbeam", "sprites/w_gb_y_s.spr", 0.3 );
+	alterCharge( 4, "kamehameha", "sprites/w_finalshine_c.spr", 0.2 );	
+	alterCharge( 5, "kamehameha", "sprites/w_finalshine_c.spr", 0.4 );	
+	alterCharge( 3, "finalflash", "sprites/VFF.spr", 0.8 );	
+	alterCharge( 4, "finalflash", "sprites/VFF.spr", 0.8 );	
+	alterCharge( 5, "finalflash", "sprites/x/finalflashcharge.spr", 0.8 );	
+	alterCharge( 3, "kamehameha", "sprites/black.spr", 0.1 );	
+
+
+}

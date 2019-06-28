@@ -1,0 +1,208 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Evil-Vegeto";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"Yassin-Mocro|D-T";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+PluginInit ()
+register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+#include <xtension/fusion>
+public @FusionClassCreation ()
+{
+	addFusion (
+		"Evil-Goku",
+		"Dark-vegeta",
+		FUSION_POTARA,
+		{ 0, 0, 0 },
+		6000000,
+		2.0,
+		Float:{ 1.0, 1.0, 83.0, 83.0 },
+		Float:{ 90.0, 0.0, 0.0, 0.0 }
+		);
+	addFusion (
+		"Evil-Goku",
+		"Dark-vegeta",
+		FUSION_POTARA,
+		{ 1, 1, 1 },
+		27000000,
+		7.0,
+		Float:{ 1.0, 1.0, 83.0, 83.0 },
+		Float:{ 90.0, 0.0, 0.0, 0.0 }
+		);
+}		
+public @ClassCreation ()
+
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+	"Evil-Vegeto", true, true, "© Dark-Pack Evil-Vegeto Made By Yassin-mocro" );
+
+	// Evil Saiya-jin
+	addClassLevel( "Evil Saiya-jin", "Dark-vegeto", 10.0, 1.5, 12000000, 1, 2.0, 
+					500, 160, bool:{ false, false }, 1.0, { 450, 0 }, { 1, 1, 1, 0, 1, 3, 3 }, 1.0, Float:{ 107.0, 22.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 3, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin
+	addClassLevel( "Super Saiya-jin", "Dark-vegeto.ssj", 22.0, 9.0, 27000000, 300000000, 7.0, 
+					600, 190, bool:{ false, false }, 3.0, { 700, 0 }, { 1, 1, 1, 1, 1, 5, 5 }, 3.0, Float:{ 173.0, 34.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 3, kRenderTransAdd,
+					{ 255, 0, 0 }, { 5, 5, 5, 15 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Evil Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_renzoku" );
+			addClassItem( Client, "weapon_gallitgun" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassSpecial( Client, "Spirit Sword" );			
+		}
+		case 1: // Super Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_renzoku" );
+			addClassItem( Client, "weapon_finalflash" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_powerbeam" );			
+			addClassSpecial( Client, "Spirit Sword" );			
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/Dark-vegeto/Dark-vegeto.mdl" );
+	precache_model( "models/evolution/Auras/shape_01-red.mdl" );
+	precache_model( "models/player/Dark-vegeto.ssj/Dark-vegeto.ssj.mdl" );
+	
+	precache_sound( "Evil-vegeto/t_ssj.wav" );
+	precache_sound( "Evil-vegeto/tp_ssj.wav" );
+	
+	precache_model( "sprites/E-L.spr" );	
+	precache_model( "sprites/aura.reda.spr" );
+	precache_model( "sprites/xsmokered.spr" );	
+	precache_model( "sprites/red.spr" );	
+}
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-vegeto/tp_ssj.wav",1.0,ATTN_NORM, 0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",102,1.0);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(8.6,"fxFinalBlow",uniqueTaskID( Client,100),CORE,1,"a",1);					
+			}
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{		
+			emit_sound( Client,CHAN_ITEM,"Evil-vegeto/t_ssj.wav",1.0,ATTN_NORM,0,PITCH_NORM);
+			AddFx( Client,"fxAvatar","create",102,1.0);
+		    //setClientANIMATION(Client,102,0.2);
+			
+			set_task(0.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);	
+		        set_task(1.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);	
+		    
+			set_task(2.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			set_task(3.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			set_task(4.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			set_task(5.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			set_task(6.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			set_task(7.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			set_task(8.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			set_task(9.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);				
+			set_task(10.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);	
+	 		set_task(11.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(12.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(12.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(13.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(13.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(14.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(14.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			set_task(15.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(15.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(16.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(16.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(17.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(17.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(18.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(18.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(19.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(19.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(20.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(20.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(21.0,"fxwave",uniqueTaskID( Client,100),CORE,1,"a",1);
+	 		set_task(21.0,"fxwave2",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			set_task(21.6,"fxFinalBlow",uniqueTaskID( Client,100),CORE,1,"a",1);					
+			}
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}

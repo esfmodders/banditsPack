@@ -1,0 +1,33 @@
+stock MOD_Weapon_PreCache ()
+{
+}
+
+public @WeaponAdjust ( Client, Weapon, const Class[], PowerLevel, Charge )
+{
+}
+
+	// >> SpiritBomb, DeathBall
+public @WeaponBall ( Client, Weapon )
+{
+}
+
+	// >> KiBlast, BigBang, ...
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{
+}
+
+	// >> KameHameHa, FinalFlash, ...
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+}
+
+	// >> Special Beam Cannon
+public @WeaponSBC ( Client, Weapon, const Class[] )
+{
+}
+
+	// >> Adjust Death Messages
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+}
+

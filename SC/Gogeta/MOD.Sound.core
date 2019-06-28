@@ -1,0 +1,121 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/kamehame.wav",
+		"ecx.gogeta/wc_bbkhh.wav",
+		"ecx.gogeta/wc_bbkhh.wav",
+		"ecx.gogeta/wc_bbkhh2.wav",
+		"ecx.gogeta/wc_bbkhh2.wav",
+		"ecx.gogeta/wc_bbkhh2.wav",
+		"ecx.gogeta/wc_bbkhh2.wav",
+		"ecx.gogeta/GOkame.wav"
+	},
+	{
+		"*/bigbang_charge.wav",
+		"ecx.gogeta/wc_bigbang.wav",
+		"ecx.gogeta/wc_bigbang.wav",
+		"ecx.gogeta/wc_bigbang.wav",
+		"ecx.gogeta/wc_bigbang.wav",
+		"ecx.gogeta/wc_bigbang.wav",
+		"ecx.gogeta/wc_bigbang.wav",
+		"ecx.gogeta/wc_bigbang.wav"
+
+	},
+	{
+		"*/bigbang.wav",
+		"ecx.gogeta/w_bigbang.wav",
+		"ecx.gogeta/w_bigbang.wav",
+		"ecx.gogeta/w_bigbang.wav",
+		"ecx.gogeta/w_bigbang.wav",
+		"ecx.gogeta/w_bigbang.wav",
+		"ecx.gogeta/w_bigbang.wav",
+		"ecx.gogeta/w_bigbang.wav"
+
+	},
+	{
+		"*/ha.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav"
+	},
+	{
+		"*/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav"
+
+	},
+	{
+		"*/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav"
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.gogeta/p_pain1.wav",
+		"ecx.gogeta/p_pain1.wav",
+		"ecx.gogeta/p_pain1.wav",
+		"ecx.gogeta/p_pain1.wav",
+		"ecx.gogeta/p_pain1.wav",
+		"ecx.gogeta/p_pain1.wav",
+		"ecx.gogeta/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.gogeta/p_pain2.wav",
+		"ecx.gogeta/p_pain2.wav",
+		"ecx.gogeta/p_pain2.wav",
+		"ecx.gogeta/p_pain2.wav",
+		"ecx.gogeta/p_pain2.wav",
+		"ecx.gogeta/p_pain2.wav",
+		"ecx.gogeta/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.gogeta/p_pain3.wav",
+		"ecx.gogeta/p_pain3.wav",
+		"ecx.gogeta/p_pain3.wav",
+		"ecx.gogeta/p_pain3.wav",
+		"ecx.gogeta/p_pain3.wav",
+		"ecx.gogeta/p_pain3.wav",
+		"ecx.gogeta/p_pain3.wav"
+	},
+
+	{
+		"*/pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav",
+		"ecx.gogeta/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.gogeta/p_death.wav",
+		"ecx.gogeta/p_death.wav",
+		"ecx.gogeta/p_death.wav",
+		"ecx.gogeta/p_death.wav",
+		"ecx.gogeta/p_death.wav",
+		"ecx.gogeta/p_death.wav",
+		"ecx.gogeta/p_death.wav"
+	}
+};

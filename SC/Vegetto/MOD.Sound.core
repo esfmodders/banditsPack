@@ -1,0 +1,100 @@
+new MOD_SOUND_CORE[][][] =
+{
+	
+	// << WEAPON >>
+
+	
+	{
+		"*/bigbang.wav",
+		"ecx.vegetto/w_bigfinish.wav",
+		"ecx.vegetto/w_bigfinish.wav",
+		"ecx.vegetto/w_bigfinish.wav",
+		"ecx.vegetto/w_bigfinish.wav",
+		"ecx.vegetto/w_bigfinish.wav"
+	},
+	{
+		"*/bigbang_charge.wav",
+		"ecx.vegetto/wc_bigfinish.wav",
+		"ecx.vegetto/wc_bigfinish.wav",
+		"ecx.vegetto/wc_bigfinish.wav",
+		"ecx.vegetto/wc_bigfinish.wav",
+		"ecx.vegetto/wc_bigfinish.wav"
+	},
+	{
+		"*/w_spiritsword.wav",
+		"ecx.vegetto/w_spiritsword.wav",
+		"ecx.vegetto/w_spiritsword.wav",
+		"ecx.vegetto/w_spiritsword.wav",
+		"ecx.vegetto/w_spiritsword.wav",
+		"ecx.vegetto/w_spiritsword.wav"
+	},
+	{
+		"*/wc_spiritsword.wav",
+		"ecx.vegetto/wc_spiritsword.wav",
+		"ecx.vegetto/wc_spiritsword.wav",
+		"ecx.vegetto/wc_spiritsword.wav",
+		"ecx.vegetto/wc_spiritsword.wav",
+		"ecx.vegetto/wc_spiritsword.wav"
+	},
+	{
+		"*/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav",
+		"ecx.goku-ts/wc_dragonfist.wav"
+
+	},
+	{
+		"*/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav",
+		"ecx.goku-ts/w_dragonfist.wav"
+	},
+	
+	
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"ecx.vegetto/p_pain1.wav",
+		"ecx.vegetto/p_pain1.wav",
+		"ecx.vegetto/p_pain1.wav",
+		"ecx.vegetto/p_pain1.wav",
+		"ecx.vegetto/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"ecx.vegetto/p_pain2.wav",
+		"ecx.vegetto/p_pain2.wav",
+		"ecx.vegetto/p_pain2.wav",
+		"ecx.vegetto/p_pain2.wav",
+		"ecx.vegetto/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"ecx.vegetto/p_pain3.wav",
+		"ecx.vegetto/p_pain3.wav",
+		"ecx.vegetto/p_pain3.wav",
+		"ecx.vegetto/p_pain3.wav",
+		"ecx.vegetto/p_pain3.wav"
+	},
+	{
+		"*/pain4.wav",
+		"ecx.vegetto/p_pain4.wav",
+		"ecx.vegetto/p_pain4.wav",
+		"ecx.vegetto/p_pain4.wav",
+		"ecx.vegetto/p_pain4.wav",
+		"ecx.vegetto/p_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"ecx.vegetto/p_death.wav",
+		"ecx.vegetto/p_death.wav",
+		"ecx.vegetto/p_death.wav",
+		"ecx.vegetto/p_death.wav",
+		"ecx.vegetto/p_death.wav"
+	}
+}

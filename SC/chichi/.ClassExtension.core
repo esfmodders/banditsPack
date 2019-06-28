@@ -1,0 +1,332 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"chichi";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT";
+
+
+new BlackID, RoseID, bool: BlackAuraVisible[ 33 ], bool: RoseAuraVisible[ 33 ], CoreAvatarEnt, CoreAuraEnt, BlackAuraEnt, RoseAuraEnt;
+
+new ClassRoseAura;
+
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Chichi", true, false, "Da Wife!", "sound/pan/c_intro.wav" );
+
+	// chichi
+	addClassLevel( "chichi", "chichi", 9.0, 1.5, 2500000, 3000000, 1.0, 
+					200, 150, bool:{ false, true }, 2.0, { 150, 120 }, { 0, 0, 0, 0, 0, 1, 0 }, 2.0, Float:{ 110.0, 20.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 20.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+	// blackchichi
+	addClassLevel( "blackchichi", "blackchichi", 3.0, 3.0, 3500000, 3500000, 4.0, 
+					390, 300, bool:{ false, false }, 4.0, { 150, 120 }, { 1, 1, 1, 1, 1, 1, 1 }, 2.0, Float:{ 165.0, 70.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 128.0, 255.0, 20.0 }, 2, kRenderTransAdd,
+					{ 255, 128, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	
+}
+
+public bool:@ClassCandyEat ( Client )
+	return true;
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // chichi
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_gallitgun" );
+			addClassItem( Client, "weapon_genericbeam" );
+			
+		}
+		
+		case 1: // blackchichi
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_gallitgun" );
+			addClassItem( Client, "weapon_genericbeam" );
+			
+		}
+	}
+}
+
+// << Class Extension PreCache >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+PluginPreCache ()
+{
+	precache_model( "models/player/chichi/chichi.mdl" );
+	precache_model( "models/player/blackchichi/blackchichi.mdl" );
+
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+
+	precache_model( "models/evolution/Auras/shape_04.mdl" );
+	precache_sound( "sound/pan/wc_1.wav" );
+	precache_sound( "ecx.uub/t_majin.wav" );
+	
+
+
+	
+}
+
+// << Class Extension Transformation >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				client_cmd( Client, "spk sound/pan/wc_1.wav" );
+				AddFx( Client, "fxScreenFade", 5.0, 1.0, 0, 200, 0, 200, 100 );
+				AddFx( Client, "fxScreenShake", 12.0, 3.0, 3.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 0.8 );
+				AddFx( Client, "fxBlow" );
+				AddFx( Client, "fxPowerWave", "sprites/white.spr", 200, 0, 200, 30, 250 );
+				AddFx( Client, "fxScreenFade", 3.0, 1.0, 0, 200, 0, 200, 100 );
+				AddFx( Client, "fxScreenShake", 12.0, 3.0, 3.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 0.8 );
+				AddFx( Client, "fxBlow" );
+				AddFx( Client, "fxPowerWave", "sprites/white.spr", 200, 0, 200, 30, 250 );
+				AddFx( Client, "fxScreenFade", 4.0, 1.0, 0, 200, 0, 200, 100 );
+				AddFx( Client, "fxScreenShake", 15.0, 6.0, 9.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 0.8 );
+				AddFx( Client, "fxBlow" );
+				AddFx( Client, "fxPowerWave", "sprites/white.spr", 200, 0, 200, 30, 250 );
+				
+			}
+
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				AddFx( Client, "fxPowerup", 0, 0, 0 );
+				client_cmd( Client, "spk sound/pan/wc_1.wav" );
+				AddFx( Client, "fxScreenFade", 3.0, 1.0, 0, 200, 0, 200, 100 );
+				AddFx( Client, "fxScreenShake", 12.0, 3.0, 3.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 0.8 );
+				AddFx( Client, "fxBlow" );
+				AddFx( Client, "fxPowerWave", "sprites/white.spr", 200, 0, 200, 30, 250 );
+				AddFx( Client, "fxScreenFade", 3.0, 1.0, 0, 200, 0, 200, 100 );
+				AddFx( Client, "fxScreenShake", 12.0, 3.0, 3.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 0.8 );
+				AddFx( Client, "fxBlow" );
+				AddFx( Client, "fxPowerWave", "sprites/white.spr", 200, 0, 200, 30, 250 );
+				AddFx( Client, "fxScreenFade", 3.0, 1.0, 0, 200, 0, 200, 100 );
+				AddFx( Client, "fxScreenShake", 12.0, 3.0, 3.0 );
+				AddFx( Client, "fxAvatar", "create", 103, 0.8 );
+				AddFx( Client, "fxBlow" );
+				AddFx( Client, "fxPowerWave", "sprites/white.spr", 200, 0, 200, 30, 250 );
+			}
+
+		}
+	}
+}
+public @ClassFinishTransformation ( Client, Level )
+{
+	setClientANIMATION( Client, -1 );
+	client_cmd( Client, "resetview" );
+	set_entity_visibility( Client, true );
+
+	RemFx( Client, "fxPowerup", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxLgtField", 0 );
+	RemFx( Client, "fxAvatar", 0 );
+	client_cmd( Client, "turbo" );
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+	setClientPL( Client, 50000000 );
+	setClientMODEL( Client, "Black" );
+	setClientANIMATION( Client, -1 );
+	set_entity_visibility( Client, true );
+	client_cmd( Client, "resetview" );
+	remove_task( uniqueTaskID( Client, 100 ) );
+
+	message_begin( MSG_BROADCAST, SVC_TEMPENTITY );
+	write_byte( TE_KILLBEAM );
+	write_short( Client );
+	message_end();
+
+	RemFx( Client, "fxPowerup", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxLgtField", 0 );
+	RemFx( Client, "fxAvatar", 0 );
+	RemFx( Client, "fxLgtField", 0 );
+}
+
+public @ClassPowerup( MsgID, dest )
+{
+	new Client = get_msg_arg_int( 1 );
+
+	if( getCXbyName( "Black" ) != getClientDATAc( Client, cliClass ) ) return;
+
+	setClientLEVELDATAv( Client, cxlLightning, { 2, 2, 2, 8 }, 4 );
+	emit_sound( Client, CHAN_VOICE, "Black/Energy.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	AddFx( Client, "fxBlow" );
+	AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+}
+
+public @ClassStopPowerup( MsgID, dest )
+{
+	new Client = get_msg_arg_int( 1 );
+
+	if( getCXbyName( "Black" ) != getClientDATAc( Client, cliClass ) ) return;
+
+	setClientLEVELDATAv( Client, cxlLightning, { 0, 0, 0, 0 }, 4 );
+}
+
+
+
+public @ClassEntityHandle( ES_Handle, e, iEntity, iHost, iHostFlags, iPlayer, iSet )
+{
+	if( !pev_valid( iEntity ) ) return;
+
+	new Class[ 10 ];
+	pev( iEntity, pev_classname, Class, 10 );
+
+	if( equal( Class, "coreAvatar" ) )
+	{
+		if( iEntity != CoreAvatarEnt ) return;
+
+		if( get_es( ES_Handle, ES_ModelIndex ) == BlackID )
+		{
+			BlackAuraVisible[ iHost ] = true;
+
+			new Float: org[ 3 ];
+			get_es( ES_Handle, ES_Origin, org );
+			set_pev( BlackAuraEnt, pev_origin, org );
+
+			if( get_es( ES_Handle, ES_Sequence ) == 25 )
+			{
+				set_pev( BlackAuraEnt, pev_scale, 0.35 );
+				set_es( ES_Handle, ES_Effects, EF_BRIGHTFIELD );
+			}
+			else
+			{
+				set_pev( BlackAuraEnt, pev_scale, 0.3 );
+			}
+		}
+		else
+		{
+			BlackAuraVisible[ iHost ] = false;
+		}
+
+		if( get_es( ES_Handle, ES_ModelIndex ) == RoseID )
+		{
+			RoseAuraVisible[ iHost ] = false;
+
+			new Float: org[ 3 ];
+			get_es( ES_Handle, ES_Origin, org );
+
+			org[ 2 ] += 9.0;
+
+			set_pev( RoseAuraEnt, pev_origin, org );
+
+			set_es( ES_Handle, ES_Effects, EF_BRIGHTFIELD );
+			
+			if( get_es( ES_Handle, ES_Sequence ) == 25 )
+			{
+				/*
+				if( pev( CoreAvatarEnt - 1, pev_sequence ) >= 41 && pev( CoreAvatarEnt - 2, pev_sequence ) < 44 ) return;
+
+				set_pev( CoreAvatarEnt - 1, pev_sequence, random_num( 42, 43 ) );
+				set_pev( CoreAvatarEnt - 2, pev_sequence, random_num( 42, 43 ) );
+				*/
+
+				if( pev( CoreAvatarEnt - 1, pev_sequence ) == 8 && pev( CoreAvatarEnt - 2, pev_sequence ) == 8 ) return;
+
+				set_pev( CoreAvatarEnt - 1, pev_sequence, 8 );
+				set_pev( CoreAvatarEnt - 2, pev_sequence, 8 );
+			}
+			else
+			{
+				set_pev( CoreAvatarEnt - 1, pev_sequence, 4 );
+				set_pev( CoreAvatarEnt - 2, pev_sequence, 4 );
+			}
+		}
+		else
+		{
+			RoseAuraVisible[ iHost ] = false;
+			set_pev( CoreAvatarEnt - 1, pev_sequence, 4 );
+			set_pev( CoreAvatarEnt - 2, pev_sequence, 4 );
+		}
+	}
+
+	if( iEntity == BlackAuraEnt )
+	{
+		if( !BlackAuraVisible[ iHost ] ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+	}
+	if( iEntity == RoseAuraEnt )
+	{
+		if( !RoseAuraVisible[ iHost ] ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+	}
+	if( iEntity == CoreAuraEnt )
+	{
+		if( BlackAuraVisible[ iHost ] ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+	}
+
+	if( iEntity == ClassRoseAura )
+	{
+		if( getClientLEVEL( iHost ) == 1 )
+		{
+			if( getClientDATAc( iHost, cliClass ) != getCXbyName( "Black" ) ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+
+			if( getClientSWOOPING( iHost ) || !getClientTURBO( iHost ) ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+
+			new Float: org[ 3 ];
+			pev( iHost, pev_origin, org );
+			set_es( ES_Handle, ES_Origin, org );
+		}
+	}
+}
+
+

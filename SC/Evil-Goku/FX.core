@@ -1,0 +1,236 @@
+public fxBlow (Client)
+{   
+   AddFx( Client,"fxBlow");
+   return 1;
+}  
+
+public fxAura( CORE[] )
+{
+	AddFx( CORE[0], "fxModelEntity", "models/evolution/Auras/shape_01-red.mdl", 0, 0, 20.0, 255, 0, 0, 1.0, 0.3, 0, 4 );
+	return 1;
+}
+
+public fxAura2( CORE[] )
+{
+AddFx( CORE[0], "fxLightning", "sprites/E-L.spr", 2, 50, 150, 200, 10 ,10 ,250 ,10 ,100 ,0);
+AddFx( CORE[0], "fxPowerWave", "sprites/waves-evil.spr", 180, 145, 120, 50, 500);		
+return 1;
+}
+
+public fx100( CORE[] )
+{
+AddFx( CORE[0], "fxModelEntity", "models/evolution/Auras/shape_01-red.mdl", 0, 0, 20.0, 255, 0, 0, 1.0, 0.3, 0, 4 );
+return 1;
+}
+
+public fxScream( CORE[] )
+{
+	AddFx( CORE[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	emit_sound( CORE[0], CHAN_ITEM, "Evil-Goku/scream123.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+public FX_off(Client)
+{
+  RemFx( Client,"fxModelEntity",0);
+  RemFx( Client,"fxModelEntity",0);
+  RemFx( Client,"fxModelEntity",0);
+  RemFx( Client,"fxSpriteEntity",0);
+  RemFx( Client,"fxSpriteEntity",0);   
+  RemFx( Client,"fxPowerup",0);    
+  return 1;
+}	
+
+public ModelChange001( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "e-c" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+public ModelChange002( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "Evil-Goku.ssj1" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/red.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmokered.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public fx112( Core[] )
+{
+	AddFx( Core[0], "fxLightning", "sprites/E-L.spr", 2, 50, 150, 200, 10 ,10 ,250 ,10 ,100 ,0);
+	return 1;
+}
+
+public fx113( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/1231.spr", 180, 145, 120, 50, 500);
+	return 1;
+}
+
+public fx114( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/waves-evil.spr", 180, 145, 120, 50, 500);	
+	return 1;
+}
+
+public fxssj3( CORE[] )
+{
+ client_cmd( CORE[0], "cam_idealdist 400" )
+ AddFx( CORE[0], "fxSpriteEntity", "sprites/es.spr", 0, 0, 255.0, 10.0, 1.0, 1.0 );
+ return 1;
+}
+
+public fxssj4( CORE[] )
+{
+	AddFx( CORE[0], "fxLightning", "sprites/E-L.spr", 2, 50, 150, 200, 10 ,10 ,250 ,10 ,100 ,0);
+	AddFx( CORE[0], "fxPowerWave", "sprites/waves-evil.spr", 180, 145, 120, 50, 500);	
+	AddFx( CORE[0], "fxPowerWave", "sprites/1231.spr", 180, 145, 120, 50, 500);	
+	return 1;
+}
+
+
+
+
+
+
+
+
+
+public fxape1A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.2, 0, 1 );
+	return 1;
+}
+
+public fxape2A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.3, 0, 1 );
+	return 1;
+}
+
+public fxape3A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.4, 0, 1 );
+	return 1;
+}
+
+public fxape4A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.5, 0, 1 );
+	return 1;
+}
+
+public fxape5A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.6, 0, 1 );
+	return 1;
+}
+
+public fxape6A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.7, 0, 1 );
+	return 1;
+}
+
+public fxape7A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.8, 0, 1 );
+	return 1;
+}
+
+public fxape8A( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Evil-Goozaru1.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.9, 0, 1 );
+	return 1;
+}
+
+public fxape1B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.2, 0, 1 );
+	return 1;
+}
+
+public fxape2B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.3, 0, 1 );
+	return 1;
+}
+
+public fxape3B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.4, 0, 1 );
+	return 1;
+}
+
+public fxape4B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.5, 0, 1 );
+	return 1;
+}
+
+public fxape5B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.6, 0, 1 );
+	return 1;
+}
+
+public fxape6B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.7, 0, 1 );
+	return 1;
+}
+
+public fxape7B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.8, 0, 1 );
+	return 1;
+}
+
+public fxape8B( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Black-oozaru.mdl", 0, 5, 100.0, 0, 0, 0, 1.0, 0.9, 0, 1 );
+	return 1;
+}
+
+public fxcam( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 400" )
+	return 1;
+}
+
+public fxoff( Core[] )
+{
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);
+	RemFx( Core[0], "fxModelEntity", 0);	
+	return 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

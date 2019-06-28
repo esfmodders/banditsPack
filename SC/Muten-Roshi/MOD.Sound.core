@@ -1,0 +1,36 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/kamehame.wav",
+		"Muten-Roshi/roshi_kamehameha_charge.wav"
+	},
+	{
+		"*/ha.wav",
+		"Muten-Roshi/roshi_kamehameha_fire.wav"
+	},
+
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"Muten-Roshi/roshi_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"Muten-Roshi/roshi_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"Muten-Roshi/roshi_pain3.wav"
+	},
+
+	{
+		"*/pain4.wav",
+		"Muten-Roshi/roshi_pain4.wav"
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"Muten-Roshi/roshi_death.wav"
+	}
+};

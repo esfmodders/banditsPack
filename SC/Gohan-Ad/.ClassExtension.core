@@ -1,0 +1,285 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2003 - 2006 Corona Bytes
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Gohan-Ad";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"TESTICLES";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+	
+	// register forward for fast ascend to blue
+	//register_forward( FM_ClientCommand,"Turbo")
+}
+
+
+
+// << Class Extension Creation >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Gohan-Ad",  true, false, "Son Gohan, Goku's son.", "sound/ecx.gohan-ad/c_intro.wav" );
+
+	// << Level >> 0 >> Saiya-jin
+	addClassLevel( "Saiya-jin", "ecx.gohan-ad", 0.0, 0.0, 1_200_000, 0, 0.0,
+					250, 100, bool:{ false, false }, 0.0, { 200, 100 }, bool:{ false, false, false, false, false, false, false }, 3.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 100.0, 100.0, 100.0, 50.0 }, 0, kRenderTransAdd,
+					{ 100, 100, 100 } );
+
+	// << Level >> 1 >> Super Saiya-jin
+	addClassLevel( "Super Saiya-jin", "ecx.gohan-ad.ssj", 5.0, 3.0, 2_000_000, 2_500_000, 2.5,
+					300, 120, bool:{ false, false }, 2.0, { 250, 90 }, bool:{ false, false, false, false, false, false, false }, 3.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 160.0, 150.0, 20.0, 60.0 }, 4, kRenderTransAdd,
+			{ 160, 150, 70 } );
+
+	// << Level >> 2 >> Super Saiya-jin 2
+	addClassLevel( "Super Saiya-jin 2", "ecx.gohan-ad.ssj2", 20.0, 3.0, 6_500_000, 7_500_000, 2.0,
+					320, 150, bool:{ false, false }, 4.0, { 300, 120 }, bool:{ true, true, false, false, false, false, false }, 3.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 170.0, 150.0, 80.0, 50.0 }, 4, kRenderTransAdd,
+			{ 170, 150, 80 }, { 1, 1, 1, 7 } );
+
+	// << Level >> 3 >> Mystic Saiya-jin
+	addClassLevel( "Mystic Saiya-jin ", "ecx.gohan-ad.myst", 17.0, 3.0, 15_500_000, 0, 1.5,
+					320, 150, bool:{ false, true }, 4.0, { 300, 120 }, bool:{ true, true, false, false, false, false, false }, 3.0, Float:{ 100.0, 30.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 100.0, 100.0, 100.0, 50.0 }, 0, kRenderTransAdd,
+					{ 100, 100, 100 } );
+
+
+}
+
+
+
+// << Class Extension Weapon >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // << Saiya-jin >>
+		{
+			addClassItem( Client, "weapon_melee", true );
+			//addClassItem( Client, "weapon_shieldattack" );
+			addClassItem( Client, "weapon_kiblast" );
+
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_powerbeam" );
+			addClassSpecial( Client, "Shield", Float:{ 50.0, 40.0, 10.0 } );
+			addClassSpecial( Client, "mafuba" );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		case 1: // << Super Saiya-jin >>
+		{
+			addClassItem( Client, "weapon_melee", true );
+			//addClassItem( Client, "weapon_shieldattack" );
+			addClassItem( Client, "weapon_kiblast" );
+
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_powerbeam" );
+			addClassSpecial( Client, "Shield", Float:{ 50.0, 40.0, 10.0 } );
+		}
+		case 2: // << Super Saiya-jin 2 >>
+		{
+			addClassItem( Client, "weapon_melee", true );
+			//addClassItem( Client, "weapon_shieldattack" );
+			addClassItem( Client, "weapon_kiblast" );
+
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_powerbeam" );
+			addClassSpecial( Client, "Shield", Float:{ 50.0, 40.0, 10.0 } );
+		}
+		case 3: // << Mystic Saiya-jin >>
+		{
+			addClassItem( Client, "weapon_melee", true );
+			//addClassItem( Client, "weapon_shieldattack" );
+			addClassItem( Client, "weapon_kiblast" );
+
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_powerbeam" );
+			addClassSpecial( Client, "Shield", Float:{ 50.0, 40.0, 10.0 } );
+		}
+	}
+}
+
+// << Class Extension PreCache >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.gohan-ad/ecx.gohan-ad.mdl" );
+	precache_model( "models/player/ecx.gohan-ad.ssj/ecx.gohan-ad.ssj.mdl" );
+	precache_model( "models/player/ecx.gohan-ad.ssj2/ecx.gohan-ad.ssj2.mdl" );
+	precache_model( "models/player/ecx.gohan-ad.myst/ecx.gohan-ad.myst.mdl" );
+	precache_model( "models/player/ecx.goku-ts.ssb/ecx.goku-ts.ssb.mdl" );
+	precache_model( "models/evolution/Auras/default.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/evolution/Auras/shape_05.mdl" );
+
+	precache_sound( "ecx.gohan-ad/t_ssj.wav" );
+	precache_sound( "ecx.gohan-ad/t_ssj2.wav" );
+	precache_sound( "ecx.gohan-ad/t_myst.wav" );
+	precache_sound( "ecx.gohan-ad/t_scream.wav" );
+
+
+	
+}
+
+// << Class Extension Transformation >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.gohan-ad/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.1, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 2.0, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.1, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+
+			case 2:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.gohan-ad/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				AddFx( Client, "fxLgtField", 0.2, 2, 255, 100 );
+				for ( new Float:i=0.0; i<=3.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.1, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+
+			// case 3: not needed cuz there is no perfect mystic trans
+
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.gohan-ad/t_ssj.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+
+				set_task( 0.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 2.1, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+				set_task( 2.2, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",4 );
+
+				set_task( 2.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				//set_task( 8.8, "fxScream", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				for ( new Float:i=4.0; i<=8.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+
+			case 2:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.gohan-ad/t_ssj2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 0.7 );
+
+				set_task( 0.0, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 10.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=10.0; i<=20.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 2.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 2.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",5 );
+
+				set_task( 19.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+			case 3:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.gohan-ad/t_myst.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				setClientHiddenPOWERUP( Client, true );
+				AddFx( Client, "fxAvatar", "create", 101, 0.5 );
+
+				set_task( 0.0, "fxAura2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 5.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 0.1, "fxLgt", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				for ( new Float:i=5.0; i<=16.0; i++ )
+					set_task( i, "fxLight", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+				set_task( 2.4, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",6 );
+				set_task( 2.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",5 );
+
+				set_task( 16.5, "fxFinalBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+
+			}
+
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	AddFx( Client, "fxBlow" );
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+	//setClientANIMATION(Client,-1);
+	RemFx( Client, "fxAvatar", 0);
+
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) );
+}

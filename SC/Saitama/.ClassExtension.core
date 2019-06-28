@@ -1,0 +1,66 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Saitama";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"BANDIT";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Saitama", false, false, "One Punsh Man" );
+
+	// Saitama
+	addClassLevel( "Saitama", "Saitama", 10.0, 1.5, 1000000, 1500000, 1.0, 
+					400, 100, bool:{ false, false }, 0.0, { 200, 100 }, { 1, 1, 1, 1, 1, 5, 5 }, 1.0, Float:{ 107.0, 60.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 0.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public bool:@ClassCandyEat ( Client )
+	return true;
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Saitama
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_bigbang" );
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/Saitama/Saitama.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+}

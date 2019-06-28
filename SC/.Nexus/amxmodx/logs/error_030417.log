@@ -1,0 +1,1542 @@
+L 03/04/2017 - 00:17:10: Start of error session.
+L 03/04/2017 - 00:17:10: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 00:17:10: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 00:17:10: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 00:17:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 00:17:10: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 00:17:10: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 00:17:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:13:17: Start of error session.
+L 03/04/2017 - 09:13:17: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 09:13:17: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:13:17: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:13:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:13:17: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:13:17: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:13:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:25:06: Start of error session.
+L 03/04/2017 - 09:25:06: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 09:25:06: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:25:06: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:25:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:25:06: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:25:06: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:25:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:27:17: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 09:27:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:27:21: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 09:27:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:27:22: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 09:27:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:30:34: Start of error session.
+L 03/04/2017 - 09:30:34: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 09:30:34: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:30:34: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:30:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:30:34: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:30:34: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:30:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:32:57: << FX >> Invalid Client [ 2 ]
+L 03/04/2017 - 09:32:57: [AMXX] Run time error 10 (plugin "Black.amxx") (native "RemFx") - debug not enabled!
+L 03/04/2017 - 09:32:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:32:57: << FX >> Invalid Client [ 2 ]
+L 03/04/2017 - 09:32:57: [AMXX] Run time error 10 (plugin "Zamasu.amxx") (native "RemFx") - debug not enabled!
+L 03/04/2017 - 09:32:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:37:06: Start of error session.
+L 03/04/2017 - 09:37:06: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 09:37:06: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:37:06: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:37:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:37:06: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:37:06: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:37:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:42:36: Start of error session.
+L 03/04/2017 - 09:42:36: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 09:42:36: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:42:36: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:42:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:42:36: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:42:36: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:42:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:45:46: Start of error session.
+L 03/04/2017 - 09:45:46: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 09:45:46: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:45:46: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:45:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:45:46: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:45:46: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:45:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:46:24: Start of error session.
+L 03/04/2017 - 09:46:24: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 09:46:24: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:46:24: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:46:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:46:24: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:46:24: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:46:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:57:46: Start of error session.
+L 03/04/2017 - 09:57:46: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 09:57:46: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:57:46: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 09:57:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 09:57:46: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 09:57:46: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 09:57:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:01:32: Start of error session.
+L 03/04/2017 - 10:01:32: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 10:01:32: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:01:32: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:01:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:01:32: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:01:32: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:01:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:03:10: Start of error session.
+L 03/04/2017 - 10:03:10: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 10:03:10: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:03:10: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:03:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:03:10: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:03:10: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:03:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:06:45: Start of error session.
+L 03/04/2017 - 10:06:45: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 10:06:45: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:06:45: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:06:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:06:45: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:06:45: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:06:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:31:46: Start of error session.
+L 03/04/2017 - 10:31:46: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 10:31:46: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:31:46: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:31:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:31:46: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:31:46: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:31:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:33:49: Start of error session.
+L 03/04/2017 - 10:33:49: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 10:33:49: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:33:49: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:33:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:33:49: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:33:49: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:33:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:38:01: Start of error session.
+L 03/04/2017 - 10:38:01: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 10:38:01: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:38:01: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:38:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:38:01: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:38:01: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:38:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:39:23: Start of error session.
+L 03/04/2017 - 10:39:23: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 10:39:23: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:39:23: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:39:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:39:23: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:39:23: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:39:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:41:49: Start of error session.
+L 03/04/2017 - 10:41:49: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 10:41:49: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:41:49: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 10:41:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 10:41:49: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 10:41:49: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 10:41:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:16:41: Start of error session.
+L 03/04/2017 - 14:16:41: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 14:16:41: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:16:41: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:16:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:16:41: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:16:41: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:16:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:20:50: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 14:20:50: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 14:20:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:20:50: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 14:20:50: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 14:20:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:26:36: Start of error session.
+L 03/04/2017 - 14:26:36: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 14:26:36: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:26:36: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:26:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:26:36: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:26:36: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:26:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:27:19: Start of error session.
+L 03/04/2017 - 14:27:19: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 14:27:19: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:27:19: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:27:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:27:19: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:27:19: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:27:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:37:26: Start of error session.
+L 03/04/2017 - 14:37:26: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 14:37:26: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:37:26: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:37:26: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:37:26: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:37:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:38:45: Start of error session.
+L 03/04/2017 - 14:38:45: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 14:38:45: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:38:45: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:38:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:38:45: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:38:45: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:38:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:47:02: Start of error session.
+L 03/04/2017 - 14:47:02: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 14:47:02: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:47:02: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:47:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:47:02: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:47:02: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:47:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:48:25: Start of error session.
+L 03/04/2017 - 14:48:25: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 14:48:25: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:48:25: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:48:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:48:25: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:48:25: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:48:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:49:08: Start of error session.
+L 03/04/2017 - 14:49:08: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 14:49:08: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:49:08: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:49:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:49:08: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:49:08: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:49:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:50:40: Start of error session.
+L 03/04/2017 - 14:50:40: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 14:50:40: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:50:40: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:50:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:50:40: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:50:40: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:50:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:53:26: Start of error session.
+L 03/04/2017 - 14:53:26: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 14:53:26: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:53:26: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:53:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:53:26: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:53:26: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:53:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:55:25: Start of error session.
+L 03/04/2017 - 14:55:25: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 14:55:25: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:55:25: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:55:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:55:25: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:55:25: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:55:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:56:26: Start of error session.
+L 03/04/2017 - 14:56:26: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 14:56:26: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:56:26: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:56:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:56:26: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:56:26: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:56:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:58:13: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 14:58:13: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 14:58:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:58:13: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 14:58:13: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 14:58:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:59:05: Start of error session.
+L 03/04/2017 - 14:59:05: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 14:59:05: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:59:05: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 14:59:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 14:59:05: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 14:59:05: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 14:59:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:00:12: Start of error session.
+L 03/04/2017 - 15:00:12: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 15:00:12: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:00:12: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 15:00:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:00:12: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:00:12: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 15:00:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:04:44: Start of error session.
+L 03/04/2017 - 15:04:44: Info (map "esf_ychampaarena") (logfile "error_030417.log")
+L 03/04/2017 - 15:04:44: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:04:44: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 15:04:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:04:44: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:04:44: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 15:04:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:41:30: Start of error session.
+L 03/04/2017 - 15:41:30: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 15:41:30: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:41:30: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 15:41:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:41:30: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:41:30: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 15:41:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:09: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:42:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:11: Invalid message argument 2
+L 03/04/2017 - 15:42:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:42:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:18: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:42:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:26: Invalid message argument 2
+L 03/04/2017 - 15:42:26: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:42:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:30: Invalid message argument 2
+L 03/04/2017 - 15:42:30: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:42:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:36: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:42:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:49: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:42:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:50: Invalid message argument 2
+L 03/04/2017 - 15:42:50: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:42:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:54: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:42:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:42:59: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:42:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:00: Invalid message argument 2
+L 03/04/2017 - 15:43:00: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:00: Invalid message argument 2
+L 03/04/2017 - 15:43:00: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:00: Invalid message argument 2
+L 03/04/2017 - 15:43:00: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:01: Invalid message argument 2
+L 03/04/2017 - 15:43:01: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:02: Invalid message argument 2
+L 03/04/2017 - 15:43:02: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:03: Invalid message argument 2
+L 03/04/2017 - 15:43:03: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:04: Invalid message argument 2
+L 03/04/2017 - 15:43:04: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:05: Invalid message argument 2
+L 03/04/2017 - 15:43:05: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:06: Invalid message argument 2
+L 03/04/2017 - 15:43:06: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:07: Invalid message argument 2
+L 03/04/2017 - 15:43:07: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:08: Invalid message argument 2
+L 03/04/2017 - 15:43:08: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:09: Invalid message argument 2
+L 03/04/2017 - 15:43:09: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:10: Invalid message argument 2
+L 03/04/2017 - 15:43:10: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:11: Invalid message argument 2
+L 03/04/2017 - 15:43:11: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: Invalid message argument 2
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: Invalid message argument 2
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: Invalid message argument 2
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: Invalid message argument 2
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: Invalid message argument 2
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 15
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 15
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 17
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: << CORE >> Invalid Client >> 17
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:12: Invalid message argument 2
+L 03/04/2017 - 15:43:12: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:21: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:43:21: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:22: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:43:22: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:22: Invalid message argument 2
+L 03/04/2017 - 15:43:22: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:22: Invalid message argument 2
+L 03/04/2017 - 15:43:22: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:22: Invalid message argument 2
+L 03/04/2017 - 15:43:22: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:22: Invalid message argument 2
+L 03/04/2017 - 15:43:22: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:22: Invalid message argument 2
+L 03/04/2017 - 15:43:22: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:22: Invalid message argument 2
+L 03/04/2017 - 15:43:22: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:23: Invalid message argument 2
+L 03/04/2017 - 15:43:23: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:24: Invalid message argument 2
+L 03/04/2017 - 15:43:24: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:25: Invalid message argument 2
+L 03/04/2017 - 15:43:25: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: Invalid message argument 2
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: Invalid message argument 2
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: Invalid message argument 2
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: << CORE >> Invalid Client >> 15
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: Invalid message argument 2
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: Invalid message argument 2
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "Beamstruggle.amxx") (native "get_msg_arg_int") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:43:26: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:43:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:43:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:46:30: Start of error session.
+L 03/04/2017 - 15:46:30: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 15:46:30: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:46:30: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 15:46:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:46:30: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:46:30: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 15:46:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:48:19: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:48:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:48:24: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 15:48:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:49:18: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:49:18: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:49:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:49:18: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:49:18: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:49:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 15
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 15
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 17
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:50:49: << CORE >> Invalid Client >> 17
+L 03/04/2017 - 15:50:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:50:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:51:14: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:51:14: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:51:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:03: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:54:03: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:03: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:54:03: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:08: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:54:08: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:08: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:54:08: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:26: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:54:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:26: << CORE >> Invalid Client >> 13
+L 03/04/2017 - 15:54:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:26: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:54:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:26: << CORE >> Invalid Client >> 14
+L 03/04/2017 - 15:54:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:54:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:31: Start of error session.
+L 03/04/2017 - 15:54:31: Info (map "esf_Gurufixed") (logfile "error_030417.log")
+L 03/04/2017 - 15:54:31: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:54:31: [AMXX] Run time error 19 (plugin "Black.amxx") - debug not enabled!
+L 03/04/2017 - 15:54:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:54:31: Could not find function "@WeaponExplosion"
+L 03/04/2017 - 15:54:31: [AMXX] Run time error 19 (plugin "Zamasu.amxx") - debug not enabled!
+L 03/04/2017 - 15:54:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:56:34: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:56:34: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:56:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:56:34: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:56:34: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:56:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:56:39: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:56:39: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:56:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:56:56: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:56:56: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:56:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:56:56: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:56:56: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:56:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:00: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:00: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:00: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:00: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:00: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:07: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:07: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:07: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:07: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:11: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:11: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:57:49: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:57:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:57:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:58:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:58:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:58:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 15:58:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 15:58:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 15:58:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:08: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:08: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:08: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:08: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:22: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:22: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:22: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:22: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:24: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:00:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:27: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:00:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:44: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:44: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:47: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:47: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:47: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:47: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:50: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:50: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:50: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:50: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:50: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:50: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:00:57: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:00:57: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:00:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:01:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:01:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:01:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:01:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:01:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:01:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:01:48: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:01:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:01:49: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:01:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:01:50: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:01:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:01:50: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:01:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:03:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:03:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:23: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:04:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:26: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:04:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:04:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:26: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:04:26: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:04:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:30: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:04:30: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:04:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:30: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:04:30: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:04:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:38: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:04:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:40: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:04:40: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:04:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:40: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:04:40: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:04:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:47: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:04:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:47: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:04:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:04:57: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:04:57: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:04:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:01: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:01: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:01: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:01: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:10: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:05:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:05:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:19: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:19: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:19: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:19: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:20: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:20: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:20: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:20: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:38: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:38: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:38: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:38: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:43: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:43: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:43: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:43: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:05:56: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:05:56: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:05:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:06:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:06:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:06:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:06:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:06:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:06:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:06:11: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:06:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:06:30: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:06:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:06:49: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:06:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:06:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:06:49: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:06:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:06:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:08:08: [AMXX] Run time error 4 (plugin "Zamasu-Fusion.amxx") - debug not enabled!
+L 03/04/2017 - 16:08:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:09:19: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:09:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:09:20: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:09:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:09:22: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:09:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:09:34: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:09:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:09:34: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:09:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:09:43: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:09:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:13: Function is not present (function "fxScream3") (plugin "CX/Vegetto.amxx")
+L 03/04/2017 - 16:10:13: [AMXX] Run time error 10 (plugin "Vegetto.amxx") (native "set_task") - debug not enabled!
+L 03/04/2017 - 16:10:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:20: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 03/04/2017 - 16:10:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:27: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 03/04/2017 - 16:10:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:31: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 03/04/2017 - 16:10:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:40: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 03/04/2017 - 16:10:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:41: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 03/04/2017 - 16:10:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:43: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 03/04/2017 - 16:10:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:10:55: [AMXX] Run time error 4 (plugin "Vegetto.amxx") - debug not enabled!
+L 03/04/2017 - 16:10:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:12:15: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:12:15: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:12:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:12:15: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:12:15: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:12:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:12:48: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:12:48: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:12:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:12:48: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:12:48: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:12:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:22: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:22: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:22: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:22: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:23: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:13:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:25: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:25: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:25: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:25: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:28: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:28: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:28: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:28: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:34: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:34: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:34: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:13:34: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:13:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:13:35: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:13:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:21: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:14:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:24: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:24: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:24: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:24: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:28: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:14:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:28: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:14:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:30: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:30: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:30: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:30: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:40: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:40: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:40: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:40: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:42: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:42: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:42: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:42: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:56: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:56: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:56: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:56: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:59: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:59: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:14:59: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:14:59: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:14:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:02: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:02: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:11: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:11: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:20: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:15:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:21: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:15:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:21: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:15:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:41: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:41: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:41: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:41: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:43: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:43: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:43: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:15:43: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:15:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:44: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:15:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:15:48: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:15:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:39: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:16:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:40: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:16:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:41: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:16:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:41: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:16:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:42: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:16:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:47: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:16:47: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:16:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:47: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:16:47: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:16:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:49: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:16:49: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:16:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:51: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:16:51: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:16:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:51: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:16:51: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:16:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:16:58: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:16:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:05: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:05: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:06: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:17:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:08: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:08: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:08: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:08: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:10: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:10: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:10: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:10: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:44: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:44: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:17:44: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:17:44: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:17:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:18:03: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:18:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:18:37: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:18:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:18:44: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:18:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:19:06: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:19:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:19:51: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:19:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:19:54: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:19:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:19:55: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:19:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:20:39: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:20:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:20:39: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:20:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:20:43: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:20:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:20:58: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:20:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:01: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:21:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:32: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:21:32: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:21:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:32: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:21:32: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:21:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:34: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:21:34: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:21:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:34: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:21:34: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:21:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:45: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:21:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:46: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:21:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:46: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:21:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:59: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:21:59: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:21:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:21:59: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:21:59: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:21:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:02: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:22:02: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:25: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:22:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:30: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:22:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:47: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:47: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:47: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:22:47: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:22:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:22:56: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:22:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:01: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:23:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:04: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:23:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:04: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:04: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:04: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:05: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:23:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:09: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:23:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:17: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:17: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:20: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:20: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:20: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:20: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:23: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:23: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:28: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:28: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:28: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:28: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:42: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:23:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:44: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:44: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:44: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:44: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:45: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:23:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:46: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:46: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:46: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:23:46: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:23:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:23:56: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:23:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:01: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:24:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:11: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:11: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:11: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:15: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:15: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:15: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:15: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:15: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:22: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:22: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:22: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:22: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:25: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:25: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:25: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:24:25: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:24:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:34: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:24:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:41: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:24:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:24:42: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:24:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:26:23: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:26:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:26:32: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:26:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:26:42: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:26:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:26:50: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 03/04/2017 - 16:26:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:42: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:42: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:42: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:42: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:48: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:48: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:48: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:48: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:52: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:52: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:52: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:52: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:54: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:54: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:54: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:54: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:54: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:54: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:58: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:58: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:31:58: << CORE >> Invalid Client >> 12
+L 03/04/2017 - 16:31:58: [AMXX] Run time error 10 (plugin "SX.Wolffangfist.amxx") (native "getClientSPEED") - debug not enabled!
+L 03/04/2017 - 16:31:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:32:45: << FX >> Invalid Client [ 2 ]
+L 03/04/2017 - 16:32:45: [AMXX] Run time error 10 (plugin "Black.amxx") (native "RemFx") - debug not enabled!
+L 03/04/2017 - 16:32:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 03/04/2017 - 16:32:45: << FX >> Invalid Client [ 2 ]
+L 03/04/2017 - 16:32:45: [AMXX] Run time error 10 (plugin "Zamasu.amxx") (native "RemFx") - debug not enabled!
+L 03/04/2017 - 16:32:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

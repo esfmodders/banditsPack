@@ -1,0 +1,229 @@
+public ModelChange001( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange002( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange003( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange004( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange005( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange006( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange007( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange008( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transgoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange009( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transgoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange010( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transgoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange011( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transgoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange012( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "transgoozarufinal" );
+AddFx( Client, "fxAvatar", "create", 120, 1.0 );
+}
+public ModelChange013( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "ecx.broly.ssj4" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+public SSJ2CHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "ecx.broly.ssj3" );
+}
+public fxBlow( Core[] )
+{
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+public fxPowerwave( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+	return 1;
+}
+public fxAura( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/default.mdl", 0, 0, 20.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.3, 0, 4 );
+        AddFx( Core[0], "fxSpriteEntity","sprites/ecx.aura.broly.spr", 0, 0, 255.0, 10.0, 1.0, 0.4 );
+	return 1;
+}
+public fxAura19( Core[] )
+{
+AddFx( Core[0], "fxSpriteEntity","sprites/ecx.wave.1.spr", 0, 0, 255.0, 10.0, 1.0, 0.6 );
+return 1;
+}
+
+public fxLight( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	return 1;
+}
+
+public fxAura2( Core[] )
+{
+	AddFx( Core[0], "fxSpriteEntity", "sprites/ecx.shine.spr", 0, 0, 30.0, 10.0, 1.0, 2.0 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/default.mdl", 0, 0, 20.0, 0, 0, 0, 1.0, 0.5, 0, 4 );
+	return 1;
+}
+
+
+public fxAura3( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.5, 0, 4 );
+        AddFx( Core[0], "fxLightning","sprites/lgtning.spr", 100, 50, 150, 10, 200, 10, 250, 10, 100, 0 );
+        AddFx( Core[0], "fxSpriteEntity","sprites/ecx.aura.ssj3.spr", 0, 0, 255.0, 10.0, 1.0, 0.4 );
+	return 1;
+}
+
+
+public fxAura4( Core[] )
+{
+        AddFx( Core[0], "fxLightning","sprites/lgtning.spr", 120, 50, 150, 200, 10, 10, 250, 10, 100, 0 );
+        AddFx( Core[0], "fxSpriteEntity","sprites/ecx.aura.broly.spr", 0, 0, 225.0, 10.0, 1.0, 0.4 );
+	return 1;
+}
+
+
+public fxAura5( Core[] )
+{
+        AddFx( Core[0], "fxLightning","sprites/lgtning.spr", 50, 150, 250, 255, 10, 10, 250, 10, 100, 0 );
+        AddFx( Core[0], "fxSpriteEntity","sprites/ecx.aura.broly.spr", 0, 0, 255.0, 10.0, 1.0, 0.4 );
+	return 1;
+}
+public fxAura6( Core[] )
+{
+        AddFx( Core[0], "fxLightning","sprites/lgtning.spr", 50, 50, 250, 255, 10, 10, 250, 10, 100, 0 );
+        AddFx( Core[0], "fxSpriteEntity","sprites/ecx.aura.broly.spr", 0, 0, 255.0, 10.0, 1.0, 1.2 );
+	return 1;
+}
+public fxAura7( Core[] )
+{
+        AddFx( Core[0], "fxLightning","sprites/lgtning.spr", 50, 50, 250, 255, 10, 10, 250, 10, 100, 0 );
+        AddFx( Core[0], "fxSpriteEntity","sprites/ecx.aura.broly.spr", 0, 0, 255.0, 10.0, 1.0, 1.3 );
+	return 1;
+}
+public fxCam( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 200" )
+}
+public fxCam1( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 45" )
+}
+public fxLgt( Core[] )
+{
+	AddFx( Core[0], "fxLgtField", 0.2, 3, 255, 100);
+	return 1;
+}
+
+
+public fxScream( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	emit_sound( Core[0], CHAN_ITEM, "ecx.broly/t_scream.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxSprite", "sprites/xflare1.spr", 15, 255, 0, 0, 0 );
+	return 1;
+}
+public fxFinalBlow2( Core[] )
+{
+	AddFx( Core[0], "fxCallSpirits", 1 , 50 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Moon.mdl", 0, 10, 1000.0, 0, 0, 0, 1.0, 5.0, 0, 10 );
+	return 1;
+}
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxLgtField", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxCSpriteRays", 0);
+
+	return 1;
+}

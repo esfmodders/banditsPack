@@ -1,0 +1,322 @@
+/* 
+
+	KAIOKEN V1.0 
+
+	21/3/2019
+
+	by Matias_Esf
+
+	https://discord.gg/FFsnV92
+
+	https://www.facebook.com/groups/EsfWarriorsZ/
+
+
+	**notes**
+
+	-Need add ki rate
+	-This kaioken call the sound of mod.sound.core > /kaioken3x.wav
+
+ */
+
+
+#include <xtension/special>
+#include <ipci/ascend>
+#include <ipci/core>
+#include <ipci/fxlib>
+#include <engine>
+#include <fun>
+#include <fakemeta>
+
+#define getClientPLAYER(%1)		(1 <= %1 <= 33)
+
+
+
+stock SpecialXtension:Kaioken;
+
+
+new Float:__float_kaiokenspeed[ 33 ], bool:__bool_swoop [ 33 ], SPR_KAIOKEN_T;
+
+new const __sz_sources[][]= 
+{
+	"weapons/swoop.wav",
+	"weapons/chainswoop.wav",
+	"common/null.wav",
+	"sprites/redtrail.spr",
+	"sprites/mat.rojo_taura.spr",
+	"models/evolution/auras/shape_01.mdl",
+	"models/evolution/auras/shape_c.mdl",
+	"weapons/kaiokenswoop.wav"
+};
+
+
+
+public plugin_init ()
+{
+	register_plugin( "Kaioken", "1.0", "Matias_Esf" );
+	register_forward(FM_EmitSound, "@Kaioken", true);
+}
+
+
+public @SpecialCreation ()
+{
+	beginSpecialCreation( "Kaioken", "", "callKaioken", "special_kaioken" );
+	
+	addSpecialCharge( IN_ATTACK, 10.0, 4.0, false );
+	
+	addSpecialHook( sxhDeathMessage, "deathmsgSample" );
+		
+	Kaioken = endSpecialCreation();
+}
+
+public plugin_precache()
+{
+	SPR_KAIOKEN_T = precache_model(__sz_sources[3]);
+	precache_model(__sz_sources[4]);
+	precache_sound(__sz_sources[7]);
+}
+
+
+
+public callKaioken ( id, CSpecialState:Status, Control, Float:Charge )
+{
+	switch ( Status )
+	{
+		case ssCharge:
+		{
+			if ((get_pdata_int(id, 199 ) && !getClientXFROZEN(id))
+			|| get_pdata_int(id, 298)
+			|| get_pdata_int(id, 230)
+			|| get_pdata_int(id, 317) 
+			|| get_pdata_int(id, 230)
+			|| get_pdata_int(id, 300)
+			|| get_pdata_int(id, 196) 
+			|| get_pdata_int(id, 202)
+			|| __float_kaiokenspeed[ id ] != 0.0)
+			{
+				return 0;
+			}
+			
+			if ( Charge == 0.0 )
+			{
+				setClientANIMATION(id, 217, 1.0);
+
+				AddFx(id, "fxPowerup", 70, 20, 20);
+
+				__float_kaiokenspeed[ id ] = 0.0
+			}
+
+			else if ( Charge == 0.3 )
+			{
+				fxEffects(id)
+				AddFx(id, "fxModelEntity",__sz_sources[5], 0, 0, 30.0, 0, 0, 0, 1.2, 0.3, 4, 3 );
+			}
+
+			else if ( Charge == 0.6 )
+			{
+				static CORE[1];
+				CORE[0] = id
+
+				fxEffects(id)
+				RemFx(id, "fxModelEntity",0)
+				AddFx(id, "fxModelEntity",__sz_sources[6], 0, 0, 40.0, 0, 0, 0, 1.2, 0.3, 4, 3 );
+
+				set_task(0.5,"fxRays", uniqueTaskID(id,100 ), CORE, 1, "b",1);
+
+			}
+
+			else if ( Charge == 0.8 )
+			{
+				client_cmd(id, "spk sound/matias_esf/power.wav")
+				AddFx(id, "fxSpriteEntity", __sz_sources[4], 0, 0, 240.0, 14.0, 0.0, 0.3 );	
+			}
+
+			else if ( Charge >= 1.0 )
+			{
+				if ( Control == IN_ATTACK )
+				{
+					setClientKAIOKEN(id, 600.0)
+				}
+
+			}
+
+			return 1;
+		}
+		
+		case ssChargeReleased:
+		{
+			if ( Charge < 0.3 )
+			{
+				fxoff(id)
+			}
+
+			else if ( Charge >= 0.8 )
+			{
+				setClientKAIOKEN(id, 600.0)
+			}
+
+			else if ( Charge >= 0.6 )
+			{
+				setClientKAIOKEN(id, 450.0)
+			}
+
+			else if ( Charge >= 0.3 )
+			{
+				setClientKAIOKEN(id, 350.0)
+			}
+		}
+		
+
+
+		case ssChargeAborted:
+		{
+			fxoff(id)
+			return 0;
+		}
+		
+		
+		case ssForceAbort:
+		{
+			fxoff(id)
+			KaiokenOFF(id)
+			return 0;
+		}
+	}
+	
+	return 1;
+}
+
+
+stock setClientKAIOKEN(id, Float:speed)
+{
+	__float_kaiokenspeed[ id ] = speed;
+
+	setClientSPECIALSTATE( id, Kaioken, true );
+
+	fxoff(id);
+	AddFx(id,"fxBlow");
+
+	if(speed == 350.0 )
+		emitClientSOUND(id, CHAN_ITEM, "*/kaioken1x.wav");
+
+	else if(speed == 450.0)
+		emitClientSOUND(id, CHAN_ITEM, "*/kaioken3x.wav");
+
+	else if(speed == 600.0)
+		emitClientSOUND(id, CHAN_ITEM, "*/kaioken10x.wav");
+
+	setClientLEVELDATAv(id,cxlGlow,{255.0,0.0,0.0,20.0})
+	setClientLEVELDATAc(id,cxlAuraSkin,3);
+	setClientLEVELDATAv(id,cxlPowerUp,{255,0,0});
+}
+
+
+
+fxoff(id)
+{
+	setClientANIMATION(id, -1)
+
+	RemFx(id, "fxPowerup");
+	RemFx(id, "fxSpriteEntity",0);
+	RemFx(id, "fxModelEntity",0);
+	remove_task( uniqueTaskID (id, 100 ) );
+}
+
+
+KaiokenOFF(id)
+{
+	__float_kaiokenspeed[ id ] = 0.0;
+
+	setClientSPECIALSTATE( id, Kaioken, false );
+	restoreClientLEVELDATA( id )
+	setClientLEVELDATAv(id,cxlGlow,{0.0,0.0,0.0,0.0})
+	set_user_rendering(id, kRenderFxNone,0,0,0, kRenderFxNone, 0)
+
+}
+
+
+
+public @Kaioken(id, __int_Channel, const __sz_Sound[])
+{
+	if(!getClientPLAYER(id) || __float_kaiokenspeed[ id ] == 0.0)
+		return FMRES_IGNORED;
+
+	if(equal(__sz_Sound,__sz_sources[0]) || equal(__sz_Sound,__sz_sources[1]))
+	{
+
+		set_pdata_float(id, 320, get_pdata_float(id, 320) + float(9999));
+		set_pdata_float(id, 699, __float_kaiokenspeed[ id ]);
+		set_pdata_int(id, 462, floatround(__float_kaiokenspeed[ id ]));
+
+		set_user_rendering(id, 19, 30, 0, 0, 4, 200);
+
+		emit_sound(id, CHAN_ITEM,__sz_sources[7], 1.0, ATTN_NORM, 0, PITCH_NORM )
+
+		if(!__bool_swoop[ id ])
+		{
+			__bool_swoop[ id ] = true;
+			message_begin(MSG_BROADCAST, SVC_TEMPENTITY);
+			write_byte(TE_BEAMFOLLOW);
+			write_short(id);
+			write_short(SPR_KAIOKEN_T)
+			write_byte(30);
+			write_byte(10);
+			write_byte(255);
+			write_byte(255);
+			write_byte(255);
+			write_byte(100);
+			message_end
+
+			AddFx(id, "fxScreenShake", 50.0, 0.4, 2.0 );
+
+		}
+	}
+
+	else if(equal(__sz_Sound,__sz_sources[2]))
+	{
+
+		if(__bool_swoop[ id ])
+		{
+			__bool_swoop[ id ] = false;
+
+			set_pdata_float(id, 320, get_pdata_float(id, 320) - float(9999));
+
+			setClientLEVELDATAv(id,cxlGlow,{255.0,0.0,0.0,15.0})
+
+			message_begin(MSG_BROADCAST, SVC_TEMPENTITY)
+			write_byte(TE_KILLBEAM)
+			write_short(id)
+			message_end() 
+		}
+	}
+
+	return FMRES_IGNORED;
+}
+
+
+fxEffects( id )
+{
+	AddFx(id, "fxBlow")
+	AddFx(id, "fxScreenShake", 50.0, 0.4, 2.0 );
+	client_cmd(id, "spk sound/matias_esf/power.wav")
+}
+
+
+public fxRays(Core[])
+{
+    AddFx(Core[0], "fxLightning", "sprites/lgtning.spr", 2, 50, 150, 255, 0, 0, 250, 10, 100, 0);
+}
+
+
+public deathmsgSample ( id, Killer, const Weapon[] )
+{
+	if(__float_kaiokenspeed[ id ] == 350.0 )
+		set_msg_arg_string( 3, "Kaioken x1" );
+
+	else if(__float_kaiokenspeed[ id ] == 450.0)
+		set_msg_arg_string( 3, "Kaioken x3" );
+
+	else if(__float_kaiokenspeed[ id ] == 600.0)
+		set_msg_arg_string( 3, "Kaioken x10" );
+
+
+}

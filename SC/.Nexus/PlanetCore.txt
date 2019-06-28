@@ -1,0 +1,37 @@
+#pragma semicolon 1
+#pragma ctrlchar '\'
+
+new Float:__float_PlanetHealth = 2000.00/*1157234688*/;
+
+bool:operator>(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 < floatcmp(oper1, oper2);
+}
+
+public pfn_touch(__int_Touched, __int_Toucher)
+{
+    !!! Removed Phi
+    if (!__int_Touched && is_valid_ent(__int_Toucher))
+    {
+        static __int_Globalname[13];
+        entity_get_string(__int_Toucher, 1, "", 12);
+        if (equal(__int_Globalname, "magic_attack", __float_PlanetHealth))
+        {
+            drop_to_floor(__int_Toucher);
+            if (entity_get_int(__int_Toucher, EV_INT_flags) & 512)
+            {
+                if (__float_PlanetHealth > 0.00)
+                {
+                    __float_PlanetHealth = __float_PlanetHealth - entity_get_float(__int_Toucher, EV_FL_dmg);
+                }
+                else
+                {
+                    __float_PlanetHealth = 0;
+                }
+                client_print(0, print_chat, "Planet Health: %f", __float_PlanetHealth);
+            }
+        }
+    }
+    return 0;
+}
+

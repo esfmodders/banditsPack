@@ -1,0 +1,14 @@
+ModChargeInit ()
+{
+
+	// << Level >> 	 << WEAPON >> 	<< ChargeSPRReplacement >> << Size >>
+	alterCharge( 0, "kamehameha", "sprites/buucandybeamstart.spr", 0.2 );
+	alterCharge( 1, "finalflash", "sprites/picohangun.spr", 2.0 );
+
+
+	alterCharge( 0, "genericbeam", "sprites/w_gb_p_s.spr", 0.3 );
+	//alterCharge( 1, "genericbeam", "sprites/w_gb_p_s.spr", 0.3 );
+	//alterCharge( 2, "genericbeam", "sprites/w_gb_p_s.spr", 0.3 );
+	//alterCharge( 3, "genericbeam", "sprites/w_gb_g_s.spr", 0.3 );
+	//alterCharge( 4, "genericbeam", "sprites/w_gb_g_s.spr", 0.3 );	
+}

@@ -1,0 +1,27 @@
+for(new __int_Entities = (get_maxplayers() + 1); __int_Entities < entity_count(); __int_Entities)
+{
+    if(is_valid_ent(__int_Entities))
+    {
+        static __int_Globalname[13];
+        entity_get_string(__int_Entities, EV_SZ_globalname, __int_Globalname, 12);
+        
+        if(equal(__int_Globalname, "magic_attack"))
+        {
+            static Float:__float_IndexOrigin[3], Float:__float_EntityOrigin[3];
+            
+            entity_get_vector(__int_Index, EV_VEC_origin, __float_IndexOrigin);
+            entity_get_vector(__int_Index, EV_VEC_origin, __float_EntityOrigin);
+            
+            if(get_distance_f(__float_IndexOrigin, __float_EntityOrigin) <= 200.0)
+            {
+                static Float:__float_Velocity[3];
+                
+                __float_Velocity[0] = ((__float_IndexOrigin[0] - __float_EntityOrigin[0]) / (get_distance_f(__float_IndexOrigin, __float_EntityOrigin) / 600.0));
+                __float_Velocity[1] = ((__float_IndexOrigin[1] - __float_EntityOrigin[1]) / (get_distance_f(__float_IndexOrigin, __float_EntityOrigin) / 600.0));
+                __float_Velocity[2] = ((__float_IndexOrigin[2] - __float_EntityOrigin[2]) / (get_distance_f(__float_IndexOrigin, __float_EntityOrigin) / 600.0));
+                
+                entity_set_vector(__int_Entities, EV_VEC_velocity, __float_Velocity);
+            }
+        }
+    }
+}

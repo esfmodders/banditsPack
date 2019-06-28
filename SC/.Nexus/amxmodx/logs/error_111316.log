@@ -1,0 +1,13 @@
+L 11/13/2016 - 13:41:58: Start of error session.
+L 11/13/2016 - 13:41:58: Info (map "esf_Guru") (logfile "error_111316.log")
+L 11/13/2016 - 13:41:58: < Core >> Model does not exist > "models/player//.mdl"
+L 11/13/2016 - 13:41:58: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/13/2016 - 13:41:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/13/2016 - 14:36:58: Start of error session.
+L 11/13/2016 - 14:36:58: Info (map "esf_Guru") (logfile "error_111316.log")
+L 11/13/2016 - 14:36:58: < Core >> Model does not exist > "models/player//.mdl"
+L 11/13/2016 - 14:36:58: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/13/2016 - 14:36:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/13/2016 - 14:38:16: << FX >> Invalid Client [ 2 ]
+L 11/13/2016 - 14:38:16: [AMXX] Run time error 10 (plugin "Black.amxx") (native "RemFx") - debug not enabled!
+L 11/13/2016 - 14:38:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

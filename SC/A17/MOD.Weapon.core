@@ -1,0 +1,148 @@
+#define MOD_WEAPON_DBG 0
+stock SPR_BLACK;
+stock SPR_SHINE;		// Shine
+stock SPR_YELLOW_S;		// Yellow Beam Head
+stock SPR_YELLOW_T;		// Yellow Beam Trail
+stock SPR_EBOMB
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	SPR_BLACK	= precache_model( "sprites/black.spr" );
+	SPR_YELLOW_S = precache_model( "sprites/w_gb_y_s.spr" );
+	SPR_YELLOW_T = precache_model( "sprites/w_gb_y_t.spr" );
+	SPR_EBOMB = precache_model( "sprites/w_Eclipse_Bomb.spr" );
+	
+	
+
+}
+public @BaseWeaponCreation ( Client, BaseWeapon, const Name[] )
+{
+	if ( equal( Name, "weapon_scattershot" ) )
+	{
+		setBeamChargeTime( BaseWeapon, 1 );
+		setBeamChargeKi( BaseWeapon, 200 );
+		setBeamSpeed( BaseWeapon, 2000 );
+	}
+	else if ( equal( Name, "weapon_finishingbuster" ) )
+	{
+		setBeamChargeTime( BaseWeapon, 15 );
+		setBeamChargeKi( BaseWeapon, 30 );
+		setBeamSpeed( BaseWeapon, 600 );
+	}
+	else if ( equal( Name, "weapon_bigbang" ) )
+	{
+		setBeamChargeTime( BaseWeapon, 15 );
+		setBeamChargeKi( BaseWeapon, 30 );
+		setBeamSpeed( BaseWeapon, 300 );
+	}
+}
+public @WeaponAdjust ( Client, Weapon, const Class[], PowerLevel, Charge )
+{
+	if ( equal( Class, "scattershot" ) )
+	{
+		setWeaponDMG( 0.2, 2.0, 0.05 );
+		setWeaponXPC( 4 );
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 9 );
+		write_byte		( 6 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+		
+		setWeaponHOMING( Weapon, 500.0, 1 /* @ Aim Vec */, 1 | 2 /* Players + Weapons*/ );
+	}
+	else if ( equal( Class, "bigbang" ) )
+	{
+		setWeaponDMG( 19.0, 60.0, 0.05 );
+		setWeaponXPC( 5 );
+		setWeaponXPM( 6.0 );
+
+		setWeaponHOMING( Weapon, 410.0, 1 /* @ Aim Vec */, 1 | 2 /* Players + Weapons*/ );
+
+		
+	}
+	else if ( equal( Class, "kiblast" ) )
+	{
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_YELLOW_T );
+		write_byte		( 4 );
+		write_byte		( 8 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+		
+	}
+}
+
+	// >> SpiritBomb, DeathBall
+
+
+	// >> KiBlast, BigBang, ...
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+	else if ( equal( Class, "bigbang" ) )
+	{
+		attachWeaponHEAD( Weapon, "sprites/w_Eclipse_Bomb.spr", kRenderTransAdd, 250.0, 1.0, 10.0 );
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLACK  );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK  );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLACK  );
+		set_msg_arg_int( 4, ARG_SHORT, 16 );
+	}
+	else if ( equal( Class, "finishingbuster" ) )
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_T );
+	}
+}
+
+	// >> KameHameHa, FinalFlash, ...
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "greenattack" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_YELLOW_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_YELLOW_T );
+	}
+}
+
+	// >> Special Beam Cannon
+public @WeaponSBC ( Client, Weapon, const Class[] )
+{
+}
+
+	// >> Adjust Death Messages
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	if ( equal( Weapon, "greenattack" ) )
+		set_msg_arg_string( 3, "yellowattack" );
+	else if ( equal( Weapon, "scattershot" ) )
+		set_msg_arg_string( 3, "Hell's Storm" );
+	else if ( equal( Weapon, "finishingbuster" ) )
+		set_msg_arg_string( 3, "Desperate Rage" );
+	else if ( equal( Weapon, "bigbang" ) )
+		set_msg_arg_string( 3, "Electro Eclipse Bomb" );
+}
+

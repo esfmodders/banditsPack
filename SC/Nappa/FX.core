@@ -1,0 +1,72 @@
+
+public fxAura( Core[] )
+{
+	client_cmd( Core[0], "cam_idealdist 95" )
+	AddFx( Core[0], "fxSpriteField", "sprites/yellowcharge.spr", 0.1, 1, 255, 40, 50 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_05.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 0.4, 0, 6 );
+	AddFx( Core[0], "fxSpriteEntity", "sprites/ecx.shine.spr", 0, 0, 100.0, 5.0, 1.0, 5 );
+	AddFx( Core[0], "fxPowerup", 220,240,220);
+	return 1;
+}
+
+public fxAura2( Core[] )
+{
+	AddFx( Core[0], "fxModelEntity", "models/evolution/Auras/shape_02.mdl", 0, 0, 30.0, 0, 0, 0, 1.0, 0.2, 0, 4 );
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	return 1;
+}
+
+public fxAura3( Core[] )
+{
+	AddFx( Core[0], "fxLgtField", 3.0, 1, 255, 15, 20 );
+	return 1;
+}
+
+public fxBlow( Core[] )
+{
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public fxLight( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	return 1;
+}
+
+public fxLgt( Core[] )
+{
+	AddFx( Core[0], "fxLgtField", 0.2, 3, 255, 100);
+	return 1;
+}
+
+public fxScream( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 40, 60, 55, 10, 2.1, 0.5);
+	emit_sound( Core[0], CHAN_ITEM, "ecx.nappa/tp_powerup.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmoke1.spr", 5, 15, 50, 255, 255, 100, 255, 25, 450, 0, 40 );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+	AddFx( Core[0], "fxBlow" );
+
+	return 1;
+}
+
+
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxLgtField", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxLgtField", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxSpriteField", 0 );
+	return 1;
+}

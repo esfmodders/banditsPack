@@ -1,0 +1,139 @@
+#define MOD_WEAPON_DBG 0
+
+// >> ARG_BYTE		int
+// >> ARG_CHAR		int
+// >> ARG_SHORT		int
+// >> ARG_LONG		int
+// >> ARG_ANGLE		float
+// >> ARG_COORD		float
+// >> ARG_STRING	string
+// >> ARG_ENTITY	int
+
+stock SPR_BLACK;
+stock SPR_SHINE;		// Shine
+
+stock SPR_KAME_S;
+stock SPR_KAME_E;
+stock SPR_KAME_T;
+
+stock SPR_POWERBEAM_S;
+stock SPR_POWERBEAM_E;
+stock SPR_POWERBEAM_T;
+
+stock ICON_KAMEHAMEHA;
+stock C_ICON_POWERBEAM;
+stock C_ICON_KAME;
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	SPR_BLACK	= precache_model( "sprites/black.spr" );
+	
+	SPR_KAME_S = precache_model( "sprites/kame-s.spr" );
+	SPR_KAME_T = precache_model( "sprites/kame-t.spr" );
+	SPR_KAME_E = precache_model( "sprites/kame-e.spr" );
+
+	SPR_POWERBEAM_S = precache_model( "sprites/Dks.spr" );
+	SPR_POWERBEAM_E = precache_model( "sprites/Dke.spr" );
+	SPR_POWERBEAM_T = precache_model( "sprites/Dkt.spr" );	 
+
+	ICON_KAMEHAMEHA = getIconINDEX( "weapon_kamehameha");
+	C_ICON_POWERBEAM = createCustomICON("c_weapon_bbkhh", { 4, 2 } );
+	C_ICON_KAME = createCustomICON("c_weapon_jukame", { 4, 2 } );	
+
+}
+
+public @WeaponAdjust ( Client, Weapon, const Class[] )
+{
+	/**
+	 0 - Blue
+	 1 - Green
+	 2 - Orange
+	 3 - Purple
+	 4 - Yellow
+	 5 - Red
+	 6 - White
+	 7 - None
+	**/
+	
+	if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 0 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 8.0 );
+		// Jubei Kamehameha
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+	
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 1 )
+	{
+		setWeaponXPC( 5 );
+		setWeaponXPM( 8.0 );
+		// Jubei Kamehameha
+		setWeaponDMG( 9.0, 150.0, 0.07 );
+	}
+
+	else if ( equal( Class, "powerbeam" ) && getClientLEVEL( Client ) == 1 )
+	{
+		setWeaponXPC( 0 );
+		setWeaponXPM( 15.0 );
+		// Dark-Kamehameha
+		setWeaponDMG( 11.0, 140.0, 0.08 );
+	}
+	
+}
+
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 0 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 15 );		
+
+	}
+
+	else if ( equal( Class, "kamehameha" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_KAME_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_KAME_T );
+		set_msg_arg_int( 9, ARG_BYTE, 16 );		
+
+	}
+	
+	else if ( equal( Class, "powerbeam" ) && getClientLEVEL( Client ) == 1 )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_POWERBEAM_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_POWERBEAM_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_POWERBEAM_E );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_POWERBEAM_T );
+		set_msg_arg_int( 9, ARG_BYTE, 17 );
+
+	}	
+}
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	/**
+	 1 -   BYTE - Killer - do not edit
+	 2 -   BYTE - Client - do not edit
+	 3 - STRING - Weapon
+	**/
+
+	if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) == 0 )
+		set_msg_arg_string( 3, "red-kamehameha" );
+	else if ( equal( Weapon, "kamehameha" ) && getClientLEVEL( Killer ) > 1 )
+		set_msg_arg_string( 3, "red-kamehameha" );
+	else if ( equal( Weapon, "powerbeam" ) && getClientLEVEL( Killer ) == 1 )
+		set_msg_arg_string( 3, "Dark-kamehameha" );
+
+		
+
+}
+

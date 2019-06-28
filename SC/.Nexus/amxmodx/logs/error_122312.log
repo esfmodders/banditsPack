@@ -1,0 +1,19 @@
+L 12/23/2012 - 00:46:37: Start of error session.
+L 12/23/2012 - 00:46:37: Info (map "esf_cell_games_night") (logfile "error_122312.log")
+L 12/23/2012 - 00:46:37: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/23/2012 - 00:46:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/23/2012 - 00:46:37: Function "Gverde" was not found
+L 12/23/2012 - 00:46:37: [AMXX] Run time error 19 (plugin "Matias_Esf-ECX.amxx") - debug not enabled!
+L 12/23/2012 - 00:46:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/23/2012 - 00:52:23: Start of error session.
+L 12/23/2012 - 00:52:23: Info (map "esf_cell_games_night") (logfile "error_122312.log")
+L 12/23/2012 - 00:52:23: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/23/2012 - 00:52:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/23/2012 - 01:10:09: Start of error session.
+L 12/23/2012 - 01:10:09: Info (map "esf_cell_games") (logfile "error_122312.log")
+L 12/23/2012 - 01:10:09: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/23/2012 - 01:10:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 12/23/2012 - 01:30:01: Start of error session.
+L 12/23/2012 - 01:30:01: Info (map "esf_namek_endtest") (logfile "error_122312.log")
+L 12/23/2012 - 01:30:01: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/23/2012 - 01:30:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

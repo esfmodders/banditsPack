@@ -1,0 +1,4 @@
+L 12/16/2012 - 01:47:33: Start of error session.
+L 12/16/2012 - 01:47:33: Info (map "esf_cell_games_night") (logfile "error_121612.log")
+L 12/16/2012 - 01:47:33: [AMXX] Run time error 14 (plugin "Ascend.amxx") - debug not enabled!
+L 12/16/2012 - 01:47:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

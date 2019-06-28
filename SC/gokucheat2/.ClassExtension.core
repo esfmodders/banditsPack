@@ -1,0 +1,62 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.gokucheat2";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"";
+
+#define MOD_SOUND 	0
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"gokucheat2", false, false, "" );
+
+	// Saiya-jin
+	addClassLevel( "Saiya-jin", "ecx.goku-ts", 10.0, 1.5, 1000000, 1500000, 1.0, 
+					1000, 100, bool:{ false, false }, 0.0, { 200, 100 }, { 1, 1, 1, 1, 1, 5, 5 }, 1.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/ecx.goku-ts/ecx.goku-ts.mdl" );
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+}

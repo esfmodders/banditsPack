@@ -1,0 +1,5 @@
+L 08/23/2016 - 20:02:05: Start of error session.
+L 08/23/2016 - 20:02:05: Info (map "esf_Guru") (logfile "error_082316.log")
+L 08/23/2016 - 20:02:05: Function is not present (function "fxFinalblow") (plugin "CX/Uub.amxx")
+L 08/23/2016 - 20:02:05: [AMXX] Run time error 10 (plugin "Uub.amxx") (native "set_task") - debug not enabled!
+L 08/23/2016 - 20:02:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

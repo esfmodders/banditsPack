@@ -1,0 +1,202 @@
+L 11/16/2016 - 00:31:31: Start of error session.
+L 11/16/2016 - 00:31:31: Info (map "esf_gero") (logfile "error_111616.log")
+L 11/16/2016 - 00:31:31: Not currently in a dynamic native
+L 11/16/2016 - 00:31:31: [AMXX] Run time error 10 (plugin "FxLib.amxx") (native "get_param_byref") - debug not enabled!
+L 11/16/2016 - 00:31:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 00:31:31: [AMXX] Run time error -1 (plugin "FxLib.amxx") - debug not enabled!
+L 11/16/2016 - 00:31:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 09:23:37: Start of error session.
+L 11/16/2016 - 09:23:37: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 09:23:37: [AMXX] Plugin file open error (plugin "CX/Zamasu")
+L 11/16/2016 - 09:28:22: Start of error session.
+L 11/16/2016 - 09:28:22: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 09:28:22: [AMXX] Plugin file open error (plugin "CX/Zamasu")
+L 11/16/2016 - 09:41:01: Start of error session.
+L 11/16/2016 - 09:41:01: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 09:41:01: < Core >> Model does not exist > "models/player//.mdl"
+L 11/16/2016 - 09:41:01: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/16/2016 - 09:41:01: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 10:35:07: Start of error session.
+L 11/16/2016 - 10:35:07: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 10:35:07: < Core >> Model does not exist > "models/player//.mdl"
+L 11/16/2016 - 10:35:07: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/16/2016 - 10:35:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 10:37:09: Start of error session.
+L 11/16/2016 - 10:37:09: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 10:37:09: < Core >> Model does not exist > "models/player//.mdl"
+L 11/16/2016 - 10:37:09: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/16/2016 - 10:37:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 10:40:50: Start of error session.
+L 11/16/2016 - 10:40:50: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 10:40:50: < Core >> Model does not exist > "models/player//.mdl"
+L 11/16/2016 - 10:40:50: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/16/2016 - 10:40:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 10:44:50: Start of error session.
+L 11/16/2016 - 10:44:50: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 10:44:50: < Core >> Model does not exist > "models/player//.mdl"
+L 11/16/2016 - 10:44:50: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/16/2016 - 10:44:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:08: Start of error session.
+L 11/16/2016 - 11:47:08: Info (map "esf_Guru") (logfile "error_111616.log")
+L 11/16/2016 - 11:47:08: < Core >> Model does not exist > "models/player//.mdl"
+L 11/16/2016 - 11:47:08: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/16/2016 - 11:47:08: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:19: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:19: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:21: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:21: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:22: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:22: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:23: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:23: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:24: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:27: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:27: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:27: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:27: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:30: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:30: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:30: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:31: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:32: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:32: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:32: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:47:33: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:47:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:14: < Core >> Model does not exist > "models/player//.mdl"
+L 11/16/2016 - 11:50:14: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/16/2016 - 11:50:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:39: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:40: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:40: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:40: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:41: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:42: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:42: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:42: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:42: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:42: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:45: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:46: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:46: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:47: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:56: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:56: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:58: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:58: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:50:58: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:50:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:03: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:06: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:06: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:06: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:06: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:09: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:09: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:09: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:09: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:10: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:10: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:11: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:11: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:11: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:11: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:11: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:11: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:11: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:41: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:42: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:42: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:43: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:43: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:43: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:43: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:43: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:43: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:43: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:54: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:55: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:56: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:51:57: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:51:57: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:05: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:05: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:06: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:07: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:07: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:07: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:07: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:07: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:07: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:07: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:12: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/16/2016 - 11:52:13: [AMXX] Run time error 4 (plugin "A18.amxx") - debug not enabled!
+L 11/16/2016 - 11:52:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

@@ -1,0 +1,362 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Dark-vegeta";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"Monkey.D Ruffy";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Dark-vegeta", true, false, "the prince of all saiyans\n","sound/ecx.vegeta-ts/c_intro.wav" );
+
+	// Saiya-jin
+	addClassLevel( "Saiya-jin", "evil-vegeta", 10.0, 2.5, 750000, 2000000, 2.0, 
+					200, 120, bool:{ false, false }, 1.0, { 200, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 100.0, 0.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 255.0, 50.0 }, 0, kRenderTransAdd,
+					{ 255, 255, 255 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin
+	addClassLevel( "Super Saiya-jin", "evil-vegeta.ssj", 15.0, 2.5, 2000000, 50000000, 2.0, 
+					225, 125, bool:{ false, false }, 1.0, { 400, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 100.0, 10.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 0.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin 2
+	addClassLevel( "Super Saiya-jin 2", "evil-vegeta.ssj2", 19.0, 1.5, 5200000, 100000000, 2.0, 
+					250, 150, bool:{ false, false }, 1.0, { 450, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 100.0, 20.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 0.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 0 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Majin Saiya-jin
+	addClassLevel( "Super Saiya-jin 2 |Majin|", "evil-vegeta.majin", 26.0, 1.5, 14500000, 100000000, 2.0, 
+					275, 180, bool:{ false, false }, 1.0, { 500, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 100.0, 25.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 0.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 0 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Super Saiya-jin 4 Perfect
+	addClassLevel( "Super Saiya-jin 4", "evil-vegeta.ssj4", 38.0, 1.5, 29000000, 500000000, 2.0, 
+					300, 180, bool:{ false, false }, 1.0, { 750, 100 }, { 0, 0, 0, 0, 0, 0, 0 }, 2.0, Float:{ 100.0, 50.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 0.0, 50.0 }, 4, kRenderTransAdd,
+					{ 255, 255, 0 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+					
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_renzoku", true );
+			addClassItem( Client, "weapon_gallitgun", true );
+			addClassItem( Client, "weapon_genericbeam", true );
+		}
+		case 1: // Super Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_renzoku", true );
+			addClassItem( Client, "weapon_gallitgun", true );
+			addClassItem( Client, "weapon_genericbeam", true );
+			addClassItem( Client, "weapon_bigbang", true );
+			addClassItem( Client, "weapon_finalflash", true );
+		}
+		case 2: // Super Saiya-jin 2
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_renzoku", true );
+			addClassItem( Client, "weapon_gallitgun", true );
+			addClassItem( Client, "weapon_genericbeam", true );
+			addClassItem( Client, "weapon_bigbang", true );
+			addClassItem( Client, "weapon_finalflash", true );
+		}
+		case 3: // Majin Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_renzoku", true );
+			addClassItem( Client, "weapon_gallitgun", true );
+			addClassItem( Client, "weapon_genericbeam", true );
+			addClassItem( Client, "weapon_bigbang", true );
+			addClassItem( Client, "weapon_finalflash", true );
+			addClassSpecial( Client, "UltimateSacrifice" );
+		}
+		case 4: // Super Saiya-jin 4
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_renzoku", true );
+			addClassItem( Client, "weapon_gallitgun", true );
+			addClassItem( Client, "weapon_genericbeam", true );
+			addClassItem( Client, "weapon_bigbang", true );
+			addClassItem( Client, "weapon_finalflash", true );
+			addClassItem( Client, "weapon_kamehameha", true );
+			addClassSpecial( Client, "SelfDestruction" );
+		}
+	}
+}
+
+PluginPreCache ()
+{
+    
+	precache_model( "models/player/oozaru.3/oozaru.3.mdl" );
+	precache_model( "models/player/oozaru.5/oozaru.5.mdl" );
+	precache_model( "models/player/oozaru.7/oozaru.7.mdl" );
+	precache_model( "models/player/oozaru.9/oozaru.9.mdl" );
+	precache_model( "models/player/goozaru.1/goozaru.1.mdl" );
+	precache_model( "models/player/goozaru.3/goozaru.3.mdl" );
+	precache_model( "models/player/goozaru.5/goozaru.5.mdl" );
+	precache_model( "models/player/evil-vegeta/evil-vegeta.mdl" );
+	precache_model( "models/player/evil-vegeta.ssj2/evil-vegeta.ssj2.mdl" );
+	precache_model( "models/player/evil-vegeta.majin/evil-vegeta.majin.mdl" );
+	precache_model( "models/player/evil-vegeta.ssj4/evil-vegeta.ssj4.mdl" );
+	precache_model( "models/player/oozaru.1/oozaru.1.mdl" );
+	precache_model( "models/player/evil-vegeta.ssj/evil-vegeta.ssj.mdl" );
+	precache_model( "models/player/goozaru.7/goozaru.7.mdl" );
+	precache_model( "models/player/goozaru.9/goozaru.9.mdl" );
+	
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/evolution/redmaura2.mdl" );
+	precache_model( "models/evolution/car.mdl" );
+	precache_model( "models/evolution/moon.mdl" );
+	precache_model( "models/evolution/chaos_aura.mdl" );
+
+	precache_model( "sprites/m_waves.spr" );
+	precache_model( "sprites/m_waves123.spr" );
+	precache_model( "sprites/m_waves12345.spr" );
+	precache_model( "sprites/ssj4_chaos.spr" );
+	precache_model( "sprites/xsmokered.spr" );
+	precache_model( "sprites/red-lightning.spr" );
+	precache_model( "sprites/evil_shine.spr" );
+	
+	precache_sound( "ecx.vegeta-ts/t_ssj2_v1.wav" );
+	precache_sound( "ecx.vegeta-ts/t_majin.wav" );
+	precache_sound( "ecx.vegeta-ts/t_ssj.wav" );
+	precache_sound( "ecx.vegeta-ts/t_ssj4.wav" );
+	precache_sound( "ecx.vegeta-ts/tp_ssj4.wav" );
+	precache_sound( "ecx.vegeta-ts/t_ssj4_2.wav" );
+	precache_sound( "ecx.vegeta-ts/tp_ssj.wav" );
+	precache_sound( "ecx.vegeta-ts/tp_ssj2.wav" );
+	precache_sound( "ecx.vegeta-ts/t_majinend.wav" );
+	precache_sound( "ecx.vegeta-ts/t_ssj4end.wav" );
+	precache_sound( "ecx.vegeta-ts/t_ssj2end.wav" );
+}
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/tp_ssj.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "blabla100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 1.6, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.5, "ModelChange2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/tp_ssj2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 0.0, "sprites2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );   
+				set_task( 0.6, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.9, "kack123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );	
+				set_task( 0.0, "blabla100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+		        	
+			}
+			case 3:
+			{
+			        emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/tp_ssj2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				//setClientANIMATION(Client,101,0.2);
+				set_task( 0.0, "sprites2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );   
+				set_task( 1.4, "hehe123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );		
+				set_task( 0.0, "blabla100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.6, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 ); 
+                		
+			}
+			case 4:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/tp_ssj4.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 101, 1.0 );
+				//setClientANIMATION(Client,101,0.2);
+				set_task( 1.4, "hehe321", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );		
+				set_task( 0.0, "sprites2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );   
+				set_task( 0.6, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "blabla100", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+			}	
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/t_ssj.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 4.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 4.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 7.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.5, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 14.0, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 7.5, "ModelChange2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.0, "ModelChange1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 10.5, "ModelChange2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 2:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/t_ssj2_v1.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+				//setClientANIMATION(Client,102,0.2);
+				set_task( 9.0, "fxAura", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			        set_task( 3.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 6.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 8.5, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			        set_task( 8.5, "sprites2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			        set_task( 9.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.0, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.9, "kack123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+			}
+			case 3:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/t_majin.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 100, 0.45 );
+				//setClientANIMATION(Client,100,0.45);
+				set_task( 17.0, "fxAura555", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "sprites2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 6.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.0, "fxAura3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 17.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.0, "fxBlow", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 25.0, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 25.9, "hehe123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				
+			}
+			case 4:
+			{
+				emit_sound( Client, CHAN_ITEM, "ecx.vegeta-ts/t_ssj4.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+				AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+				//setClientANIMATION(Client,102,1.0);
+				set_task( 0.0, "ModelChange3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "blabla200", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAurai", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "fxAurai", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 3.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 6.0, "fxAurai", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 6.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.0, "fxAurai", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 9.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.0, "fxAurai", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 12.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.0, "fxAurai", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 15.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.0, "fxAurai", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 18.0, "lol123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.9, "hehe12345", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 20.9, "fxAura2000", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 21.5, "oozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 21.5, "oozaru2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 22.0, "oozaru3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 22.5, "oozaru4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 23.0, "oozaru5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 24.5, "goozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 24.5, "goozaru11", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 25.5, "goozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 26.0, "fxAurabla", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 26.0, "fxAura3000", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 26.0, "fxAurabla123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 29.0, "fxAurabla123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 31.5, "fxAurabla123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 33.0, "fxAurabla123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.0, "fxAurabla123", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 37.0, "fxAurabla", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 31.5, "goozaru11", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 32.5, "goozaru1", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.0, "goozaru2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 35.5, "goozaru3", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 36.0, "goozaru4", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 36.5, "goozaru5", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "sprites2000", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 37.9, "hehe321", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 37.0, "fxFinalBlow2", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+				set_task( 0.0, "fxAura122", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );	
+            }			
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+
+        RemFx( Client, "fxAvatar", 0);
+
+	FX_off(Client);
+
+	remove_task( uniqueTaskID( Client, 100 ) ); 
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+        new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+        if( Level == 2 )
+		set_task( 0.0, "SSJ2CHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );      
+        else if( Level == 1 )
+        set_task( 0.0, "SSJCHECK",uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+        else if( Level == 0 )
+		set_task( 0.0, "NORMALCHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+        else if( Level == 3 )
+		set_task( 0.0, "MAJINCHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+        else if( Level == 4 )
+		set_task( 0.0, "MAJINCHECK", uniqueTaskID( Client,100 ), CORE, 1, "a",1 );
+}

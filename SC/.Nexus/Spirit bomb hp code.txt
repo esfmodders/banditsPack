@@ -1,0 +1,41 @@
+#include <amxmodx>
+#include <hamsandwich>
+#include <fakemeta>
+
+public plugin_init() 
+{
+    RegisterHam( Ham_TakeDamage , "player" , "TakeDamage_Post" , true );
+}
+
+public TakeDamage_Post( Victim , Inflictor , Attacker , Float:fDamage , bitDamage ) 
+{     
+    new iLossInHP = pev( Victim , pev_dmg_take );
+    new Float:fSize = 1.0 + ( float( iLossInHP ) / 100.0 );
+    
+    switch ( iLossInHP )
+    {
+        case 10 .. 19:
+        {
+            
+        }
+        case 20 .. 29:
+        {
+            
+        }
+        default:
+        {
+            
+        }
+    }
+}  
+
+
+
+Try this out:
+
+static Float:var_Grow[0x20]; // Global var
+
+var_Grow[int_Index] = float(0x01); // Default grow value
+
+var_Grow[int_Index] += ((var_Grow[int_Index] < float(0b101)) ? (var_Damage / 0x64) : (0x00)); // Damage conversion formula
+This variable works as a constant for each case.

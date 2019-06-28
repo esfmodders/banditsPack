@@ -1,0 +1,154 @@
+new const CX_Plugin[]   =   "Bonuseffects";
+new const CX_Version[]  =   "1337";
+new const CX_Author[]   =   "BANDIT/C4";
+ 
+#define MOD_SOUND   0
+#define MOD_CHARGE  0
+#define MOD_WEAPON  0
+ 
+ 
+#include <amxmodx>
+#include <amxmisc>
+#include <fakemeta> 
+#include <engine> 
+#include <fun> 
+#include "ipci/Core"
+#include <ipci/ascend>
+#include <ipci/Fxlib>
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+ 
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+	register_message( get_user_msgid( "PowerStrug" ), "@PowerStruggle" );
+	register_message( get_user_msgid( "EETrail" ), "@WeaponBeams" );
+	register_message( get_user_msgid( "ManipModel" ), "@ManipModel" );
+}
+ 
+new BeamHead[ 33 ];
+ 
+@WeaponBeams( MsgID )
+{
+    BeamHead[ get_msg_arg_int(1) ] = get_msg_arg_int( 2 );
+   
+}
+ 
+new Sub_BeamHead[ 33 ];
+new Sub_BeamHead2[ 33 ];
+ 
+@PowerStruggle( MsgID, Dest, Client )
+{
+    
+   
+    if( get_msg_arg_int( 1 ) == 127 )// Struggle End
+    {
+		// Remove your FX here...
+		if( is_valid_ent( Sub_BeamHead[ Client ] ) ) remove_entity( Sub_BeamHead[ Client ] );
+		Sub_BeamHead[ Client ] = 0;
+		
+		if( is_valid_ent( Sub_BeamHead2[ Client ] ) ) remove_entity( Sub_BeamHead2[ Client ] );
+		Sub_BeamHead2[ Client ] = 0;
+	
+		
+		BeamHead[ Client ] = 0;
+	
+		return;
+    }
+ 
+    if( is_valid_ent( BeamHead[ Client ] ) )
+    {
+		message_begin( MSG_PVS, get_user_msgid( "MeleeFX" ), _, Client );
+		write_byte( 3 );// Effect Index
+		write_byte( BeamHead[ Client ] );// Entity Index
+		message_end();
+	
+		if( !is_valid_ent( Sub_BeamHead[ Client ] ) )
+		{
+			Sub_BeamHead[ Client ] = create_entity( "env_sprite" );
+			engfunc( EngFunc_SetModel, Sub_BeamHead[ Client ], "sprites/w_energy_f.spr" );
+			set_rendering( Sub_BeamHead[ Client ], kRenderFxNone, 0, 0, 0, kRenderTransAdd, 185 );
+			set_pev( Sub_BeamHead[ Client ], pev_aiment, BeamHead[ Client ] );
+			set_pev( Sub_BeamHead[ Client ], pev_movetype, MOVETYPE_FOLLOW );
+			DispatchKeyValue( Sub_BeamHead[ Client ], "scale", "7.2");
+			DispatchKeyValue( Sub_BeamHead[ Client ], "framerate", "14.0");
+			DispatchSpawn( Sub_BeamHead[ Client ] );
+		}
+		
+		if( !is_valid_ent( Sub_BeamHead2[ Client ] ) )
+		{
+			Sub_BeamHead2[ Client ] = create_entity( "env_sprite" );
+			engfunc( EngFunc_SetModel, Sub_BeamHead2[ Client ], "sprites/x/blast4.spr" );
+			set_rendering( Sub_BeamHead2[ Client ], kRenderFxNone, 0, 0, 0, kRenderTransAdd, 185 );
+			set_pev( Sub_BeamHead2[ Client ], pev_aiment, BeamHead[ Client ] );
+			set_pev( Sub_BeamHead2[ Client ], pev_movetype, MOVETYPE_FOLLOW );
+			DispatchKeyValue( Sub_BeamHead2[ Client ], "scale", "3.3");
+			DispatchKeyValue( Sub_BeamHead2[ Client ], "framerate", "14.0");
+			DispatchSpawn( Sub_BeamHead2[ Client ] );
+        }
+		
+	}
+ 
+    if( get_pdata_int( Client, 198 ) == 1 )// Block Struggle
+    {
+        if( get_msg_arg_int( 1 ) < 0 )// While the client is going to lose
+        {
+            client_print( Client, print_center, "[Blocking] %d", get_msg_arg_int( 1 ) );
+ 
+            AddFx( Client, "fxBlow" );
+        }
+ 
+        if( get_msg_arg_int( 1 ) > 0 )// While the client is going to win
+        {
+            client_print( Client, print_center, "[Blocking] %d", get_msg_arg_int( 1 ) );
+ 
+            AddFx( Client, "fxBlow" );
+        }
+    }
+    else // Beam Struggle
+    {
+        if( get_msg_arg_int( 1 ) < 0 ) // While the client is going to lose
+        {  
+            client_print( Client, print_center, "%d", get_msg_arg_int( 1 ) );
+ 
+            //
+        }
+ 
+        if( get_msg_arg_int( 1 ) > 0 ) // While the client is going to win
+        {  
+            client_print( Client, print_center, "%d", get_msg_arg_int( 1 ) );
+ 
+            //
+        }
+    }
+ 
+    //set_msg_arg_int( 1, ARG_CHAR, 100 );// -100 ~ 100: -100 = lose, 100 = win, this only changes the StruggleHud of clients.
+}
+ 
+
+
+
+@ManipModel( msgID, dest )
+{
+        new Client = pev( get_msg_arg_int( 2 ), pev_owner );
+
+        if( Client > 0 && Client < 33 )
+        {
+                if( getClientTURBO( Client ) )
+				{
+					AddFx( Client, "fxPowerup", 0, 0, 0 );
+				}	
+					
+				else
+				{	
+					RemFx( Client, "fxPowerup", 0 );
+				}
+        }
+}
+	
+PluginPreCache ()
+{
+	precache_model( "sprites/w_energy_f.spr" );
+	precache_model( "sprites/x/blast4.spr" );
+}

@@ -1,0 +1,478 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later version.
+**
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	= 	"CX.Evil-Goku";
+new const CX_Version[]	=	"1.0";
+new const CX_Author[]	=	"Y-M|Dark-Team";
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON },
+				"Evil-Goku", true, false, "Made By Yassin-Mocro ©Do Not Cop Of Steal sound/Evil-Goku/c_intro.wav" );
+
+	// Evil-Saiya-jin
+	addClassLevel( "Evil-Saiya-jin", "Evil-Goku", 10.0, 1.5, 5000000, 1, 1.0, 
+					400, 100, bool:{ false, false }, 1.0, { 200, 0 }, { 1, 0, 0, 0, 0, 2, 2 }, 1.0, Float:{ 56.0, 10.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 2, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Evil Super Saiya-jin
+	addClassLevel( "Evil Super Saiya-jin", "Evil-Goku.ssj1", 15.0, 4.0, 7000000, 8500000, 2.0, 
+					500, 120, bool:{ false, false }, 3.0, { 400, 0 }, { 1, 0, 0, 0, 1, 3, 3 }, 3.0, Float:{ 36.0, 10.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 2, kRenderTransAdd,
+					{ 255, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Evil Super Saiya-jin 2
+	addClassLevel( "Evil Super Saiya-jin 2", "Evil-Goku.ssj2", 18.0, 2.0, 30000000, 40000000, 2.0, 
+					700, 170, bool:{ false, false }, 5.0, { 700, 0 }, { 1, 0, 1, 0, 1, 4, 4 }, 5.0, Float:{ 82.0, 20.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 2, kRenderTransAdd,
+					{ 255, 0, 0 }, { 5, 5, 5, 15 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Evil Super Saiya-jin 3
+	addClassLevel( "Evil Super Saiya-jin 3", "Evil-Goku.ssj3", 30.0, 2.0, 70000000, 80000000, 2.0, 
+					850, 200, bool:{ false, false }, 7.0, { 800, 0 }, { 1, 1, 1, 1, 1, 5, 5 }, 7.0, Float:{ 173.0, 21.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 2, kRenderTransAdd,
+					{ 255, 0, 0 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Evil Super Saiya-jin 4
+	addClassLevel( "Evil Super Saiya-jin 4", "Evil-Goku.ssj4", 20.0, 9.0, 150000000, 250000000, 2.0, 
+					950, 230, bool:{ false, false }, 14.0, { 900, 0 }, { 1, 1, 1, 1, 1, 5, 5 }, 10.0, Float:{ 180.0, 42.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 2, kRenderTransAdd,
+					{ 255, 0, 0 }, { 5, 5, 5, 15 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// Evil-Goku.ssj4-100%
+	addClassLevel( "Evil-Goku.ssj4-100%", "Evil-Goku.ssj4-100%", 15.0, 6.0, 350000000, 450000000, 2.0, 
+					950, 245, bool:{ false, false }, 15.0, { 1000, 0 }, { 1, 1, 1, 1, 1, 5, 5 }, 10.0, Float:{ 260.0, 54.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01-red.mdl", Float:{ 255.0, 0.0, 0.0, 50.0 }, 3, kRenderTransAdd,
+					{ 255, 0, 0 }, { 1, 1, 1, 7 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+}
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Evil-Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_solarflare" );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_spiritbomb" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+		}
+		case 1: // Evil Super Saiya-jin
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_solarflare" );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_spiritbomb" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_genericbeam" );			
+		}
+		case 2: // Evil Super Saiya-jin 2
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_solarflare" );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_genericbeam" );				
+		}
+		case 3: // Evil Super Saiya-jin 3
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_solarflare" );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_genericbeam" );				
+		}
+		case 4: // Evil Super Saiya-jin 4
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_solarflare" );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_spiritbomb" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_genericbeam" );				
+		}
+		case 5: // Evil-Goku.ssj4-100%
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_solarflare" );
+			addClassItem( Client, "weapon_kiblast" );
+			addClassItem( Client, "weapon_spiritbomb" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_kametorpedo" );
+			addClassItem( Client, "weapon_genericbeam" );				
+		}
+	}
+}
+
+PluginPreCache ()
+{
+	precache_model( "models/player/Evil-Goku/Evil-Goku.mdl" );
+	precache_model( "models/evolution/Auras/shape_01-red.mdl" );	
+	precache_model( "models/player/Evil-Goku.ssj1/Evil-Goku.ssj1.mdl" );
+	precache_model( "models/player/Evil-Goku.ssj2/Evil-Goku.ssj2.mdl" );
+	precache_model( "models/player/Evil-Goku.ssj3/Evil-Goku.ssj3.mdl" );
+	precache_model( "models/player/Evil-Goku.ssj4/Evil-Goku.ssj4.mdl" );
+	precache_model( "models/player/Evil-Goku.ssj4-100%/Evil-Goku.ssj4-100%.mdl" );
+
+	precache_sound( "Evil-Goku/scream123.wav" );
+	precache_model( "models/player/e-c/e-c.mdl" );
+
+	precache_model( "sprites/E-L.spr" );
+	precache_model( "sprites/Evil-Wave.spr" );	
+	precache_model( "sprites/1231.spr" );	
+	precache_model( "sprites/red.spr" );  
+	precache_model( "sprites/xsmokered.spr" );	
+	precache_model( "sprites/waves-evil.spr" );		
+	precache_model( "sprites/es.spr" );		
+	
+	precache_model( "models/evolution/Auras/default.mdl" );		
+	precache_model( "models/evolution/Auras/shape_01-red.mdl" );
+	precache_model( "models/evolution/Auras/PuAura_1-Red.mdl" );	
+	precache_model( "models/evolution/Evil-Goozaru1.mdl" );	
+	precache_model( "models/evolution/Black-oozaru.mdl" );		
+
+	precache_sound( "Evil-Goku/t_ssj.wav" );
+	precache_sound( "Evil-Goku/t_ssj2.wav" );
+	precache_sound( "Evil-Goku/t_ssj3.wav" );
+	precache_sound( "Evil-Goku/t_ssj4.wav" );
+	precache_sound( "Evil-Goku/t_ssj4100%.wav" );	
+	precache_sound( "Evil-Goku/tp_ssj.wav" );
+	precache_sound( "Evil-Goku/tp_ssj2.wav" );
+	precache_sound( "Evil-Goku/tp_ssj3.wav" );
+	precache_sound( "Evil-Goku/tp_ssj4.wav" );	
+	precache_sound( "Evil-Goku/tp_ssj4100%.wav" );	
+	precache_sound( "Evil-Goku/ssj4100%scream.wav" );	
+}
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	new CORE[ 1 ];
+	CORE[ 0 ] = Client;
+	
+	if ( Perfect )
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/tp_ssj.wav",1.0,ATTN_NORM, 0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",102,1.0);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			}
+			case 2:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/tp_ssj2.wav",1.0,ATTN_NORM, 0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",102,1.0);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			}
+			case 3:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/tp_ssj3.wav",1.0,ATTN_NORM, 0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",102,1.0);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			}
+			case 4:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/tp_ssj4.wav",1.0,ATTN_NORM, 0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",102,1.0);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			}
+			case 5:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/tp_ssj4100%.wav",1.0,ATTN_NORM, 0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",102,1.0);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);
+			}
+		}
+	}
+
+	else
+	{
+		switch ( Level )
+		{
+			case 1:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/t_ssj.wav",1.0,ATTN_NORM,0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",101,0.46041);
+				//setClientANIMATION(Client,102,0.2);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(1.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(2.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(3.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(4.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(5.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(6.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(7.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(8.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(9.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(10.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.0,"fx113",uniqueTaskID( Client,100),CORE,1,"a",1);				
+			    set_task(0.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(1.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(2.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(3.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(4.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(5.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(6.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(7.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(8.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(9.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(10.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(11.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(12.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(13.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(14.0,"fx112",uniqueTaskID( Client,100),CORE,1,"a",1);					
+			    set_task(1.0,"ModelChange001",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(2.0,"ModelChange002",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(3.0,"ModelChange001",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(4.0,"ModelChange002",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(5.0,"ModelChange001",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(6.0,"ModelChange002",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(7.0,"ModelChange001",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(8.0,"ModelChange002",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(9.0,"ModelChange001",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(10.0,"ModelChange002",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.0,"ModelChange001",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.0,"ModelChange002",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.0,"ModelChange001",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.0,"ModelChange002",uniqueTaskID( Client,100),CORE,1,"a",1);			
+			    set_task(14.8,"fxFinalBlow",uniqueTaskID( Client,100),CORE,1,"a",1);					
+			}
+			case 2:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/t_ssj2.wav",1.0,ATTN_NORM,0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",101,0.46041);
+				//setClientANIMATION(Client,102,0.2);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(1.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(2.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(3.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(4.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(5.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(6.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(7.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(8.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(9.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(10.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(15.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(16.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(17.0,"fxBlow",uniqueTaskID( Client,100),CORE,1,"a",1);				
+			    set_task(1.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(2.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(3.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(4.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(5.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(6.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(7.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(8.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(9.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(10.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(15.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(16.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(17.0,"fx114",uniqueTaskID( Client,100),CORE,1,"a",1);						
+			    set_task(17.8,"fxFinalBlow",uniqueTaskID( Client,100),CORE,1,"a",1);					
+				
+			}
+			case 3:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/t_ssj3.wav",1.0,ATTN_NORM,0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",101,0.46041);
+				//setClientANIMATION(Client,102,0.2);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(1.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(2.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(3.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(4.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(5.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(6.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(7.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(8.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(9.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(10.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(11.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(12.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(13.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(14.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(15.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(16.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(17.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(18.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(19.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(20.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(21.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(22.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(23.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(24.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(25.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(26.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(27.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(28.0,"fxssj3",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(29.8,"fxFinalBlow",uniqueTaskID( Client,100),CORE,1,"a",1);					
+				
+			}
+			case 4:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/t_ssj4.wav",1.0,ATTN_NORM,0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",101,0.46041);
+				//setClientANIMATION(Client,102,0.2);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(1.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(2.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(3.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(4.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(5.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(6.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(7.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(8.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(9.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(10.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.0,"fxape1A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.0,"fxcam",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.5,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.5,"fxape2A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.0,"fxape3A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.5,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.5,"fxape4A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.0,"fxape5A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.5,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.5,"fxape6A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.0,"fxape7A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.5,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.5,"fxape8A",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(15.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(16.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(17.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(18.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(19.0,"fxssj4",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(15.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);			    
+			    set_task(15.0,"fxape8B",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(15.5,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(15.5,"fxape7B",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(16.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(16.0,"fxape6B",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(17.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(17.0,"fxape5B",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(17.5,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(17.5,"fxape4B",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(18.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(18.0,"fxape3B",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(19.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(19.0,"fxape2B",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(20.0,"fxoff",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(20.0,"fxape1B",uniqueTaskID( Client,100),CORE,1,"a",1);					
+			    set_task(19.8,"fxFinalBlow",uniqueTaskID( Client,100),CORE,1,"a",1);				
+				
+			}
+			case 5:
+			{
+			    emit_sound( Client,CHAN_ITEM,"Evil-Goku/t_ssj4100%.wav",1.0,ATTN_NORM,0,PITCH_NORM);
+			    AddFx( Client,"fxAvatar","create",101,0.46041);
+				//setClientANIMATION(Client,102,0.2);
+			    set_task(0.0,"fxAura",uniqueTaskID( Client,100),CORE,1,"a",1);				   
+			    set_task(0.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);		
+			    set_task(1.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(2.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(3.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(4.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(5.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(6.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(7.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(8.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(9.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(10.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(11.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(12.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(13.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(14.0,"fxAura2",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(1.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);	
+			    set_task(2.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(3.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(4.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(5.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(6.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(7.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(8.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(9.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(10.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(11.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(12.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(13.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);
+			    set_task(14.0,"fx100",uniqueTaskID( Client,100),CORE,1,"a",1);				
+			    set_task(14.8,"fxFinalBlow",uniqueTaskID( Client,100),CORE,1,"a",1);				
+			}
+		}
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+  RemFx( Client,"fxAvatar",0);
+  AddFx( Client,"fxBlow");
+  RemFx( Client,"fxSpriteEntity",0);  
+  RemFx( Client,"fxssj4",0); 
+  RemFx( Client,"fxAura2",0);  
+  RemFx( Client,"fx115",0);  
+  FX_off(Client);
+  remove_task( uniqueTaskID( Client, 100));
+
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+  RemFx( Client,"fxAvatar",0);
+  RemFx( Client,"fxssj4",0);   
+  RemFx( Client,"fxSpriteEntity",0); 
+  RemFx( Client,"fxAura2",0);
+  RemFx( Client,"fx115",0);   
+  FX_off( Client);
+  remove_task( uniqueTaskID( Client, 100));
+}
+

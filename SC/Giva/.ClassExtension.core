@@ -1,0 +1,157 @@
+// GIVING CLIENT ATTACKS ESF v1.2b by Mr. Satan
+//=========================================================
+
+#include <amxmodx>
+#include <fun>
+
+public give_attack_esf(admin_index,victim_index,weapon_give[])
+{
+
+   new arg1[32]
+   read_argv(1,arg1,32)
+   new name[32]
+   get_user_name(victim_index,name,32)   
+// Remove The slashes before the follow 2 lines of code to enable info messages
+   // set_hudmessage(200, 50, 0, -1.0, 0.30, 0, 6.0, 6.0, 0.5, 0.15, 1)
+   // show_hudmessage(0,"%s Has Been Given An Attack",name)
+
+   
+// Ki Attacks & Items
+   
+   if (equal(weapon_give,"all")){
+      give_item(victim_index,"weapon_bigbang")
+      give_item(victim_index,"weapon_burningattack")
+      give_item(victim_index,"weapon_candy")
+      give_item(victim_index,"weapon_deathball")
+      give_item(victim_index,"weapon_destructodisc")
+      give_item(victim_index,"weapon_eyelaser")
+      give_item(victim_index,"weapon_finalflash")
+      give_item(victim_index,"weapon_fingerlaser")
+      give_item(victim_index,"weapon_finishingbuster")
+      give_item(victim_index,"weapon_friezadisc")
+      give_item(victim_index,"weapon_gallitgun")
+      give_item(victim_index,"weapon_kamehameha")
+      give_item(victim_index,"weapon_kametorpedo")
+      give_item(victim_index,"weapon_masenko")
+      give_item(victim_index,"weapon_mouthblast")
+      give_item(victim_index,"weapon_powerbeam")
+      give_item(victim_index,"weapon_regeneration")
+      give_item(victim_index,"weapon_renzoku")
+      give_item(victim_index,"weapon_scatterbeam")
+      give_item(victim_index,"weapon_scattershot")
+      give_item(victim_index,"weapon_sensu")
+      give_item(victim_index,"item_sensubeanbag")
+      give_item(victim_index,"item_sensubeanbag")
+      give_item(victim_index,"weapon_shieldattack")
+      give_item(victim_index,"weapon_solarflare")
+      give_item(victim_index,"weapon_specialbeamcannon")
+      give_item(victim_index,"weapon_spiritbomb")
+      give_item(victim_index,"weapon_sword")
+      give_item(victim_index,"weapon_telekinesis")
+   } else if (equal(weapon_give,"bigbang")){
+      give_item(victim_index,"weapon_bigbang")
+   } else if (equal(weapon_give,"burningatk")){
+      give_item(victim_index,"weapon_burningattack")
+   } else if (equal(weapon_give,"candy")) {
+      give_item(victim_index,"weapon_candy")
+   } else if (equal(weapon_give,"deathball")){
+      give_item(victim_index,"weapon_deathball")
+   } else if (equal(weapon_give,"ddisc")){
+      give_item(victim_index,"weapon_destructodisc")
+   } else if (equal(weapon_give,"eyelaser")){
+      give_item(victim_index,"weapon_eyelaser")
+   } else if (equal(weapon_give,"finalflash")) {
+      give_item(victim_index,"weapon_finalflash")
+   } else if (equal(weapon_give,"fingerlaser")) {
+      give_item(victim_index,"weapon_fingerlaser")
+   } else if (equal(weapon_give,"fbuster")) {
+      give_item(victim_index,"weapon_finishingbuster")
+   } else if (equal(weapon_give,"fdisc")) {
+      give_item(victim_index,"weapon_friezadisc")
+   } else if (equal(weapon_give,"gallitgun")) {
+      give_item(victim_index,"weapon_gallitgun")
+   } else if (equal(weapon_give,"kamehameha")) {
+      give_item(victim_index,"weapon_kamehameha")
+   } else if (equal(weapon_give,"kametorp")) {
+      give_item(victim_index,"weapon_kametorpedo")
+   } else if (equal(weapon_give,"masenko")) {
+      give_item(victim_index,"weapon_masenko")
+   } else if (equal(weapon_give,"mouthblast")) {
+      give_item(victim_index,"weapon_mouthblast")
+   } else if (equal(weapon_give,"powerbeam")) {
+      give_item(victim_index,"weapon_powerbeam")
+   } else if (equal(weapon_give,"regen")) {
+      give_item(victim_index,"weapon_regeneration")
+   } else if (equal(weapon_give,"renzoku")) {
+      give_item(victim_index,"weapon_renzoku")
+   } else if (equal(weapon_give,"scatterbeam")) {
+      give_item(victim_index,"weapon_scatterbeam")
+   } else if (equal(weapon_give,"scattershot")) {
+      give_item(victim_index,"weapon_scattershot")
+   } else if (equal(weapon_give,"sensu")) {
+      give_item(victim_index,"weapon_sensu")
+      give_item(victim_index,"item_sensubeanbag")
+      give_item(victim_index,"item_sensubeanbag")
+   } else if (equal(weapon_give,"shield")) {
+      give_item(victim_index,"weapon_shieldattack")
+   } else if (equal(weapon_give,"solarflare")) {
+      give_item(victim_index,"weapon_solarflare")
+   } else if (equal(weapon_give,"sbc")) {
+      give_item(victim_index,"weapon_specialbeamcannon")
+   } else if (equal(weapon_give,"spiritbomb")) {
+      give_item(victim_index,"weapon_spiritbomb")
+   } else if (equal(weapon_give,"sword")) {
+      give_item(victim_index,"weapon_sword")
+   } else if (equal(weapon_give,"telekinesis")) {
+      give_item(victim_index,"weapon_telekinesis")
+   } else if (equal(weapon_give,"db")) {	// EXPERIMENTAL -- BE CAREFUL
+      give_item(victim_index,"weapon_dragonball")
+   } else {
+      client_print(admin_index,print_console,"[AMXX] There is no such attack")
+      return PLUGIN_CONTINUE
+   }
+   
+   // client_print(admin_index,print_console,"[AMXX] Client ^"%s^" has been given an attack",name)
+   return PLUGIN_CONTINUE
+}
+
+public admin_attack_esf(id)
+{
+   new argc = read_argc()
+   if (argc < 3) {
+      client_print(id,print_console,"[AMXX] Usage: amx_attack_esf < part of nick > or < # index > < attack to give >")
+      return PLUGIN_HANDLED
+   }
+   new arg1[32]
+   new arg2[32]
+   new arg3[32]
+   read_argv(1,arg1,32)
+   read_argv(2,arg2,32)
+   read_argv(3,arg3,32)
+
+
+//Index
+   if (equal(arg1,"#")) {
+      if (is_user_connected(str_to_num(arg2))) {
+         give_attack_esf(id,str_to_num(arg2),arg3)
+      } else {
+         client_print(id,print_console,"[AMXX] Client not found")
+      }
+   } else {
+      new player = find_player("lb",arg1)
+      if (player) {
+         give_attack_esf(id,player,arg2)
+      } else {
+         client_print(id,print_console,"[AMXX] Client with that part of nick not found")
+      }
+   }
+   
+   return PLUGIN_HANDLED
+}
+
+public plugin_init()
+{
+   register_plugin("ESF Give Attacks","1.2b","Mr. Satan")
+   register_concmd("amx_attack_esf","admin_attack_esf",ADMIN_LEVEL_A,"<part of nick> or <# index> <attack to give>")
+   return PLUGIN_CONTINUE
+} 

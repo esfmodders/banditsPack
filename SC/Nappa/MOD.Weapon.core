@@ -1,0 +1,256 @@
+// >> ARG_BYTE		int
+// >> ARG_CHAR		int
+// >> ARG_SHORT		int
+// >> ARG_LONG		int
+// >> ARG_ANGLE		float
+// >> ARG_COORD		float
+// >> ARG_STRING	string
+// >> ARG_ENTITY	int
+
+stock SPR_SHINE;
+stock SPR_BLACK;
+
+stock SPR_GREEN_S;
+stock SPR_GREEN_T;
+
+stock SPR_BLUE_S;
+stock SPR_BLUE_T;
+stock SPR_CITY_S;
+
+stock SPR_BIGBANG;
+stock SPR_BIGBANG_T;
+
+stock ICON_BIGBANG;
+stock ICON_FINALFLASH;
+stock C_ICON_NAPPA;
+stock C_ICON_CITYDESTROYER;
+
+stock ICON_KIBLAST;
+stock ICON_SPEEDBEAMS;
+
+stock MOD_Weapon_PreCache ()
+{
+	SPR_SHINE = precache_model( "sprites/ecx.shine.spr" );
+	SPR_BLACK	= precache_model( "sprites/black.spr" );
+
+	SPR_GREEN_S = precache_model( "sprites/w_finalshine_c.spr" );
+	SPR_GREEN_T = precache_model( "sprites/w_gb_g_t.spr" );
+
+
+	SPR_BLUE_S = precache_model( "sprites/w_gb_b_s.spr" );
+	SPR_BLUE_T = precache_model( "sprites/w_gb_b_t.spr" );
+
+	SPR_BIGBANG = precache_model( "sprites/w_bigbang.spr" );
+	SPR_BIGBANG_T = precache_model( "sprites/w_sukame_t.spr" );
+	
+	ICON_FINALFLASH = getIconINDEX( "weapon_finalflash" );
+	C_ICON_NAPPA  = createCustomICON( "c_weapon_nappa", { 4, 3 } );
+	
+}
+
+public @IconUpdate ( Client, Level )
+{
+	replaceClientICON( Client, C_ICON_NAPPA, ICON_FINALFLASH );
+}
+
+
+public @BaseWeaponCreation ( Client, BaseWeapon, const Name[] )
+{
+
+
+	if ( equal( Name, "weapon_finalflash" ))
+	{
+		setBeamChargeTime( BaseWeapon, 12 );
+		setBeamChargeKi( BaseWeapon, 81 );
+		setBeamSpeed( BaseWeapon, 750 );
+	}
+
+	else if ( equal( Name, "weapon_kiblast" ))
+	{
+		setBeamSpeed( BaseWeapon, 1500 );
+	}
+}
+
+public @WeaponAdjust ( Client, Weapon, const Class[] )
+{
+	/**
+	 0 - Blue
+	 1 - Green
+	 2 - Orange
+	 3 - Purple
+	 4 - Yellow
+	 5 - Red
+	 6 - White
+	 7 - None
+	**/
+
+	
+	if ( equal( Class, "greenattack" ) )
+	{
+		setWeaponXPC( 0 );
+		setWeaponXPM( 1.2 );
+	}
+	
+		
+	else if ( equal( Class, "finalflash" ) )
+	{
+		setWeaponXPM( 4.0 );
+		setWeaponXPC( 1 );
+		setWeaponDMG( 20.0, 300.0, 0.09 );	
+
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_GREEN_T );
+		write_byte		( 2 );
+		write_byte		( 2 );
+		write_byte		( 0 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+		
+
+	}
+
+	else if ( equal( Class, "kiblast" ) )
+	{
+		setWeaponXPM( 1.3 );
+		setWeaponXPC( 0 );
+		
+		message_begin	( MSG_BROADCAST, SVC_TEMPENTITY );
+		write_byte		( TE_BEAMFOLLOW );
+		write_short		( Weapon );
+		write_short		( SPR_BLUE_T );
+		write_byte		( 9 );
+		write_byte		( 15 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		write_byte		( 255 );
+		message_end		();
+		
+
+	}
+	
+}
+
+public @WeaponBeam ( Client, Weapon, const Class[], Size )
+{
+	/**
+	 1 -  LONG - Client ???				- do not edit
+	 2 -  LONG - Weapon					- do not edit
+	 3 -  BYTE - Client ???				- do not edit
+	 4 - SHORT - Head Start A
+	 5 - SHORT - Head Start B
+	 6 - SHORT - Head End A
+	 7 - SHORT - Head End B
+	 8 - SHORT - Trail
+	 9 -  BYTE - Size
+	10 -  BYTE - Segement Length ???
+	11 - COORD - X						- do not edit
+	12 - COORD - Y						- do not edit
+	13 - COORD - Z						- do not edit
+	**/
+
+	if ( equal( Class, "greenattack" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLUE_T );
+
+		//set_msg_arg_int( 9, ARG_BYTE, 15 );
+	}
+
+	if ( equal( Class, "finalflash" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_GREEN_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_GREEN_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+
+		set_msg_arg_int( 9, ARG_BYTE, 10 );
+
+	}
+
+	if ( equal( Class, "kiblast" ) )
+	{
+		set_msg_arg_int( 4, ARG_SHORT, SPR_SHINE );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 7, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 8, ARG_SHORT, SPR_BLACK);
+
+		set_msg_arg_int( 9, ARG_BYTE, 15 );
+
+	}
+
+}
+
+public @WeaponBlast ( Client, Weapon, const Class[], Size )
+{
+	/**
+	 1 -  LONG - Entity  - do not edit
+	 2 - SHORT - Head A
+	 3 - SHORT - Head B
+	 4 - SHORT - Size
+	 5 - SHORT - Trail A
+	 6 - SHORT - Trail B
+	 7 - COORD - X		- do not edit
+	 8 - COORD - Y		- do not edit
+	 9 - COORD - Z		- do not edit
+	**/
+
+	if ( equal( Class, "greenattack" ))
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 4, ARG_SHORT, 15 );
+	}
+
+	if ( equal( Class, "kiblast" ))
+	{
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLUE_S );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLUE_T );
+		set_msg_arg_int( 4, ARG_SHORT, 15 );
+	}
+
+	
+	else if ( equal( Class, "finalflash" ))
+	{
+		attachWeaponHEAD( Weapon, "sprites/ecx.aura.broly.spr", kRenderTransAdd, 250.0, 1.0, 10.0 );
+
+		set_msg_arg_int( 2, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 3, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 4, ARG_SHORT, 8 );
+		set_msg_arg_int( 5, ARG_SHORT, SPR_BLACK );
+		set_msg_arg_int( 6, ARG_SHORT, SPR_BLACK );
+	}
+}
+
+public @WeaponDeath ( Client, Killer, const Weapon[] )
+{
+	/**
+	 1 -   BYTE - Killer - do not edit
+	 2 -   BYTE - Client - do not edit
+	 3 - STRING - Weapon
+	**/
+
+
+	if ( equal( Weapon, "greenattack" ) && getClientLEVEL( Client ) == 0 )
+		set_msg_arg_string( 3, "blueattack" );
+
+	else if ( equal( Weapon, "finalflash" ) )
+		set_msg_arg_string( 3, "Nappa's Rage Blast" );
+
+	else if ( equal( Weapon, "kiblast" ) )
+		set_msg_arg_string( 3, "Energy Ball" );
+
+}

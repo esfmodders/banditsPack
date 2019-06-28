@@ -1,0 +1,395 @@
+public fxBlow( Core[] )
+{
+        AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public esf123( CORE[])
+{
+	AddFx( CORE[0], "fxLightning","sprites/lgtning.spr", 7, 50, 150, 200, 10, 10, 250, 10, 150, 0 );	
+	return 1;
+}
+
+public NORMALCHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "evil-vegeta" );
+}
+
+public MAJINCHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "evil-vegeta.majin" );
+}
+
+public SSJ2CHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "evil-vegeta.ssj2" );
+}
+
+public SSJCHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "evil-vegeta.ssj" );
+}
+
+public CHECK3( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "evil-vegeta.ssj2" );
+}
+
+public CHECK( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "evil-vegeta.majin" );
+}
+
+public CHECK2( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+FX_off(Client);
+remove_task( uniqueTaskID( Client, 100 ) );
+setClientMODEL( Client, "evil-vegeta.ssj" );
+}
+
+public fxAvatar( Core[] )
+{
+        AddFx( Core[0], "fxAvatar", "create",101,1.0 );	
+        return 1;
+}
+
+public fxAvatar2( Core[] )
+{
+        AddFx( Core[0], "fxAvatar", "create",102,1.0 );	
+        return 1;
+}
+
+public fxAvatar3( Core[] )
+{
+        AddFx( Core[0], "fxAvatar", "create",103,1.0 );	
+        return 1;
+}
+
+public ModelChange1( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "evil-vegeta" );
+AddFx( Client, "fxAvatar", "create", 25, 1.0 );
+}
+
+public ModelChange2( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "evil-vegeta.ssj" );
+AddFx( Client, "fxAvatar", "create", 25, 1.0 );
+}
+
+public ModelChange3( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "evil-vegeta" );
+AddFx( Client, "fxAvatar", "create", 102, 1.0 );
+}
+
+public sprites1( Core[] )
+{
+	AddFx( Core[0], "fxVerticalSpriteField","sprites/red-lightning.spr", 1.7, 12, 100, 0, 200, 180, 255, 255, 5, 150, 600 );
+	return 1;
+}
+
+public blabla5( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 20, 100, 100, 100, 10, 1 );
+	return 1;
+}
+
+public sprites2000( Core[] )
+{
+	AddFx( Core[0], "fxLgtField", 0.2, 3, 255, 100);	
+	return 1;
+}
+
+public sprites2( Core[] )
+{
+	AddFx( Core[0], "fxLgtField", 0.4, 2, 255, 50, 20 );	
+	return 1;
+}
+
+public fxAura122( Core[] )
+{
+	AddFx( Core[0], "fxVerticalSpriteField", "sprites/red-lightning.spr", 1.7, 12, 100, 0, 200, 180, 255, 255, 5, 150, 600 );
+	return 1;
+}
+
+public fxAura( Core[] )
+{   
+        client_cmd( Core[0], "cam_idealdist 150" )
+	AddFx( Core[0], "fxModelEntity", "models/evolution/chaos_aura.mdl", 0, 0, 50.0, 0, 0, 0, 1.0, 1.0, 0, 3 );
+	return 1;
+}
+
+public fxAurabla( Core[] )
+{
+        AddFx( Core[0], "fxSpriteEntity", "sprites/ssj4_chaos.spr", 0, 0, 200.0, 50.0, 1.0, 3.5 );
+        return 1;
+}
+
+public fxAurabla123( Core[] )
+{
+        AddFx( Core[0], "fxSpriteEntity", "sprites/m_waves123.spr", 0, 0, 200.0, 50.0, 1.0, 3.5 );
+        return 1;
+}
+
+public fxAura555( Core[] )
+{   
+        client_cmd( Core[0], "cam_idealdist 150" )
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 4.3, 0, 8 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 2.8, 0, 8 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 3.8, 0, 8 );
+	return 1;
+}
+
+public blabla100( Core[] )
+{   
+        client_cmd( Core[0], "cam_idealdist 150" )
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 4.3, 0, 8 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 2.8, 0, 8 );
+	AddFx( Core[0], "fxModelEntity", "models/evolution/redmaura2.mdl", 0, 22, 90.0, 2, 0, 2, 3.0, 3.8, 0, 8 );
+	return 1;
+}
+
+public blabla200( Core[] )
+{   
+        client_cmd( Core[0], "cam_idealdist 250" )
+	AddFx( Core[0], "fxSpriteEntity", "sprites/evil_shine.spr", 0, 0, 100.0, 5.0, 1.0, 5 );
+	return 1;
+}
+
+public fxAura2( Core[] )
+{   
+	AddFx( Core[0], "fxBeamTorus", "sprites/lgtning.spr", 255, 255, 255, 255, 250, 10, 96, 0 );
+	return 1;
+}
+
+public fxAurai( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/m_waves12345.spr", 4, 50, 0, 0, 0 );
+	return 1;
+}
+
+public fxAura5( Core[] )
+{
+        AddFx( Core[0], "fxPowerup", 0, 0, 0 );
+	return 1;
+}
+
+public fxAura3( Core[] )
+{
+	AddFx( Core[0], "fxSprite", "sprites/m_waves.spr", 4, 50, 0, 0, 0 );
+	return 1;
+}
+
+public blitz123( Core[] )
+{
+	AddFx( Core[0], "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 20, 50, 255, 100, 40, 150, 200, 650, 0, 22 );
+	return 1;
+}
+
+public lol123( Core[] )
+{
+	AddFx( Core[0], "fxLightning","sprites/lgtning.spr", 2, 50, 150, 200, 10, 10, 250, 10, 100, 5 );
+	return 1;
+}
+
+public hehe123( Core[] )
+{
+	emit_sound( Core[0], CHAN_ITEM, "ecx.vegeta-ts/t_majinend.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+public hehe12345( Core[] )
+{
+	emit_sound( Core[0], CHAN_ITEM, "ecx.vegeta-ts/t_ssj4_2.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+public kack123( Core[] )
+{
+	emit_sound( Core[0], CHAN_ITEM, "ecx.vegeta-ts/t_ssj2end.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+public hehe321( Core[] )
+{
+	emit_sound( Core[0], CHAN_ITEM, "ecx.vegeta-ts/t_ssj4end.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	return 1;
+}
+
+
+
+public oozaru1( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "oozaru.1" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public oozaru2( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "oozaru.3" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public oozaru3( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "oozaru.5" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public oozaru4( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "oozaru.7" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public oozaru5( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "oozaru.9" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public goozaru1( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "goozaru.9" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public esf12345( Core[] )
+{
+	AddFx( Core[0], "fxWorldLight", 90, 255, 255, 255, 200.1, 0.5);
+	return 1;
+}
+
+public goozaru11( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "goozaru.9" );
+AddFx( Client, "fxAvatar", "create", 87, 1.0 );
+}
+
+public goozaru2( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "goozaru.7" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public goozaru3( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "goozaru.5" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public fxAura2000( Core[] )
+{
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	RemFx( Core[0], "fxSpriteEntity", 0);
+	return 1;
+}
+
+public fxAura3000( Core[] )
+{
+	RemFx( Core[0], "fxModelEntity", 0);
+	return 1;
+}
+
+
+public goozaru4( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "goozaru.3" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public goozaru5( CORE[] )
+{
+new Client = CORE[0];
+RemFx( Client, "fxAvatar", 0);
+setClientMODEL( Client, "goozaru.1" );
+AddFx( Client, "fxAvatar", "create", 86, 1.0 );
+}
+
+public fxFinalBlow( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/xsmokered.spr", 5, 15, 0, 255, 255, 100, 255, 25, 350, 0, 25 );
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public fxFinalBlow2( Core[] )
+{
+	AddFx( Core[0], "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250);
+	AddFx( Core[0], "fxSpriteRays", "sprites/ecx.lightning.spr", 8, 20, 50, 255, 100, 40, 150, 200, 650, 0, 22 );
+	AddFx( Core[0], "fxBlow" );
+	return 1;
+}
+
+public FX_off( Client )
+{
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxModelEntity", 0);
+	RemFx( Client, "fxLgtField", 0);
+	RemFx( Client, "fxPowerup", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	RemFx( Client, "fxVerticalSpriteField", 0);
+	RemFx( Client, "fxSmokeField", 0 );
+	RemFx( Client, "fxSpriteField", 0 );
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxSpriteEntity", 0);
+	RemFx( Client, "fxCSpriteRays", 0 );
+	RemFx( Client, "fxLgtField", 0 );
+	return 1;
+}

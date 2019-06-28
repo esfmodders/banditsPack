@@ -1,0 +1,47 @@
+new MOD_SOUND_CORE[][][] =
+{
+	// << WEAPON >>
+	{
+		"*/wc_spiritsword.wav",
+		"Evil-vegeto/wc_spiritsword.wav"	
+	},
+	
+	{
+		"*/w_spiritsword.wav",
+		"Evil-vegeto/w_spiritsword.wav"
+	},
+	
+	{
+		"*/powerbeam.wav",
+		"Evil-vegeto/powerbeam.wav"
+	},
+    
+	{
+		"*/powerbeamha.wav",
+		"Evil-vegeto/powerbeamha.wav"
+	},
+	
+	// << Pain >>
+	{
+		"*/pain1.wav",
+		"Evil-vegeto/p_pain1.wav"
+	},
+	{
+		"*/pain2.wav",
+		"Evil-vegeto/p_pain2.wav"
+	},
+	{
+		"*/pain3.wav",
+		"Evil-vegeto/p_pain3.wav"	
+	},
+
+	{
+		"*/pain4.wav",
+		"Evil-vegeto/p_pain4.wav"	
+	},
+	// << Death >>
+	{
+		"*/death.wav",
+		"Evil-vegeto/p_death.wav"	
+	}
+}

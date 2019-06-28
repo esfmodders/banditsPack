@@ -1,0 +1,255 @@
+L 11/15/2016 - 13:15:28: Start of error session.
+L 11/15/2016 - 13:15:28: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 13:15:28: < Core >> Model does not exist > "models/player//.mdl"
+L 11/15/2016 - 13:15:28: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/15/2016 - 13:15:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:22:56: << FX >> Invalid Client [ 3 ]
+L 11/15/2016 - 13:22:56: [AMXX] Run time error 10 (plugin "Black.amxx") (native "RemFx") - debug not enabled!
+L 11/15/2016 - 13:22:56: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:23:20: << FX >> Invalid Client [ 3 ]
+L 11/15/2016 - 13:23:20: [AMXX] Run time error 10 (plugin "Black.amxx") (native "RemFx") - debug not enabled!
+L 11/15/2016 - 13:23:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:24:12: Start of error session.
+L 11/15/2016 - 13:24:12: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 13:24:12: < Core >> Model does not exist > "models/player//.mdl"
+L 11/15/2016 - 13:24:12: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/15/2016 - 13:24:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:26:41: << CORE >> Invalid Client >> 3
+L 11/15/2016 - 13:26:41: [AMXX] Run time error 10 (plugin "Black.amxx") (native "getClientMHP") - debug not enabled!
+L 11/15/2016 - 13:26:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:26:41: << CORE >> Invalid Client >> 3
+L 11/15/2016 - 13:26:41: [AMXX] Run time error 10 (plugin "Black.amxx") (native "getClientMHP") - debug not enabled!
+L 11/15/2016 - 13:26:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:30:46: Not currently in a dynamic native
+L 11/15/2016 - 13:30:46: [AMXX] Run time error 10 (plugin "FxLib.amxx") (native "get_param_byref") - debug not enabled!
+L 11/15/2016 - 13:30:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:30:46: [AMXX] Run time error -1 (plugin "FxLib.amxx") - debug not enabled!
+L 11/15/2016 - 13:30:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:35:47: Not currently in a dynamic native
+L 11/15/2016 - 13:35:47: [AMXX] Run time error 10 (plugin "FxLib.amxx") (native "get_param_byref") - debug not enabled!
+L 11/15/2016 - 13:35:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 13:35:47: [AMXX] Run time error -1 (plugin "FxLib.amxx") - debug not enabled!
+L 11/15/2016 - 13:35:47: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 14:41:39: Start of error session.
+L 11/15/2016 - 14:41:39: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 14:41:39: Function is not present (function "fxAura3") (plugin "CX/Vegeta-TS.amxx")
+L 11/15/2016 - 14:41:39: [AMXX] Run time error 10 (plugin "Vegeta-TS.amxx") (native "set_task") - debug not enabled!
+L 11/15/2016 - 14:41:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 15:28:28: Start of error session.
+L 11/15/2016 - 15:28:28: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 15:28:28: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 15:28:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 15:28:32: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 15:28:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 15:43:44: Start of error session.
+L 11/15/2016 - 15:43:44: Info (map "esf_gero") (logfile "error_111516.log")
+L 11/15/2016 - 15:43:44: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 15:43:44: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 15:43:46: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 15:43:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:34:54: Start of error session.
+L 11/15/2016 - 17:34:54: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 17:34:54: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:34:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:34:59: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:34:59: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:35:03: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:35:03: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:35:10: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:35:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:41: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:43: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:43: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:45: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:48: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:49: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:49: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:49: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:50: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:50: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:50: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:51: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:51: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:51: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:51: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:52: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:52: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:52: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:52: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:53: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:53: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:53: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:53: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:36:58: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:36:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:38:37: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:38:37: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:38:39: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:38:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:41:34: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:41:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:41:36: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:41:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:45:48: Start of error session.
+L 11/15/2016 - 17:45:48: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 17:45:48: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:45:48: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:45:50: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:45:50: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:45:53: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:45:53: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:45:55: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:45:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:09: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:09: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:17: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:20: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:20: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:20: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:21: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:24: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:24: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:27: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:27: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:28: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:28: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:28: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:29: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:30: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:30: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:31: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:31: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:31: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:33: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:34: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:34: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:35: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:35: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:39: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:39: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:39: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:39: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:46: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:46: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:51: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:51: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:46:58: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:46:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:47:06: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:47:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:47:11: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:47:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:47:12: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:47:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:47:13: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:47:13: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:47:14: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:47:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:47:17: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:47:17: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:47:18: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:47:18: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:48:21: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:48:21: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:48:22: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:48:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:48:25: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:48:25: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:48:33: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:48:33: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:48:41: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:48:41: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:49:26: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:49:26: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:49:32: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:49:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:49:45: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:49:45: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:49:55: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:49:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:50:12: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:50:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:50:16: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:50:16: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:50:29: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:50:29: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 17:50:36: [AMXX] Run time error 4 (plugin "Vegeta-TS.amxx") - debug not enabled!
+L 11/15/2016 - 17:50:36: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:33:55: Start of error session.
+L 11/15/2016 - 22:33:55: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 22:33:55: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:33:55: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:33:58: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:33:58: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:41:11: Start of error session.
+L 11/15/2016 - 22:41:11: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 22:41:11: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:41:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:41:14: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:41:14: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:41:22: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:41:22: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:41:28: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:41:28: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:42:32: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:42:32: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:42:38: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:42:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:46:52: Start of error session.
+L 11/15/2016 - 22:46:52: Info (map "esf_Guru") (logfile "error_111516.log")
+L 11/15/2016 - 22:46:52: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:46:52: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:46:54: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:46:54: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:47:06: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:47:06: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 22:47:12: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 22:47:12: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 23:21:10: Start of error session.
+L 11/15/2016 - 23:21:10: Info (map "esf_gero") (logfile "error_111516.log")
+L 11/15/2016 - 23:21:10: < Core >> Model does not exist > "models/player//.mdl"
+L 11/15/2016 - 23:21:10: [AMXX] Run time error 10 (plugin "Ascend.amxx") (native "setClientMODEL") - debug not enabled!
+L 11/15/2016 - 23:21:10: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 23:21:11: Not currently in a dynamic native
+L 11/15/2016 - 23:21:11: [AMXX] Run time error 10 (plugin "FxLib.amxx") (native "get_param_byref") - debug not enabled!
+L 11/15/2016 - 23:21:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 23:21:11: [AMXX] Run time error -1 (plugin "FxLib.amxx") - debug not enabled!
+L 11/15/2016 - 23:21:11: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 23:59:38: Start of error session.
+L 11/15/2016 - 23:59:38: Info (map "esf_gero") (logfile "error_111516.log")
+L 11/15/2016 - 23:59:38: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 23:59:38: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).
+L 11/15/2016 - 23:59:43: [AMXX] Run time error 4 (plugin "Goku-TS.amxx") - debug not enabled!
+L 11/15/2016 - 23:59:43: [AMXX] To enable debug mode, add "debug" after the plugin name in plugins.ini (without quotes).

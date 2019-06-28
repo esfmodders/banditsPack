@@ -1,0 +1,707 @@
+// Ignored xs__ variables
+#pragma semicolon 1
+#pragma ctrlchar '\'
+
+new SpecialXtension:sxBodypart;
+new BodyMdl;
+new BodyMdlStr[20] =
+{
+    109, 111, 100, 101, 108, 115, 47, 98, 111, 100, 121, 112, 97, 114, 116, 46, 109, 100, 108, 0
+}
+new BodyMdlSmallStr[26] =
+{
+    109, 111, 100, 101, 108, 115, 47, 98, 111, 100, 121, 112, 97, 114, 116, 95, 115, 109, 97, 108, 108, 46, 109, 100, 108, 0
+}
+new BodyMdlMediumStr[27] =
+{
+    109, 111, 100, 101, 108, 115, 47, 98, 111, 100, 121, 112, 97, 114, 116, 95, 109, 101, 100, 105, 117, 109, 46, 109, 100, 108, 0
+}
+new BodyMdlLargeStr[26] =
+{
+    109, 111, 100, 101, 108, 115, 47, 98, 111, 100, 121, 112, 97, 114, 116, 95, 108, 97, 114, 103, 101, 46, 109, 100, 108, 0
+}
+new BodyClass[12] =
+{
+    67, 88, 46, 66, 111, 100, 121, 112, 97, 114, 116, 0
+}
+new PiccoloMdl[60] =
+{
+    109, 111, 100, 101, 108, 115, 47, 112, 108, 97, 121, 101, 114, 47, 101, 99, 120, 46, 98, 117, 117, 46, 115, 98, 117, 117, 46, 112, 105, 99, 99, 111, 108, 111, 47, 101, 99, 120, 46, 98, 117, 117, 46, 115, 98, 117, 117, 46, 112, 105, 99, 99, 111, 108, 111, 46, 109, 100, 108, 0
+}
+new GotenksMdl[60] =
+{
+    109, 111, 100, 101, 108, 115, 47, 112, 108, 97, 121, 101, 114, 47, 101, 99, 120, 46, 98, 117, 117, 46, 115, 98, 117, 117, 46, 103, 111, 116, 101, 110, 107, 115, 47, 101, 99, 120, 46, 98, 117, 117, 46, 115, 98, 117, 117, 46, 103, 111, 116, 101, 110, 107, 115, 46, 109, 100, 108, 0
+}
+new GohanMdl[56] =
+{
+    109, 111, 100, 101, 108, 115, 47, 112, 108, 97, 121, 101, 114, 47, 101, 99, 120, 46, 98, 117, 117, 46, 115, 98, 117, 117, 46, 103, 111, 104, 97, 110, 47, 101, 99, 120, 46, 98, 117, 117, 46, 115, 98, 117, 117, 46, 103, 111, 104, 97, 110, 46, 109, 100, 108, 0
+}
+
+Float:operator*(Float:,_:)(Float:oper1, oper2)
+{
+    return oper1 * float(oper2);
+}
+
+bool:operator==(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return floatcmp(oper1, oper2) == 0;
+}
+
+bool:operator!=(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return floatcmp(oper1, oper2) != 0;
+}
+
+bool:operator>(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 < floatcmp(oper1, oper2);
+}
+
+bool:operator>=(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 <= floatcmp(oper1, oper2);
+}
+
+bool:operator<(Float:,Float:)(Float:oper1, Float:oper2)
+{
+    return 0 > floatcmp(oper1, oper2);
+}
+
+public plugin_pause()
+{
+    unpause(0, "", "");
+    return 1;
+}
+
+ADV_MELEE_DIRECTION:randomMeleeDirection()
+{
+    return random(8);
+}
+
+Float:xs_rsqrt(Float:x)
+{
+    return 1.00 / floatsqroot(x);
+}
+
+xs_vec_add(Float:in1[], Float:in2[], Float:out[])
+{
+    out[0] = in1[0] + in2[0];
+    out[1] = in1[1] + in2[1];
+    out[2] = in1[2] + in2[2];
+    return 0;
+}
+
+xs_vec_sub(Float:in1[], Float:in2[], Float:out[])
+{
+    out[0] = in1[0] - in2[0];
+    out[1] = in1[1] - in2[1];
+    out[2] = in1[2] - in2[2];
+    return 0;
+}
+
+xs_vec_mul_scalar(Float:vec[], Float:scalar, Float:out[])
+{
+    out[0] = vec[0] * scalar;
+    out[1] = vec[1] * scalar;
+    out[2] = vec[2] * scalar;
+    return 0;
+}
+
+xs_vec_normalize(Float:vec[], Float:out[])
+{
+    new Float:invlen = xs_rsqrt(vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2]);
+    out[0] = vec[0] * invlen;
+    out[1] = vec[1] * invlen;
+    out[2] = vec[2] * invlen;
+    return 0;
+}
+
+UTIL_GetAimOrigin(index, Float:origin[3], Float:scalar)
+{
+    new Float:start[3];
+    new Float:view_ofs[3];
+    pev(index, pev_origin, start);
+    pev(index, pev_view_ofs, view_ofs);
+    xs_vec_add(start, view_ofs, start);
+    new Float:dest[3];
+    pev(index, pev_v_angle, dest);
+    engfunc(EngFunc_MakeVectors, dest);
+    global_get(glb_v_forward, dest);
+    xs_vec_mul_scalar(dest, scalar, dest);
+    xs_vec_add(start, dest, dest);
+    engfunc(EngFunc_TraceLine, start, dest, 0, index);
+    global_get(glb_trace_endpos, origin);
+    return 0;
+}
+
+UTIL_Damage(Client, dmg, String:attack[])
+{
+    new hp = getClientHP(Client) - dmg;
+    if (0 < hp)
+    {
+        setClientHP(Client, hp);
+    }
+    else
+    {
+        message_begin(MSG_ALL, get_user_msgid("DeathMsg"), 52, 0);
+        write_byte(Client);
+        write_byte(Client);
+        write_string(attack);
+        message_end();
+        silentClientKILL(Client);
+    }
+    return 0;
+}
+
+public plugin_init()
+{
+    register_plugin("Bodypart", "1.0", "core | Greenberet");
+    register_forward(FM_Touch, "BodyTouch", 0);
+    register_forward(FM_Think, "BodyThink", 0);
+    register_message(get_user_msgid("DeathMsg"), "DeathMsg");
+    return 0;
+}
+
+public plugin_precache()
+{
+    BodyMdl = precache_model(BodyMdlStr);
+    precache_model(BodyMdlSmallStr);
+    precache_model(BodyMdlMediumStr);
+    precache_model(BodyMdlLargeStr);
+    precache_model(PiccoloMdl);
+    precache_model(GotenksMdl);
+    precache_model(GohanMdl);
+    return 0;
+}
+
+public @SpecialCreation()
+{
+    beginSpecialCreation("Bodypart", "", "callbackBodypart", "special_bodypart", "");
+    addSpecialCharge("", 10.00/*1092616192*/, 5.00/*1084227584*/, 0);
+    sxBodypart = endSpecialCreation();
+    return 0;
+}
+
+
+/ * ERROR! control flow graph is not reducible * /
+ function "callbackBodypart"
+public callbackBodypart(Client, CSpecialState:Status, Control, Float:Charge)
+
+createBodypart(Client, Float:Charge)
+{
+    new ent = 0;
+    ent = engfunc(EngFunc_CreateNamedEntity, engfunc(EngFunc_AllocString, "info_target"));
+    if (!ent)
+    {
+        return ent;
+    }
+    engfunc(EngFunc_SetModel, ent, BodyMdlStr);
+    set_pev(ent, pev_classname, BodyClass);
+    set_pev(ent, pev_mins, "");
+    set_pev(ent, pev_maxs, "");
+    set_pev(ent, pev_owner, Client);
+    set_pev(ent, pev_fuser2, Charge);
+    set_pev(ent, pev_iuser2, 0);
+    set_pev(ent, pev_framerate, 1.00/*1065353216*/);
+    set_pev(ent, pev_scale, 1.00/*1065353216*/);
+    set_pev(ent, pev_frame, 1.00/*1065353216*/);
+    set_pev(ent, pev_sequence, 1);
+    set_pev(ent, pev_solid, 1);
+    set_pev(ent, pev_speed, 150.00/*1125515264*/);
+    set_pev(ent, pev_movetype, 5);
+    static Float:velocity[3];
+    static Float:spawnOrigin[3];
+    static Float:aimOrigin[3];
+    UTIL_GetAimOrigin(Client, spawnOrigin, 50.00);
+    UTIL_GetAimOrigin(Client, aimOrigin, 9999.90);
+    set_pev(ent, pev_origin, spawnOrigin);
+    xs_vec_sub(aimOrigin, spawnOrigin, velocity);
+    xs_vec_normalize(velocity, velocity);
+    xs_vec_mul_scalar(velocity, 400.00, velocity);
+    set_pev(ent, pev_velocity, velocity);
+    setWeaponHOMING(ent, 400.00/*1137180672*/, "", "");
+    return ent;
+}
+
+removeBodypart(Body)
+{
+    !!! Removed Phi
+    if (pev_valid(Target) && is_user_alive(Target))
+    {
+        setClientXFROZEN(Target, 0);
+        setClientPROTECT(Target, 0);
+        setClientDATAc(Target, "", "");
+    }
+    engfunc(EngFunc_RemoveEntity, Body);
+    return 0;
+}
+
+removeBodypartClient(Client, Target)
+{
+    new ent = 0;
+    new var2 = engfunc(EngFunc_FindEntityByString, ent, "classname", BodyClass);
+    ent = var2;
+    while (var2)
+    {
+        new var1;
+        if (Target)
+        {
+            var1 = 101;
+        }
+        else
+        {
+            var1 = 18;
+        }
+
+/ * ERROR! No se puede convertir un objeto de tipo 'Lysis.DSentinel' al tipo 'Lysis.DReturn'. * /
+ function "removeBodypartClient"
+removeBodypartClient(Client, Target)
+
+attachBodypart(Body, Client)
+{
+    if (pev(Body, pev_iuser2))
+    {
+        return 0;
+    }
+    client_cmd(Client, "weapon_melee");
+    client_cmd(Client, "weapon_sword");
+    setClientXFROZEN(Client, "");
+    setClientPROTECT(Client, "");
+    new Float:Charge = 0;
+    pev(Body, pev_fuser2, Charge);
+    switch (floatround(Charge * 100, floatround_round))
+    {
+        case 0:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 1:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 2:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 3:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 4:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 5:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 6:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 7:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 8:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 9:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 10:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 11:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 12:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 13:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 14:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 15:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 16:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 17:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 18:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 19:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 20:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 21:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 22:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 23:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 24:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 25:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 26:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 27:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 28:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 29:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 30:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 31:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 32:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 33:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 34:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 35:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 36:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 37:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 38:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 39:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 40:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 41:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 42:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 43:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 44:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 45:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 46:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 47:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 48:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 49:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 50:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 51:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 52:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 53:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 54:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 55:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 56:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 57:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 58:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 59:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 60:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 61:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 62:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 63:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 64:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 65:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 66:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 67:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 68:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 69:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 70:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 71:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 72:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 73:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 74:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        case 75:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlSmallStr);
+        }
+        default:
+        {
+            engfunc(EngFunc_SetModel, Body, BodyMdlLargeStr);
+        }
+    }
+    set_pev(Body, pev_framerate, 1.00/*1065353216*/);
+    set_pev(Body, pev_scale, 1.00/*1065353216*/);
+    set_pev(Body, pev_frame, 1.00/*1065353216*/);
+    set_pev(Body, pev_sequence, 1);
+    set_pev(Body, pev_velocity, "");
+    static Float:Origin[3];
+    pev(Client, pev_origin, Origin);
+    set_pev(Body, pev_origin, Origin);
+    set_pev(Body, pev_iuser2, Client);
+    set_pev(Body, pev_nextthink, get_gametime() + 0.10);
+    set_pev(Body, pev_solid, 1);
+    addArrows(Client, "ArrowCallback", randomMeleeDirection(), randomMeleeDirection(), randomMeleeDirection(), randomMeleeDirection(), randomMeleeDirection(), randomMeleeDirection());
+    return 0;
+}
+
+public ArrowCallback(Client, failrate)
+{
+    !!! Removed Phi
+    if (!pev_valid(Client) || failrate)
+    {
+        return 0;
+    }
+    removeBodypartClient(Client, 1);
+    return 1;
+}
+
+public BodyTouch(ptr, ptd)
+{
+    !!! Removed Phi
+    if (!pev_valid(ptr))
+    {
+        return 0;
+    }
+    if (ptd != pev(ptr, pev_owner) && (pev_valid(ptd) && pev(ptd, pev_owner) == ptr))
+    {
+        return 0;
+    }
+    if (equali("", "CX.Bodypart", 0) && pev(ptr, pev_iuser2))
+    {
+        if (pev_valid(ptd))
+        {
+            if (equali("", "player", 0) && (getClientTEAM(ptd) == getClientTEAM(pev(ptr, pev_owner)) && getGameMODE()) && !getClientGOD(ptd))
+            {
+                attachBodypart(ptr, ptd);
+            }
+            else
+            {
+                removeBodypart(ptr);
+            }
+        }
+        removeBodypart(ptr);
+    }
+    return 0;
+}
+
+public BodyThink(Body)
+{
+    if (!pev_valid(Body))
+    {
+        return 0;
+    }
+    static classname[32];
+    pev(Body, pev_classname, classname, 31);
+    if (!equali("", "CX.Bodypart", 0))
+    {
+        return 0;
+    }
+    new Float:nextthink = 0;
+    pev(Body, pev_nextthink, nextthink);
+    if (nextthink > get_gametime())
+    {
+        return 0;
+    }
+    set_pev(Body, pev_nextthink, get_gametime() + 0.10);
+    new Target = 0;
+    new Client = 0;
+    Target = pev(Body, pev_iuser2);
+    if (!pev_valid(Target))
+    {
+        return 0;
+    }
+    setClientXFROZEN(Target, "");
+    setClientSPEEDMP(Target, 0);
+    setClientPROTECT(Target, "");
+    Client = pev(Body, pev_owner);
+    if (!pev_valid(Client))
+    {
+        return 0;
+    }
+    pev(Body, pev_fuser2, nextthink);
+    Damage(Client, Target, "Bodypart", nextthink * 1.00);
+    return 0;
+}
+
+public DeathMsg()
+{
+    !!! Removed Phi
+    new Client = get_msg_arg_int(1);
+    new Target = get_msg_arg_int(2);
+    static Attack[33];
+    get_msg_arg_string(3, "", 32);
+    removeBodypartClient(Target, 0);
+    if (!equali("", "Bodypart", 0))
+    {
+        return 0;
+    }
+    if (containi("", "gohan-ad") == -1 && containi("", "yamcha") == -1 && containi("", "goten") == -1 && containi("", "goku-ts") == -1)
+    {
+        setClientMODEL(Client, "ecx.buu.sbuu.gohan");
+    }
+    else
+    {
+        if (containi("", "gotenks") != -1)
+        {
+            setClientMODEL(Client, "ecx.buu.sbuu.gotenks");
+        }
+        if (containi("", "piccolo") != -1)
+        {
+            setClientMODEL(Client, "ecx.buu.sbuu.piccolo");
+        }
+    }
+    removeBodypartClient(Target, 1);
+    return 0;
+}
+

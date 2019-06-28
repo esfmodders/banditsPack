@@ -1,0 +1,106 @@
+new victima;
+
+
+
+public client_PreThink(id)
+{
+	new Float:origin[3];
+	pev(id,pev_origin,origin);
+	new ent = -1;
+            
+	while((ent = find_ent_in_sphere(ent,origin,500.0)) != 0) 
+	{
+		new className[32];
+		entity_get_string(ent, EV_SZ_classname, className,32);
+		new owner = entity_get_edict(ent, EV_ENT_owner);
+				
+		if(!equali(className, "SwoopShineFx") && owner < 500 && owner > 0 && owner != id)
+		{
+			if(!equali(className, "bodyque") && owner < 500 && owner > 0 && owner != id)
+			{
+				victima = owner
+				aimatme2(id)
+			}
+		}
+	}
+}
+
+Float:xs_rsqrt(Float:x)
+{
+    return 1.00 / floatsqroot(x);
+}
+
+xs_vec_normalize(Float:vec[], Float:out[])
+{
+    new Float:invlen = xs_rsqrt(vec[0] * vec[0] + vec[1] * vec[1] + vec[2] * vec[2]);
+    out[0] = vec[0] * invlen;
+    out[1] = vec[1] * invlen;
+    out[2] = vec[2] * invlen;
+    return 0;
+}
+
+xs_vec_cross(Float:vec1[], Float:vec2[], Float:out[])
+{
+    out[0] = vec1[1] * vec2[2] - vec1[2] * vec2[1];
+    out[1] = vec1[2] * vec2[0] - vec1[0] * vec2[2];
+    out[2] = vec1[0] * vec2[1] - vec1[1] * vec2[0];
+    return 0;
+}
+
+setAIM(id, Float:target_origin[3])
+{
+    static Float:end[3];
+    static Float:start[3];
+    entity_get_vector(id, 0, start);
+    entity_get_vector(id, 18, end);
+
+    static Float:new_angles[3];
+    static Float:aim_vector[3];
+    aim_vector[0] = target_origin[0] - start[0];
+    aim_vector[1] = target_origin[1] - start[1];
+    aim_vector[2] = target_origin[2] - start[2];
+    vector_to_angle(aim_vector, new_angles);
+    while (new_angles[0] > 360.00)
+    {
+        new_angles[0] = new_angles[0] - 360.00;
+    }
+    while (new_angles[0] < 0.00)
+    {
+        new_angles[0] = new_angles[0] + 360.00;
+    }
+    new_angles[0] = new_angles[0] * -1;
+    while (new_angles[1] > 360.00)
+    {
+        new_angles[0] = new_angles[0] - 360.00;
+    }
+    while (new_angles[1] < 0.00)
+    {
+        new_angles[0] = new_angles[0] + 360.00;
+    }
+    entity_set_vector(id, 6, new_angles);
+    entity_set_int(id, EV_INT_fixangle, 1);
+    return 1;
+}
+
+public aimatme(id)
+{
+	new Float:vAng[3];
+	new Float:vec[3];
+	pev(victima, pev_v_angle, vAng);
+	angle_vector(vAng, 2, vec);
+	new Float:vec2[3];
+	vec2[0] = vec[0];
+	vec2[1] = vec[1];
+	vec2[2] = vec[2] + 1.00;
+	new Float:vecBackward[3];
+	xs_vec_cross(vec, vec2, vecBackward);
+	xs_vec_normalize(vecBackward, vecBackward);
+	new Float:org[3];
+	new Float:org2[3];
+	entity_get_vector(victima, 0, org);
+	entity_get_vector(victima, 0, org2);
+	org[0] = vecBackward[0] * 30.00 + org[0];
+	org[1] = vecBackward[1] * 30.00 + org[1];
+	org[2] = vecBackward[2] * 30.00 + org[2];
+	setAIM(id, org2);
+}

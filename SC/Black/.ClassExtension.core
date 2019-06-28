@@ -1,0 +1,335 @@
+/*
+** << Evolution Class Extension >>
+**
+** 	Copyright (C) 2005 - 2007 Corona Bytes .NET
+**
+** This program is free software; you can redistribute it and/or
+** modify
+
+it under the terms of the GNU General Public License
+** as published by the Free Software Foundation; either version 2
+** of the License, or (at your option) any later **
+ version.
+** This program is distributed in the hope that it will be useful,
+** but WITHOUT ANY WARRANTY; without even the implied warranty of
+** MERCHANTABILITY or
+
+FITNESS FOR A PARTICULAR PURPOSE.  See the
+** GNU General Public License for more details.
+**
+** You should have received a copy of the GNU General Public License
+** along
+
+with this program; if not, write to the Free Software
+** Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
+new const CX_Plugin[]	=	"CX.Black";
+new const CX_Version[]	=	"1337";
+new const CX_Author[]	=	"BANDIT";
+
+new BlackID, RoseID, bool: BlackAuraVisible[ 33 ], bool: RoseAuraVisible[ 33 ], CoreAvatarEnt, CoreAuraEnt, BlackAuraEnt, RoseAuraEnt;
+new ClassRoseAura;
+
+#define MOD_SOUND 	1
+#define MOD_CHARGE 	1
+#define MOD_WEAPON	1
+
+
+ 
+#include <amxmodx>
+#include <amxmisc>
+#include <fakemeta> 
+#include <engine> 
+#include <fun> 
+#include "ipci/Core"
+#include <ipci/ascend>
+#include <ipci/Fxlib>
+
+// << Implement CX Interface >>
+#include <xtension/class/main>
+
+PluginInit ()
+{
+	register_plugin( CX_Plugin, CX_Version, CX_Author );
+
+	//register_forward( FM_PlayerPostThink, "@ClassBlackThink" )
+	register_forward( FM_EmitSound, "fw_EmitSound", true );
+	register_forward( FM_Touch, "@WeaponTouch" );
+	register_forward( FM_AddToFullPack, "@ClassEntityHandle", true );
+	register_forward( FM_AddToFullPack, "@ClassChargeBlack", true );
+
+	register_message( get_user_msgid( "Powerup" ), "@ClassPowerup" );
+	register_message( get_user_msgid( "StopPowerup" ), "@ClassStopPowerup" );
+	register_message( get_user_msgid( "Charge" ), "@WeaponCharge" );
+	register_message( get_user_msgid( "CurWeapon" ), "@WeaponSwitch" );
+	register_message( get_user_msgid( "KillTrail" ), "@WeaponExplosion" );
+	register_event("DeathMsg", "lol", "a")
+	
+	register_message( get_user_msgid( "Health" ), "@ClassDamage" );
+}
+
+public @ClassCreation ()
+{
+	createClass( { MOD_SOUND, MOD_CHARGE, MOD_WEAPON }, "Black", true, false, "www.esfkami.net", "Black/c_intro.wav" );
+
+	// Black
+	addClassLevel( "Black", "Black", 1.0, 1.5, 50000000, 0, 1.0, 
+					400, 200, bool:{ false, false }, 12.0, { 600, 70 }, { 0, 1, 0, 0, 0, 3, 3 }, 5.0, Float:{ 180.0, 50.0 } );
+	addClassEffect( "models/evolution/Auras/shape_01.mdl", Float:{ 255.0, 255.0, 128.0, 50.0 }, 0, kRenderTransAdd,
+					{ 0, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	// SSJ Rose
+	addClassLevel( "SSJ Rose", "BlackSSJRose", 35.0, 1.5, 0, 30000000, 1.0, 
+					600, 230, bool:{ false, false }, 15.0, { 800, 50 }, { 1, 1, 0, 0, 0, 5, 5 }, 10.0, Float:{ 230.0, 70.0 } );
+	addClassEffect( "models/evolution/Auras/shape_06.mdl", Float:{ 1.0, 1.0, 1.0, 50.0 }, 2, kRenderTransAdd,
+					{ 0, 0, 0 }, { 0, 0, 0, 0 }, Float:{ 0.0, 0.0, 0.0, 0.0 } );
+
+	
+
+
+}
+
+
+
+public bool:@ClassCandyEat ( Client )
+	return true;
+
+public @ClassWeaponUpdate ( Client, Level )
+{
+	switch ( Level )
+	{
+		case 0: // Black
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_renzoku" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_bigbang" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_sensu" );
+		}
+		case 1: // SSJ Rose
+		{
+			addClassItem( Client, "weapon_melee", true );
+			addClassItem( Client, "weapon_renzoku" );
+			addClassItem( Client, "weapon_burningattack" );
+			addClassItem( Client, "weapon_genericbeam" );
+			addClassItem( Client, "weapon_kamehameha" );
+			addClassItem( Client, "weapon_bigbang" );
+			
+
+		}
+	}
+}
+
+public @ClassInitiateTransformation ( Client, Level, bool:Perfect )
+{
+	if( Perfect )
+	{	
+		AddFx( Client, "fxPowerup", 0, 0, 0 );
+		emit_sound( Client, CHAN_BODY, "Black/TransformationP.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+		setClientPL( Client, getClientPL( Client ) * 2 );
+		setClientMODEL( Client, "BlackSSJRose" );
+		AddFx( Client, "fxScreenFade", 3.0, 1.0, 0, 200, 0, 200, 100 );
+		AddFx( Client, "fxScreenShake", 12.0, 3.0, 3.0 );
+		AddFx( Client, "fxAvatar", "create", 103, 0.8 );
+		AddFx( Client, "fxBlow" );
+		AddFx( Client, "fxPowerWave", "sprites/white.spr", 200, 0, 200, 30, 250 );
+	}
+	else
+	{	
+		AddFx( Client, "fxPowerup", 0, 0, 0 );
+		emit_sound( Client, CHAN_BODY, "Black/Transformation.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+		setClientANIMATION( Client, 28 );
+		set_task( 6.5, "TransformFX", uniqueTaskID( Client, 100 ) );
+	}
+}
+
+public @ClassFinishTransformation ( Client, Level )
+{
+	setClientANIMATION( Client, -1 );
+	client_cmd( Client, "resetview" );
+	set_entity_visibility( Client, true );
+
+	RemFx( Client, "fxPowerup", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxLgtField", 0 );
+	RemFx( Client, "fxAvatar", 0 );
+	client_cmd( Client, "turbo" );
+
+}
+
+public @ClassCancelTransformation ( Client, Level )
+{
+	setClientPL( Client, 50000000 );
+	setClientMODEL( Client, "Black" );
+	setClientANIMATION( Client, -1 );
+	set_entity_visibility( Client, true );
+	client_cmd( Client, "resetview" );
+	remove_task( uniqueTaskID( Client, 100 ) );
+
+	message_begin( MSG_BROADCAST, SVC_TEMPENTITY );
+	write_byte( TE_KILLBEAM );
+	write_short( Client );
+	message_end();
+
+	RemFx( Client, "fxPowerup", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxModelEntity", 0 );
+	RemFx( Client, "fxLgtField", 0 );
+	RemFx( Client, "fxAvatar", 0 );
+	RemFx( Client, "fxLgtField", 0 );
+}
+
+public @ClassPowerup( MsgID, dest )
+{
+	new Client = get_msg_arg_int( 1 );
+
+	if( getCXbyName( "Black" ) != getClientDATAc( Client, cliClass ) ) return;
+
+	setClientLEVELDATAv( Client, cxlLightning, { 2, 2, 2, 8 }, 4 );
+	emit_sound( Client, CHAN_VOICE, "Black/Energy.wav", 1.0, ATTN_NORM, 0, PITCH_NORM );
+	AddFx( Client, "fxBlow" );
+	AddFx( Client, "fxPowerWave", "sprites/white.spr", 180, 145, 120, 30, 250 );
+}
+
+public @ClassStopPowerup( MsgID, dest )
+{
+	new Client = get_msg_arg_int( 1 );
+
+	if( getCXbyName( "Black" ) != getClientDATAc( Client, cliClass ) ) return;
+
+	setClientLEVELDATAv( Client, cxlLightning, { 0, 0, 0, 0 }, 4 );
+}
+
+
+
+public @ClassEntityHandle( ES_Handle, e, iEntity, iHost, iHostFlags, iPlayer, iSet )
+{
+	if( !pev_valid( iEntity ) ) return;
+
+	new Class[ 10 ];
+	pev( iEntity, pev_classname, Class, 10 );
+
+	if( equal( Class, "coreAvatar" ) )
+	{
+		if( iEntity != CoreAvatarEnt ) return;
+
+		if( get_es( ES_Handle, ES_ModelIndex ) == BlackID )
+		{
+			BlackAuraVisible[ iHost ] = true;
+
+			new Float: org[ 3 ];
+			get_es( ES_Handle, ES_Origin, org );
+			set_pev( BlackAuraEnt, pev_origin, org );
+
+			if( get_es( ES_Handle, ES_Sequence ) == 25 )
+			{
+				set_pev( BlackAuraEnt, pev_scale, 0.35 );
+				set_es( ES_Handle, ES_Effects, EF_BRIGHTFIELD );
+			}
+			else
+			{
+				set_pev( BlackAuraEnt, pev_scale, 0.3 );
+			}
+		}
+		else
+		{
+			BlackAuraVisible[ iHost ] = false;
+		}
+
+		if( get_es( ES_Handle, ES_ModelIndex ) == RoseID )
+		{
+			RoseAuraVisible[ iHost ] = false;
+
+			new Float: org[ 3 ];
+			get_es( ES_Handle, ES_Origin, org );
+
+			org[ 2 ] += 9.0;
+
+			set_pev( RoseAuraEnt, pev_origin, org );
+
+			set_es( ES_Handle, ES_Effects, EF_BRIGHTFIELD );
+			
+			if( get_es( ES_Handle, ES_Sequence ) == 25 )
+			{
+				/*
+				if( pev( CoreAvatarEnt - 1, pev_sequence ) >= 41 && pev( CoreAvatarEnt - 2, pev_sequence ) < 44 ) return;
+
+				set_pev( CoreAvatarEnt - 1, pev_sequence, random_num( 42, 43 ) );
+				set_pev( CoreAvatarEnt - 2, pev_sequence, random_num( 42, 43 ) );
+				*/
+
+				if( pev( CoreAvatarEnt - 1, pev_sequence ) == 8 && pev( CoreAvatarEnt - 2, pev_sequence ) == 8 ) return;
+
+				set_pev( CoreAvatarEnt - 1, pev_sequence, 8 );
+				set_pev( CoreAvatarEnt - 2, pev_sequence, 8 );
+			}
+			else
+			{
+				set_pev( CoreAvatarEnt - 1, pev_sequence, 4 );
+				set_pev( CoreAvatarEnt - 2, pev_sequence, 4 );
+			}
+		}
+		else
+		{
+			RoseAuraVisible[ iHost ] = false;
+			set_pev( CoreAvatarEnt - 1, pev_sequence, 4 );
+			set_pev( CoreAvatarEnt - 2, pev_sequence, 4 );
+		}
+	}
+
+	if( iEntity == BlackAuraEnt )
+	{
+		if( !BlackAuraVisible[ iHost ] ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+	}
+	if( iEntity == RoseAuraEnt )
+	{
+		if( !RoseAuraVisible[ iHost ] ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+	}
+	if( iEntity == CoreAuraEnt )
+	{
+		if( BlackAuraVisible[ iHost ] ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+	}
+
+	if( iEntity == ClassRoseAura )
+	{
+		if( getClientLEVEL( iHost ) == 1 )
+		{
+			if( getClientDATAc( iHost, cliClass ) != getCXbyName( "Black" ) ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+
+			if( getClientSWOOPING( iHost ) || !getClientTURBO( iHost ) ) set_es( ES_Handle, ES_Effects, EF_NODRAW );
+
+			new Float: org[ 3 ];
+			pev( iHost, pev_origin, org );
+			set_es( ES_Handle, ES_Origin, org );
+		}
+	}
+}
+
+
+
+PluginPreCache ()
+{
+	MOD_Charge_PreCache ();
+	
+
+	precache_sound( "Black/Null.wav" );
+	precache_sound( "Black/Step1.wav" );
+	precache_sound( "Black/Step2.wav" );
+	precache_sound( "Black/Step3.wav" );
+	precache_sound( "Black/Step4.wav" );
+	precache_sound( "Black/Transformation.wav" );
+	precache_sound( "Black/TransformationP.wav" );
+
+	precache_model( "sprites/RoseAura.spr" );
+
+	precache_model( "models/evolution/Auras/shape_01.mdl" );
+	precache_model( "models/evolution/Auras/shape_03.mdl" );
+	precache_model( "models/evolution/Auras/shape_06.mdl" );
+	BlackID = precache_model( "models/player/Black/Black.mdl" );
+	RoseID = precache_model( "models/player/BlackSSJRose/BlackSSJRose.mdl" );
+}
+
+

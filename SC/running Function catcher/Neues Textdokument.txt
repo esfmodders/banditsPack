@@ -1,0 +1,8 @@
+stock bool: getClientRunning( Client )
+{
+        if( pev( Client, pev_sequence ) ==  3 || pev( Client, pev_sequence ) ==  4 || pev( Client, pev_sequence ) ==  5 || pev( Client, pev_sequence ) ==  6 )
+        {
+                return true;
+        }
+        return false;
+}
