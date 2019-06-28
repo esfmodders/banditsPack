@@ -1,0 +1,12 @@
+ESF_GERO_LAB
+Made for Earth's Special Forces
+======== 
+Credits go out to:
+
+MAP AND TEXTURES - imkongkong
+
+TEXTURE HELP - dj ready, bapplebo
+
+TREE MODELS - esf team
+
+My version of gero's laboratory

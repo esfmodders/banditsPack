@@ -1,0 +1,8 @@
+by only 
+esf_dust created for Earths Special Forces 
+------------------------------------------
+map : esf_dust
+creared by : only
+textures : halflife.wad and cs_dust ( couner-strike wad :P )
+
+Play and loved :D

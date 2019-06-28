@@ -1,0 +1,3 @@
+4
+weapon_s	640 ico_utrunks		0	0	96	32
+crosshair	640 640crosshair	0	0	32	32

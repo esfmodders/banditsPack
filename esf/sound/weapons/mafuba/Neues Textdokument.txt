@@ -1,0 +1,6 @@
+	precache_sound("weapons/mafuba/jar_use.wav");
+	precache_sound("weapons/mafuba/jar_lgt_1.wav");
+	precache_sound("weapons/mafuba/jar_lgt_2.wav");
+	precache_sound("weapons/mafuba/jar_lgt_3.wav");
+	precache_sound("weapons/mafuba/jar_break.wav");
+	

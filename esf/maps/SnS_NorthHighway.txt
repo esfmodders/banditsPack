@@ -1,0 +1,18 @@
+========================================================================
+SnS_NorthHighway         BY        -)SnS(- Optional
+========================================================================
+
+I remade TM_NorthHighway. This version is bigger, better, and sexier!
+
+Features
+ -New Textures
+ -Much Larger Dimensions
+ -Includes Rocks and Tree Models
+ -An Easteregg
+
+Team SnS <http://sns.webgv.com>
+
+Special thanks:
+
+DJ-Ready
+Slackiller - For the truck (www.slackiller.com)

@@ -1,0 +1,6 @@
+z_spike_v5
+===========
+
+Duels/Training/Tournament map made for the |::Z::| Clan.
+
+(Made by grOOvy)

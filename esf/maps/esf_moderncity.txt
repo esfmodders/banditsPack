@@ -1,0 +1,19 @@
+Modern City
+**************
+
+This map is based on Modern City's of today. The Map include's alot of buildings, A broken bridge, A mountain, Petrol Station and A Small Park. Each and every building have a distructive place. But buildings that are connected have only one.
+
+The is my first map release for esf
+
+Custom Textures:	Yes
+		I used some of Max payne's textures.
+Sky:		Tnx for Ape's City sky
+Mod:		This map is fully compatible for Esf 1.2
+
+Installation:
+*************
+Just extract everything to you esf folder.
+
+Tnx for downloading
+Hellhound
+tertio@mighty.co.za

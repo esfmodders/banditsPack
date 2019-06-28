@@ -1,0 +1,16 @@
+folder extras:
+
+ssjgoku:hair fading
+ssj3goku:grow models as submodels
+ssjgotenks:hair grow to ssj3(not needed!)
+majinvegeta: majin animation
+ssj4gogeta:bigbangkhh animation(kamehamehaa)
+<<<<<oozarugrowmodels>>>>>
+frieza3:grow from second to third form as submodels
+
+
+
+
+OOAZRUS:
+oozaru:  1-6    1=goku size        6=normal oozaru
+goozaru: 1-6    1=ssj4goku size    6=normal goozaru

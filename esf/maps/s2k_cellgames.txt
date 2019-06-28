@@ -1,0 +1,16 @@
+    --== S2k_Cellgames ==--
+ ______________________________
+| Author    : DJ-Ready         |
+| Build time: 2 days           |
+| Textures  : DJ-Ready         |
+| E-Mail    : DJ-Ready@web.de  |
+|______________________________|
+
+-- == An [-=S2k=-]Mapping Squad Map ==--	
+
+This is an ESF World Networkxx exclusive file.
+If I see the file on another Server then ESF World Networkxx or its filesponsors, I'm gonna hunt you down and kill you. :-)
+
+Have fun with the map
+
+DJ-Ready

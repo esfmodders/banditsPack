@@ -1,0 +1,21 @@
+The Lookout 1.2
+**************
+
+This map is based on the Lookout in DBZ. The map include The lookout, Corin's tower, A DBZ type city and The Hiberbolic Timechamber.
+
+Changed:
+Have bigger hiberbolic timechamber
+have some board in the city
+And other small stuff
+
+Custom Textures:	Yes
+		I also used some of Swiss Cheese Textures
+Mod:		This map is fully compatible for Esf 1.2
+
+Installation:
+*************
+Just extract everything to you esf folder.
+
+Tnx for downloading
+Hellhound
+tertio@mighty.co.za
